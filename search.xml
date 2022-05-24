@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>test</title>
+    <url>/posts/d87f7e0c.html</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>技术类</category>
+      </categories>
+      <tags>
+        <tag>Test</tag>
+        <tag>测试标签</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo+Next 下的语法格式</title>
+    <url>/posts/d1aba92d.html</url>
+    <content><![CDATA[<blockquote class="blockquote-center">
+<p><strong>滴水穿石，不舍昼夜</strong></p>
+
+</blockquote>
+
+<span id="more"></span>
+
+<p>a<br>a</p>
+<p>a</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>)</span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>)</span><br><span class="line"><span class="keyword">var</span> url = <span class="built_in">require</span>(<span class="string">&#x27;url&#x27;</span>)</span><br><span class="line"><span class="keyword">var</span> port = process.<span class="property">argv</span>[<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(!port)&#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;请指定端口号，例如：node server.js xxxx&#x27;</span>)</span><br><span class="line">  process.<span class="title function_">exit</span>(<span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>a<br>a<br>a</p>
+<p>a<br>a<br>a<br>a</p>
+<p>a<br>a<br>a</p>
+<p>a<br>a</p>
+<p>a<br>a<br>a</p>
+<p>a<br>a<br>a<br>a<br>a</p>
+<p>a<br>a<br>a<br>a<br>a</p>
+<p>a<br>a<br>a<br>a</p>
+<p>a<br>a</p>
+]]></content>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Next</tag>
+      </tags>
+  </entry>
+</search>
