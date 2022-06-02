@@ -54,4 +54,25 @@
         <tag>git</tag>
       </tags>
   </entry>
+  <entry>
+    <title>jQuery的设计思想</title>
+    <url>/posts/171faadf.html</url>
+    <content><![CDATA[<h2 id="jQuery如何获取元素"><a href="#jQuery如何获取元素" class="headerlink" title="jQuery如何获取元素"></a>jQuery如何获取元素</h2><h3 id="CSS选择器方式"><a href="#CSS选择器方式" class="headerlink" title="CSS选择器方式"></a>CSS选择器方式</h3><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-variable language_">document</span>) <span class="hljs-comment">// 选取整个文档对象</span><br><br>$(<span class="hljs-string">&#x27;#mydiv&#x27;</span>) <span class="hljs-comment">// 选择id为mydiv的元素</span><br><br>$(<span class="hljs-string">&#x27;.tt&#x27;</span>) <span class="hljs-comment">// 选择class为tt的元素</span><br><br>$(<span class="hljs-string">&#x27;input[name=username]&#x27;</span>) <span class="hljs-comment">// 选择name属性为username的input元素</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="jQuery特有表达式"><a href="#jQuery特有表达式" class="headerlink" title="jQuery特有表达式"></a>jQuery特有表达式</h3><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;a:first&#x27;</span>) <span class="hljs-comment">// 选择页面中第一个a元素</span><br><br>$(<span class="hljs-string">&#x27;tr:odd&#x27;</span>) <span class="hljs-comment">// 选择表格的奇数行</span><br><br>$(<span class="hljs-string">&#x27;#myForm :input&#x27;</span>) <span class="hljs-comment">// 选取id为myForm中的input元素</span><br><br>$(<span class="hljs-string">&#x27;div:visible&#x27;</span>) <span class="hljs-comment">// 选择可见的div元素</span><br><br>$(<span class="hljs-string">&#x27;div:gt(2)&#x27;</span>) <span class="hljs-comment">// 选择所有的div元素，除了前三个（0、1、2）</span><br><br>$(<span class="hljs-string">&#x27;div:animated&#x27;</span>) <span class="hljs-comment">// 选择当前处于动画状态的div元素</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="jQuery的链式操作"><a href="#jQuery的链式操作" class="headerlink" title="jQuery的链式操作"></a>jQuery的链式操作</h2><p>在jQuery中使用了<span class="label label-info">链式操作</span>，就是在你获取网页元素之后，可以连续对他进行一列的操作，并且这一系列的操作可以连续的写在一起，就好像链条一样。</p>
+<p>例如：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;#mydiv&#x27;</span>).<span class="hljs-title function_">find</span>(<span class="hljs-string">&#x27;span&#x27;</span>).<span class="hljs-title function_">eq</span>(<span class="hljs-number">2</span>).<span class="hljs-title function_">html</span>(<span class="hljs-string">&#x27;Hello World!&#x27;</span>);<br></code></pre></td></tr></table></figure>
+
+<p>将其分解之后：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;#mydiv&#x27;</span>) <span class="hljs-comment">// 获取到id为mydiv的元素</span><br><br>    .<span class="hljs-title function_">find</span>(<span class="hljs-string">&#x27;span&#x27;</span>) <span class="hljs-comment">// 在他的内部寻找span标签</span><br><br>    .<span class="hljs-title function_">eq</span>(<span class="hljs-number">2</span>) <span class="hljs-comment">// 获取span标签中的第3个(下标从0开始)</span><br><br>    .<span class="hljs-title function_">html</span>(<span class="hljs-string">&#x27;Hello World!&#x27;</span>); <span class="hljs-comment">// 将它的内容改为&#x27;Hello World!&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<p>每一次的jQuery操作，都会返回一个jQuery对象，下一个操作就可以直接在前一个操作的基础之上进行。</p>
+<p>此外jQuery还提供了<a href="https://www.jquery123.com/end/">.end()</a>方法，返回上一个操作的对象。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;#mydiv&#x27;</span>) <span class="hljs-comment">// 获取到id为mydiv的元素</span><br><br>    .<span class="hljs-title function_">find</span>(<span class="hljs-string">&#x27;span&#x27;</span>) <span class="hljs-comment">// 在他的内部寻找span标签</span><br><br>    .<span class="hljs-title function_">eq</span>(<span class="hljs-number">2</span>) <span class="hljs-comment">// 获取span标签中的第3个(下标从0开始)</span><br><br>    .<span class="hljs-title function_">html</span>(<span class="hljs-string">&#x27;Hello World!&#x27;</span>); <span class="hljs-comment">// 将它的内容改为&#x27;Hello World!&#x27;</span><br>	<br>	<span class="hljs-comment">// 此时操作的对象是mydiv下的第3个span元素</span><br><br>	.<span class="hljs-title function_">end</span>() <span class="hljs-comment">// 返回上一个操作对象</span><br><br>	<span class="hljs-comment">// 此时操作的对象是mydiv下的所有span元素</span><br></code></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>jquery</tag>
+      </tags>
+  </entry>
 </search>
