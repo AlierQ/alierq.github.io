@@ -16,16 +16,16 @@
   <meta name="author" content="AlierQ">
   <meta name="keywords" content="">
   
-    <meta name="description" content="jQuery如何获取元素CSS选择器方式1234567$(document) &#x2F;&#x2F; 选取整个文档对象$(&amp;#x27;#mydiv&amp;#x27;) &#x2F;&#x2F; 选择id为mydiv的元素$(&amp;#x27;.tt&amp;#x27;) &#x2F;&#x2F; 选择class为tt的元素$(&amp;#x27;input[name&#x3D;username]&amp;#x27;) &#x2F;&#x2F; 选择name属性为username的input元素  jQuery特有表达式">
+    <meta name="description" content="jQuery的一些设计思想和基本用法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jQuery的设计思想">
-<meta property="og:url" content="http://example.com/posts/171faadf.html">
+<meta property="og:url" content="https://alierq.space/posts/171faadf.html">
 <meta property="og:site_name" content="AlierQ&#39;s Blog">
-<meta property="og:description" content="jQuery如何获取元素CSS选择器方式1234567$(document) &#x2F;&#x2F; 选取整个文档对象$(&amp;#x27;#mydiv&amp;#x27;) &#x2F;&#x2F; 选择id为mydiv的元素$(&amp;#x27;.tt&amp;#x27;) &#x2F;&#x2F; 选择class为tt的元素$(&amp;#x27;input[name&#x3D;username]&amp;#x27;) &#x2F;&#x2F; 选择name属性为username的input元素  jQuery特有表达式">
+<meta property="og:description" content="jQuery的一些设计思想和基本用法">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/image-20220602235935365.png">
 <meta property="article:published_time" content="2022-06-02T15:56:58.000Z">
-<meta property="article:modified_time" content="2022-06-02T16:33:59.803Z">
+<meta property="article:modified_time" content="2022-06-03T07:00:53.163Z">
 <meta property="article:author" content="AlierQ">
 <meta property="article:tag" content="jquery">
 <meta name="twitter:card" content="summary_large_image">
@@ -75,7 +75,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"df60f35396f0f48b8cc541f369532995","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"z8WG5aFCs52EcQQxkXfUu7mT-MdYXbMMI","app_key":"HMJ6Ccdd4GYlyQRORR6OLJaF","server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"alierq.space","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"df60f35396f0f48b8cc541f369532995","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"z8WG5aFCs52EcQQxkXfUu7mT-MdYXbMMI","app_key":"HMJ6Ccdd4GYlyQRORR6OLJaF","server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          文章字数：1.1k 字
+          文章字数：2.4k 字
         
       </span>
     
@@ -234,7 +234,7 @@
         
         
         
-          阅读时长 ≈ 10 分钟
+          阅读时长 ≈ 21 分钟
         
       </span>
     
@@ -285,14 +285,14 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年6月3日 凌晨
+                    本文最后更新于：2022年6月3日 下午
                   
                 
               </p>
             
             <div class="markdown-body">
               
-              <h2 id="jQuery如何获取元素"><a href="#jQuery如何获取元素" class="headerlink" title="jQuery如何获取元素"></a>jQuery如何获取元素</h2><h3 id="CSS选择器方式"><a href="#CSS选择器方式" class="headerlink" title="CSS选择器方式"></a>CSS选择器方式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js">$(<span class="hljs-variable language_">document</span>) <span class="hljs-comment">// 选取整个文档对象</span><br><br>$(<span class="hljs-string">&#x27;#mydiv&#x27;</span>) <span class="hljs-comment">// 选择id为mydiv的元素</span><br><br>$(<span class="hljs-string">&#x27;.tt&#x27;</span>) <span class="hljs-comment">// 选择class为tt的元素</span><br><br>$(<span class="hljs-string">&#x27;input[name=username]&#x27;</span>) <span class="hljs-comment">// 选择name属性为username的input元素</span><br></code></pre></td></tr></table></figure>
+              <h2 id="jQuery获取元素"><a href="#jQuery获取元素" class="headerlink" title="jQuery获取元素"></a>jQuery获取元素</h2><h3 id="CSS选择器方式"><a href="#CSS选择器方式" class="headerlink" title="CSS选择器方式"></a>CSS选择器方式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js">$(<span class="hljs-variable language_">document</span>) <span class="hljs-comment">// 选取整个文档对象</span><br><br>$(<span class="hljs-string">&#x27;#mydiv&#x27;</span>) <span class="hljs-comment">// 选择id为mydiv的元素</span><br><br>$(<span class="hljs-string">&#x27;.tt&#x27;</span>) <span class="hljs-comment">// 选择class为tt的元素</span><br><br>$(<span class="hljs-string">&#x27;input[name=username]&#x27;</span>) <span class="hljs-comment">// 选择name属性为username的input元素</span><br></code></pre></td></tr></table></figure>
 
 <h3 id="jQuery特有表达式"><a href="#jQuery特有表达式" class="headerlink" title="jQuery特有表达式"></a>jQuery特有表达式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;a:first&#x27;</span>) <span class="hljs-comment">// 选择页面中第一个a元素</span><br><br>$(<span class="hljs-string">&#x27;tr:odd&#x27;</span>) <span class="hljs-comment">// 选择表格的奇数行</span><br><br>$(<span class="hljs-string">&#x27;#myForm :input&#x27;</span>) <span class="hljs-comment">// 选取id为myForm中的input元素</span><br><br>$(<span class="hljs-string">&#x27;div:visible&#x27;</span>) <span class="hljs-comment">// 选择可见的div元素</span><br><br>$(<span class="hljs-string">&#x27;div:gt(2)&#x27;</span>) <span class="hljs-comment">// 选择所有的div元素，除了前三个（0、1、2）</span><br><br>$(<span class="hljs-string">&#x27;div:animated&#x27;</span>) <span class="hljs-comment">// 选择当前处于动画状态的div元素</span><br></code></pre></td></tr></table></figure>
 
@@ -306,6 +306,30 @@
 <p>每一次的jQuery操作，都会返回一个jQuery对象，下一个操作就可以直接在前一个操作的基础之上进行。</p>
 <p>此外jQuery还提供了<a target="_blank" rel="noopener" href="https://www.jquery123.com/end/">.end()</a>方法，返回上一个操作的对象。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;#mydiv&#x27;</span>) <span class="hljs-comment">// 获取到id为mydiv的元素</span><br><br>    .<span class="hljs-title function_">find</span>(<span class="hljs-string">&#x27;span&#x27;</span>) <span class="hljs-comment">// 在他的内部寻找span标签</span><br><br>    .<span class="hljs-title function_">eq</span>(<span class="hljs-number">2</span>) <span class="hljs-comment">// 获取span标签中的第3个(下标从0开始)</span><br><br>    .<span class="hljs-title function_">html</span>(<span class="hljs-string">&#x27;Hello World!&#x27;</span>); <span class="hljs-comment">// 将它的内容改为&#x27;Hello World!&#x27;</span><br>	<br>	<span class="hljs-comment">// 此时操作的对象是mydiv下的第3个span元素</span><br><br>	.<span class="hljs-title function_">end</span>() <span class="hljs-comment">// 返回上一个操作对象</span><br><br>	<span class="hljs-comment">// 此时操作的对象是mydiv下的所有span元素</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="jQuery创建元素"><a href="#jQuery创建元素" class="headerlink" title="jQuery创建元素"></a>jQuery创建元素</h2><p>jQuery创建元素只需要把新元素以字符串的形式传入jQuery的构造构造函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;&lt;div&gt;Hello World!&lt;/div&gt;&#x27;</span>)<br><br>$(<span class="hljs-string">&#x27;&lt;li&gt;new li&lt;/li&gt;&#x27;</span>)<br><br><span class="hljs-comment">// 还可以使用append创建之后直接插入</span><br><br>$(<span class="hljs-string">&#x27;ul&#x27;</span>).<span class="hljs-title function_">append</span>(<span class="hljs-string">&#x27;&lt;li&gt;li&lt;/li&gt;&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<h2 id="jQuery移动元素"><a href="#jQuery移动元素" class="headerlink" title="jQuery移动元素"></a>jQuery移动元素</h2><p>jQuery移动元素提供了两种方法：</p>
+<p>假定我们想要将div元素放在p元素后面</p>
+<p>第一种：直接移动该元素</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;div&#x27;</span>).<span class="hljs-title function_">insertAfter</span>($(<span class="hljs-string">&#x27;p&#x27;</span>))  <span class="hljs-comment">// 将div元素移动到p元素后面</span><br></code></pre></td></tr></table></figure>
+
+<p>第二种：移动其他元素的位置，从而达到目的</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;p&#x27;</span>).<span class="hljs-title function_">after</span>($(<span class="hljs-string">&#x27;div&#x27;</span>))  <span class="hljs-comment">// 在p元素的后面加入一个div</span><br></code></pre></td></tr></table></figure>
+
+<p>两者实现的效果是相同的，但是第一种方法返回的对象是div元素，第二种方法返回的是p元素。</p>
+<p>这类操作方法，一共有四对：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 在现存元素的外部，从后面插入元素</span><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">insertAfter</span>()<br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">after</span>()<br><br><span class="hljs-comment">// 在现存元素的外部，从前面插入元素</span><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">insertBefore</span>()<br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">before</span>()<br><br><span class="hljs-comment">// 在现存元素的内部，从后面插入元素</span><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">appendTo</span>()<br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">append</span>()<br><br><span class="hljs-comment">// 在现存元素的内部，从前面插入元素</span><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">prependTo</span>()<br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">prepend</span>()<br></code></pre></td></tr></table></figure>
+
+<h2 id="jQuery修改元素属性"><a href="#jQuery修改元素属性" class="headerlink" title="jQuery修改元素属性"></a>jQuery修改元素属性</h2><p>jQuery中使用同意个函数进行取值（getter）和赋值（setter），具体是取值还是赋值由函数的参数决定</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;div&#x27;</span>).<span class="hljs-property">html</span>; <span class="hljs-comment">// 无参，获取div的值</span><br><br>$(<span class="hljs-string">&#x27;div&#x27;</span>).<span class="hljs-property">html</span>; <span class="hljs-comment">// 带参，设置div的值 </span><br></code></pre></td></tr></table></figure>
+
+<p>常用赋值和取值操作如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">html</span>() <span class="hljs-comment">// 取出或设置html内容</span><br><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">text</span>() <span class="hljs-comment">// 取出或设置text内容</span><br><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">attr</span>() <span class="hljs-comment">// 取出或设置某个属性的值</span><br><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">width</span>() <span class="hljs-comment">// 取出或设置某个元素的宽度</span><br><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">height</span>() <span class="hljs-comment">// 取出或设置某个元素的高度</span><br><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">val</span>() <span class="hljs-comment">// 取出某个表单元素的值</span><br></code></pre></td></tr></table></figure>
+
+<p>有一点需要注意，在<span class="label label-info">$(‘xxx’)</span>获取的值是多个时，在进行赋值的时候，是对所有元素进行赋值；在进行取值的时候，只对第一个元素进行取值（<a target="_blank" rel="noopener" href="https://www.jquery123.com/text/">.text()</a>除外，它是取出所有元素text内容）。</p>
+
               
             </div>
             <hr/>
@@ -329,7 +353,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>jQuery的设计思想</div>
-      <div>http://example.com/posts/171faadf.html</div>
+      <div>https://alierq.space/posts/171faadf.html</div>
     </div>
     <div class="license-meta">
       
