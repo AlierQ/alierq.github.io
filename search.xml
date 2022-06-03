@@ -56,6 +56,51 @@
       </tags>
   </entry>
   <entry>
+    <title>jQuery的设计思想</title>
+    <url>/posts/171faadf.html</url>
+    <content><![CDATA[<h2 id="jQuery获取元素"><a href="#jQuery获取元素" class="headerlink" title="jQuery获取元素"></a>jQuery获取元素</h2><h3 id="CSS选择器方式"><a href="#CSS选择器方式" class="headerlink" title="CSS选择器方式"></a>CSS选择器方式</h3><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-variable language_">document</span>) <span class="hljs-comment">// 选取整个文档对象</span><br><br>$(<span class="hljs-string">&#x27;#mydiv&#x27;</span>) <span class="hljs-comment">// 选择id为mydiv的元素</span><br><br>$(<span class="hljs-string">&#x27;.tt&#x27;</span>) <span class="hljs-comment">// 选择class为tt的元素</span><br><br>$(<span class="hljs-string">&#x27;input[name=username]&#x27;</span>) <span class="hljs-comment">// 选择name属性为username的input元素</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="jQuery特有表达式"><a href="#jQuery特有表达式" class="headerlink" title="jQuery特有表达式"></a>jQuery特有表达式</h3><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;a:first&#x27;</span>) <span class="hljs-comment">// 选择页面中第一个a元素</span><br><br>$(<span class="hljs-string">&#x27;tr:odd&#x27;</span>) <span class="hljs-comment">// 选择表格的奇数行</span><br><br>$(<span class="hljs-string">&#x27;#myForm :input&#x27;</span>) <span class="hljs-comment">// 选取id为myForm中的input元素</span><br><br>$(<span class="hljs-string">&#x27;div:visible&#x27;</span>) <span class="hljs-comment">// 选择可见的div元素</span><br><br>$(<span class="hljs-string">&#x27;div:gt(2)&#x27;</span>) <span class="hljs-comment">// 选择所有的div元素，除了前三个（0、1、2）</span><br><br>$(<span class="hljs-string">&#x27;div:animated&#x27;</span>) <span class="hljs-comment">// 选择当前处于动画状态的div元素</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="jQuery的链式操作"><a href="#jQuery的链式操作" class="headerlink" title="jQuery的链式操作"></a>jQuery的链式操作</h2><p>在jQuery中使用了<span class="label label-info">链式操作</span>，就是在你获取网页元素之后，可以连续对他进行一列的操作，并且这一系列的操作可以连续的写在一起，就好像链条一样。</p>
+<p>例如：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;#mydiv&#x27;</span>).<span class="hljs-title function_">find</span>(<span class="hljs-string">&#x27;span&#x27;</span>).<span class="hljs-title function_">eq</span>(<span class="hljs-number">2</span>).<span class="hljs-title function_">html</span>(<span class="hljs-string">&#x27;Hello World!&#x27;</span>);<br></code></pre></td></tr></table></figure>
+
+<p>将其分解之后：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;#mydiv&#x27;</span>) <span class="hljs-comment">// 获取到id为mydiv的元素</span><br><br>    .<span class="hljs-title function_">find</span>(<span class="hljs-string">&#x27;span&#x27;</span>) <span class="hljs-comment">// 在他的内部寻找span标签</span><br><br>    .<span class="hljs-title function_">eq</span>(<span class="hljs-number">2</span>) <span class="hljs-comment">// 获取span标签中的第3个(下标从0开始)</span><br><br>    .<span class="hljs-title function_">html</span>(<span class="hljs-string">&#x27;Hello World!&#x27;</span>); <span class="hljs-comment">// 将它的内容改为&#x27;Hello World!&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<p>每一次的jQuery操作，都会返回一个jQuery对象，下一个操作就可以直接在前一个操作的基础之上进行。</p>
+<p>此外jQuery还提供了<a href="https://www.jquery123.com/end/">.end()</a>方法，返回上一个操作的对象。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;#mydiv&#x27;</span>) <span class="hljs-comment">// 获取到id为mydiv的元素</span><br><br>    .<span class="hljs-title function_">find</span>(<span class="hljs-string">&#x27;span&#x27;</span>) <span class="hljs-comment">// 在他的内部寻找span标签</span><br><br>    .<span class="hljs-title function_">eq</span>(<span class="hljs-number">2</span>) <span class="hljs-comment">// 获取span标签中的第3个(下标从0开始)</span><br><br>    .<span class="hljs-title function_">html</span>(<span class="hljs-string">&#x27;Hello World!&#x27;</span>); <span class="hljs-comment">// 将它的内容改为&#x27;Hello World!&#x27;</span><br>	<br>	<span class="hljs-comment">// 此时操作的对象是mydiv下的第3个span元素</span><br><br>	.<span class="hljs-title function_">end</span>() <span class="hljs-comment">// 返回上一个操作对象</span><br><br>	<span class="hljs-comment">// 此时操作的对象是mydiv下的所有span元素</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="jQuery创建元素"><a href="#jQuery创建元素" class="headerlink" title="jQuery创建元素"></a>jQuery创建元素</h2><p>jQuery创建元素只需要把新元素以字符串的形式传入jQuery的构造构造函数</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;&lt;div&gt;Hello World!&lt;/div&gt;&#x27;</span>)<br><br>$(<span class="hljs-string">&#x27;&lt;li&gt;new li&lt;/li&gt;&#x27;</span>)<br><br><span class="hljs-comment">// 还可以使用append创建之后直接插入</span><br><br>$(<span class="hljs-string">&#x27;ul&#x27;</span>).<span class="hljs-title function_">append</span>(<span class="hljs-string">&#x27;&lt;li&gt;li&lt;/li&gt;&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<h2 id="jQuery移动元素"><a href="#jQuery移动元素" class="headerlink" title="jQuery移动元素"></a>jQuery移动元素</h2><p>jQuery移动元素提供了两种方法：</p>
+<p>假定我们想要将div元素放在p元素后面</p>
+<p>第一种：直接移动该元素</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;div&#x27;</span>).<span class="hljs-title function_">insertAfter</span>($(<span class="hljs-string">&#x27;p&#x27;</span>))  <span class="hljs-comment">// 将div元素移动到p元素后面</span><br></code></pre></td></tr></table></figure>
+
+<p>第二种：移动其他元素的位置，从而达到目的</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;p&#x27;</span>).<span class="hljs-title function_">after</span>($(<span class="hljs-string">&#x27;div&#x27;</span>))  <span class="hljs-comment">// 在p元素的后面加入一个div</span><br></code></pre></td></tr></table></figure>
+
+<p>两者实现的效果是相同的，但是第一种方法返回的对象是div元素，第二种方法返回的是p元素。</p>
+<p>这类操作方法，一共有四对：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 在现存元素的外部，从后面插入元素</span><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">insertAfter</span>()<br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">after</span>()<br><br><span class="hljs-comment">// 在现存元素的外部，从前面插入元素</span><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">insertBefore</span>()<br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">before</span>()<br><br><span class="hljs-comment">// 在现存元素的内部，从后面插入元素</span><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">appendTo</span>()<br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">append</span>()<br><br><span class="hljs-comment">// 在现存元素的内部，从前面插入元素</span><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">prependTo</span>()<br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">prepend</span>()<br></code></pre></td></tr></table></figure>
+
+<h2 id="jQuery修改元素属性"><a href="#jQuery修改元素属性" class="headerlink" title="jQuery修改元素属性"></a>jQuery修改元素属性</h2><p>jQuery中使用同意个函数进行取值（getter）和赋值（setter），具体是取值还是赋值由函数的参数决定</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;div&#x27;</span>).<span class="hljs-property">html</span>; <span class="hljs-comment">// 无参，获取div的值</span><br><br>$(<span class="hljs-string">&#x27;div&#x27;</span>).<span class="hljs-property">html</span>; <span class="hljs-comment">// 带参，设置div的值 </span><br></code></pre></td></tr></table></figure>
+
+<p>常用赋值和取值操作如下：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">html</span>() <span class="hljs-comment">// 取出或设置html内容</span><br><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">text</span>() <span class="hljs-comment">// 取出或设置text内容</span><br><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">attr</span>() <span class="hljs-comment">// 取出或设置某个属性的值</span><br><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">width</span>() <span class="hljs-comment">// 取出或设置某个元素的宽度</span><br><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">height</span>() <span class="hljs-comment">// 取出或设置某个元素的高度</span><br><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">val</span>() <span class="hljs-comment">// 取出某个表单元素的值</span><br></code></pre></td></tr></table></figure>
+
+<p>有一点需要注意，在<span class="label label-info">$(‘xxx’)</span>获取的值是多个时，在进行赋值的时候，是对所有元素进行赋值；在进行取值的时候，只对第一个元素进行取值（<a href="https://www.jquery123.com/text/">.text()</a>除外，它是取出所有元素text内容）。</p>
+]]></content>
+      <tags>
+        <tag>jquery</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>命令行常用操作</title>
     <url>/posts/bf840e6a.html</url>
     <content><![CDATA[<h3 id="文件查看操作"><a href="#文件查看操作" class="headerlink" title="文件查看操作"></a>文件查看操作</h3><h4 id="查看文件路径"><a href="#查看文件路径" class="headerlink" title="查看文件路径"></a>查看文件路径</h4><p><code>pwd</code>：查看当前目录的绝对路径</p>
@@ -104,51 +149,6 @@
       <tags>
         <tag>bash</tag>
         <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>jQuery的设计思想</title>
-    <url>/posts/171faadf.html</url>
-    <content><![CDATA[<h2 id="jQuery获取元素"><a href="#jQuery获取元素" class="headerlink" title="jQuery获取元素"></a>jQuery获取元素</h2><h3 id="CSS选择器方式"><a href="#CSS选择器方式" class="headerlink" title="CSS选择器方式"></a>CSS选择器方式</h3><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-variable language_">document</span>) <span class="hljs-comment">// 选取整个文档对象</span><br><br>$(<span class="hljs-string">&#x27;#mydiv&#x27;</span>) <span class="hljs-comment">// 选择id为mydiv的元素</span><br><br>$(<span class="hljs-string">&#x27;.tt&#x27;</span>) <span class="hljs-comment">// 选择class为tt的元素</span><br><br>$(<span class="hljs-string">&#x27;input[name=username]&#x27;</span>) <span class="hljs-comment">// 选择name属性为username的input元素</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="jQuery特有表达式"><a href="#jQuery特有表达式" class="headerlink" title="jQuery特有表达式"></a>jQuery特有表达式</h3><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;a:first&#x27;</span>) <span class="hljs-comment">// 选择页面中第一个a元素</span><br><br>$(<span class="hljs-string">&#x27;tr:odd&#x27;</span>) <span class="hljs-comment">// 选择表格的奇数行</span><br><br>$(<span class="hljs-string">&#x27;#myForm :input&#x27;</span>) <span class="hljs-comment">// 选取id为myForm中的input元素</span><br><br>$(<span class="hljs-string">&#x27;div:visible&#x27;</span>) <span class="hljs-comment">// 选择可见的div元素</span><br><br>$(<span class="hljs-string">&#x27;div:gt(2)&#x27;</span>) <span class="hljs-comment">// 选择所有的div元素，除了前三个（0、1、2）</span><br><br>$(<span class="hljs-string">&#x27;div:animated&#x27;</span>) <span class="hljs-comment">// 选择当前处于动画状态的div元素</span><br></code></pre></td></tr></table></figure>
-
-<h2 id="jQuery的链式操作"><a href="#jQuery的链式操作" class="headerlink" title="jQuery的链式操作"></a>jQuery的链式操作</h2><p>在jQuery中使用了<span class="label label-info">链式操作</span>，就是在你获取网页元素之后，可以连续对他进行一列的操作，并且这一系列的操作可以连续的写在一起，就好像链条一样。</p>
-<p>例如：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;#mydiv&#x27;</span>).<span class="hljs-title function_">find</span>(<span class="hljs-string">&#x27;span&#x27;</span>).<span class="hljs-title function_">eq</span>(<span class="hljs-number">2</span>).<span class="hljs-title function_">html</span>(<span class="hljs-string">&#x27;Hello World!&#x27;</span>);<br></code></pre></td></tr></table></figure>
-
-<p>将其分解之后：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;#mydiv&#x27;</span>) <span class="hljs-comment">// 获取到id为mydiv的元素</span><br><br>    .<span class="hljs-title function_">find</span>(<span class="hljs-string">&#x27;span&#x27;</span>) <span class="hljs-comment">// 在他的内部寻找span标签</span><br><br>    .<span class="hljs-title function_">eq</span>(<span class="hljs-number">2</span>) <span class="hljs-comment">// 获取span标签中的第3个(下标从0开始)</span><br><br>    .<span class="hljs-title function_">html</span>(<span class="hljs-string">&#x27;Hello World!&#x27;</span>); <span class="hljs-comment">// 将它的内容改为&#x27;Hello World!&#x27;</span><br></code></pre></td></tr></table></figure>
-
-<p>每一次的jQuery操作，都会返回一个jQuery对象，下一个操作就可以直接在前一个操作的基础之上进行。</p>
-<p>此外jQuery还提供了<a href="https://www.jquery123.com/end/">.end()</a>方法，返回上一个操作的对象。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;#mydiv&#x27;</span>) <span class="hljs-comment">// 获取到id为mydiv的元素</span><br><br>    .<span class="hljs-title function_">find</span>(<span class="hljs-string">&#x27;span&#x27;</span>) <span class="hljs-comment">// 在他的内部寻找span标签</span><br><br>    .<span class="hljs-title function_">eq</span>(<span class="hljs-number">2</span>) <span class="hljs-comment">// 获取span标签中的第3个(下标从0开始)</span><br><br>    .<span class="hljs-title function_">html</span>(<span class="hljs-string">&#x27;Hello World!&#x27;</span>); <span class="hljs-comment">// 将它的内容改为&#x27;Hello World!&#x27;</span><br>	<br>	<span class="hljs-comment">// 此时操作的对象是mydiv下的第3个span元素</span><br><br>	.<span class="hljs-title function_">end</span>() <span class="hljs-comment">// 返回上一个操作对象</span><br><br>	<span class="hljs-comment">// 此时操作的对象是mydiv下的所有span元素</span><br></code></pre></td></tr></table></figure>
-
-<h2 id="jQuery创建元素"><a href="#jQuery创建元素" class="headerlink" title="jQuery创建元素"></a>jQuery创建元素</h2><p>jQuery创建元素只需要把新元素以字符串的形式传入jQuery的构造构造函数</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;&lt;div&gt;Hello World!&lt;/div&gt;&#x27;</span>)<br><br>$(<span class="hljs-string">&#x27;&lt;li&gt;new li&lt;/li&gt;&#x27;</span>)<br><br><span class="hljs-comment">// 还可以使用append创建之后直接插入</span><br><br>$(<span class="hljs-string">&#x27;ul&#x27;</span>).<span class="hljs-title function_">append</span>(<span class="hljs-string">&#x27;&lt;li&gt;li&lt;/li&gt;&#x27;</span>)<br></code></pre></td></tr></table></figure>
-
-<h2 id="jQuery移动元素"><a href="#jQuery移动元素" class="headerlink" title="jQuery移动元素"></a>jQuery移动元素</h2><p>jQuery移动元素提供了两种方法：</p>
-<p>假定我们想要将div元素放在p元素后面</p>
-<p>第一种：直接移动该元素</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;div&#x27;</span>).<span class="hljs-title function_">insertAfter</span>($(<span class="hljs-string">&#x27;p&#x27;</span>))  <span class="hljs-comment">// 将div元素移动到p元素后面</span><br></code></pre></td></tr></table></figure>
-
-<p>第二种：移动其他元素的位置，从而达到目的</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;p&#x27;</span>).<span class="hljs-title function_">after</span>($(<span class="hljs-string">&#x27;div&#x27;</span>))  <span class="hljs-comment">// 在p元素的后面加入一个div</span><br></code></pre></td></tr></table></figure>
-
-<p>两者实现的效果是相同的，但是第一种方法返回的对象是div元素，第二种方法返回的是p元素。</p>
-<p>这类操作方法，一共有四对：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 在现存元素的外部，从后面插入元素</span><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">insertAfter</span>()<br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">after</span>()<br><br><span class="hljs-comment">// 在现存元素的外部，从前面插入元素</span><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">insertBefore</span>()<br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">before</span>()<br><br><span class="hljs-comment">// 在现存元素的内部，从后面插入元素</span><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">appendTo</span>()<br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">append</span>()<br><br><span class="hljs-comment">// 在现存元素的内部，从前面插入元素</span><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">prependTo</span>()<br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">prepend</span>()<br></code></pre></td></tr></table></figure>
-
-<h2 id="jQuery修改元素属性"><a href="#jQuery修改元素属性" class="headerlink" title="jQuery修改元素属性"></a>jQuery修改元素属性</h2><p>jQuery中使用同意个函数进行取值（getter）和赋值（setter），具体是取值还是赋值由函数的参数决定</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;div&#x27;</span>).<span class="hljs-property">html</span>; <span class="hljs-comment">// 无参，获取div的值</span><br><br>$(<span class="hljs-string">&#x27;div&#x27;</span>).<span class="hljs-property">html</span>; <span class="hljs-comment">// 带参，设置div的值 </span><br></code></pre></td></tr></table></figure>
-
-<p>常用赋值和取值操作如下：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">html</span>() <span class="hljs-comment">// 取出或设置html内容</span><br><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">text</span>() <span class="hljs-comment">// 取出或设置text内容</span><br><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">attr</span>() <span class="hljs-comment">// 取出或设置某个属性的值</span><br><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">width</span>() <span class="hljs-comment">// 取出或设置某个元素的宽度</span><br><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">height</span>() <span class="hljs-comment">// 取出或设置某个元素的高度</span><br><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">val</span>() <span class="hljs-comment">// 取出某个表单元素的值</span><br></code></pre></td></tr></table></figure>
-
-<p>有一点需要注意，在<span class="label label-info">$(‘xxx’)</span>获取的值是多个时，在进行赋值的时候，是对所有元素进行赋值；在进行取值的时候，只对第一个元素进行取值（<a href="https://www.jquery123.com/text/">.text()</a>除外，它是取出所有元素text内容）。</p>
-]]></content>
-      <tags>
-        <tag>jquery</tag>
       </tags>
   </entry>
 </search>
