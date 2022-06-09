@@ -16,24 +16,23 @@
   <meta name="author" content="AlierQ">
   <meta name="keywords" content="">
   
-    <meta name="description" content="JavaScript是单线程JavaScript在诞生之初是被用作实现用户和浏览器的一些简单的交互，这也就使得了JavaScript在设计的时候就没有考虑他要做一些很复杂的操作，所以JavaScript就被设计成了单线程的一门语言。并在至今为止他都是一门单线程的脚本语言。 所谓的单线程是指JavaScript引擎解释和执行的线程只有一个 同步和异步的概念同步同步的概念：假设我现在手头有两件事要做：">
+    <meta name="description" content="AJAX请求的步骤 创建XMLHttpRequest对象  1const request &#x3D; new XMLHttpRequest();   调用XMLHttpRequest对象建立连接  1request.open(&amp;#x27;get&amp;#x27;,&amp;#x27;&#x2F;index.html&amp;#x27;)   监听对象  使用onload或者onerror监听  1234567request.onload">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript同步和异步">
-<meta property="og:url" content="https://alierq.space/posts/95105818.html">
+<meta property="og:title" content="JavaScript原生AJAX">
+<meta property="og:url" content="https://alierq.space/posts/d0443184.html">
 <meta property="og:site_name" content="AlierQ&#39;s Blog">
-<meta property="og:description" content="JavaScript是单线程JavaScript在诞生之初是被用作实现用户和浏览器的一些简单的交互，这也就使得了JavaScript在设计的时候就没有考虑他要做一些很复杂的操作，所以JavaScript就被设计成了单线程的一门语言。并在至今为止他都是一门单线程的脚本语言。 所谓的单线程是指JavaScript引擎解释和执行的线程只有一个 同步和异步的概念同步同步的概念：假设我现在手头有两件事要做：">
+<meta property="og:description" content="AJAX请求的步骤 创建XMLHttpRequest对象  1const request &#x3D; new XMLHttpRequest();   调用XMLHttpRequest对象建立连接  1request.open(&amp;#x27;get&amp;#x27;,&amp;#x27;&#x2F;index.html&amp;#x27;)   监听对象  使用onload或者onerror监听  1234567request.onload">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206062237238.png">
-<meta property="article:published_time" content="2022-06-09T12:41:57.000Z">
-<meta property="article:modified_time" content="2022-06-09T13:36:02.842Z">
+<meta property="article:published_time" content="2022-06-09T13:41:18.000Z">
+<meta property="article:modified_time" content="2022-06-09T13:58:22.720Z">
 <meta property="article:author" content="AlierQ">
 <meta property="article:tag" content="javascript">
+<meta property="article:tag" content="ajax">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206062237238.png">
   
   
   
-  <title>JavaScript同步和异步 - AlierQ&#39;s Blog</title>
+  <title>JavaScript原生AJAX - AlierQ&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -200,7 +199,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="JavaScript同步和异步"></span>
+            <span id="subtitle" data-typed-text="JavaScript原生AJAX"></span>
           
         </div>
 
@@ -211,7 +210,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-06-09 20:41" pubdate>
+        <time datetime="2022-06-09 21:41" pubdate>
           2022年6月9日 晚上
         </time>
       </span>
@@ -223,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          文章字数：844 字
+          文章字数：935 字
         
       </span>
     
@@ -280,7 +279,7 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">JavaScript同步和异步</h1>
+            <h1 style="display: none">JavaScript原生AJAX</h1>
             
               <p class="note note-info">
                 
@@ -292,26 +291,78 @@
             
             <div class="markdown-body">
               
-              <h2 id="JavaScript是单线程"><a href="#JavaScript是单线程" class="headerlink" title="JavaScript是单线程"></a>JavaScript是单线程</h2><p>JavaScript在诞生之初是被用作实现用户和浏览器的一些简单的交互，这也就使得了JavaScript在设计的时候就没有考虑他要做一些很复杂的操作，所以JavaScript就被设计成了单线程的一门语言。并在至今为止他都是一门单线程的脚本语言。</p>
-<p>所谓的单线程是指JavaScript引擎解释和执行的线程只有一个</p>
-<h2 id="同步和异步的概念"><a href="#同步和异步的概念" class="headerlink" title="同步和异步的概念"></a>同步和异步的概念</h2><h3 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h3><p>同步的概念：假设我现在手头有两件事要做：切菜和炒菜，我做这两件事情的时候，我必须要先切菜再炒菜，并且一定要等切菜这个任务完成之后才可以开始我炒菜的任务，如果切菜没有完成我就需要一直等待。</p>
+              <h2 id="AJAX请求的步骤"><a href="#AJAX请求的步骤" class="headerlink" title="AJAX请求的步骤"></a>AJAX请求的步骤</h2><ol>
+<li>创建XMLHttpRequest对象</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> request = <span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLHttpRequest</span>();<br></code></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>调用XMLHttpRequest对象建立连接</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">request.<span class="hljs-title function_">open</span>(<span class="hljs-string">&#x27;get&#x27;</span>,<span class="hljs-string">&#x27;/index.html&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>监听对象</p>
 <ul>
-<li>换成计算机的表达：我需要等A事件执行完了，才能去执行B事件，如果A事件没有执行完，我就一直等待，直到它完成，我再去执行B事件。</li>
+<li>使用onload或者onerror监听</li>
 </ul>
-<p><span class="label label-info">概括</span>：我一定要拿到结果，拿不到我就不走！</p>
-<h3 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h3><p>异步的概念：同样的，现在我的手头也有两件事要做：煲饭和炒菜，我做这两件事情的时候，我可以把饭煲上，然后我就去炒菜，我并不需要等待饭煲好了，再去炒菜，什么时候饭煲好了它可以响一下提醒我。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js">request.<span class="hljs-property">onload</span> = <span class="hljs-function">()=&gt;</span>&#123;<br>	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(request.<span class="hljs-property">response</span>)  <span class="hljs-comment">// 可以获取请求到的内容</span><br>&#125;<br><br>request.<span class="hljs-property">onerror</span> = <span class="hljs-function">()=&gt;</span>&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;请求错误！&#x27;</span>)<br>&#125;<br></code></pre></td></tr></table></figure>
+
 <ul>
-<li>换成计算机得表达：我让A事件执行，并且让它做完了之后就提醒我，在他执行的时候我去执行B事件。</li>
+<li>使用onreadystatechange监听</li>
 </ul>
-<p><span class="label label-info">概括</span>：我不一定要拿到结果，我继续走，有结果了通知我一声就行！</p>
-<h2 id="JavaScript为什么需要异步任务"><a href="#JavaScript为什么需要异步任务" class="headerlink" title="JavaScript为什么需要异步任务"></a>JavaScript为什么需要异步任务</h2><p>因为JavaScript是单线程的，所以如果现在JavaScript中的一些事件需要长时间的执行，这就会导致后续要执行的事件要进行长时间的等待，极端条件下这种等待是不可控的。所以这个时候就需要引入异步的操作，将这类需要长时间的事件，放到一边去执行，不影响后续的事件。然后在特定的时间或者特定的状态使用一下<span class="label label-info">特殊的手段</span>再去得到之前那些长时间执行的事件的结果。</p>
-<h2 id="如何得到异步任务的结果"><a href="#如何得到异步任务的结果" class="headerlink" title="如何得到异步任务的结果"></a>如何得到异步任务的结果</h2><h3 id="轮询"><a href="#轮询" class="headerlink" title="轮询"></a>轮询</h3><p>每隔一段时间就询问一下异步任务是否有结果</p>
-<h3 id="回调"><a href="#回调" class="headerlink" title="回调"></a>回调</h3><p>当异步任务达到某种状态（完成、错误、超时…..）执行一段代码，由这段代码（回调函数）来得到结果。</p>
-<h2 id="常见的异步"><a href="#常见的异步" class="headerlink" title="常见的异步"></a>常见的异步</h2><ul>
-<li>AJAX</li>
-<li>addEventListener</li>
-<li>setTimeout()</li>
-<li>待补充…</li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js">request.<span class="hljs-property">onreadystatechange</span> = <span class="hljs-function">()=&gt;</span>&#123;<br>	request.<span class="hljs-property">readyState</span> <span class="hljs-comment">// 获取当前XMLHttpRequest对象的状态</span><br>    <br>    request.<span class="hljs-property">status</span> <span class="hljs-comment">// 获取当前请求的状态码</span><br>    <br>    <span class="hljs-comment">// 根据当前request对象的状态和请求的状态码进行相应的处理</span><br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>调用XMLHttpRequest对象的send()方法发送请求</p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">request.<span class="hljs-title function_">send</span>() <br></code></pre></td></tr></table></figure>
+
+<h2 id="readyState状态"><a href="#readyState状态" class="headerlink" title="readyState状态"></a>readyState状态</h2><p><strong>XMLHttpRequest.readyState</strong>属性返回的是一个XMLHttpRequest 代理当前所处的状态</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>状态</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>UNSENT</td>
+<td>代理被创建，但未调用open()方法</td>
+</tr>
+<tr>
+<td>1</td>
+<td>OPENED</td>
+<td>open()方法已经被调用</td>
+</tr>
+<tr>
+<td>2</td>
+<td>HEADERS_RECEIVED</td>
+<td>send()方法已经被调用，并且头部状态已经可以获取</td>
+</tr>
+<tr>
+<td>3</td>
+<td>LOADING</td>
+<td>下载中，responseText属性已经包含部分数据</td>
+</tr>
+<tr>
+<td>4</td>
+<td>DONE</td>
+<td>下载操作已经完成</td>
+</tr>
+</tbody></table>
+<p class="note note-warning">
+通常在的下载完成之后时候使用onreadystatechange方法
+</p>
+
+<h2 id="AJAX请求的数据类型及使用方法"><a href="#AJAX请求的数据类型及使用方法" class="headerlink" title="AJAX请求的数据类型及使用方法"></a>AJAX请求的数据类型及使用方法</h2><ul>
+<li>CSS：得到之后可以将其放入style标签中</li>
+<li>HTML：得到之后使用innerHTML和DOM API加入网页中</li>
+<li>JS：得到之后可以将其放入script标签中</li>
+<li>XML：得到之后使用responseXML和DOM API获取其中的内容</li>
+<li>JSON：得到之后可以使用JSON.parse()将其转化成相应的数据类型</li>
 </ul>
 
               
@@ -326,6 +377,8 @@
       
         <a href="/tags/javascript/">#javascript</a>
       
+        <a href="/tags/ajax/">#ajax</a>
+      
     </div>
   
 </div>
@@ -336,8 +389,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>JavaScript同步和异步</div>
-      <div>https://alierq.space/posts/95105818.html</div>
+      <div>JavaScript原生AJAX</div>
+      <div>https://alierq.space/posts/d0443184.html</div>
     </div>
     <div class="license-meta">
       
@@ -384,18 +437,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/d0443184.html" title="JavaScript原生AJAX">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">JavaScript原生AJAX</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/94a1bb4e.html" title="CSS盒模型">
-                        <span class="hidden-mobile">CSS盒模型</span>
+                      <a href="/posts/95105818.html" title="JavaScript同步和异步">
+                        <span class="hidden-mobile">JavaScript同步和异步</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

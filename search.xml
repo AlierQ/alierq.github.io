@@ -1,6 +1,225 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>CSS盒模型</title>
+    <url>/posts/94a1bb4e.html</url>
+    <content><![CDATA[<h2 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h2><p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206062244801.png" alt="盒模型示意图"></p>
+<p>如上图所示盒模型由三个部分组成：</p>
+<ul>
+<li>内边距：<span class="label label-info">Padding</span></li>
+<li>边框：<span class="label label-info">Border</span></li>
+<li>外边距：<span class="label label-info">Margin</span></li>
+</ul>
+<h3 id="边框（Border）"><a href="#边框（Border）" class="headerlink" title="边框（Border）"></a>边框（Border）</h3><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/* 边框宽度 || 边框样式 || 边框颜色 */</span><br><span class="hljs-attribute">border</span>:border-width || border-style || border-color<br></code></pre></td></tr></table></figure>
+<p>边框样式属性值如下：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">none</span> <span class="hljs-comment">/* 没有边框样式 */</span><br><br>solid <span class="hljs-comment">/* 边框样式为单实线 */</span><br><br>dashed <span class="hljs-comment">/* 边框样式为虚线 */</span><br><br>dotted <span class="hljs-comment">/* 边框样式为点线 */</span><br><br>double <span class="hljs-comment">/* 边框样式为双实线 */</span><br></code></pre></td></tr></table></figure>
+<p>简写形式如下：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#ccc</span>;  <span class="hljs-comment">/* 宽度、颜色、样式 */</span><br></code></pre></td></tr></table></figure>
+<h4 id="特殊边框"><a href="#特殊边框" class="headerlink" title="特殊边框"></a>特殊边框</h4><p>表格边框：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">table</span>&#123;<br>	<span class="hljs-attribute">border-collapse</span>:collapse;  <span class="hljs-comment">/* 合并表格边框 */</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p>圆角边框：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css">bordre-radius: 左上 右上 右下 左下;<br><span class="hljs-comment">/* 从左上角顺时针分配指 */</span><br><br><span class="hljs-attribute">border-radius</span>:<span class="hljs-number">50%</span><br><span class="hljs-comment">/* 画圆 */</span><br><br>border-radius:<span class="hljs-number">10px</span> <span class="hljs-number">40px</span>;<br><span class="hljs-comment">/* 使用两个值的时候默认第一个设置主对角线，第二个设置副对角线 */</span><br><br><span class="hljs-attribute">border-radius</span>:<span class="hljs-number">10px</span> <span class="hljs-number">20px</span> <span class="hljs-number">30px</span><br><span class="hljs-comment">/* 使用三个值的时候,第一个参数和第三个参数为左上和右下，第二个参数设置副对角线 */</span><br></code></pre></td></tr></table></figure>
+<h3 id="内边距（Padding）"><a href="#内边距（Padding）" class="headerlink" title="内边距（Padding）"></a>内边距（Padding）</h3><p>内容距离边框的距离称为内边距</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">padding-left</span>:<span class="hljs-number">10px</span>;<br><span class="hljs-attribute">padding-right</span>:<span class="hljs-number">20px</span>;<br><span class="hljs-attribute">padding-top</span>:<span class="hljs-number">30px</span>;<br><span class="hljs-attribute">padding-bottom</span>:<span class="hljs-number">40px</span>;<br><span class="hljs-comment">/* 设置上下左右四个方向的内边距 */</span><br></code></pre></td></tr></table></figure>
+<p>简写形式：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">padding</span>:<span class="hljs-number">20px</span>;<br><span class="hljs-comment">/* 表示上下左右内边距都是20px的距离 */</span><br><br><span class="hljs-attribute">padding</span>:<span class="hljs-number">20px</span> <span class="hljs-number">30px</span>;<br><span class="hljs-comment">/* 上下是20px 左右是30px的内边距 */</span><br><br><span class="hljs-attribute">padding</span>:<span class="hljs-number">10px</span> <span class="hljs-number">20px</span> <span class="hljs-number">50px</span>;<br><span class="hljs-comment">/* 上内边距时10px 左右内边距是20px 下内边距是50px */</span><br><br><span class="hljs-attribute">padding</span>:<span class="hljs-number">10px</span> <span class="hljs-number">20px</span> <span class="hljs-number">30px</span> <span class="hljs-number">40px</span>;  <br><span class="hljs-comment">/* 顺时针的，上右下左 */</span><br></code></pre></td></tr></table></figure>
+<h3 id="外边距（Margin）"><a href="#外边距（Margin）" class="headerlink" title="外边距（Margin）"></a>外边距（Margin）</h3><p>边框之外到其他元素的距离称为外边</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">margin-top</span>:<span class="hljs-number">10px</span>;<br><span class="hljs-attribute">margin-right</span>:<span class="hljs-number">20px</span>;<br><span class="hljs-attribute">margin-left</span>:<span class="hljs-number">30px</span>;<br><span class="hljs-attribute">margin-bottom</span>:<span class="hljs-number">40px</span>;<br><span class="hljs-comment">/* 分别设置上右下左的外边距 */</span><br><span class="hljs-comment">/* 外边距简写方式与内边距相同 */</span><br></code></pre></td></tr></table></figure>
+<h4 id="外边距实现左右居中"><a href="#外边距实现左右居中" class="headerlink" title="外边距实现左右居中"></a>外边距实现左右居中</h4><p class="note note-warning">
+使用margin实现盒子水平居中，需要满足以下条件：<br>
+1、必须block元素<br>
+2、盒子必须指定width
+</p>
+实现方法：
+<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.div</span>&#123;<br>	<span class="hljs-attribute">width</span>:<span class="hljs-number">960px</span>;<br>	<span class="hljs-attribute">margin</span>:<span class="hljs-number">0</span> auto; <br>	<span class="hljs-comment">/* 更推荐下面的写法,不会影响top和bottom的样式 */</span><br>	<span class="hljs-attribute">margin-left</span>:auto;<br>	<span class="hljs-attribute">margin-right</span>:auto;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="盒模型分类"><a href="#盒模型分类" class="headerlink" title="盒模型分类"></a>盒模型分类</h3><p>盒模型分为内容盒模型和边框盒模型，如图所示：</p>
+<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206062346000.png" alt="内容盒模型和边框盒模型"></p>
+<h4 id="内容盒模型（content-box）"><a href="#内容盒模型（content-box）" class="headerlink" title="内容盒模型（content-box）"></a>内容盒模型（content-box）</h4><p>设置内容盒模型：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">box-sizing</span>:content-box; <span class="hljs-comment">/* 默认是内容盒模型 */</span><br></code></pre></td></tr></table></figure>
+<p>内容盒模型的width只包含了<span class="label label-info">content</span>的内容<br>实际的盒子宽度 &#x3D; <span class="label label-info">width</span> + <span class="label label-info">border</span> + <span class="label label-info">padding</span></p>
+<h4 id="边框盒模型（border-box）"><a href="#边框盒模型（border-box）" class="headerlink" title="边框盒模型（border-box）"></a>边框盒模型（border-box）</h4><p>设置边框盒模型：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">box-sizing</span>:border-box;<br></code></pre></td></tr></table></figure>
+<p>内容盒模型的width包含了<span class="label label-info">content</span>、<span class="label label-info">border</span> 、<span class="label label-info">padding</span>的内容<br>实际的盒子宽度 &#x3D; <span class="label label-info">width</span></p>
+]]></content>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS文档流</title>
+    <url>/posts/1ec30961.html</url>
+    <content><![CDATA[<h2 id="文档流"><a href="#文档流" class="headerlink" title="文档流"></a>文档流</h2><p>文档流是指HTML页面中的元素排布（流动）的方向</p>
+<h3 id="流动方向"><a href="#流动方向" class="headerlink" title="流动方向"></a>流动方向</h3><ul>
+<li>inline元素：从左到右，到达最右边才会换行</li>
+<li>block元素：从上到下，每一个元素都占据单独的一行</li>
+<li>inline-block元素：从左到右</li>
+</ul>
+<h3 id="宽度"><a href="#宽度" class="headerlink" title="宽度"></a>宽度</h3><ul>
+<li>inline元素：宽度为内部inline元素的和，不能用<span class="label label-info">width</span>指定</li>
+<li>block元素：默认自动计算宽度，可以使用<span class="label label-info">width</span>指定</li>
+<li>inline-block元素：结合两者特点，可以使用<span class="label label-info">width</span>指定</li>
+</ul>
+<p class="note note-warning">
+TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`设置文本换行
+</p>
+
+<h3 id="高度"><a href="#高度" class="headerlink" title="高度"></a>高度</h3><ul>
+<li>inline元素：高度由<span class="label label-info">line-height</span>简介确定，跟<span class="label label-info">height</span>无关</li>
+<li>block元素：高度由内部文档流元素决定，可以设置<span class="label label-info">height</span></li>
+<li>inline-block元素：同上述的block类似，可以设置<span class="label label-info">height</span></li>
+</ul>
+<p class="note note-warning">
+有以下几点需要注意：</br>
+    1、不要在inline元素中放block元素</br>
+    2、不要写width:100%</br>
+    3、当高度小于内部文档流元素时称为溢出，可使用`overflow`解决</br>
+    4、block元素没有内容高度为0，inline元素没有内容高度也不为0
+</p>
+
+<h3 id="脱离文档流"><a href="#脱离文档流" class="headerlink" title="脱离文档流"></a>脱离文档流</h3><ul>
+<li>浮动：<span class="label label-info">float</span></li>
+<li>定位：<span class="label label-info">position:absolute &#x2F; fixed</span></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaScript原生AJAX</title>
+    <url>/posts/d0443184.html</url>
+    <content><![CDATA[<h2 id="AJAX请求的步骤"><a href="#AJAX请求的步骤" class="headerlink" title="AJAX请求的步骤"></a>AJAX请求的步骤</h2><ol>
+<li>创建XMLHttpRequest对象</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> request = <span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLHttpRequest</span>();<br></code></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>调用XMLHttpRequest对象建立连接</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">request.<span class="hljs-title function_">open</span>(<span class="hljs-string">&#x27;get&#x27;</span>,<span class="hljs-string">&#x27;/index.html&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>监听对象</p>
+<ul>
+<li>使用onload或者onerror监听</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">request.<span class="hljs-property">onload</span> = <span class="hljs-function">()=&gt;</span>&#123;<br>	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(request.<span class="hljs-property">response</span>)  <span class="hljs-comment">// 可以获取请求到的内容</span><br>&#125;<br><br>request.<span class="hljs-property">onerror</span> = <span class="hljs-function">()=&gt;</span>&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;请求错误！&#x27;</span>)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>使用onreadystatechange监听</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">request.<span class="hljs-property">onreadystatechange</span> = <span class="hljs-function">()=&gt;</span>&#123;<br>	request.<span class="hljs-property">readyState</span> <span class="hljs-comment">// 获取当前XMLHttpRequest对象的状态</span><br>    <br>    request.<span class="hljs-property">status</span> <span class="hljs-comment">// 获取当前请求的状态码</span><br>    <br>    <span class="hljs-comment">// 根据当前request对象的状态和请求的状态码进行相应的处理</span><br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>调用XMLHttpRequest对象的send()方法发送请求</p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">request.<span class="hljs-title function_">send</span>() <br></code></pre></td></tr></table></figure>
+
+<h2 id="readyState状态"><a href="#readyState状态" class="headerlink" title="readyState状态"></a>readyState状态</h2><p><strong>XMLHttpRequest.readyState</strong>属性返回的是一个XMLHttpRequest 代理当前所处的状态</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>状态</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>UNSENT</td>
+<td>代理被创建，但未调用open()方法</td>
+</tr>
+<tr>
+<td>1</td>
+<td>OPENED</td>
+<td>open()方法已经被调用</td>
+</tr>
+<tr>
+<td>2</td>
+<td>HEADERS_RECEIVED</td>
+<td>send()方法已经被调用，并且头部状态已经可以获取</td>
+</tr>
+<tr>
+<td>3</td>
+<td>LOADING</td>
+<td>下载中，responseText属性已经包含部分数据</td>
+</tr>
+<tr>
+<td>4</td>
+<td>DONE</td>
+<td>下载操作已经完成</td>
+</tr>
+</tbody></table>
+<p class="note note-warning">
+通常在的下载完成之后时候使用onreadystatechange方法
+</p>
+
+<h2 id="AJAX请求的数据类型及使用方法"><a href="#AJAX请求的数据类型及使用方法" class="headerlink" title="AJAX请求的数据类型及使用方法"></a>AJAX请求的数据类型及使用方法</h2><ul>
+<li>CSS：得到之后可以将其放入style标签中</li>
+<li>HTML：得到之后使用innerHTML和DOM API加入网页中</li>
+<li>JS：得到之后可以将其放入script标签中</li>
+<li>XML：得到之后使用responseXML和DOM API获取其中的内容</li>
+<li>JSON：得到之后可以使用JSON.parse()将其转化成相应的数据类型</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>javascript</tag>
+        <tag>ajax</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>命令行常用操作</title>
+    <url>/posts/bf840e6a.html</url>
+    <content><![CDATA[<h3 id="文件查看操作"><a href="#文件查看操作" class="headerlink" title="文件查看操作"></a>文件查看操作</h3><h4 id="查看文件路径"><a href="#查看文件路径" class="headerlink" title="查看文件路径"></a>查看文件路径</h4><p><code>pwd</code>：查看当前目录的绝对路径</p>
+<p><code>ls</code>：查看当前目录内容</p>
+<p><code>ls 路径</code>：查看指定目录内容</p>
+<h4 id="查看文件内容"><a href="#查看文件内容" class="headerlink" title="查看文件内容"></a>查看文件内容</h4><p><code>cat 路径</code>  ：会显示文件的所有内容</p>
+<p><code>head 路径</code>：只显示文件的前10行     </p>
+<p>​		<code>-n 行数</code>：控制查看行数</p>
+<p><code>tail 路径</code>：只显示文件的后10行</p>
+<p>​		<code>-n 行数</code>：控制查看行数</p>
+<p><code>less 路径</code>：进入一个可以滚动的界面 （q键退出）</p>
+<h3 id="文件增加操作"><a href="#文件增加操作" class="headerlink" title="文件增加操作"></a>文件增加操作</h3><p><code>touch 文件名</code>：创建空文件</p>
+<p><code>echo 内容</code>：打印内容</p>
+<p><code>echo 内容 &gt; 文件名</code>：将内容放在文件中（文件存在会覆盖文件原有的内容，文件不存在会新建文件然后放入内容）</p>
+<p><code>echo 内容 &gt;&gt; 文件名</code>：将内容追加在文件中</p>
+<p><code>echo  -e &quot;内容(可包含转义字符)&quot;  &gt;&gt; 文件名</code> ：追加文本中使用转义字符（双引号不能少）</p>
+<p><code>mkdir 文件夹名称1 文件夹名称2</code>：新建文件夹，多个文件夹用空格隔开</p>
+<p><code>mkdir -p a/b/c/d/e</code>：创建多层目录（若有多个用空格隔开）</p>
+<p><code>cp 1.txt  2.txt</code> ：将文件1拷贝成文件2</p>
+<p><code>cp -r a b</code>：将a目录复制成b目录</p>
+<h3 id="文件删除操作"><a href="#文件删除操作" class="headerlink" title="文件删除操作"></a>文件删除操作</h3><p><code>rm 1.txt</code>：删除文件 1.txt</p>
+<p><code>rm -r a</code>：删除文件目录a</p>
+<p>​		<code>-f</code>：强制执行</p>
+<h3 id="文件修改操作"><a href="#文件修改操作" class="headerlink" title="文件修改操作"></a>文件修改操作</h3><p><code>code 文件名</code>：使用默认编辑器打开这个文件进行编辑</p>
+<p><code>start 文件名</code>：使用对应默认的软件打开</p>
+<p><code>echo 内容 &gt;&gt; 文件名</code>：向文件中追加内容</p>
+<p><code>echo &#39;&#39; &gt; 1.txt</code>：清空文件内容（使用echo添加一个空字符串）</p>
+<p><code>mv 1.txt a</code>：将1.txt放入a目录中</p>
+<p><code>mv b/1.txt .</code>：将b文件夹中的1.txt放入当前目录中</p>
+<p><code>mv 1.txt 2.txt</code>：将1.txt重命名为2.txt</p>
+<p><code>touch  1.txt</code> ：更新文件修改时间为当前时间</p>
+<h3 id="脚本文件"><a href="#脚本文件" class="headerlink" title="脚本文件"></a>脚本文件</h3><p><code>a命令内容  &amp;&amp;  b命令内容</code>：a命令内容执行成功之后执行b命令内容</p>
+<p><code>a命令内容; b命令内容</code>：a命令内容执行之后执行b命令内容（a命令不一定需要成功）</p>
+<h4 id="创建一个脚本"><a href="#创建一个脚本" class="headerlink" title="创建一个脚本"></a>创建一个脚本</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh"><span class="hljs-meta">#!/usr/bin/env sh</span><br><span class="hljs-built_in">mkdir</span> x<br><span class="hljs-built_in">cd</span> x<br><span class="hljs-built_in">touch</span> index.html<br><span class="hljs-built_in">touch</span> style.css<br><span class="hljs-built_in">touch</span> main.js<br><span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;追加\n内容&quot;</span> &gt;&gt; index.html<br></code></pre></td></tr></table></figure>
+
+<h4 id="添加可执行权限"><a href="#添加可执行权限" class="headerlink" title="添加可执行权限"></a>添加可执行权限</h4><p>windos可以不用，但是在mac和linux下要做</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">chmod</span> +x 脚本文件名<br></code></pre></td></tr></table></figure>
+
+<h4 id="执行脚本"><a href="#执行脚本" class="headerlink" title="执行脚本"></a>执行脚本</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">./脚本文件名<br>or<br>sh 脚本文件名<br></code></pre></td></tr></table></figure>
+
+<p>注意：要加.&#x2F;否则不知道脚本文件的位置</p>
+<h4 id="可接受参数脚本"><a href="#可接受参数脚本" class="headerlink" title="可接受参数脚本"></a>可接受参数脚本</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh"><span class="hljs-meta">#!/usr/bin/env sh</span><br><span class="hljs-built_in">mkdir</span> <span class="hljs-variable">$1</span><br><span class="hljs-built_in">cd</span> <span class="hljs-variable">$1</span><br><span class="hljs-built_in">touch</span> index.html<br><span class="hljs-built_in">touch</span> style.css<br><span class="hljs-built_in">touch</span> main.js<br><span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;追加\n内容&quot;</span> &gt;&gt; index.html<br></code></pre></td></tr></table></figure>
+
+<p><code>$1</code>表示接收到的第一个参数</p>
+]]></content>
+      <tags>
+        <tag>bash</tag>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Dom事件模型和事件机制</title>
     <url>/posts/41c8ebf3.html</url>
     <content><![CDATA[<h2 id="Dom事件模型"><a href="#Dom事件模型" class="headerlink" title="Dom事件模型"></a>Dom事件模型</h2><p>Dom事件模型分为两种：<span class="label label-info">事件冒泡</span>和<span class="label label-info">事件捕获</span>，事件冒泡模型由微软提出，而事件捕获模型由网景提出。</p>
@@ -56,140 +275,32 @@
       </tags>
   </entry>
   <entry>
-    <title>CSS文档流</title>
-    <url>/posts/1ec30961.html</url>
-    <content><![CDATA[<h2 id="文档流"><a href="#文档流" class="headerlink" title="文档流"></a>文档流</h2><p>文档流是指HTML页面中的元素排布（流动）的方向</p>
-<h3 id="流动方向"><a href="#流动方向" class="headerlink" title="流动方向"></a>流动方向</h3><ul>
-<li>inline元素：从左到右，到达最右边才会换行</li>
-<li>block元素：从上到下，每一个元素都占据单独的一行</li>
-<li>inline-block元素：从左到右</li>
-</ul>
-<h3 id="宽度"><a href="#宽度" class="headerlink" title="宽度"></a>宽度</h3><ul>
-<li>inline元素：宽度为内部inline元素的和，不能用<span class="label label-info">width</span>指定</li>
-<li>block元素：默认自动计算宽度，可以使用<span class="label label-info">width</span>指定</li>
-<li>inline-block元素：结合两者特点，可以使用<span class="label label-info">width</span>指定</li>
-</ul>
-<p class="note note-warning">
-TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`设置文本换行
-</p>
-
-<h3 id="高度"><a href="#高度" class="headerlink" title="高度"></a>高度</h3><ul>
-<li>inline元素：高度由<span class="label label-info">line-height</span>简介确定，跟<span class="label label-info">height</span>无关</li>
-<li>block元素：高度由内部文档流元素决定，可以设置<span class="label label-info">height</span></li>
-<li>inline-block元素：同上述的block类似，可以设置<span class="label label-info">height</span></li>
-</ul>
-<p class="note note-warning">
-有以下几点需要注意：</br>
-    1、不要在inline元素中放block元素</br>
-    2、不要写width:100%</br>
-    3、当高度小于内部文档流元素时称为溢出，可使用`overflow`解决</br>
-    4、block元素没有内容高度为0，inline元素没有内容高度也不为0
-</p>
-
-<h3 id="脱离文档流"><a href="#脱离文档流" class="headerlink" title="脱离文档流"></a>脱离文档流</h3><ul>
-<li>浮动：<span class="label label-info">float</span></li>
-<li>定位：<span class="label label-info">position:absolute &#x2F; fixed</span></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>css</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSS盒模型</title>
-    <url>/posts/94a1bb4e.html</url>
-    <content><![CDATA[<h2 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h2><p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206062244801.png" alt="盒模型示意图"></p>
-<p>如上图所示盒模型由三个部分组成：</p>
+    <title>JavaScript同步和异步</title>
+    <url>/posts/95105818.html</url>
+    <content><![CDATA[<h2 id="JavaScript是单线程"><a href="#JavaScript是单线程" class="headerlink" title="JavaScript是单线程"></a>JavaScript是单线程</h2><p>JavaScript在诞生之初是被用作实现用户和浏览器的一些简单的交互，这也就使得了JavaScript在设计的时候就没有考虑他要做一些很复杂的操作，所以JavaScript就被设计成了单线程的一门语言。并在至今为止他都是一门单线程的脚本语言。</p>
+<p>所谓的单线程是指JavaScript引擎解释和执行的线程只有一个</p>
+<h2 id="同步和异步的概念"><a href="#同步和异步的概念" class="headerlink" title="同步和异步的概念"></a>同步和异步的概念</h2><h3 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h3><p>同步的概念：假设我现在手头有两件事要做：切菜和炒菜，我做这两件事情的时候，我必须要先切菜再炒菜，并且一定要等切菜这个任务完成之后才可以开始我炒菜的任务，如果切菜没有完成我就需要一直等待。</p>
 <ul>
-<li>内边距：<span class="label label-info">Padding</span></li>
-<li>边框：<span class="label label-info">Border</span></li>
-<li>外边距：<span class="label label-info">Margin</span></li>
+<li>换成计算机的表达：我需要等A事件执行完了，才能去执行B事件，如果A事件没有执行完，我就一直等待，直到它完成，我再去执行B事件。</li>
 </ul>
-<h3 id="边框（Border）"><a href="#边框（Border）" class="headerlink" title="边框（Border）"></a>边框（Border）</h3><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/* 边框宽度 || 边框样式 || 边框颜色 */</span><br><span class="hljs-attribute">border</span>:border-width || border-style || border-color<br></code></pre></td></tr></table></figure>
-<p>边框样式属性值如下：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">none</span> <span class="hljs-comment">/* 没有边框样式 */</span><br><br>solid <span class="hljs-comment">/* 边框样式为单实线 */</span><br><br>dashed <span class="hljs-comment">/* 边框样式为虚线 */</span><br><br>dotted <span class="hljs-comment">/* 边框样式为点线 */</span><br><br>double <span class="hljs-comment">/* 边框样式为双实线 */</span><br></code></pre></td></tr></table></figure>
-<p>简写形式如下：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#ccc</span>;  <span class="hljs-comment">/* 宽度、颜色、样式 */</span><br></code></pre></td></tr></table></figure>
-<h4 id="特殊边框"><a href="#特殊边框" class="headerlink" title="特殊边框"></a>特殊边框</h4><p>表格边框：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">table</span>&#123;<br>	<span class="hljs-attribute">border-collapse</span>:collapse;  <span class="hljs-comment">/* 合并表格边框 */</span><br>&#125;<br></code></pre></td></tr></table></figure>
-<p>圆角边框：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css">bordre-radius: 左上 右上 右下 左下;<br><span class="hljs-comment">/* 从左上角顺时针分配指 */</span><br><br><span class="hljs-attribute">border-radius</span>:<span class="hljs-number">50%</span><br><span class="hljs-comment">/* 画圆 */</span><br><br>border-radius:<span class="hljs-number">10px</span> <span class="hljs-number">40px</span>;<br><span class="hljs-comment">/* 使用两个值的时候默认第一个设置主对角线，第二个设置副对角线 */</span><br><br><span class="hljs-attribute">border-radius</span>:<span class="hljs-number">10px</span> <span class="hljs-number">20px</span> <span class="hljs-number">30px</span><br><span class="hljs-comment">/* 使用三个值的时候,第一个参数和第三个参数为左上和右下，第二个参数设置副对角线 */</span><br></code></pre></td></tr></table></figure>
-<h3 id="内边距（Padding）"><a href="#内边距（Padding）" class="headerlink" title="内边距（Padding）"></a>内边距（Padding）</h3><p>内容距离边框的距离称为内边距</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">padding-left</span>:<span class="hljs-number">10px</span>;<br><span class="hljs-attribute">padding-right</span>:<span class="hljs-number">20px</span>;<br><span class="hljs-attribute">padding-top</span>:<span class="hljs-number">30px</span>;<br><span class="hljs-attribute">padding-bottom</span>:<span class="hljs-number">40px</span>;<br><span class="hljs-comment">/* 设置上下左右四个方向的内边距 */</span><br></code></pre></td></tr></table></figure>
-<p>简写形式：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">padding</span>:<span class="hljs-number">20px</span>;<br><span class="hljs-comment">/* 表示上下左右内边距都是20px的距离 */</span><br><br><span class="hljs-attribute">padding</span>:<span class="hljs-number">20px</span> <span class="hljs-number">30px</span>;<br><span class="hljs-comment">/* 上下是20px 左右是30px的内边距 */</span><br><br><span class="hljs-attribute">padding</span>:<span class="hljs-number">10px</span> <span class="hljs-number">20px</span> <span class="hljs-number">50px</span>;<br><span class="hljs-comment">/* 上内边距时10px 左右内边距是20px 下内边距是50px */</span><br><br><span class="hljs-attribute">padding</span>:<span class="hljs-number">10px</span> <span class="hljs-number">20px</span> <span class="hljs-number">30px</span> <span class="hljs-number">40px</span>;  <br><span class="hljs-comment">/* 顺时针的，上右下左 */</span><br></code></pre></td></tr></table></figure>
-<h3 id="外边距（Margin）"><a href="#外边距（Margin）" class="headerlink" title="外边距（Margin）"></a>外边距（Margin）</h3><p>边框之外到其他元素的距离称为外边</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">margin-top</span>:<span class="hljs-number">10px</span>;<br><span class="hljs-attribute">margin-right</span>:<span class="hljs-number">20px</span>;<br><span class="hljs-attribute">margin-left</span>:<span class="hljs-number">30px</span>;<br><span class="hljs-attribute">margin-bottom</span>:<span class="hljs-number">40px</span>;<br><span class="hljs-comment">/* 分别设置上右下左的外边距 */</span><br><span class="hljs-comment">/* 外边距简写方式与内边距相同 */</span><br></code></pre></td></tr></table></figure>
-<h4 id="外边距实现左右居中"><a href="#外边距实现左右居中" class="headerlink" title="外边距实现左右居中"></a>外边距实现左右居中</h4><p class="note note-warning">
-使用margin实现盒子水平居中，需要满足以下条件：<br>
-1、必须block元素<br>
-2、盒子必须指定width
-</p>
-实现方法：
-<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.div</span>&#123;<br>	<span class="hljs-attribute">width</span>:<span class="hljs-number">960px</span>;<br>	<span class="hljs-attribute">margin</span>:<span class="hljs-number">0</span> auto; <br>	<span class="hljs-comment">/* 更推荐下面的写法,不会影响top和bottom的样式 */</span><br>	<span class="hljs-attribute">margin-left</span>:auto;<br>	<span class="hljs-attribute">margin-right</span>:auto;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<h3 id="盒模型分类"><a href="#盒模型分类" class="headerlink" title="盒模型分类"></a>盒模型分类</h3><p>盒模型分为内容盒模型和边框盒模型，如图所示：</p>
-<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206062346000.png" alt="内容盒模型和边框盒模型"></p>
-<h4 id="内容盒模型（content-box）"><a href="#内容盒模型（content-box）" class="headerlink" title="内容盒模型（content-box）"></a>内容盒模型（content-box）</h4><p>设置内容盒模型：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">box-sizing</span>:content-box; <span class="hljs-comment">/* 默认是内容盒模型 */</span><br></code></pre></td></tr></table></figure>
-<p>内容盒模型的width只包含了<span class="label label-info">content</span>的内容<br>实际的盒子宽度 &#x3D; <span class="label label-info">width</span> + <span class="label label-info">border</span> + <span class="label label-info">padding</span></p>
-<h4 id="边框盒模型（border-box）"><a href="#边框盒模型（border-box）" class="headerlink" title="边框盒模型（border-box）"></a>边框盒模型（border-box）</h4><p>设置边框盒模型：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">box-sizing</span>:border-box;<br></code></pre></td></tr></table></figure>
-<p>内容盒模型的width包含了<span class="label label-info">content</span>、<span class="label label-info">border</span> 、<span class="label label-info">padding</span>的内容<br>实际的盒子宽度 &#x3D; <span class="label label-info">width</span></p>
+<p><span class="label label-info">概括</span>：我一定要拿到结果，拿不到我就不走！</p>
+<h3 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h3><p>异步的概念：同样的，现在我的手头也有两件事要做：煲饭和炒菜，我做这两件事情的时候，我可以把饭煲上，然后我就去炒菜，我并不需要等待饭煲好了，再去炒菜，什么时候饭煲好了它可以响一下提醒我。</p>
+<ul>
+<li>换成计算机得表达：我让A事件执行，并且让它做完了之后就提醒我，在他执行的时候我去执行B事件。</li>
+</ul>
+<p><span class="label label-info">概括</span>：我不一定要拿到结果，我继续走，有结果了通知我一声就行！</p>
+<h2 id="JavaScript为什么需要异步任务"><a href="#JavaScript为什么需要异步任务" class="headerlink" title="JavaScript为什么需要异步任务"></a>JavaScript为什么需要异步任务</h2><p>因为JavaScript是单线程的，所以如果现在JavaScript中的一些事件需要长时间的执行，这就会导致后续要执行的事件要进行长时间的等待，极端条件下这种等待是不可控的。所以这个时候就需要引入异步的操作，将这类需要长时间的事件，放到一边去执行，不影响后续的事件。然后在特定的时间或者特定的状态使用一下<span class="label label-info">特殊的手段</span>再去得到之前那些长时间执行的事件的结果。</p>
+<h2 id="如何得到异步任务的结果"><a href="#如何得到异步任务的结果" class="headerlink" title="如何得到异步任务的结果"></a>如何得到异步任务的结果</h2><h3 id="轮询"><a href="#轮询" class="headerlink" title="轮询"></a>轮询</h3><p>每隔一段时间就询问一下异步任务是否有结果</p>
+<h3 id="回调"><a href="#回调" class="headerlink" title="回调"></a>回调</h3><p>当异步任务达到某种状态（完成、错误、超时…..）执行一段代码，由这段代码（回调函数）来得到结果。</p>
+<h2 id="常见的异步"><a href="#常见的异步" class="headerlink" title="常见的异步"></a>常见的异步</h2><ul>
+<li>AJAX</li>
+<li>addEventListener</li>
+<li>setTimeout()</li>
+<li>待补充…</li>
+</ul>
 ]]></content>
       <tags>
-        <tag>css</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>命令行常用操作</title>
-    <url>/posts/bf840e6a.html</url>
-    <content><![CDATA[<h3 id="文件查看操作"><a href="#文件查看操作" class="headerlink" title="文件查看操作"></a>文件查看操作</h3><h4 id="查看文件路径"><a href="#查看文件路径" class="headerlink" title="查看文件路径"></a>查看文件路径</h4><p><code>pwd</code>：查看当前目录的绝对路径</p>
-<p><code>ls</code>：查看当前目录内容</p>
-<p><code>ls 路径</code>：查看指定目录内容</p>
-<h4 id="查看文件内容"><a href="#查看文件内容" class="headerlink" title="查看文件内容"></a>查看文件内容</h4><p><code>cat 路径</code>  ：会显示文件的所有内容</p>
-<p><code>head 路径</code>：只显示文件的前10行     </p>
-<p>​		<code>-n 行数</code>：控制查看行数</p>
-<p><code>tail 路径</code>：只显示文件的后10行</p>
-<p>​		<code>-n 行数</code>：控制查看行数</p>
-<p><code>less 路径</code>：进入一个可以滚动的界面 （q键退出）</p>
-<h3 id="文件增加操作"><a href="#文件增加操作" class="headerlink" title="文件增加操作"></a>文件增加操作</h3><p><code>touch 文件名</code>：创建空文件</p>
-<p><code>echo 内容</code>：打印内容</p>
-<p><code>echo 内容 &gt; 文件名</code>：将内容放在文件中（文件存在会覆盖文件原有的内容，文件不存在会新建文件然后放入内容）</p>
-<p><code>echo 内容 &gt;&gt; 文件名</code>：将内容追加在文件中</p>
-<p><code>echo  -e &quot;内容(可包含转义字符)&quot;  &gt;&gt; 文件名</code> ：追加文本中使用转义字符（双引号不能少）</p>
-<p><code>mkdir 文件夹名称1 文件夹名称2</code>：新建文件夹，多个文件夹用空格隔开</p>
-<p><code>mkdir -p a/b/c/d/e</code>：创建多层目录（若有多个用空格隔开）</p>
-<p><code>cp 1.txt  2.txt</code> ：将文件1拷贝成文件2</p>
-<p><code>cp -r a b</code>：将a目录复制成b目录</p>
-<h3 id="文件删除操作"><a href="#文件删除操作" class="headerlink" title="文件删除操作"></a>文件删除操作</h3><p><code>rm 1.txt</code>：删除文件 1.txt</p>
-<p><code>rm -r a</code>：删除文件目录a</p>
-<p>​		<code>-f</code>：强制执行</p>
-<h3 id="文件修改操作"><a href="#文件修改操作" class="headerlink" title="文件修改操作"></a>文件修改操作</h3><p><code>code 文件名</code>：使用默认编辑器打开这个文件进行编辑</p>
-<p><code>start 文件名</code>：使用对应默认的软件打开</p>
-<p><code>echo 内容 &gt;&gt; 文件名</code>：向文件中追加内容</p>
-<p><code>echo &#39;&#39; &gt; 1.txt</code>：清空文件内容（使用echo添加一个空字符串）</p>
-<p><code>mv 1.txt a</code>：将1.txt放入a目录中</p>
-<p><code>mv b/1.txt .</code>：将b文件夹中的1.txt放入当前目录中</p>
-<p><code>mv 1.txt 2.txt</code>：将1.txt重命名为2.txt</p>
-<p><code>touch  1.txt</code> ：更新文件修改时间为当前时间</p>
-<h3 id="脚本文件"><a href="#脚本文件" class="headerlink" title="脚本文件"></a>脚本文件</h3><p><code>a命令内容  &amp;&amp;  b命令内容</code>：a命令内容执行成功之后执行b命令内容</p>
-<p><code>a命令内容; b命令内容</code>：a命令内容执行之后执行b命令内容（a命令不一定需要成功）</p>
-<h4 id="创建一个脚本"><a href="#创建一个脚本" class="headerlink" title="创建一个脚本"></a>创建一个脚本</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh"><span class="hljs-meta">#!/usr/bin/env sh</span><br><span class="hljs-built_in">mkdir</span> x<br><span class="hljs-built_in">cd</span> x<br><span class="hljs-built_in">touch</span> index.html<br><span class="hljs-built_in">touch</span> style.css<br><span class="hljs-built_in">touch</span> main.js<br><span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;追加\n内容&quot;</span> &gt;&gt; index.html<br></code></pre></td></tr></table></figure>
-
-<h4 id="添加可执行权限"><a href="#添加可执行权限" class="headerlink" title="添加可执行权限"></a>添加可执行权限</h4><p>windos可以不用，但是在mac和linux下要做</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">chmod</span> +x 脚本文件名<br></code></pre></td></tr></table></figure>
-
-<h4 id="执行脚本"><a href="#执行脚本" class="headerlink" title="执行脚本"></a>执行脚本</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">./脚本文件名<br>or<br>sh 脚本文件名<br></code></pre></td></tr></table></figure>
-
-<p>注意：要加.&#x2F;否则不知道脚本文件的位置</p>
-<h4 id="可接受参数脚本"><a href="#可接受参数脚本" class="headerlink" title="可接受参数脚本"></a>可接受参数脚本</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh"><span class="hljs-meta">#!/usr/bin/env sh</span><br><span class="hljs-built_in">mkdir</span> <span class="hljs-variable">$1</span><br><span class="hljs-built_in">cd</span> <span class="hljs-variable">$1</span><br><span class="hljs-built_in">touch</span> index.html<br><span class="hljs-built_in">touch</span> style.css<br><span class="hljs-built_in">touch</span> main.js<br><span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;追加\n内容&quot;</span> &gt;&gt; index.html<br></code></pre></td></tr></table></figure>
-
-<p><code>$1</code>表示接收到的第一个参数</p>
-]]></content>
-      <tags>
-        <tag>bash</tag>
-        <tag>git</tag>
+        <tag>javascript</tag>
       </tags>
   </entry>
   <entry>
@@ -235,35 +346,6 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
 ]]></content>
       <tags>
         <tag>jquery</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JavaScript同步和异步</title>
-    <url>/posts/95105818.html</url>
-    <content><![CDATA[<h2 id="JavaScript是单线程"><a href="#JavaScript是单线程" class="headerlink" title="JavaScript是单线程"></a>JavaScript是单线程</h2><p>JavaScript在诞生之初是被用作实现用户和浏览器的一些简单的交互，这也就使得了JavaScript在设计的时候就没有考虑他要做一些很复杂的操作，所以JavaScript就被设计成了单线程的一门语言。并在至今为止他都是一门单线程的脚本语言。</p>
-<p>所谓的单线程是指JavaScript引擎解释和执行的线程只有一个</p>
-<h2 id="同步和异步的概念"><a href="#同步和异步的概念" class="headerlink" title="同步和异步的概念"></a>同步和异步的概念</h2><h3 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h3><p>同步的概念：假设我现在手头有两件事要做：切菜和炒菜，我做这两件事情的时候，我必须要先切菜再炒菜，并且一定要等切菜这个任务完成之后才可以开始我炒菜的任务，如果切菜没有完成我就需要一直等待。</p>
-<ul>
-<li>换成计算机的表达：我需要等A事件执行完了，才能去执行B事件，如果A事件没有执行完，我就一直等待，直到它完成，我再去执行B事件。</li>
-</ul>
-<p><span class="label label-info">概括</span>：我一定要拿到结果，拿不到我就不走！</p>
-<h3 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h3><p>异步的概念：同样的，现在我的手头也有两件事要做：煲饭和炒菜，我做这两件事情的时候，我可以把饭煲上，然后我就去炒菜，我并不需要等待饭煲好了，再去炒菜，什么时候饭煲好了它可以响一下提醒我。</p>
-<ul>
-<li>换成计算机得表达：我让A事件执行，并且让它做完了之后就提醒我，在他执行的时候我去执行B事件。</li>
-</ul>
-<p><span class="label label-info">概括</span>：我不一定要拿到结果，我继续走，有结果了通知我一声就行！</p>
-<h2 id="JavaScript为什么需要异步任务"><a href="#JavaScript为什么需要异步任务" class="headerlink" title="JavaScript为什么需要异步任务"></a>JavaScript为什么需要异步任务</h2><p>因为JavaScript是单线程的，所以如果现在JavaScript中的一些事件需要长时间的执行，这就会导致后续要执行的事件要进行长时间的等待，极端条件下这种等待是不可控的。所以这个时候就需要引入异步的操作，将这类需要长时间的事件，放到一边去执行，不影响后续的事件。然后在特定的时间或者特定的状态使用一下<span class="label label-info">特殊的手段</span>再去得到之前那些长时间执行的事件的结果。</p>
-<h2 id="如何得到异步任务的结果"><a href="#如何得到异步任务的结果" class="headerlink" title="如何得到异步任务的结果"></a>如何得到异步任务的结果</h2><h3 id="轮询"><a href="#轮询" class="headerlink" title="轮询"></a>轮询</h3><p>每隔一段时间就询问一下异步任务是否有结果</p>
-<h3 id="回调"><a href="#回调" class="headerlink" title="回调"></a>回调</h3><p>当异步任务达到某种状态（完成、错误、超时…..）执行一段代码，由这段代码（回调函数）来得到结果。</p>
-<h2 id="常见的异步"><a href="#常见的异步" class="headerlink" title="常见的异步"></a>常见的异步</h2><ul>
-<li>AJAX</li>
-<li>addEventListener</li>
-<li>setTimeout()</li>
-<li>待补充…</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>javascript</tag>
       </tags>
   </entry>
 </search>

@@ -4,6 +4,27 @@
   
   
   <entry>
+    <title>JavaScript原生AJAX</title>
+    <link href="/posts/d0443184.html"/>
+    <url>/posts/d0443184.html</url>
+    
+    <content type="html"><![CDATA[<h2 id="AJAX请求的步骤"><a href="#AJAX请求的步骤" class="headerlink" title="AJAX请求的步骤"></a>AJAX请求的步骤</h2><ol><li>创建XMLHttpRequest对象</li></ol><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> request = <span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLHttpRequest</span>();<br></code></pre></td></tr></table></figure><ol start="2"><li>调用XMLHttpRequest对象建立连接</li></ol><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">request.<span class="hljs-title function_">open</span>(<span class="hljs-string">&#x27;get&#x27;</span>,<span class="hljs-string">&#x27;/index.html&#x27;</span>)<br></code></pre></td></tr></table></figure><ol start="3"><li><p>监听对象</p><ul><li>使用onload或者onerror监听</li></ul><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js">request.<span class="hljs-property">onload</span> = <span class="hljs-function">()=&gt;</span>&#123;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(request.<span class="hljs-property">response</span>)  <span class="hljs-comment">// 可以获取请求到的内容</span><br>&#125;<br><br>request.<span class="hljs-property">onerror</span> = <span class="hljs-function">()=&gt;</span>&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;请求错误！&#x27;</span>)<br>&#125;<br></code></pre></td></tr></table></figure><ul><li>使用onreadystatechange监听</li></ul><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js">request.<span class="hljs-property">onreadystatechange</span> = <span class="hljs-function">()=&gt;</span>&#123;<br>request.<span class="hljs-property">readyState</span> <span class="hljs-comment">// 获取当前XMLHttpRequest对象的状态</span><br>    <br>    request.<span class="hljs-property">status</span> <span class="hljs-comment">// 获取当前请求的状态码</span><br>    <br>    <span class="hljs-comment">// 根据当前request对象的状态和请求的状态码进行相应的处理</span><br>&#125;<br></code></pre></td></tr></table></figure></li><li><p>调用XMLHttpRequest对象的send()方法发送请求</p></li></ol><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">request.<span class="hljs-title function_">send</span>() <br></code></pre></td></tr></table></figure><h2 id="readyState状态"><a href="#readyState状态" class="headerlink" title="readyState状态"></a>readyState状态</h2><p><strong>XMLHttpRequest.readyState</strong>属性返回的是一个XMLHttpRequest 代理当前所处的状态</p><table><thead><tr><th>值</th><th>状态</th><th>描述</th></tr></thead><tbody><tr><td>0</td><td>UNSENT</td><td>代理被创建，但未调用open()方法</td></tr><tr><td>1</td><td>OPENED</td><td>open()方法已经被调用</td></tr><tr><td>2</td><td>HEADERS_RECEIVED</td><td>send()方法已经被调用，并且头部状态已经可以获取</td></tr><tr><td>3</td><td>LOADING</td><td>下载中，responseText属性已经包含部分数据</td></tr><tr><td>4</td><td>DONE</td><td>下载操作已经完成</td></tr></tbody></table><p class="note note-warning">通常在的下载完成之后时候使用onreadystatechange方法</p><h2 id="AJAX请求的数据类型及使用方法"><a href="#AJAX请求的数据类型及使用方法" class="headerlink" title="AJAX请求的数据类型及使用方法"></a>AJAX请求的数据类型及使用方法</h2><ul><li>CSS：得到之后可以将其放入style标签中</li><li>HTML：得到之后使用innerHTML和DOM API加入网页中</li><li>JS：得到之后可以将其放入script标签中</li><li>XML：得到之后使用responseXML和DOM API获取其中的内容</li><li>JSON：得到之后可以使用JSON.parse()将其转化成相应的数据类型</li></ul>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>javascript</tag>
+      
+      <tag>ajax</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>JavaScript同步和异步</title>
     <link href="/posts/95105818.html"/>
     <url>/posts/95105818.html</url>
