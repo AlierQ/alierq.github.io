@@ -16,24 +16,24 @@
   <meta name="author" content="AlierQ">
   <meta name="keywords" content="">
   
-    <meta name="description" content="盒模型 如上图所示盒模型由三个部分组成：  内边距：Padding 边框：Border 外边距：Margin  边框（Border）12&#x2F;* 边框宽度 || 边框样式 || 边框颜色 *&#x2F;border:border-width || border-style || border-color 边框样式属性值如下： 123456789none &#x2F;* 没有边框样式 *&#x2F;solid &#x2F;* 边框样式为单实线">
+    <meta name="description" content="JavaScript是单线程JavaScript在诞生之初是被用作实现用户和浏览器的一些简单的交互，这也就使得了JavaScript在设计的时候就没有考虑他要做一些很复杂的操作，所以JavaScript就被设计成了单线程的一门语言。并在至今为止他都是一门单线程的脚本语言。 所谓的单线程是指JavaScript引擎解释和执行的线程只有一个 同步和异步的概念同步同步的概念：假设我现在手头有两件事要做：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS盒模型">
-<meta property="og:url" content="https://alierq.space/posts/94a1bb4e.html">
+<meta property="og:title" content="JavaScript同步和异步">
+<meta property="og:url" content="https://alierq.space/posts/95105818.html">
 <meta property="og:site_name" content="AlierQ&#39;s Blog">
-<meta property="og:description" content="盒模型 如上图所示盒模型由三个部分组成：  内边距：Padding 边框：Border 外边距：Margin  边框（Border）12&#x2F;* 边框宽度 || 边框样式 || 边框颜色 *&#x2F;border:border-width || border-style || border-color 边框样式属性值如下： 123456789none &#x2F;* 没有边框样式 *&#x2F;solid &#x2F;* 边框样式为单实线">
+<meta property="og:description" content="JavaScript是单线程JavaScript在诞生之初是被用作实现用户和浏览器的一些简单的交互，这也就使得了JavaScript在设计的时候就没有考虑他要做一些很复杂的操作，所以JavaScript就被设计成了单线程的一门语言。并在至今为止他都是一门单线程的脚本语言。 所谓的单线程是指JavaScript引擎解释和执行的线程只有一个 同步和异步的概念同步同步的概念：假设我现在手头有两件事要做：">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206062236418.jpeg">
-<meta property="article:published_time" content="2022-06-06T14:40:54.000Z">
-<meta property="article:modified_time" content="2022-06-06T15:51:37.260Z">
+<meta property="og:image" content="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206062237238.png">
+<meta property="article:published_time" content="2022-06-09T12:41:57.000Z">
+<meta property="article:modified_time" content="2022-06-09T13:36:02.842Z">
 <meta property="article:author" content="AlierQ">
-<meta property="article:tag" content="css">
+<meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206062236418.jpeg">
+<meta name="twitter:image" content="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206062237238.png">
   
   
   
-  <title>CSS盒模型 - AlierQ&#39;s Blog</title>
+  <title>JavaScript同步和异步 - AlierQ&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -200,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="CSS盒模型"></span>
+            <span id="subtitle" data-typed-text="JavaScript同步和异步"></span>
           
         </div>
 
@@ -211,8 +211,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-06-06 22:40" pubdate>
-          2022年6月6日 晚上
+        <time datetime="2022-06-09 20:41" pubdate>
+          2022年6月9日 晚上
         </time>
       </span>
     
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          文章字数：1.4k 字
+          文章字数：844 字
         
       </span>
     
@@ -234,7 +234,7 @@
         
         
         
-          阅读时长 ≈ 12 分钟
+          阅读时长 ≈ 8 分钟
         
       </span>
     
@@ -280,56 +280,39 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">CSS盒模型</h1>
+            <h1 style="display: none">JavaScript同步和异步</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年6月6日 晚上
+                    本文最后更新于：2022年6月9日 晚上
                   
                 
               </p>
             
             <div class="markdown-body">
               
-              <h2 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h2><p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206062244801.png" srcset="/img/loading.gif" lazyload alt="盒模型示意图"></p>
-<p>如上图所示盒模型由三个部分组成：</p>
+              <h2 id="JavaScript是单线程"><a href="#JavaScript是单线程" class="headerlink" title="JavaScript是单线程"></a>JavaScript是单线程</h2><p>JavaScript在诞生之初是被用作实现用户和浏览器的一些简单的交互，这也就使得了JavaScript在设计的时候就没有考虑他要做一些很复杂的操作，所以JavaScript就被设计成了单线程的一门语言。并在至今为止他都是一门单线程的脚本语言。</p>
+<p>所谓的单线程是指JavaScript引擎解释和执行的线程只有一个</p>
+<h2 id="同步和异步的概念"><a href="#同步和异步的概念" class="headerlink" title="同步和异步的概念"></a>同步和异步的概念</h2><h3 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h3><p>同步的概念：假设我现在手头有两件事要做：切菜和炒菜，我做这两件事情的时候，我必须要先切菜再炒菜，并且一定要等切菜这个任务完成之后才可以开始我炒菜的任务，如果切菜没有完成我就需要一直等待。</p>
 <ul>
-<li>内边距：<span class="label label-info">Padding</span></li>
-<li>边框：<span class="label label-info">Border</span></li>
-<li>外边距：<span class="label label-info">Margin</span></li>
+<li>换成计算机的表达：我需要等A事件执行完了，才能去执行B事件，如果A事件没有执行完，我就一直等待，直到它完成，我再去执行B事件。</li>
 </ul>
-<h3 id="边框（Border）"><a href="#边框（Border）" class="headerlink" title="边框（Border）"></a>边框（Border）</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/* 边框宽度 || 边框样式 || 边框颜色 */</span><br><span class="hljs-attribute">border</span>:border-width || border-style || border-color<br></code></pre></td></tr></table></figure>
-<p>边框样式属性值如下：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">none</span> <span class="hljs-comment">/* 没有边框样式 */</span><br><br>solid <span class="hljs-comment">/* 边框样式为单实线 */</span><br><br>dashed <span class="hljs-comment">/* 边框样式为虚线 */</span><br><br>dotted <span class="hljs-comment">/* 边框样式为点线 */</span><br><br>double <span class="hljs-comment">/* 边框样式为双实线 */</span><br></code></pre></td></tr></table></figure>
-<p>简写形式如下：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#ccc</span>;  <span class="hljs-comment">/* 宽度、颜色、样式 */</span><br></code></pre></td></tr></table></figure>
-<h4 id="特殊边框"><a href="#特殊边框" class="headerlink" title="特殊边框"></a>特殊边框</h4><p>表格边框：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">table</span>&#123;<br>	<span class="hljs-attribute">border-collapse</span>:collapse;  <span class="hljs-comment">/* 合并表格边框 */</span><br>&#125;<br></code></pre></td></tr></table></figure>
-<p>圆角边框：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs css">bordre-radius: 左上 右上 右下 左下;<br><span class="hljs-comment">/* 从左上角顺时针分配指 */</span><br><br><span class="hljs-attribute">border-radius</span>:<span class="hljs-number">50%</span><br><span class="hljs-comment">/* 画圆 */</span><br><br>border-radius:<span class="hljs-number">10px</span> <span class="hljs-number">40px</span>;<br><span class="hljs-comment">/* 使用两个值的时候默认第一个设置主对角线，第二个设置副对角线 */</span><br><br><span class="hljs-attribute">border-radius</span>:<span class="hljs-number">10px</span> <span class="hljs-number">20px</span> <span class="hljs-number">30px</span><br><span class="hljs-comment">/* 使用三个值的时候,第一个参数和第三个参数为左上和右下，第二个参数设置副对角线 */</span><br></code></pre></td></tr></table></figure>
-<h3 id="内边距（Padding）"><a href="#内边距（Padding）" class="headerlink" title="内边距（Padding）"></a>内边距（Padding）</h3><p>内容距离边框的距离称为内边距</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">padding-left</span>:<span class="hljs-number">10px</span>;<br><span class="hljs-attribute">padding-right</span>:<span class="hljs-number">20px</span>;<br><span class="hljs-attribute">padding-top</span>:<span class="hljs-number">30px</span>;<br><span class="hljs-attribute">padding-bottom</span>:<span class="hljs-number">40px</span>;<br><span class="hljs-comment">/* 设置上下左右四个方向的内边距 */</span><br></code></pre></td></tr></table></figure>
-<p>简写形式：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">padding</span>:<span class="hljs-number">20px</span>;<br><span class="hljs-comment">/* 表示上下左右内边距都是20px的距离 */</span><br><br><span class="hljs-attribute">padding</span>:<span class="hljs-number">20px</span> <span class="hljs-number">30px</span>;<br><span class="hljs-comment">/* 上下是20px 左右是30px的内边距 */</span><br><br><span class="hljs-attribute">padding</span>:<span class="hljs-number">10px</span> <span class="hljs-number">20px</span> <span class="hljs-number">50px</span>;<br><span class="hljs-comment">/* 上内边距时10px 左右内边距是20px 下内边距是50px */</span><br><br><span class="hljs-attribute">padding</span>:<span class="hljs-number">10px</span> <span class="hljs-number">20px</span> <span class="hljs-number">30px</span> <span class="hljs-number">40px</span>;  <br><span class="hljs-comment">/* 顺时针的，上右下左 */</span><br></code></pre></td></tr></table></figure>
-<h3 id="外边距（Margin）"><a href="#外边距（Margin）" class="headerlink" title="外边距（Margin）"></a>外边距（Margin）</h3><p>边框之外到其他元素的距离称为外边</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">margin-top</span>:<span class="hljs-number">10px</span>;<br><span class="hljs-attribute">margin-right</span>:<span class="hljs-number">20px</span>;<br><span class="hljs-attribute">margin-left</span>:<span class="hljs-number">30px</span>;<br><span class="hljs-attribute">margin-bottom</span>:<span class="hljs-number">40px</span>;<br><span class="hljs-comment">/* 分别设置上右下左的外边距 */</span><br><span class="hljs-comment">/* 外边距简写方式与内边距相同 */</span><br></code></pre></td></tr></table></figure>
-<h4 id="外边距实现左右居中"><a href="#外边距实现左右居中" class="headerlink" title="外边距实现左右居中"></a>外边距实现左右居中</h4><p class="note note-warning">
-使用margin实现盒子水平居中，需要满足以下条件：<br>
-1、必须block元素<br>
-2、盒子必须指定width
-</p>
-实现方法：
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.div</span>&#123;<br>	<span class="hljs-attribute">width</span>:<span class="hljs-number">960px</span>;<br>	<span class="hljs-attribute">margin</span>:<span class="hljs-number">0</span> auto; <br>	<span class="hljs-comment">/* 更推荐下面的写法,不会影响top和bottom的样式 */</span><br>	<span class="hljs-attribute">margin-left</span>:auto;<br>	<span class="hljs-attribute">margin-right</span>:auto;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<h3 id="盒模型分类"><a href="#盒模型分类" class="headerlink" title="盒模型分类"></a>盒模型分类</h3><p>盒模型分为内容盒模型和边框盒模型，如图所示：</p>
-<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206062346000.png" srcset="/img/loading.gif" lazyload alt="内容盒模型和边框盒模型"></p>
-<h4 id="内容盒模型（content-box）"><a href="#内容盒模型（content-box）" class="headerlink" title="内容盒模型（content-box）"></a>内容盒模型（content-box）</h4><p>设置内容盒模型：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">box-sizing</span>:content-box; <span class="hljs-comment">/* 默认是内容盒模型 */</span><br></code></pre></td></tr></table></figure>
-<p>内容盒模型的width只包含了<span class="label label-info">content</span>的内容<br>实际的盒子宽度 &#x3D; <span class="label label-info">width</span> + <span class="label label-info">border</span> + <span class="label label-info">padding</span></p>
-<h4 id="边框盒模型（border-box）"><a href="#边框盒模型（border-box）" class="headerlink" title="边框盒模型（border-box）"></a>边框盒模型（border-box）</h4><p>设置边框盒模型：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">box-sizing</span>:border-box;<br></code></pre></td></tr></table></figure>
-<p>内容盒模型的width包含了<span class="label label-info">content</span>、<span class="label label-info">border</span> 、<span class="label label-info">padding</span>的内容<br>实际的盒子宽度 &#x3D; <span class="label label-info">width</span></p>
+<p><span class="label label-info">概括</span>：我一定要拿到结果，拿不到我就不走！</p>
+<h3 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h3><p>异步的概念：同样的，现在我的手头也有两件事要做：煲饭和炒菜，我做这两件事情的时候，我可以把饭煲上，然后我就去炒菜，我并不需要等待饭煲好了，再去炒菜，什么时候饭煲好了它可以响一下提醒我。</p>
+<ul>
+<li>换成计算机得表达：我让A事件执行，并且让它做完了之后就提醒我，在他执行的时候我去执行B事件。</li>
+</ul>
+<p><span class="label label-info">概括</span>：我不一定要拿到结果，我继续走，有结果了通知我一声就行！</p>
+<h2 id="JavaScript为什么需要异步任务"><a href="#JavaScript为什么需要异步任务" class="headerlink" title="JavaScript为什么需要异步任务"></a>JavaScript为什么需要异步任务</h2><p>因为JavaScript是单线程的，所以如果现在JavaScript中的一些事件需要长时间的执行，这就会导致后续要执行的事件要进行长时间的等待，极端条件下这种等待是不可控的。所以这个时候就需要引入异步的操作，将这类需要长时间的事件，放到一边去执行，不影响后续的事件。然后在特定的时间或者特定的状态使用一下<span class="label label-info">特殊的手段</span>再去得到之前那些长时间执行的事件的结果。</p>
+<h2 id="如何得到异步任务的结果"><a href="#如何得到异步任务的结果" class="headerlink" title="如何得到异步任务的结果"></a>如何得到异步任务的结果</h2><h3 id="轮询"><a href="#轮询" class="headerlink" title="轮询"></a>轮询</h3><p>每隔一段时间就询问一下异步任务是否有结果</p>
+<h3 id="回调"><a href="#回调" class="headerlink" title="回调"></a>回调</h3><p>当异步任务达到某种状态（完成、错误、超时…..）执行一段代码，由这段代码（回调函数）来得到结果。</p>
+<h2 id="常见的异步"><a href="#常见的异步" class="headerlink" title="常见的异步"></a>常见的异步</h2><ul>
+<li>AJAX</li>
+<li>addEventListener</li>
+<li>setTimeout()</li>
+<li>待补充…</li>
+</ul>
 
               
             </div>
@@ -341,7 +324,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/css/">#css</a>
+        <a href="/tags/javascript/">#javascript</a>
       
     </div>
   
@@ -353,8 +336,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>CSS盒模型</div>
-      <div>https://alierq.space/posts/94a1bb4e.html</div>
+      <div>JavaScript同步和异步</div>
+      <div>https://alierq.space/posts/95105818.html</div>
     </div>
     <div class="license-meta">
       
@@ -366,13 +349,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年6月6日</div>
+          <div>2022年6月9日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年6月6日</div>
+          <div>2022年6月9日</div>
         </div>
       
       <div class="license-meta-item">
@@ -401,18 +384,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/95105818.html" title="JavaScript同步和异步">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">JavaScript同步和异步</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/1ec30961.html" title="CSS文档流">
-                        <span class="hidden-mobile">CSS文档流</span>
+                      <a href="/posts/94a1bb4e.html" title="CSS盒模型">
+                        <span class="hidden-mobile">CSS盒模型</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
