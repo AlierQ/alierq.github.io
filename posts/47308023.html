@@ -16,25 +16,25 @@
   <meta name="author" content="AlierQ">
   <meta name="keywords" content="">
   
-    <meta name="description" content="AJAX请求的步骤 创建XMLHttpRequest对象  1const request &#x3D; new XMLHttpRequest();   调用XMLHttpRequest对象建立连接  1request.open(&amp;#x27;get&amp;#x27;,&amp;#x27;&#x2F;index.html&amp;#x27;)   监听对象  使用onload或者onerror监听  1234567request.onload">
+    <meta name="description" content="Promise简介Promise是前端解决异步任务的统一方式。从JavaScript的语法上而言：Promise是一个对象，可以从它身上获取异步操作的消息。从Promise的词意上而言：Promise的意思是“承诺”，它承诺过一段时间给你异步任务操作的结果。 Promise状态 pending（等待状态） fulfiled（成功状态） rejected（失败状态）  Promise特点 对象的状">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript原生AJAX">
-<meta property="og:url" content="https://alierq.space/posts/d0443184.html">
+<meta property="og:title" content="浅述Promise">
+<meta property="og:url" content="https://alierq.space/posts/47308023.html">
 <meta property="og:site_name" content="AlierQ&#39;s Blog">
-<meta property="og:description" content="AJAX请求的步骤 创建XMLHttpRequest对象  1const request &#x3D; new XMLHttpRequest();   调用XMLHttpRequest对象建立连接  1request.open(&amp;#x27;get&amp;#x27;,&amp;#x27;&#x2F;index.html&amp;#x27;)   监听对象  使用onload或者onerror监听  1234567request.onload">
+<meta property="og:description" content="Promise简介Promise是前端解决异步任务的统一方式。从JavaScript的语法上而言：Promise是一个对象，可以从它身上获取异步操作的消息。从Promise的词意上而言：Promise的意思是“承诺”，它承诺过一段时间给你异步任务操作的结果。 Promise状态 pending（等待状态） fulfiled（成功状态） rejected（失败状态）  Promise特点 对象的状">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206092304434.png">
-<meta property="article:published_time" content="2022-06-09T13:41:18.000Z">
-<meta property="article:modified_time" content="2022-06-09T15:04:25.214Z">
+<meta property="og:image" content="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206092334626.png">
+<meta property="article:published_time" content="2022-06-09T15:14:58.000Z">
+<meta property="article:modified_time" content="2022-06-09T16:33:56.969Z">
 <meta property="article:author" content="AlierQ">
 <meta property="article:tag" content="javascript">
-<meta property="article:tag" content="ajax">
+<meta property="article:tag" content="promise">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206092304434.png">
+<meta name="twitter:image" content="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206092334626.png">
   
   
   
-  <title>JavaScript原生AJAX - AlierQ&#39;s Blog</title>
+  <title>浅述Promise - AlierQ&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -201,7 +201,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="JavaScript原生AJAX"></span>
+            <span id="subtitle" data-typed-text="浅述Promise"></span>
           
         </div>
 
@@ -212,7 +212,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-06-09 21:41" pubdate>
+        <time datetime="2022-06-09 23:14" pubdate>
           2022年6月9日 晚上
         </time>
       </span>
@@ -224,7 +224,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          文章字数：935 字
+          文章字数：1.1k 字
         
       </span>
     
@@ -235,7 +235,7 @@
         
         
         
-          阅读时长 ≈ 8 分钟
+          阅读时长 ≈ 10 分钟
         
       </span>
     
@@ -281,91 +281,48 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">JavaScript原生AJAX</h1>
+            <h1 style="display: none">浅述Promise</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年6月9日 晚上
+                    本文最后更新于：2022年6月10日 凌晨
                   
                 
               </p>
             
             <div class="markdown-body">
               
-              <h2 id="AJAX请求的步骤"><a href="#AJAX请求的步骤" class="headerlink" title="AJAX请求的步骤"></a>AJAX请求的步骤</h2><ol>
-<li>创建XMLHttpRequest对象</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> request = <span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLHttpRequest</span>();<br></code></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>调用XMLHttpRequest对象建立连接</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">request.<span class="hljs-title function_">open</span>(<span class="hljs-string">&#x27;get&#x27;</span>,<span class="hljs-string">&#x27;/index.html&#x27;</span>)<br></code></pre></td></tr></table></figure>
-
-<ol start="3">
-<li><p>监听对象</p>
-<ul>
-<li>使用onload或者onerror监听</li>
+              <p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206092334626.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="Promise简介"><a href="#Promise简介" class="headerlink" title="Promise简介"></a>Promise简介</h2><p>Promise是前端解决异步任务的统一方式。<br>从JavaScript的语法上而言：Promise是一个对象，可以从它身上获取异步操作的消息。<br>从Promise的词意上而言：Promise的意思是“承诺”，它承诺过一段时间给你异步任务操作的结果。</p>
+<h2 id="Promise状态"><a href="#Promise状态" class="headerlink" title="Promise状态"></a>Promise状态</h2><ul>
+<li>pending（等待状态）</li>
+<li>fulfiled（成功状态）</li>
+<li>rejected（失败状态）</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js">request.<span class="hljs-property">onload</span> = <span class="hljs-function">()=&gt;</span>&#123;<br>	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(request.<span class="hljs-property">response</span>)  <span class="hljs-comment">// 可以获取请求到的内容</span><br>&#125;<br><br>request.<span class="hljs-property">onerror</span> = <span class="hljs-function">()=&gt;</span>&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;请求错误！&#x27;</span>)<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<ul>
-<li>使用onreadystatechange监听</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js">request.<span class="hljs-property">onreadystatechange</span> = <span class="hljs-function">()=&gt;</span>&#123;<br>	request.<span class="hljs-property">readyState</span> <span class="hljs-comment">// 获取当前XMLHttpRequest对象的状态</span><br>    <br>    request.<span class="hljs-property">status</span> <span class="hljs-comment">// 获取当前请求的状态码</span><br>    <br>    <span class="hljs-comment">// 根据当前request对象的状态和请求的状态码进行相应的处理</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="Promise特点"><a href="#Promise特点" class="headerlink" title="Promise特点"></a>Promise特点</h2><ol>
+<li><p>对象的状态不会受外界的影响，只有异步操作的结果可以决定当前是哪一种状态，其他的操作无法改变这个状态。</p>
 </li>
-<li><p>调用XMLHttpRequest对象的send()方法发送请求</p>
+<li><p>一旦状态改变，之后就不会再改变了，任何时候都能够得到这个结果。Promise中的对象状态的改变，只有两种可能：<span class="label label-info">（pending——&gt;&gt;fulfiled）</span>、<span class="label label-info">（pending——&gt;&gt;rejected）</span>一旦这种情况发生了，状态就固定了，不会再改变。</p>
+</li>
+<li><p>创建了Promise对象之后就会立即执行</p>
 </li>
 </ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">request.<span class="hljs-title function_">send</span>() <br></code></pre></td></tr></table></figure>
-
-<h2 id="readyState状态"><a href="#readyState状态" class="headerlink" title="readyState状态"></a>readyState状态</h2><p><strong>XMLHttpRequest.readyState</strong>属性返回的是一个XMLHttpRequest 代理当前所处的状态</p>
-<table>
-<thead>
-<tr>
-<th>值</th>
-<th>状态</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>0</td>
-<td>UNSENT</td>
-<td>代理被创建，但未调用open()方法</td>
-</tr>
-<tr>
-<td>1</td>
-<td>OPENED</td>
-<td>open()方法已经被调用</td>
-</tr>
-<tr>
-<td>2</td>
-<td>HEADERS_RECEIVED</td>
-<td>send()方法已经被调用，并且头部状态已经可以获取</td>
-</tr>
-<tr>
-<td>3</td>
-<td>LOADING</td>
-<td>下载中，responseText属性已经包含部分数据</td>
-</tr>
-<tr>
-<td>4</td>
-<td>DONE</td>
-<td>下载操作已经完成</td>
-</tr>
-</tbody></table>
 <p class="note note-warning">
-通常在的下载完成之后时候使用onreadystatechange方法
+如果你在状态改变之后给Promise对象添加回调函数，你仍然能够得到这个结果。但如果是事件，你一旦错过了这个事件的触发，你再进行监听就无法得到之前的结果了。
 </p>
 
-<h2 id="AJAX请求的数据类型及使用方法"><a href="#AJAX请求的数据类型及使用方法" class="headerlink" title="AJAX请求的数据类型及使用方法"></a>AJAX请求的数据类型及使用方法</h2><ul>
-<li>CSS：得到之后可以将其放入style标签中</li>
-<li>HTML：得到之后使用innerHTML和DOM API加入网页中</li>
-<li>JS：得到之后可以将其放入script标签中</li>
-<li>XML：得到之后使用responseXML和DOM API获取其中的内容</li>
-<li>JSON：得到之后可以使用JSON.parse()将其转化成相应的数据类型</li>
-</ul>
+<h2 id="Promise使用"><a href="#Promise使用" class="headerlink" title="Promise使用"></a>Promise使用</h2><h3 id="创建Promise对象"><a href="#创建Promise对象" class="headerlink" title="创建Promise对象"></a>创建Promise对象</h3><p>我们可以通过<span class="label label-info">new</span>关键字创建一个Promise对象。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> promise = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>)&#123;<br>	<span class="hljs-comment">// 异步操作</span><br>	<span class="hljs-built_in">setTimeout</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>		<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;执行了一些异步操作&#x27;</span>);<br>		<span class="hljs-title function_">resolve</span>(<span class="hljs-string">&#x27;拿到的一些数据&#x27;</span>);<br>	&#125;,<span class="hljs-number">2000</span>);<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p>执行结果：</p>
+<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206100019947.png" srcset="/img/loading.gif" lazyload></p>
+<p>从上面的执行结果我们就可以看出Promise对象在一创建出来就被立即执行了，所以在使用Promise对象的时候通常会使用一个函数将他包裹起来。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">async</span>(<span class="hljs-params"></span>)&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>)&#123;<br>        <span class="hljs-comment">// 异步操作</span><br>        <span class="hljs-built_in">setTimeout</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;执行了一些异步操作&#x27;</span>);<br>            <span class="hljs-title function_">resolve</span>(<span class="hljs-string">&#x27;拿到的一些数据&#x27;</span>);<br>        &#125;,<span class="hljs-number">2000</span>);<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>使用函数包裹并return对象之后，我们在调用async这个函数的时候就会得到一个Promise对象，我们就可以使用Promise对象自身及其原型上的方法了，例如：</p>
+<p><span class="label label-info">.resolve()</span>、<span class="label label-info">.reject()</span>、<span class="label label-info">.all()</span>、<span class="label label-info">.race()</span>、<span class="label label-info">.then()</span>、<span class="label label-info">.catch()</span></p>
+<p>未完待续…</p>
 
               
             </div>
@@ -379,7 +336,7 @@
       
         <a href="/tags/javascript/">#javascript</a>
       
-        <a href="/tags/ajax/">#ajax</a>
+        <a href="/tags/promise/">#promise</a>
       
     </div>
   
@@ -391,8 +348,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>JavaScript原生AJAX</div>
-      <div>https://alierq.space/posts/d0443184.html</div>
+      <div>浅述Promise</div>
+      <div>https://alierq.space/posts/47308023.html</div>
     </div>
     <div class="license-meta">
       
@@ -410,7 +367,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年6月9日</div>
+          <div>2022年6月10日</div>
         </div>
       
       <div class="license-meta-item">
@@ -439,18 +396,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/47308023.html" title="浅述Promise">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">浅述Promise</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/95105818.html" title="JavaScript同步和异步">
-                        <span class="hidden-mobile">JavaScript同步和异步</span>
+                      <a href="/posts/d0443184.html" title="JavaScript原生AJAX">
+                        <span class="hidden-mobile">JavaScript原生AJAX</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

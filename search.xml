@@ -348,4 +348,43 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
         <tag>jquery</tag>
       </tags>
   </entry>
+  <entry>
+    <title>浅述Promise</title>
+    <url>/posts/47308023.html</url>
+    <content><![CDATA[<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206092334626.png"></p>
+<h2 id="Promise简介"><a href="#Promise简介" class="headerlink" title="Promise简介"></a>Promise简介</h2><p>Promise是前端解决异步任务的统一方式。<br>从JavaScript的语法上而言：Promise是一个对象，可以从它身上获取异步操作的消息。<br>从Promise的词意上而言：Promise的意思是“承诺”，它承诺过一段时间给你异步任务操作的结果。</p>
+<h2 id="Promise状态"><a href="#Promise状态" class="headerlink" title="Promise状态"></a>Promise状态</h2><ul>
+<li>pending（等待状态）</li>
+<li>fulfiled（成功状态）</li>
+<li>rejected（失败状态）</li>
+</ul>
+<h2 id="Promise特点"><a href="#Promise特点" class="headerlink" title="Promise特点"></a>Promise特点</h2><ol>
+<li><p>对象的状态不会受外界的影响，只有异步操作的结果可以决定当前是哪一种状态，其他的操作无法改变这个状态。</p>
+</li>
+<li><p>一旦状态改变，之后就不会再改变了，任何时候都能够得到这个结果。Promise中的对象状态的改变，只有两种可能：<span class="label label-info">（pending——&gt;&gt;fulfiled）</span>、<span class="label label-info">（pending——&gt;&gt;rejected）</span>一旦这种情况发生了，状态就固定了，不会再改变。</p>
+</li>
+<li><p>创建了Promise对象之后就会立即执行</p>
+</li>
+</ol>
+<p class="note note-warning">
+如果你在状态改变之后给Promise对象添加回调函数，你仍然能够得到这个结果。但如果是事件，你一旦错过了这个事件的触发，你再进行监听就无法得到之前的结果了。
+</p>
+
+<h2 id="Promise使用"><a href="#Promise使用" class="headerlink" title="Promise使用"></a>Promise使用</h2><h3 id="创建Promise对象"><a href="#创建Promise对象" class="headerlink" title="创建Promise对象"></a>创建Promise对象</h3><p>我们可以通过<span class="label label-info">new</span>关键字创建一个Promise对象。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> promise = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>)&#123;<br>	<span class="hljs-comment">// 异步操作</span><br>	<span class="hljs-built_in">setTimeout</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>		<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;执行了一些异步操作&#x27;</span>);<br>		<span class="hljs-title function_">resolve</span>(<span class="hljs-string">&#x27;拿到的一些数据&#x27;</span>);<br>	&#125;,<span class="hljs-number">2000</span>);<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p>执行结果：</p>
+<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206100019947.png"></p>
+<p>从上面的执行结果我们就可以看出Promise对象在一创建出来就被立即执行了，所以在使用Promise对象的时候通常会使用一个函数将他包裹起来。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">async</span>(<span class="hljs-params"></span>)&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>)&#123;<br>        <span class="hljs-comment">// 异步操作</span><br>        <span class="hljs-built_in">setTimeout</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;执行了一些异步操作&#x27;</span>);<br>            <span class="hljs-title function_">resolve</span>(<span class="hljs-string">&#x27;拿到的一些数据&#x27;</span>);<br>        &#125;,<span class="hljs-number">2000</span>);<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>使用函数包裹并return对象之后，我们在调用async这个函数的时候就会得到一个Promise对象，我们就可以使用Promise对象自身及其原型上的方法了，例如：</p>
+<p><span class="label label-info">.resolve()</span>、<span class="label label-info">.reject()</span>、<span class="label label-info">.all()</span>、<span class="label label-info">.race()</span>、<span class="label label-info">.then()</span>、<span class="label label-info">.catch()</span></p>
+<p>未完待续…</p>
+]]></content>
+      <tags>
+        <tag>javascript</tag>
+        <tag>promise</tag>
+      </tags>
+  </entry>
 </search>

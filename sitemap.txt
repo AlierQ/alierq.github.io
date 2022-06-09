@@ -1,3 +1,4 @@
+https://alierq.space/posts/47308023.html
 https://alierq.space/posts/d0443184.html
 https://alierq.space/posts/95105818.html
 https://alierq.space/posts/94a1bb4e.html
@@ -15,3 +16,4 @@ https://alierq.space/tags/ajax/
 https://alierq.space/tags/bash/
 https://alierq.space/tags/git/
 https://alierq.space/tags/jquery/
+https://alierq.space/tags/promise/

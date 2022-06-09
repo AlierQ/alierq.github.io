@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://alierq.space/posts/47308023.html</loc>
+    
+    <lastmod>2022-06-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://alierq.space/posts/d0443184.html</loc>
     
     <lastmod>2022-06-09</lastmod>
@@ -137,6 +146,13 @@
   
   <url>
     <loc>https://alierq.space/tags/jquery/</loc>
+    <lastmod>2022-06-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://alierq.space/tags/promise/</loc>
     <lastmod>2022-06-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
