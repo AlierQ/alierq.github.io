@@ -455,6 +455,7 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
 <h2 id="跨域常见问题"><a href="#跨域常见问题" class="headerlink" title="跨域常见问题"></a>跨域常见问题</h2><h4 id="为什么可以使用其他网站上的css、js、和img？"><a href="#为什么可以使用其他网站上的css、js、和img？" class="headerlink" title="为什么可以使用其他网站上的css、js、和img？"></a>为什么可以使用其他网站上的css、js、和img？</h4><p>同源策略限制的是数据访问，在网站中使用js、css、img时是属于引用，不能够获取到其中数据的。</p>
 ]]></content>
       <tags>
+        <tag>javascript</tag>
         <tag>cors</tag>
         <tag>jsonp</tag>
       </tags>
