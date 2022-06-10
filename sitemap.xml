@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://alierq.space/posts/721439c2.html</loc>
+    
+    <lastmod>2022-06-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://alierq.space/posts/47308023.html</loc>
     
     <lastmod>2022-06-09</lastmod>
@@ -103,7 +112,7 @@
 
   <url>
     <loc>https://alierq.space/</loc>
-    <lastmod>2022-06-09</lastmod>
+    <lastmod>2022-06-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -111,49 +120,63 @@
   
   <url>
     <loc>https://alierq.space/tags/css/</loc>
-    <lastmod>2022-06-09</lastmod>
+    <lastmod>2022-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://alierq.space/tags/javascript/</loc>
-    <lastmod>2022-06-09</lastmod>
+    <lastmod>2022-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://alierq.space/tags/ajax/</loc>
-    <lastmod>2022-06-09</lastmod>
+    <lastmod>2022-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://alierq.space/tags/bash/</loc>
-    <lastmod>2022-06-09</lastmod>
+    <lastmod>2022-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://alierq.space/tags/git/</loc>
-    <lastmod>2022-06-09</lastmod>
+    <lastmod>2022-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://alierq.space/tags/jquery/</loc>
-    <lastmod>2022-06-09</lastmod>
+    <lastmod>2022-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://alierq.space/tags/promise/</loc>
-    <lastmod>2022-06-09</lastmod>
+    <lastmod>2022-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://alierq.space/tags/cors/</loc>
+    <lastmod>2022-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://alierq.space/tags/jsonp/</loc>
+    <lastmod>2022-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

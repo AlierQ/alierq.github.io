@@ -387,4 +387,76 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
         <tag>promise</tag>
       </tags>
   </entry>
+  <entry>
+    <title>浅析跨域问题</title>
+    <url>/posts/721439c2.html</url>
+    <content><![CDATA[<h2 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h2><h3 id="源的概念"><a href="#源的概念" class="headerlink" title="源的概念"></a>源的概念</h3><p>window.origin或location.origin就可以得到当前源</p>
+<p>源 &#x3D; 协议 + 域名 + 端口号</p>
+<h3 id="同源的概念"><a href="#同源的概念" class="headerlink" title="同源的概念"></a>同源的概念</h3><p>如果两个url的协议、域名、端口号都完全一致，则这两个url就是同源的</p>
+<p>例如：</p>
+<p><a href="https://qq/.com">https://qq/.com</a> 和 <a href="https://www.baidu.com/">https://www.baidu.com</a> 不同源</p>
+<p><a href="https://baidu.com/">https://baidu.com</a> 和 <a href="https://www.baidu.com/">https://www.baidu.com</a> 不同源</p>
+<p>注意：只有完全一致才能算是同源</p>
+<h3 id="同源策源的概念"><a href="#同源策源的概念" class="headerlink" title="同源策源的概念"></a>同源策源的概念</h3><p>浏览器如果JavaScript运行在源A中就只允许获取源A的数据，而不能够源B中的数据，即不允许跨域</p>
+<p>同源策略的目的为了保护用户的隐私</p>
+<h2 id="跨域请求示例"><a href="#跨域请求示例" class="headerlink" title="跨域请求示例"></a>跨域请求示例</h2><p>我现在在本地9999端口的网页发送一个请求去请求本地8888端口的资源，代码如下：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> request = <span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLHttpRequest</span>();<br><br>request.<span class="hljs-title function_">open</span>(<span class="hljs-string">&#x27;get&#x27;</span>,<span class="hljs-string">&#x27;http://localhost:8888/friends.json&#x27;</span>)<br><br>request.<span class="hljs-property">onreadystatechange</span> = <span class="hljs-function">()=&gt;</span>&#123;<br>  <span class="hljs-keyword">if</span>(request.<span class="hljs-property">readyState</span> === <span class="hljs-number">4</span> &amp;&amp; request.<span class="hljs-property">status</span> === <span class="hljs-number">200</span>)&#123;<br>    <span class="hljs-keyword">let</span> ul = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&#x27;ul&#x27;</span>);<br>    <span class="hljs-keyword">let</span> friends = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(request.<span class="hljs-property">response</span>);<br>    friends.<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">item</span>)=&gt;</span>&#123;<br>        <span class="hljs-keyword">let</span> li = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&#x27;li&#x27;</span>);<br>        li.<span class="hljs-property">textContent</span> = item.<span class="hljs-property">name</span>;<br>        ul.<span class="hljs-title function_">appendChild</span>(li);<br>    &#125;)<br>    <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-title function_">appendChild</span>(ul);<br>  &#125;<br>&#125;<br><br>request.<span class="hljs-title function_">send</span>();<br></code></pre></td></tr></table></figure>
+
+<p>浏览器就会发出下面的错误信息，提示你进行了跨域请求并且已经被浏览器进行阻止。</p>
+<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206110109578.png" alt="浏览器提示跨域错误"></p>
+<h2 id="跨域解决方式"><a href="#跨域解决方式" class="headerlink" title="跨域解决方式"></a>跨域解决方式</h2><h3 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h3><p>CORS（Cross-Origin Resource Sharing）跨域资源共享，是一种基于 HTTP 头的机制，该机制通过允许服务器标示除了它自己以外的其它origin（域、协议和端口），这样其他网站可以直接请求该网站的这些资源。</p>
+<p>使用方法：</p>
+<p>在被请求网站的响应头中进行添加</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><code class="hljs awk">...<br>Access-Control-Allow-Origin: http:<span class="hljs-regexp">//</span>xxx.xxxx.xxx    <span class="hljs-regexp">//</span>指定网址访问<br><br>or<br><br>Access-Control-Allow-Origin: *   <span class="hljs-regexp">//</span> 所有均可访问<br>...<br></code></pre></td></tr></table></figure>
+
+<p>更多请见-&gt;<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CORS#%E7%AE%80%E5%8D%95%E8%AF%B7%E6%B1%82">MDN CORS文档</a></p>
+<h3 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h3><p>JSONP是当浏览器不支持CORS（比如IE浏览器）时使用的一种跨域方式</p>
+<h5 id="JSONP的实现"><a href="#JSONP的实现" class="headerlink" title="JSONP的实现"></a>JSONP的实现</h5><p>在请求网站中引入被请求网站的js代码，代码中cd是指定的回调函数</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;http://localhost:8888/jsonp/friends.js?callback=callback&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>后台内容</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">if</span>(path === <span class="hljs-string">&#x27;/jsonp/friends.js&#x27;</span>)&#123;<br>    response.<span class="hljs-property">statusCode</span> = <span class="hljs-number">200</span><br>    response.<span class="hljs-title function_">setHeader</span>(<span class="hljs-string">&#x27;Content-Type&#x27;</span>, <span class="hljs-string">&#x27;text/javascript;charset=utf-8&#x27;</span>)<br>    <span class="hljs-keyword">const</span> string = fs.<span class="hljs-title function_">readFileSync</span>(<span class="hljs-string">&#x27;public/friends.json&#x27;</span>)<br>    <br>    <span class="hljs-comment">// query.cd 获取前端传过来的cd参数的值</span><br>    <span class="hljs-comment">// 将cd的值作为回调函数的名称，进行拼接然后返回</span><br>    response.<span class="hljs-title function_">write</span>(query.<span class="hljs-property">callback</span> + <span class="hljs-string">&#x27;(&#x27;</span> + string + <span class="hljs-string">&#x27;)&#x27;</span>)<br>    response.<span class="hljs-title function_">end</span>()<br> &#125;<br></code></pre></td></tr></table></figure>
+
+<p>后台处理之后&#x2F;jsonp&#x2F;friends.js下的js文件的内容就变成了下面这样，变成了调用这个callback的函数，并且将数据作为参数传入callback中。</p>
+<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206110109038.png" alt="friends.js内容"></p>
+<p>callback函数的定义如下：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">callback</span>(<span class="hljs-params">data</span>)&#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(data);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>控制台输出如下</p>
+<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206110109369.png" alt="控制台输出"></p>
+<p>至此，就已经能够在本页面访问到目标页面的数据了。</p>
+<p>注意：JSONP的实现需要后端支持</p>
+<p>上面的做法有一个缺点，这样设置JSONP之后所有网站都能够拿到这些数据了，如果不想所有网站都能够拿到数据，</p>
+<p>这个时候我们需要做出一些限制：</p>
+<ol>
+<li>使用请求头里面的referer进行匹配</li>
+<li>待补充…</li>
+</ol>
+<h4 id="JSONP优化"><a href="#JSONP优化" class="headerlink" title="JSONP优化"></a>JSONP优化</h4><ol>
+<li><p>自定义回调函数名 （上面的示例已经实现）</p>
+</li>
+<li><p>动态添加删除script标签</p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> script = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&#x27;script&#x27;</span>)<br>script.<span class="hljs-property">src</span> = <span class="hljs-string">`http://localhost:8888/jsonp/friends.js?callback=callback`</span><br>script.<span class="hljs-property">onload</span> = <span class="hljs-function">()=&gt;</span>&#123;<br>	script.<span class="hljs-title function_">remove</span>()<br>&#125;<br><span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-title function_">appendChild</span>(script)<br></code></pre></td></tr></table></figure>
+
+<h4 id="JSONP优缺点"><a href="#JSONP优缺点" class="headerlink" title="JSONP优缺点"></a>JSONP优缺点</h4><p>优点：</p>
+<ul>
+<li>能够在IE下实现跨域</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>只能得到失败还是成功，无法得到状态码以及响应头等</li>
+<li>无法使用post请求，因为script只支持post</li>
+</ul>
+<h4 id="Promise规范封装JSONP"><a href="#Promise规范封装JSONP" class="headerlink" title="Promise规范封装JSONP"></a>Promise规范封装JSONP</h4><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 封装jsonp</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">jsonp</span>(<span class="hljs-params">url</span>)&#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve,rejected</span>)=&gt;</span>&#123;<br>    <span class="hljs-comment">// 随机生成回调函数名</span><br>	<span class="hljs-keyword">const</span> random = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>();<br>    <span class="hljs-comment">// 回调函数</span><br>    <span class="hljs-variable language_">window</span>[random] = <span class="hljs-function">(<span class="hljs-params">data</span>)=&gt;</span>&#123;<br>      <span class="hljs-title function_">resolve</span>(data);<br>    &#125;<br>    <span class="hljs-keyword">const</span> script = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&#x27;script&#x27;</span>)<br>    script.<span class="hljs-property">src</span> = url + <span class="hljs-string">`?callback=`</span> + random;<br>    script.<span class="hljs-property">onload</span> = <span class="hljs-function">()=&gt;</span>&#123;<br>      script.<span class="hljs-title function_">remove</span>()<br>    &#125;<br>    script.<span class="hljs-property">onerror</span> = <span class="hljs-function">()=&gt;</span>&#123;<br>      <span class="hljs-title function_">rejected</span>();<br>    &#125;<br>    <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-title function_">appendChild</span>(script)<br>  &#125;)<br>&#125;<br><br><span class="hljs-comment">// 调用jsonp</span><br><span class="hljs-title function_">jsonp</span>(<span class="hljs-string">&#x27;http://localhost:8888/jsonp/friends.js&#x27;</span>)<br>.<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">data</span>)=&gt;</span>&#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(data);<br>&#125;,<span class="hljs-function">()=&gt;</span>&#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;请求失败！&#x27;</span>);<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p>注意：这种方式封装JSONP需要将回调函数放在window上，否则因为作用域的原因会使得friends.js中的回调函数无法访问到。另外，如果只有一个jsonp请求，可以使用一个回调函数，但是一旦出现了多个jsonp请求，就要使用不同的回调函数了，上面采用了随机数的方式生成回调函数名。</p>
+<h2 id="跨域常见问题"><a href="#跨域常见问题" class="headerlink" title="跨域常见问题"></a>跨域常见问题</h2><h4 id="为什么可以使用其他网站上的css、js、和img？"><a href="#为什么可以使用其他网站上的css、js、和img？" class="headerlink" title="为什么可以使用其他网站上的css、js、和img？"></a>为什么可以使用其他网站上的css、js、和img？</h4><p>同源策略限制的是数据访问，在网站中使用js、css、img时是属于引用，不能够获取到其中数据的。</p>
+]]></content>
+      <tags>
+        <tag>cors</tag>
+        <tag>jsonp</tag>
+      </tags>
+  </entry>
 </search>
