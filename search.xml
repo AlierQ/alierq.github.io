@@ -460,4 +460,97 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
         <tag>jsonp</tag>
       </tags>
   </entry>
+  <entry>
+    <title>浏览器客户端存储</title>
+    <url>/posts/b7f743a4.html</url>
+    <content><![CDATA[<h2 id="客户端存储"><a href="#客户端存储" class="headerlink" title="客户端存储"></a>客户端存储</h2><p>有时候我们会希望能够将服务器的一些特殊的用户数据存贮在本地，这个时候就需要用到客户端数据存储技术</p>
+<h3 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3><p>Cookie是服务器下发给浏览器的一段字符串，以键值对的形式存储</p>
+<h4 id="Cookie的使用"><a href="#Cookie的使用" class="headerlink" title="Cookie的使用"></a>Cookie的使用</h4><p>客户端：</p>
+<ul>
+<li>写入Cookie</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-variable language_">document</span>.<span class="hljs-property">cookie</span>=<span class="hljs-string">&quot;key=value;expires=失效时间&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p class="note note-warning">如果未指定expires，浏览器关闭时cookie就失效</p>
+
+<ul>
+<li>读取Cookie</li>
+</ul>
+<p>通过<code>document.cookie</code>进行整体读取，然后再根据<code>;</code>和<code>=</code>进行分割</p>
+<p>服务器端：</p>
+<ul>
+<li>通过Set-Cookie在响应头设置Cookie</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">response.<span class="hljs-title function_">setHeader</span>(<span class="hljs-string">&#x27;Set-Cookie&#x27;</span>,<span class="hljs-string">`session_id=111; HttpOnly`</span>);<br></code></pre></td></tr></table></figure>
+
+<p>更多操作见<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Set-Cookie">Set-Cookie MDN文档</a></p>
+<h4 id="Cookie优缺点"><a href="#Cookie优缺点" class="headerlink" title="Cookie优缺点"></a>Cookie优缺点</h4><p>Cookie的优点：</p>
+<ul>
+<li>能够和服务器端交互</li>
+<li>浏览器自动管理不同站点的数据，并且能够之后的发起相同二级域名请求中附上cookie</li>
+</ul>
+<p>Cooke的缺点：</p>
+<ul>
+<li>安全性差</li>
+<li>数据量受限（4KB）</li>
+<li>可用性受限</li>
+<li>明文存储</li>
+</ul>
+<h3 id="WebStorage"><a href="#WebStorage" class="headerlink" title="WebStorage"></a>WebStorage</h3><p>WebStorage是HTML5中引入的本地存储解决方案，可以在客户端本地存储数据<br>由两部分组成：</p>
+<ul>
+<li>localStorage：在本地永久性存储数据</li>
+<li>sessionStorage：存储的数据只会在会话期间有效，关闭浏览器则自动删除</li>
+</ul>
+<h4 id="WebStorage的使用"><a href="#WebStorage的使用" class="headerlink" title="WebStorage的使用"></a>WebStorage的使用</h4><p>localStorage和sessionStorage的用法相同，常用API如下：</p>
+<table>
+<thead>
+<tr>
+<th>方法&#x2F;属性</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>setItem(key,value)</strong></td>
+<td>写入数据，添加&#x2F;修改键值对</td>
+</tr>
+<tr>
+<td><strong>getItem(key)</strong></td>
+<td>读取数据，根据键读取对应的值，不存在返回空</td>
+</tr>
+<tr>
+<td><strong>removeItem(key)</strong></td>
+<td>删除数据，根据键删除对应的键值对</td>
+</tr>
+<tr>
+<td><strong>key(index)</strong></td>
+<td>根据索引获取对应的键</td>
+</tr>
+<tr>
+<td><strong>clear()</strong></td>
+<td>清空数据</td>
+</tr>
+<tr>
+<td><strong>length</strong></td>
+<td>获取键值对数量</td>
+</tr>
+</tbody></table>
+<p class="note note-warning">WebStorage中只能够存储字符串数据，如果要存储对象，则要通过JSON.stringify()序列化然后进行存储</p>
+
+<h4 id="WebStorage的事件监听"><a href="#WebStorage的事件监听" class="headerlink" title="WebStorage的事件监听"></a>WebStorage的事件监听</h4><p>可以对WebStorage进行事件监听，当数据发生变化的时候执行回调函数</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-variable language_">window</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;storage&#x27;</span>,<span class="hljs-function">()=&gt;</span>&#123;<br>	<span class="hljs-comment">// 函数体</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p>StorageEvent事件对象参数：</p>
+<ul>
+<li>key  发送变化的健名</li>
+<li>oldValue  变化之前的值</li>
+<li>newValue  变化之后的值</li>
+<li>storageArea  发送变化的是localStorage还是sessionStorage</li>
+<li>url  引发变化的页面对应的url</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Cookie</tag>
+        <tag>webStorage</tag>
+      </tags>
+  </entry>
 </search>

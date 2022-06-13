@@ -1,3 +1,4 @@
+https://alierq.space/posts/b7f743a4.html
 https://alierq.space/posts/95105818.html
 https://alierq.space/posts/721439c2.html
 https://alierq.space/posts/47308023.html
@@ -20,3 +21,5 @@ https://alierq.space/tags/jquery/
 https://alierq.space/tags/promise/
 https://alierq.space/tags/cors/
 https://alierq.space/tags/jsonp/
+https://alierq.space/tags/Cookie/
+https://alierq.space/tags/webStorage/
