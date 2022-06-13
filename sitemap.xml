@@ -2,24 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://alierq.space/posts/3f4e513f.html</loc>
-    
-    <lastmod>2022-06-13</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://alierq.space/posts/e38660dc.html</loc>
-    
-    <lastmod>2022-06-13</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://alierq.space/posts/8e7db504.html</loc>
     
     <lastmod>2022-06-13</lastmod>
@@ -40,7 +22,7 @@
   <url>
     <loc>https://alierq.space/posts/95105818.html</loc>
     
-    <lastmod>2022-06-10</lastmod>
+    <lastmod>2022-06-13</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -49,7 +31,7 @@
   <url>
     <loc>https://alierq.space/posts/721439c2.html</loc>
     
-    <lastmod>2022-06-10</lastmod>
+    <lastmod>2022-06-13</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -58,7 +40,7 @@
   <url>
     <loc>https://alierq.space/posts/47308023.html</loc>
     
-    <lastmod>2022-06-09</lastmod>
+    <lastmod>2022-06-13</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -67,7 +49,7 @@
   <url>
     <loc>https://alierq.space/posts/d0443184.html</loc>
     
-    <lastmod>2022-06-09</lastmod>
+    <lastmod>2022-06-13</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -76,7 +58,7 @@
   <url>
     <loc>https://alierq.space/posts/94a1bb4e.html</loc>
     
-    <lastmod>2022-06-06</lastmod>
+    <lastmod>2022-06-13</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -85,7 +67,7 @@
   <url>
     <loc>https://alierq.space/posts/1ec30961.html</loc>
     
-    <lastmod>2022-06-06</lastmod>
+    <lastmod>2022-06-13</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -94,7 +76,7 @@
   <url>
     <loc>https://alierq.space/posts/41c8ebf3.html</loc>
     
-    <lastmod>2022-06-06</lastmod>
+    <lastmod>2022-06-13</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -103,7 +85,7 @@
   <url>
     <loc>https://alierq.space/posts/171faadf.html</loc>
     
-    <lastmod>2022-06-03</lastmod>
+    <lastmod>2022-06-13</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -112,7 +94,25 @@
   <url>
     <loc>https://alierq.space/posts/bf840e6a.html</loc>
     
-    <lastmod>2022-06-03</lastmod>
+    <lastmod>2022-06-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://alierq.space/posts/3f4e513f.html</loc>
+    
+    <lastmod>2022-06-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://alierq.space/posts/e38660dc.html</loc>
+    
+    <lastmod>2022-06-13</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -155,77 +155,7 @@
 
   
   <url>
-    <loc>https://alierq.space/tags/css/</loc>
-    <lastmod>2022-06-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://alierq.space/tags/javascript/</loc>
-    <lastmod>2022-06-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://alierq.space/tags/ajax/</loc>
-    <lastmod>2022-06-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://alierq.space/tags/bash/</loc>
-    <lastmod>2022-06-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://alierq.space/tags/git/</loc>
-    <lastmod>2022-06-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://alierq.space/tags/jquery/</loc>
-    <lastmod>2022-06-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://alierq.space/tags/promise/</loc>
-    <lastmod>2022-06-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://alierq.space/tags/cors/</loc>
-    <lastmod>2022-06-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://alierq.space/tags/jsonp/</loc>
-    <lastmod>2022-06-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://alierq.space/tags/Cookie/</loc>
-    <lastmod>2022-06-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://alierq.space/tags/webStorage/</loc>
     <lastmod>2022-06-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -240,6 +170,76 @@
   
   <url>
     <loc>https://alierq.space/tags/HTTP/</loc>
+    <lastmod>2022-06-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://alierq.space/tags/JavaScript/</loc>
+    <lastmod>2022-06-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://alierq.space/tags/AJAX/</loc>
+    <lastmod>2022-06-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://alierq.space/tags/Css/</loc>
+    <lastmod>2022-06-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://alierq.space/tags/jQuery/</loc>
+    <lastmod>2022-06-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://alierq.space/tags/Bash/</loc>
+    <lastmod>2022-06-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://alierq.space/tags/Git/</loc>
+    <lastmod>2022-06-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://alierq.space/tags/Promise/</loc>
+    <lastmod>2022-06-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://alierq.space/tags/CORS/</loc>
+    <lastmod>2022-06-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://alierq.space/tags/JSONP/</loc>
+    <lastmod>2022-06-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://alierq.space/tags/WebStorage/</loc>
     <lastmod>2022-06-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

@@ -43,7 +43,7 @@
 <p>内容盒模型的width包含了<span class="label label-info">content</span>、<span class="label label-info">border</span> 、<span class="label label-info">padding</span>的内容<br>实际的盒子宽度 &#x3D; <span class="label label-info">width</span></p>
 ]]></content>
       <tags>
-        <tag>css</tag>
+        <tag>Css</tag>
       </tags>
   </entry>
   <entry>
@@ -83,7 +83,7 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
 </ul>
 ]]></content>
       <tags>
-        <tag>css</tag>
+        <tag>Css</tag>
       </tags>
   </entry>
   <entry>
@@ -164,8 +164,8 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
 </ul>
 ]]></content>
       <tags>
-        <tag>javascript</tag>
-        <tag>ajax</tag>
+        <tag>JavaScript</tag>
+        <tag>AJAX</tag>
       </tags>
   </entry>
   <entry>
@@ -215,8 +215,8 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
 <p><code>$1</code>表示接收到的第一个参数</p>
 ]]></content>
       <tags>
-        <tag>bash</tag>
-        <tag>git</tag>
+        <tag>Bash</tag>
+        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
@@ -271,7 +271,7 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
 </ul>
 ]]></content>
       <tags>
-        <tag>javascript</tag>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -300,7 +300,7 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
 </ul>
 ]]></content>
       <tags>
-        <tag>javascript</tag>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -345,7 +345,7 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
 <p>有一点需要注意，在<span class="label label-info">$(‘xxx’)</span>获取的值是多个时，在进行赋值的时候，是对所有元素进行赋值；在进行取值的时候，只对第一个元素进行取值（<a href="https://www.jquery123.com/text/">.text()</a>除外，它是取出所有元素text内容）。</p>
 ]]></content>
       <tags>
-        <tag>jquery</tag>
+        <tag>jQuery</tag>
       </tags>
   </entry>
   <entry>
@@ -383,8 +383,8 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
 <p>未完待续…</p>
 ]]></content>
       <tags>
-        <tag>javascript</tag>
-        <tag>promise</tag>
+        <tag>JavaScript</tag>
+        <tag>Promise</tag>
       </tags>
   </entry>
   <entry>
@@ -455,9 +455,9 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
 <h2 id="跨域常见问题"><a href="#跨域常见问题" class="headerlink" title="跨域常见问题"></a>跨域常见问题</h2><h4 id="为什么可以使用其他网站上的css、js、和img？"><a href="#为什么可以使用其他网站上的css、js、和img？" class="headerlink" title="为什么可以使用其他网站上的css、js、和img？"></a>为什么可以使用其他网站上的css、js、和img？</h4><p>同源策略限制的是数据访问，在网站中使用js、css、img时是属于引用，不能够获取到其中数据的。</p>
 ]]></content>
       <tags>
-        <tag>javascript</tag>
-        <tag>cors</tag>
-        <tag>jsonp</tag>
+        <tag>JavaScript</tag>
+        <tag>CORS</tag>
+        <tag>JSONP</tag>
       </tags>
   </entry>
   <entry>
@@ -555,7 +555,7 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
 ]]></content>
       <tags>
         <tag>Cookie</tag>
-        <tag>webStorage</tag>
+        <tag>WebStorage</tag>
       </tags>
   </entry>
   <entry>
@@ -630,7 +630,7 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
 
 ]]></content>
       <tags>
-        <tag>git</tag>
+        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
