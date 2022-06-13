@@ -496,6 +496,11 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
 <li>可用性受限</li>
 <li>明文存储</li>
 </ul>
+<h4 id="防止用户篡改cookie"><a href="#防止用户篡改cookie" class="headerlink" title="防止用户篡改cookie"></a>防止用户篡改cookie</h4><p>思路一：</p>
+<p>将Cookie进行加密之后再发送给前端，后端读取Cookie解密后再使用但是这种方法有漏洞，加密后的内容可以无限期使用</p>
+<p>解决方法：JWT</p>
+<p>思路二：</p>
+<p>将用户信息放在服务器的文件中，给用户信息碎甲产生一个id，然后将这个id发给前端，后端去文件中读取id对应的用户内容。</p>
 <h3 id="WebStorage"><a href="#WebStorage" class="headerlink" title="WebStorage"></a>WebStorage</h3><p>WebStorage是HTML5中引入的本地存储解决方案，可以在客户端本地存储数据<br>由两部分组成：</p>
 <ul>
 <li>localStorage：在本地永久性存储数据</li>
