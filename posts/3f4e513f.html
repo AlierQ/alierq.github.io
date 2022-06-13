@@ -16,24 +16,24 @@
   <meta name="author" content="AlierQ">
   <meta name="keywords" content="">
   
-    <meta name="description" content="JSON简介JSON是一门独立的标记语言，用来展示数据，它易于人阅读和编写。同时也易于机器解析和生成。 JSON支持数据类型 string - 只支持双引号，不支持单引号和无引号 number - 支持科学计数法 bool - true和false null - 没有undefined object  array  JSON数据的转换JSON.parse（反序列化）将符合JSON语法的字符串转成J">
+    <meta name="description" content="HTTP简介HTTP 协议一般指 HTTP（超文本传输协议）是一种用于分布式、协作式和超媒体信息系统的应用层协议，是因特网上应用最为广泛的一种网络传输协议，所有的 WWW 文件都必须遵守这个标准。HTTP 是为 Web 浏览器与 Web 服务器之间的通信而设计的，但也可以用于其他目的。HTTP 是一个基于 TCP&#x2F;IP 通信协议来传递数据的（HTML 文件、图片文件、查询结果等）。 HT">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JSON简述">
-<meta property="og:url" content="https://alierq.space/posts/e38660dc.html">
+<meta property="og:title" content="HTTP基本概念">
+<meta property="og:url" content="https://alierq.space/posts/3f4e513f.html">
 <meta property="og:site_name" content="AlierQ&#39;s Blog">
-<meta property="og:description" content="JSON简介JSON是一门独立的标记语言，用来展示数据，它易于人阅读和编写。同时也易于机器解析和生成。 JSON支持数据类型 string - 只支持双引号，不支持单引号和无引号 number - 支持科学计数法 bool - true和false null - 没有undefined object  array  JSON数据的转换JSON.parse（反序列化）将符合JSON语法的字符串转成J">
+<meta property="og:description" content="HTTP简介HTTP 协议一般指 HTTP（超文本传输协议）是一种用于分布式、协作式和超媒体信息系统的应用层协议，是因特网上应用最为广泛的一种网络传输协议，所有的 WWW 文件都必须遵守这个标准。HTTP 是为 Web 浏览器与 Web 服务器之间的通信而设计的，但也可以用于其他目的。HTTP 是一个基于 TCP&#x2F;IP 通信协议来传递数据的（HTML 文件、图片文件、查询结果等）。 HT">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206132242313.png">
-<meta property="article:published_time" content="2022-06-13T14:24:59.000Z">
-<meta property="article:modified_time" content="2022-06-13T14:45:40.243Z">
+<meta property="og:image" content="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206132313656.png">
+<meta property="article:published_time" content="2022-06-13T15:10:07.000Z">
+<meta property="article:modified_time" content="2022-06-13T16:41:44.677Z">
 <meta property="article:author" content="AlierQ">
-<meta property="article:tag" content="JSON">
+<meta property="article:tag" content="HTTP">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206132242313.png">
+<meta name="twitter:image" content="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206132313656.png">
   
   
   
-  <title>JSON简述 - AlierQ&#39;s Blog</title>
+  <title>HTTP基本概念 - AlierQ&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -200,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="JSON简述"></span>
+            <span id="subtitle" data-typed-text="HTTP基本概念"></span>
           
         </div>
 
@@ -211,7 +211,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-06-13 22:24" pubdate>
+        <time datetime="2022-06-13 23:10" pubdate>
           2022年6月13日 晚上
         </time>
       </span>
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          文章字数：369 字
+          文章字数：2k 字
         
       </span>
     
@@ -234,7 +234,7 @@
         
         
         
-          阅读时长 ≈ 4 分钟
+          阅读时长 ≈ 17 分钟
         
       </span>
     
@@ -280,40 +280,225 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">JSON简述</h1>
+            <h1 style="display: none">HTTP基本概念</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年6月13日 晚上
+                    本文最后更新于：2022年6月14日 凌晨
                   
                 
               </p>
             
             <div class="markdown-body">
               
-              <h2 id="JSON简介"><a href="#JSON简介" class="headerlink" title="JSON简介"></a>JSON简介</h2><p>JSON是一门独立的标记语言，用来展示数据，它易于人阅读和编写。同时也易于机器解析和生成。</p>
-<h2 id="JSON支持数据类型"><a href="#JSON支持数据类型" class="headerlink" title="JSON支持数据类型"></a>JSON支持数据类型</h2><ul>
-<li>string - 只支持双引号，不支持单引号和无引号</li>
-<li>number - 支持科学计数法</li>
-<li>bool - true和false</li>
-<li>null - 没有undefined</li>
-<li>object </li>
-<li>array</li>
+              <h2 id="HTTP简介"><a href="#HTTP简介" class="headerlink" title="HTTP简介"></a>HTTP简介</h2><p>HTTP 协议一般指 HTTP（超文本传输协议）是一种用于分布式、协作式和超媒体信息系统的应用层协议，是因特网上应用最为广泛的一种网络传输协议，所有的 WWW 文件都必须遵守这个标准。HTTP 是为 Web 浏览器与 Web 服务器之间的通信而设计的，但也可以用于其他目的。HTTP 是一个基于 TCP&#x2F;IP 通信协议来传递数据的（HTML 文件、图片文件、查询结果等）。</p>
+<h3 id="HTTP请求"><a href="#HTTP请求" class="headerlink" title="HTTP请求"></a>HTTP请求</h3><p>HTTP请求流程：</p>
+<ol>
+<li><p>构建请求</p>
+<p>浏览器构建请求行信息，准备向服务器发送网络请求</p>
+</li>
+<li><p>查找缓存</p>
+<p>在发起请求之前会在缓存中查询是否有要请求的文件，如果有就拦截请求，返回缓存中的资源，没有则请求服务器</p>
+</li>
+<li><p>准备IP地址和端口</p>
+<p>请求的URL一般会经过DNS转换成IP地址，并且还需要获取对应的端口</p>
+</li>
+<li><p>等待TCP队列</p>
+<p>在准备好IP和端口之后并不一定会马上发送，因为同一个域名同时最多可以支持6个TCP连接，所以可能当前请求会进入队列进行排队等待。</p>
+</li>
+<li><p>建立TCP连接</p>
+<p>进行握手建立服务器连接，在开始通信之前要进行连接的建立</p>
+</li>
+<li><p>发送HTTP请求</p>
+<p>连接建立完成之后，发送HTTP请求进行通信</p>
+</li>
+</ol>
+<h4 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h4><ul>
+<li><code>请求动词</code>  <code>路径加查询参数</code>  <code>协议名/版本</code>           （请求行）</li>
+<li>Host：域名或IP  端口号                                      （请求头）</li>
+<li>Accept： text&#x2F;html      （希望接受的数据类型）（请求头）</li>
+<li>Content-Type：（发送的实体数据的数据类型）（请求头）</li>
+<li>（请求体）</li>
 </ul>
-<h2 id="JSON数据的转换"><a href="#JSON数据的转换" class="headerlink" title="JSON数据的转换"></a>JSON数据的转换</h2><h3 id="JSON-parse（反序列化）"><a href="#JSON-parse（反序列化）" class="headerlink" title="JSON.parse（反序列化）"></a>JSON.parse（反序列化）</h3><p>将符合JSON语法的字符串转成JS对应类型的数据</p>
-<p>注意：</p>
-<ul>
-<li>由于JSON只有六种语法，所以转成的数据也只有6种</li>
-<li>不符合JSON语法，则直接抛出一个Error对象</li>
-<li>一般使用try catch捕获错误</li>
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><ul>
+<li><p>三部分：请求行、请求头、请求体</p>
+</li>
+<li><p>请求动词有 GET &#x2F; POST &#x2F; PUT &#x2F; PATCH &#x2F; DELETE 等</p>
+</li>
+<li><p>请求体在GET请求中一般为空</p>
+</li>
 </ul>
-<h3 id="JSON-stringify（序列化）"><a href="#JSON-stringify（序列化）" class="headerlink" title="JSON.stringify（序列化）"></a>JSON.stringify（序列化）</h3><p>是JSON.parse的逆运算用于将符合JSON语法的数据类型转成JSON格式</p>
-<p>注意</p>
-<ul>
-<li>因为JS数据类型比JSON多，所以转换不一定都能成功，如果失败就抛出Error对象</li>
+<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206132335333.png" srcset="/img/loading.gif" lazyload alt="HTTP请求图示"></p>
+<h3 id="HTTP响应"><a href="#HTTP响应" class="headerlink" title="HTTP响应"></a>HTTP响应</h3><p>HTTP响应流程：</p>
+<ol>
+<li><p>返回请求</p>
+<p>服务员一旦完成请求的处理，就可以返回数据给浏览器</p>
+</li>
+<li><p>断开连接</p>
+<p>服务器向客户端返回响应之后，就关闭TCP连接。</p>
+</li>
+</ol>
+<p class="note note-warning">可以在头部信息中加入`Contention:Keep-Alive`让TCP连接保持连接</p>
+
+<h4 id="格式-1"><a href="#格式-1" class="headerlink" title="格式"></a>格式</h4><ul>
+<li><code>协议名/版本</code>  <code>状态码</code>  <code>状态字符串</code>    （响应行）</li>
+<li>Content-Type：响应体的格式            （响应头）</li>
+<li>（响应体）（下载内容）</li>
 </ul>
-<p><a target="_blank" rel="noopener" href="http://json.org/json-zh.html">JSON中文介绍官网</a></p>
+<h4 id="注意-1"><a href="#注意-1" class="headerlink" title="注意"></a>注意</h4><ul>
+<li><p>三部分：状态行、响应头、响应体</p>
+</li>
+<li><p>常见的<code>状态码</code>是重点</p>
+</li>
+</ul>
+<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206132335024.png" srcset="/img/loading.gif" lazyload alt="HTTP响应图示"></p>
+<h3 id="HTTP状态码"><a href="#HTTP状态码" class="headerlink" title="HTTP状态码"></a>HTTP状态码</h3><p>HTTP状态码能够描述返回的请求结果。借助状态码可以知道服务器是否正确的处理请求</p>
+<h4 id="状态码类别"><a href="#状态码类别" class="headerlink" title="状态码类别"></a>状态码类别</h4><table>
+<thead>
+<tr>
+<th>状态码</th>
+<th>类别</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>1XX</strong></td>
+<td>Informational（信息性状态码）</td>
+<td>接收的请求正在处理</td>
+</tr>
+<tr>
+<td><strong>2XX</strong></td>
+<td>Success（成功状态码）</td>
+<td>请求正常处理完毕</td>
+</tr>
+<tr>
+<td><strong>3XX</strong></td>
+<td>Redirection（重定向状态码）</td>
+<td>需要进行附加操作以完成请求</td>
+</tr>
+<tr>
+<td><strong>4XX</strong></td>
+<td>Client Error（客户端错误状态码）</td>
+<td>错误来自客户端</td>
+</tr>
+<tr>
+<td><strong>5XX</strong></td>
+<td>Server Error（服务器错误状态码）</td>
+<td>错误来自服务器</td>
+</tr>
+</tbody></table>
+<h4 id="常见状态码"><a href="#常见状态码" class="headerlink" title="常见状态码"></a>常见状态码</h4><p><code>2XX</code>：请求被正确处理</p>
+<table>
+<thead>
+<tr>
+<th>状态码</th>
+<th>含义</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>200 OK</strong></td>
+<td>请求在服务段被正常处理</td>
+<td>GET 方法，对应请求资源的实体会作为响应返回；HEAD 方法，不返回</td>
+</tr>
+<tr>
+<td><strong>204 No Content</strong></td>
+<td>请求正确处理，但是不返回实体的主体</td>
+<td>用于客户端往服务器发送信息，而客户端不用更新</td>
+</tr>
+<tr>
+<td><strong>204 Partial Content</strong></td>
+<td>客户端有请求范围，服务器成功执行范围请求</td>
+<td>响应报文中包含由 Content-Range 指定范围的实体内容</td>
+</tr>
+</tbody></table>
+<p><code>3XX</code>：浏览器需要执行某些特殊的处理来正确处理请求</p>
+<table>
+<thead>
+<tr>
+<th>状态码</th>
+<th>含义</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>301 Moved Permanently</strong></td>
+<td>永久性重定向</td>
+<td>请求的资源已被分配了新的URI，以后应使用新的 URI</td>
+</tr>
+<tr>
+<td><strong>302 Found</strong></td>
+<td>临时性重定向</td>
+<td>请求的资源已被分配了新的 URI，本次应使用新的 URI</td>
+</tr>
+<tr>
+<td><strong>303 See Other</strong></td>
+<td>临时性重定向</td>
+<td>与302有相同的功能，但本次应使用 GET 方法定向获取请求的资源</td>
+</tr>
+<tr>
+<td><strong>304 Not Modified</strong></td>
+<td>发送附带请求的请求，资源不满足条件</td>
+<td>附带条件：GET 方法的请求报文中包含 If-Match，If-Modified-Since，If-None-Match，If-Range，If-Unmodified-Since 中任一首部</td>
+</tr>
+<tr>
+<td><strong>307 Temporary Redirect</strong></td>
+<td>临时性重定向</td>
+<td>与302有相同的功能，但307 会遵照浏览器标准，请求方法不会从 POST 变成 GET</td>
+</tr>
+</tbody></table>
+<p><code>4XX</code>：客户端时发送错误的原因所在</p>
+<table>
+<thead>
+<tr>
+<th>状态码</th>
+<th>含义</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>400 Bad Request</strong></td>
+<td>请求报文中存在语法错误</td>
+<td>错误发生时，需修改请求的内容后再次发送请求</td>
+</tr>
+<tr>
+<td><strong>401 Unauthorized</strong></td>
+<td>请求需要通过HTTP 认证</td>
+<td>浏览器初次接收到 401 响应，会弹出认证用的对话窗口；之前已进行过 1 次请求，则表示用 户认证失败</td>
+</tr>
+<tr>
+<td><strong>403 Forbidden</strong></td>
+<td>服务器拒绝请求</td>
+<td>服务器端没有必要给出拒绝的详细理由，想说明可以在实体的主体部分描述原因；未授权的访问可能导致403</td>
+</tr>
+<tr>
+<td><strong>404 Not Found</strong></td>
+<td>服务器上无法找到请求的资源</td>
+<td>可以在服务器端拒绝请求且不想说明理由时使用</td>
+</tr>
+</tbody></table>
+<p><code>5XX</code>：服务器本身发送错误</p>
+<table>
+<thead>
+<tr>
+<th>状态码</th>
+<th>含义</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>500 Internal Server Error</strong></td>
+<td>服务器执行请求时出错</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>503 Service Unavailable</strong></td>
+<td>服务器无法处理请求</td>
+<td>服务器暂时处于超负载或正在进行停机维护</td>
+</tr>
+</tbody></table>
+<p>更多状态码可以访问<a target="_blank" rel="noopener" href="https://http.cat/">HTTP Cat</a></p>
 
               
             </div>
@@ -325,7 +510,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/JSON/">#JSON</a>
+        <a href="/tags/HTTP/">#HTTP</a>
       
     </div>
   
@@ -337,8 +522,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>JSON简述</div>
-      <div>https://alierq.space/posts/e38660dc.html</div>
+      <div>HTTP基本概念</div>
+      <div>https://alierq.space/posts/3f4e513f.html</div>
     </div>
     <div class="license-meta">
       
@@ -356,7 +541,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年6月13日</div>
+          <div>2022年6月14日</div>
         </div>
       
       <div class="license-meta-item">
@@ -385,18 +570,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/3f4e513f.html" title="HTTP基本概念">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">HTTP基本概念</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/8e7db504.html" title="Git入门">
-                        <span class="hidden-mobile">Git入门</span>
+                      <a href="/posts/e38660dc.html" title="JSON简述">
+                        <span class="hidden-mobile">JSON简述</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
