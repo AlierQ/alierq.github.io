@@ -16,24 +16,24 @@
   <meta name="author" content="AlierQ">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Git指令设置Git配置123456git config --global user.name 你的英文名git config --global user.email 你的邮箱git config --global push.default simplegit config --global core.quotepath falsegit config --global core.editor &amp;">
+    <meta name="description" content="JSON简介JSON是一门独立的标记语言，用来展示数据，它易于人阅读和编写。同时也易于机器解析和生成。 JSON支持数据类型 string - 只支持双引号，不支持单引号和无引号 number - 支持科学计数法 bool - true和false null - 没有undefined object  array  JSON数据的转换JSON.parse（反序列化）将符合JSON语法的字符串转成J">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git入门">
-<meta property="og:url" content="https://alierq.space/posts/8e7db504.html">
+<meta property="og:title" content="JSON简述">
+<meta property="og:url" content="https://alierq.space/posts/e38660dc.html">
 <meta property="og:site_name" content="AlierQ&#39;s Blog">
-<meta property="og:description" content="Git指令设置Git配置123456git config --global user.name 你的英文名git config --global user.email 你的邮箱git config --global push.default simplegit config --global core.quotepath falsegit config --global core.editor &amp;">
+<meta property="og:description" content="JSON简介JSON是一门独立的标记语言，用来展示数据，它易于人阅读和编写。同时也易于机器解析和生成。 JSON支持数据类型 string - 只支持双引号，不支持单引号和无引号 number - 支持科学计数法 bool - true和false null - 没有undefined object  array  JSON数据的转换JSON.parse（反序列化）将符合JSON语法的字符串转成J">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206132211080.png">
-<meta property="article:published_time" content="2022-06-13T13:22:56.000Z">
-<meta property="article:modified_time" content="2022-06-13T14:12:47.095Z">
+<meta property="og:image" content="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206132242313.png">
+<meta property="article:published_time" content="2022-06-13T14:24:59.000Z">
+<meta property="article:modified_time" content="2022-06-13T14:45:40.243Z">
 <meta property="article:author" content="AlierQ">
-<meta property="article:tag" content="git">
+<meta property="article:tag" content="JSON">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206132211080.png">
+<meta name="twitter:image" content="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206132242313.png">
   
   
   
-  <title>Git入门 - AlierQ&#39;s Blog</title>
+  <title>JSON简述 - AlierQ&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -200,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Git入门"></span>
+            <span id="subtitle" data-typed-text="JSON简述"></span>
           
         </div>
 
@@ -211,7 +211,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-06-13 21:22" pubdate>
+        <time datetime="2022-06-13 22:24" pubdate>
           2022年6月13日 晚上
         </time>
       </span>
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          文章字数：2.5k 字
+          文章字数：369 字
         
       </span>
     
@@ -234,7 +234,7 @@
         
         
         
-          阅读时长 ≈ 21 分钟
+          阅读时长 ≈ 4 分钟
         
       </span>
     
@@ -280,7 +280,7 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Git入门</h1>
+            <h1 style="display: none">JSON简述</h1>
             
               <p class="note note-info">
                 
@@ -292,73 +292,28 @@
             
             <div class="markdown-body">
               
-              <h2 id="Git指令"><a href="#Git指令" class="headerlink" title="Git指令"></a>Git指令</h2><h3 id="设置Git配置"><a href="#设置Git配置" class="headerlink" title="设置Git配置"></a>设置Git配置</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs sh">git config --global user.name 你的英文名<br>git config --global user.email 你的邮箱<br>git config --global push.default simple<br>git config --global core.quotepath <span class="hljs-literal">false</span><br>git config --global core.editor <span class="hljs-string">&quot;code --wait&quot;</span><br>git config --global core.autocrlf input<br></code></pre></td></tr></table></figure>
-
-<h3 id="查看Git配置"><a href="#查看Git配置" class="headerlink" title="查看Git配置"></a>查看Git配置</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">git config --global --list<br></code></pre></td></tr></table></figure>
-
-<h3 id="常用Git指令"><a href="#常用Git指令" class="headerlink" title="常用Git指令"></a>常用Git指令</h3><p><code>git init</code> ：初始化一个git仓库</p>
-<p><code>git add 文件名\路径</code>：提交文件到暂存区</p>
-<p><code>git commit -m &quot;提交信息内容&quot;</code> ：将文件提交到仓库中，并注上提交信息</p>
-<p><code>git commit -v</code>：能够在编辑器中看到自己当前的修改行数内容</p>
-<p><code>git commit -v --amend</code> ：VScode终端提交语句</p>
-<p><code>git log</code> ：查看提交记录</p>
-<p><code>git reflog</code>：查看历史记录（包括回退的记录）</p>
-<p><code>git reset --hard 版本号前6位</code>：回退到指定版本</p>
-<p><code>git branch </code>：查看所有分支，以及当前所在分支</p>
-<p><code>git branch 分支名</code>：创建一个新分支</p>
-<p><code>git checkout 分支名</code>：切换到指定分支</p>
-<p><code>git merge 分支名</code>：将另一个分支合并到当前分支</p>
-<p><code>git status -sb</code>：用来查看当前哪个文件冲突了</p>
-<p><code>git branch -d 分支名</code>：删除合并后的无用的分支</p>
-<p><code>git remote -v</code>：显示所有远程仓库</p>
-<p class="note note-warning">当合并分支的时候可能会产生冲突，解决完冲突之后应重新add、commit该文件（此时commit时不带参数）</p>
-
-<p><span style="color:red;"><code>.gitignore文件</code>：配置哪些文件不需要提交</span></p>
-<p>常见不用提交目录：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">node_modules<br>.DS_Store<br>.idea<br>.vscode<br></code></pre></td></tr></table></figure>
-
-<h3 id="远程git仓库"><a href="#远程git仓库" class="headerlink" title="远程git仓库"></a>远程git仓库</h3><h4 id="创建ssh-key"><a href="#创建ssh-key" class="headerlink" title="创建ssh key"></a>创建ssh key</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">ssh-keygen -t rsa -b 4096 -C &quot;你的任意邮箱地址&quot;<br><span class="hljs-meta prompt_"># </span><span class="language-bash">-t 表示密钥的类型 ，-b表示密钥的长度，-C 用于识别这个密钥的注释</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="Github配置公钥"><a href="#Github配置公钥" class="headerlink" title="Github配置公钥"></a>Github配置公钥</h4><p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206132145247.png" srcset="/img/loading.gif" lazyload alt="git设置公钥"></p>
-<h4 id="测试Github连接"><a href="#测试Github连接" class="headerlink" title="测试Github连接"></a>测试Github连接</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">ssh -T git@github.com<br></code></pre></td></tr></table></figure>
-
-<h4 id="上传远程仓库"><a href="#上传远程仓库" class="headerlink" title="上传远程仓库"></a>上传远程仓库</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">将本地仓库和远程仓库连接起来</span><br>git remote add origin git@github.com:AlierQ/GitTest.git<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">将原有的master改名位main,因为github上的主分支名称由master改为了main</span><br>git branch -M main<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">推到远程仓库的main分支</span><br>git push -u origin main<br></code></pre></td></tr></table></figure>
-
-<h4 id="上传其他分支"><a href="#上传其他分支" class="headerlink" title="上传其他分支"></a>上传其他分支</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">方式1</span><br>git checkout 分支名<br>git push -u origin 分支名<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">方式2</span><br>git push origin 本地分支名:远程分支名<br></code></pre></td></tr></table></figure>
-
-<h4 id="获取远程合并本地"><a href="#获取远程合并本地" class="headerlink" title="获取远程合并本地"></a>获取远程合并本地</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">将远程的仓库合并到本地</span><br>git pull<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">若有多个仓库名</span><br>git pull 仓库名 远程分支名:本地分支名<br></code></pre></td></tr></table></figure>
-
-<h4 id="克隆远程仓库"><a href="#克隆远程仓库" class="headerlink" title="克隆远程仓库"></a>克隆远程仓库</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">从目标地址克隆项目到本地</span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">当前目录下新建一个与项目同名的文件夹，将项目放在里面</span><br>git clone git@XXXXXX[目标地址]    <br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">新建一个abc目录，将克隆的项目放在这里</span><br>git clone git@XXXXXX[目标地址] abc <br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">在当前目录下直接存放项目,(最好是空文件夹)</span><br>git clone git@XXXXXX[目标地址] .<br></code></pre></td></tr></table></figure>
-
-<h3 id="Git高级操作"><a href="#Git高级操作" class="headerlink" title="Git高级操作"></a>Git高级操作</h3><h4 id="bash-alias简化命令"><a href="#bash-alias简化命令" class="headerlink" title="bash alias简化命令"></a>bash alias简化命令</h4><p>1、向&#x2F;.bashrc文件里面写入配置</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell">touch ~/.bashrc<br>echo &#x27;alias ga=&quot;git add&quot;&#x27;&gt;&gt; ~/.bashrc<br>echo &#x27;alias gc=&quot;git commit -v&quot;&#x27;&gt;&gt; ~/.bashrc<br>echo &#x27;alias gl=&quot;git pull&quot;&#x27;&gt;&gt; ~/.bashrc<br>echo &#x27;alias gp=&quot;git push&quot;&#x27;&gt;&gt; ~/.bashrc<br>echo &#x27;alias gco=&quot;git checkout&quot;&#x27;&gt;&gt; ~/.bashrc<br>echo &#x27;alias gst=&quot;git status -sb&quot;&#x27;&gt;&gt; ~/.bashrc<br></code></pre></td></tr></table></figure>
-
-<p>2、加载配置</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">source ~/.bashrc<br></code></pre></td></tr></table></figure>
-
-<h4 id="美化提交历史记录"><a href="#美化提交历史记录" class="headerlink" title="美化提交历史记录"></a>美化提交历史记录</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git rebase -i 版本号<br></code></pre></td></tr></table></figure>
-
-<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206132145993.png" srcset="/img/loading.gif" lazyload></p>
-<h4 id="冲突解决"><a href="#冲突解决" class="headerlink" title="冲突解决"></a>冲突解决</h4><h5 id="中止"><a href="#中止" class="headerlink" title="中止"></a>中止</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git rebase --abort<br></code></pre></td></tr></table></figure>
-
-<h5 id="继续"><a href="#继续" class="headerlink" title="继续"></a>继续</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git rebase --continue<br></code></pre></td></tr></table></figure>
-
-<h4 id="临时隐藏文件"><a href="#临时隐藏文件" class="headerlink" title="临时隐藏文件"></a>临时隐藏文件</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">git add后可以使用该命令将文件隐藏</span><br>git stash<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">取消隐藏</span><br>git stash pop<br></code></pre></td></tr></table></figure>
-
-<p class="note note-warning">可以连续使用，pop顺序与放入顺序相反</p>
-
-<h3 id="忽略文件-gitignore"><a href="#忽略文件-gitignore" class="headerlink" title="忽略文件.gitignore"></a>忽略文件.gitignore</h3><p>.gitinore可以配置哪些文件不需要提交</p>
-<p>文件编写规则：</p>
-<ol>
-<li>忽略文件中的空行或以井号（#）开始的行将会被忽略。（注释）</li>
-<li>可以使用Linux通配符。例如：星号（*）代表任意多个字符，问号（?）代表一个字符，方括号（[abc]）代表可选字符范围，大括号（{string1,string2,…}）代表可选的字符串等。</li>
-<li>如果名称的最前面有一个感叹号（!），表示例外规则，将不被忽略。</li>
-<li>如果名称的最前面是一个路径分隔符（&#x2F;），表示要忽略的文件在此目录下，而子目录中的文件不忽略。</li>
-<li>如果名称的最后面是一个路径分隔符（&#x2F;），表示要忽略的是此目录下该名称的子目录，而非文件（默认文件或目录都忽略）。</li>
-</ol>
-<p>例如：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">注释</span><br><br>*.txt        # 忽略所有 .txt结尾的文件,这样的话上传就不会被选中！<br><br>!lib.txt     # 但lib.txt除外<br><br>/temp        # 仅忽略项目根目录下的temp文件,不包括其它目录subdir/temp<br><br>build/       # 忽略build/目录下的所有文件<br><br>doc/*.txt    # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt<br></code></pre></td></tr></table></figure>
-
+              <h2 id="JSON简介"><a href="#JSON简介" class="headerlink" title="JSON简介"></a>JSON简介</h2><p>JSON是一门独立的标记语言，用来展示数据，它易于人阅读和编写。同时也易于机器解析和生成。</p>
+<h2 id="JSON支持数据类型"><a href="#JSON支持数据类型" class="headerlink" title="JSON支持数据类型"></a>JSON支持数据类型</h2><ul>
+<li>string - 只支持双引号，不支持单引号和无引号</li>
+<li>number - 支持科学计数法</li>
+<li>bool - true和false</li>
+<li>null - 没有undefined</li>
+<li>object </li>
+<li>array</li>
+</ul>
+<h2 id="JSON数据的转换"><a href="#JSON数据的转换" class="headerlink" title="JSON数据的转换"></a>JSON数据的转换</h2><h3 id="JSON-parse（反序列化）"><a href="#JSON-parse（反序列化）" class="headerlink" title="JSON.parse（反序列化）"></a>JSON.parse（反序列化）</h3><p>将符合JSON语法的字符串转成JS对应类型的数据</p>
+<p>注意：</p>
+<ul>
+<li>由于JSON只有六种语法，所以转成的数据也只有6种</li>
+<li>不符合JSON语法，则直接抛出一个Error对象</li>
+<li>一般使用try catch捕获错误</li>
+</ul>
+<h3 id="JSON-stringify（序列化）"><a href="#JSON-stringify（序列化）" class="headerlink" title="JSON.stringify（序列化）"></a>JSON.stringify（序列化）</h3><p>是JSON.parse的逆运算用于将符合JSON语法的数据类型转成JSON格式</p>
+<p>注意</p>
+<ul>
+<li>因为JS数据类型比JSON多，所以转换不一定都能成功，如果失败就抛出Error对象</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="http://json.org/json-zh.html">JSON中文介绍官网</a></p>
 
               
             </div>
@@ -370,7 +325,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/git/">#git</a>
+        <a href="/tags/JSON/">#JSON</a>
       
     </div>
   
@@ -382,8 +337,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Git入门</div>
-      <div>https://alierq.space/posts/8e7db504.html</div>
+      <div>JSON简述</div>
+      <div>https://alierq.space/posts/e38660dc.html</div>
     </div>
     <div class="license-meta">
       
@@ -430,18 +385,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/e38660dc.html" title="JSON简述">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">JSON简述</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/b7f743a4.html" title="浏览器客户端存储">
-                        <span class="hidden-mobile">浏览器客户端存储</span>
+                      <a href="/posts/8e7db504.html" title="Git入门">
+                        <span class="hidden-mobile">Git入门</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
