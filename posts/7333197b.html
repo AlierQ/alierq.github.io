@@ -16,24 +16,24 @@
   <meta name="author" content="AlierQ">
   <meta name="keywords" content="">
   
-    <meta name="description" content="HTTP简介HTTP 协议一般指 HTTP（超文本传输协议）是一种用于分布式、协作式和超媒体信息系统的应用层协议，是因特网上应用最为广泛的一种网络传输协议，所有的 WWW 文件都必须遵守这个标准。HTTP 是为 Web 浏览器与 Web 服务器之间的通信而设计的，但也可以用于其他目的。HTTP 是一个基于 TCP&#x2F;IP 通信协议来传递数据的（HTML 文件、图片文件、查询结果等）。 HT">
+    <meta name="description" content="MVC设计模模式什么是设计模式？设计模式是软件开发人员在软件开发过程中面临一般问题的解决方案，是一套被反复使用的、多数人知晓的、代码设计的总结。使用设计模式能够使得代码更可靠、更易懂、更高效。 什么是MVC设计模式？MVC设计模式为了提高代码的灵活性和复用性，将应用划分为三个部分：  Model（模型） 这部分封装了应用程序业务逻辑相关的数据以及他们对应的处理数据的方法，当数据发生改变时模型将会通">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTTP基本概念">
-<meta property="og:url" content="https://alierq.space/posts/3f4e513f.html">
+<meta property="og:title" content="MVC设计模式">
+<meta property="og:url" content="https://alierq.space/posts/7333197b.html">
 <meta property="og:site_name" content="AlierQ&#39;s Blog">
-<meta property="og:description" content="HTTP简介HTTP 协议一般指 HTTP（超文本传输协议）是一种用于分布式、协作式和超媒体信息系统的应用层协议，是因特网上应用最为广泛的一种网络传输协议，所有的 WWW 文件都必须遵守这个标准。HTTP 是为 Web 浏览器与 Web 服务器之间的通信而设计的，但也可以用于其他目的。HTTP 是一个基于 TCP&#x2F;IP 通信协议来传递数据的（HTML 文件、图片文件、查询结果等）。 HT">
+<meta property="og:description" content="MVC设计模模式什么是设计模式？设计模式是软件开发人员在软件开发过程中面临一般问题的解决方案，是一套被反复使用的、多数人知晓的、代码设计的总结。使用设计模式能够使得代码更可靠、更易懂、更高效。 什么是MVC设计模式？MVC设计模式为了提高代码的灵活性和复用性，将应用划分为三个部分：  Model（模型） 这部分封装了应用程序业务逻辑相关的数据以及他们对应的处理数据的方法，当数据发生改变时模型将会通">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206132313656.png">
-<meta property="article:published_time" content="2022-06-13T15:10:07.000Z">
-<meta property="article:modified_time" content="2022-06-13T16:41:44.677Z">
+<meta property="og:image" content="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206172046665.jpg">
+<meta property="article:published_time" content="2022-06-17T12:42:52.000Z">
+<meta property="article:modified_time" content="2022-06-17T15:01:42.285Z">
 <meta property="article:author" content="AlierQ">
-<meta property="article:tag" content="HTTP">
+<meta property="article:tag" content="MVC">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206132313656.png">
+<meta name="twitter:image" content="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206172046665.jpg">
   
   
   
-  <title>HTTP基本概念 - AlierQ&#39;s Blog</title>
+  <title>MVC设计模式 - AlierQ&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -200,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="HTTP基本概念"></span>
+            <span id="subtitle" data-typed-text="MVC设计模式"></span>
           
         </div>
 
@@ -211,8 +211,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-06-13 23:10" pubdate>
-          2022年6月13日 晚上
+        <time datetime="2022-06-17 20:42" pubdate>
+          2022年6月17日 晚上
         </time>
       </span>
     
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          文章字数：2k 字
+          文章字数：1.6k 字
         
       </span>
     
@@ -234,7 +234,7 @@
         
         
         
-          阅读时长 ≈ 17 分钟
+          阅读时长 ≈ 14 分钟
         
       </span>
     
@@ -280,225 +280,43 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">HTTP基本概念</h1>
+            <h1 style="display: none">MVC设计模式</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年6月14日 凌晨
+                    本文最后更新于：2022年6月17日 晚上
                   
                 
               </p>
             
             <div class="markdown-body">
               
-              <h2 id="HTTP简介"><a href="#HTTP简介" class="headerlink" title="HTTP简介"></a>HTTP简介</h2><p>HTTP 协议一般指 HTTP（超文本传输协议）是一种用于分布式、协作式和超媒体信息系统的应用层协议，是因特网上应用最为广泛的一种网络传输协议，所有的 WWW 文件都必须遵守这个标准。HTTP 是为 Web 浏览器与 Web 服务器之间的通信而设计的，但也可以用于其他目的。HTTP 是一个基于 TCP&#x2F;IP 通信协议来传递数据的（HTML 文件、图片文件、查询结果等）。</p>
-<h3 id="HTTP请求"><a href="#HTTP请求" class="headerlink" title="HTTP请求"></a>HTTP请求</h3><p>HTTP请求流程：</p>
+              <h2 id="MVC设计模模式"><a href="#MVC设计模模式" class="headerlink" title="MVC设计模模式"></a>MVC设计模模式</h2><h3 id="什么是设计模式？"><a href="#什么是设计模式？" class="headerlink" title="什么是设计模式？"></a>什么是设计模式？</h3><p>设计模式是软件开发人员在软件开发过程中面临一般问题的解决方案，是一套被反复使用的、多数人知晓的、代码设计的总结。使用设计模式能够使得代码更可靠、更易懂、更高效。</p>
+<h3 id="什么是MVC设计模式？"><a href="#什么是MVC设计模式？" class="headerlink" title="什么是MVC设计模式？"></a>什么是MVC设计模式？</h3><p>MVC设计模式为了提高代码的灵活性和复用性，将应用划分为三个部分：</p>
 <ol>
-<li><p>构建请求</p>
-<p>浏览器构建请求行信息，准备向服务器发送网络请求</p>
-</li>
-<li><p>查找缓存</p>
-<p>在发起请求之前会在缓存中查询是否有要请求的文件，如果有就拦截请求，返回缓存中的资源，没有则请求服务器</p>
-</li>
-<li><p>准备IP地址和端口</p>
-<p>请求的URL一般会经过DNS转换成IP地址，并且还需要获取对应的端口</p>
-</li>
-<li><p>等待TCP队列</p>
-<p>在准备好IP和端口之后并不一定会马上发送，因为同一个域名同时最多可以支持6个TCP连接，所以可能当前请求会进入队列进行排队等待。</p>
-</li>
-<li><p>建立TCP连接</p>
-<p>进行握手建立服务器连接，在开始通信之前要进行连接的建立</p>
-</li>
-<li><p>发送HTTP请求</p>
-<p>连接建立完成之后，发送HTTP请求进行通信</p>
-</li>
+<li>Model（模型） 这部分封装了应用程序业务逻辑相关的数据以及他们对应的处理数据的方法，当数据发生改变时模型将会通知数据相关的视图。</li>
 </ol>
-<h4 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h4><ul>
-<li><code>请求动词</code>  <code>路径加查询参数</code>  <code>协议名/版本</code>           （请求行）</li>
-<li>Host：域名或IP  端口号                                      （请求头）</li>
-<li>Accept： text&#x2F;html      （希望接受的数据类型）（请求头）</li>
-<li>Content-Type：（发送的实体数据的数据类型）（请求头）</li>
-<li>（请求体）</li>
-</ul>
-<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><ul>
-<li><p>三部分：请求行、请求头、请求体</p>
-</li>
-<li><p>请求动词有 GET &#x2F; POST &#x2F; PUT &#x2F; PATCH &#x2F; DELETE 等</p>
-</li>
-<li><p>请求体在GET请求中一般为空</p>
-</li>
-</ul>
-<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206132335333.png" srcset="/img/loading.gif" lazyload alt="HTTP请求图示"></p>
-<h3 id="HTTP响应"><a href="#HTTP响应" class="headerlink" title="HTTP响应"></a>HTTP响应</h3><p>HTTP响应流程：</p>
-<ol>
-<li><p>返回请求</p>
-<p>服务员一旦完成请求的处理，就可以返回数据给浏览器</p>
-</li>
-<li><p>断开连接</p>
-<p>服务器向客户端返回响应之后，就关闭TCP连接。</p>
-</li>
+<p>Model示例：</p>
+   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> <span class="hljs-title class_">Model</span> = &#123;<br>    <span class="hljs-attr">data</span>:&#123;&#125;,     <span class="hljs-comment">// 数据</span><br>    <span class="hljs-title function_">get</span>(<span class="hljs-params"></span>)&#123;&#125;,     <span class="hljs-comment">// 获取数据</span><br>    <span class="hljs-title function_">save</span>(<span class="hljs-params"></span>)&#123;&#125;,    <span class="hljs-comment">// 保存数据</span><br>    <span class="hljs-title function_">create</span>(<span class="hljs-params"></span>)&#123;&#125;,  <span class="hljs-comment">// 创建数据</span><br>    <span class="hljs-title function_">delete</span>(<span class="hljs-params"></span>)&#123;&#125;,  <span class="hljs-comment">// 删除数据</span><br>    <span class="hljs-title function_">update</span>(<span class="hljs-params"></span>)&#123;&#125;,  <span class="hljs-comment">// 更新数据</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>View（视图） 这部分是界面上的展示，展示的是Model中的数据的状态，当数据发送变化，视图也会随之重新渲染页面。</li>
 </ol>
-<p class="note note-warning">可以在头部信息中加入`Contention:Keep-Alive`让TCP连接保持连接</p>
+<p>View示例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> <span class="hljs-title class_">View</span> = &#123;<br><span class="hljs-attr">container</span>:&#123;&#125;,  <span class="hljs-comment">// 视图的容器</span><br><span class="hljs-attr">element</span>:&#123;&#125;,    <span class="hljs-comment">// 视图的内容</span><br><span class="hljs-title function_">render</span>(<span class="hljs-params"></span>)&#123;&#125;,    <span class="hljs-comment">// 渲染视图</span><br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h4 id="格式-1"><a href="#格式-1" class="headerlink" title="格式"></a>格式</h4><ul>
-<li><code>协议名/版本</code>  <code>状态码</code>  <code>状态字符串</code>    （响应行）</li>
-<li>Content-Type：响应体的格式            （响应头）</li>
-<li>（响应体）（下载内容）</li>
-</ul>
-<h4 id="注意-1"><a href="#注意-1" class="headerlink" title="注意"></a>注意</h4><ul>
-<li><p>三部分：状态行、响应头、响应体</p>
-</li>
-<li><p>常见的<code>状态码</code>是重点</p>
-</li>
-</ul>
-<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206132335024.png" srcset="/img/loading.gif" lazyload alt="HTTP响应图示"></p>
-<h3 id="HTTP状态码"><a href="#HTTP状态码" class="headerlink" title="HTTP状态码"></a>HTTP状态码</h3><p>HTTP状态码能够描述返回的请求结果。借助状态码可以知道服务器是否正确的处理请求</p>
-<h4 id="状态码类别"><a href="#状态码类别" class="headerlink" title="状态码类别"></a>状态码类别</h4><table>
-<thead>
-<tr>
-<th>状态码</th>
-<th>类别</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>1XX</strong></td>
-<td>Informational（信息性状态码）</td>
-<td>接收的请求正在处理</td>
-</tr>
-<tr>
-<td><strong>2XX</strong></td>
-<td>Success（成功状态码）</td>
-<td>请求正常处理完毕</td>
-</tr>
-<tr>
-<td><strong>3XX</strong></td>
-<td>Redirection（重定向状态码）</td>
-<td>需要进行附加操作以完成请求</td>
-</tr>
-<tr>
-<td><strong>4XX</strong></td>
-<td>Client Error（客户端错误状态码）</td>
-<td>错误来自客户端</td>
-</tr>
-<tr>
-<td><strong>5XX</strong></td>
-<td>Server Error（服务器错误状态码）</td>
-<td>错误来自服务器</td>
-</tr>
-</tbody></table>
-<h4 id="常见状态码"><a href="#常见状态码" class="headerlink" title="常见状态码"></a>常见状态码</h4><p><code>2XX</code>：请求被正确处理</p>
-<table>
-<thead>
-<tr>
-<th>状态码</th>
-<th>含义</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>200 OK</strong></td>
-<td>请求在服务段被正常处理</td>
-<td>GET 方法，对应请求资源的实体会作为响应返回；HEAD 方法，不返回</td>
-</tr>
-<tr>
-<td><strong>204 No Content</strong></td>
-<td>请求正确处理，但是不返回实体的主体</td>
-<td>用于客户端往服务器发送信息，而客户端不用更新</td>
-</tr>
-<tr>
-<td><strong>204 Partial Content</strong></td>
-<td>客户端有请求范围，服务器成功执行范围请求</td>
-<td>响应报文中包含由 Content-Range 指定范围的实体内容</td>
-</tr>
-</tbody></table>
-<p><code>3XX</code>：浏览器需要执行某些特殊的处理来正确处理请求</p>
-<table>
-<thead>
-<tr>
-<th>状态码</th>
-<th>含义</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>301 Moved Permanently</strong></td>
-<td>永久性重定向</td>
-<td>请求的资源已被分配了新的URI，以后应使用新的 URI</td>
-</tr>
-<tr>
-<td><strong>302 Found</strong></td>
-<td>临时性重定向</td>
-<td>请求的资源已被分配了新的 URI，本次应使用新的 URI</td>
-</tr>
-<tr>
-<td><strong>303 See Other</strong></td>
-<td>临时性重定向</td>
-<td>与302有相同的功能，但本次应使用 GET 方法定向获取请求的资源</td>
-</tr>
-<tr>
-<td><strong>304 Not Modified</strong></td>
-<td>发送附带请求的请求，资源不满足条件</td>
-<td>附带条件：GET 方法的请求报文中包含 If-Match，If-Modified-Since，If-None-Match，If-Range，If-Unmodified-Since 中任一首部</td>
-</tr>
-<tr>
-<td><strong>307 Temporary Redirect</strong></td>
-<td>临时性重定向</td>
-<td>与302有相同的功能，但307 会遵照浏览器标准，请求方法不会从 POST 变成 GET</td>
-</tr>
-</tbody></table>
-<p><code>4XX</code>：客户端时发送错误的原因所在</p>
-<table>
-<thead>
-<tr>
-<th>状态码</th>
-<th>含义</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>400 Bad Request</strong></td>
-<td>请求报文中存在语法错误</td>
-<td>错误发生时，需修改请求的内容后再次发送请求</td>
-</tr>
-<tr>
-<td><strong>401 Unauthorized</strong></td>
-<td>请求需要通过HTTP 认证</td>
-<td>浏览器初次接收到 401 响应，会弹出认证用的对话窗口；之前已进行过 1 次请求，则表示用 户认证失败</td>
-</tr>
-<tr>
-<td><strong>403 Forbidden</strong></td>
-<td>服务器拒绝请求</td>
-<td>服务器端没有必要给出拒绝的详细理由，想说明可以在实体的主体部分描述原因；未授权的访问可能导致403</td>
-</tr>
-<tr>
-<td><strong>404 Not Found</strong></td>
-<td>服务器上无法找到请求的资源</td>
-<td>可以在服务器端拒绝请求且不想说明理由时使用</td>
-</tr>
-</tbody></table>
-<p><code>5XX</code>：服务器本身发送错误</p>
-<table>
-<thead>
-<tr>
-<th>状态码</th>
-<th>含义</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>500 Internal Server Error</strong></td>
-<td>服务器执行请求时出错</td>
-<td></td>
-</tr>
-<tr>
-<td><strong>503 Service Unavailable</strong></td>
-<td>服务器无法处理请求</td>
-<td>服务器暂时处于超负载或正在进行停机维护</td>
-</tr>
-</tbody></table>
-<p>更多状态码可以访问<a target="_blank" rel="noopener" href="https://http.cat/">HTTP Cat</a></p>
+<ol start="3">
+<li>Controller（控制器）这一部分是负责结合数据和视图这两部分，使之能够相互关联起来。控制器的工作流程：从视图中获取事件或者输入，根据业务逻辑让Model对数据进行处理，然后通知视图进行更新。</li>
+</ol>
+<p>Controller示例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> <span class="hljs-title class_">Controller</span> = &#123;<br>    <span class="hljs-attr">events</span>:&#123;&#125;,      <span class="hljs-comment">// 事件元素</span><br>    <span class="hljs-title function_">bindEvent</span>(<span class="hljs-params"></span>)&#123;&#125;,  <span class="hljs-comment">// 绑定事件监听</span><br>    <span class="hljs-title function_">action1</span>(<span class="hljs-params"></span>)&#123;&#125;,    <span class="hljs-comment">// 事件触发回调函数（某些业务逻辑）</span><br>    <span class="hljs-title function_">action2</span>(<span class="hljs-params"></span>)&#123;&#125;,    <span class="hljs-comment">// 事件触发回调函数（某些业务逻辑）</span><br>    <span class="hljs-title function_">action3</span>(<span class="hljs-params"></span>)&#123;&#125;     <span class="hljs-comment">// 事件触发回调函数（某些业务逻辑）</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="表驱动编程"><a href="#表驱动编程" class="headerlink" title="表驱动编程"></a>表驱动编程</h2><p>表驱动编程中的表指的是通过数据结构哈希表来进行挑选，然后执行相应语句，而不是使用许多逻辑语句（if-else、switch等）来进行选择执行，并且随着操作的增多，逻辑链的增多，表编程带来的效率提升会更高</p>
+<h3 id="非表编程"><a href="#非表编程" class="headerlink" title="非表编程"></a>非表编程</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">weekday</span>(<span class="hljs-params">day</span>) &#123; <br>    <span class="hljs-keyword">if</span>(day%<span class="hljs-number">7</span>===<span class="hljs-number">0</span>)&#123; <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;星期天&#x27;</span>; &#125; <br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(day%<span class="hljs-number">7</span>===<span class="hljs-number">1</span>)&#123; <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;星期一&#x27;</span>; &#125; <br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(day%<span class="hljs-number">7</span>===<span class="hljs-number">2</span>)&#123; <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;星期二&#x27;</span>; &#125; <br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(day%<span class="hljs-number">7</span>===<span class="hljs-number">3</span>)&#123; <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;星期三&#x27;</span>; &#125; <br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(day%<span class="hljs-number">7</span>===<span class="hljs-number">4</span>)&#123; <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;星期四&#x27;</span>; &#125; <br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(day%<span class="hljs-number">7</span>===<span class="hljs-number">5</span>)&#123; <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;星期五&#x27;</span>; &#125; <br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(day%<span class="hljs-number">7</span>===<span class="hljs-number">6</span>)&#123; <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;星期六&#x27;</span>; &#125; <br>&#125; <br></code></pre></td></tr></table></figure>
+
+<h3 id="表编程"><a href="#表编程" class="headerlink" title="表编程"></a>表编程</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">weekday</span>(<span class="hljs-params">day</span>) &#123; <br>    <span class="hljs-keyword">let</span> week = [<span class="hljs-string">&#x27;星期天&#x27;</span>,<span class="hljs-string">&#x27;星期一&#x27;</span>,<span class="hljs-string">&#x27;星期二&#x27;</span>,<span class="hljs-string">&#x27;星期三&#x27;</span>,<span class="hljs-string">&#x27;星期四&#x27;</span>,<span class="hljs-string">&#x27;星期五&#x27;</span>,<span class="hljs-string">&#x27;星期六&#x27;</span>]<br>    <span class="hljs-keyword">return</span> week[day%<span class="hljs-number">7</span>]<br>&#125; <br></code></pre></td></tr></table></figure>
+
+<p>从上面的例子可以看出，通过表编程可以简化一些逻辑操作。所以适当的运用表编程能够提升代码的效率。</p>
 
               
             </div>
@@ -510,7 +328,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/HTTP/">#HTTP</a>
+        <a href="/tags/MVC/">#MVC</a>
       
     </div>
   
@@ -522,8 +340,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>HTTP基本概念</div>
-      <div>https://alierq.space/posts/3f4e513f.html</div>
+      <div>MVC设计模式</div>
+      <div>https://alierq.space/posts/7333197b.html</div>
     </div>
     <div class="license-meta">
       
@@ -535,13 +353,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年6月13日</div>
+          <div>2022年6月17日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年6月14日</div>
+          <div>2022年6月17日</div>
         </div>
       
       <div class="license-meta-item">
@@ -570,18 +388,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/7333197b.html" title="MVC设计模式">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">MVC设计模式</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/e38660dc.html" title="JSON简述">
-                        <span class="hidden-mobile">JSON简述</span>
+                      <a href="/posts/3f4e513f.html" title="HTTP基本概念">
+                        <span class="hidden-mobile">HTTP基本概念</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
