@@ -971,7 +971,8 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
 
 ]]></content>
       <tags>
-        <tag>-EventBus -JavaScript</tag>
+        <tag>JavaScript</tag>
+        <tag>EventBus</tag>
       </tags>
   </entry>
 </search>

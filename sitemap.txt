@@ -33,4 +33,4 @@ https://alierq.space/tags/JSONP/
 https://alierq.space/tags/WebStorage/
 https://alierq.space/tags/MVC/
 https://alierq.space/tags/Parcel/
-https://alierq.space/tags/EventBus-JavaScript/
+https://alierq.space/tags/EventBus/
