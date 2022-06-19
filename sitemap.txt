@@ -1,5 +1,6 @@
-https://alierq.space/posts/7333197b.html
+https://alierq.space/posts/dd5d5baf.html
 https://alierq.space/posts/8e7db504.html
+https://alierq.space/posts/7333197b.html
 https://alierq.space/posts/b7f743a4.html
 https://alierq.space/posts/95105818.html
 https://alierq.space/posts/721439c2.html
@@ -30,3 +31,4 @@ https://alierq.space/tags/CORS/
 https://alierq.space/tags/JSONP/
 https://alierq.space/tags/WebStorage/
 https://alierq.space/tags/MVC/
+https://alierq.space/tags/Parcel/

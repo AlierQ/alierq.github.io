@@ -16,24 +16,24 @@
   <meta name="author" content="AlierQ">
   <meta name="keywords" content="">
   
-    <meta name="description" content="MVC设计模模式什么是设计模式？设计模式是软件开发人员在软件开发过程中面临一般问题的解决方案，是一套被反复使用的、多数人知晓的、代码设计的总结。使用设计模式能够使得代码更可靠、更易懂、更高效。 什么是MVC设计模式？MVC设计模式为了提高代码的灵活性和复用性，将应用划分为三个部分：  Model（模型） 这部分封装了应用程序业务逻辑相关的数据以及他们对应的处理数据的方法，当数据发生改变时模型将会通">
+    <meta name="description" content="Parcel简介Parcel是一款无需额外配置的打包工具，可以做到安装之后直接使用。得益于Parcel内部使用多线程打包，所以在相同项目中parcel的打包速度会快很多。 Parcel安装yarn初始化项目 1yarn init -y 全局安装Parcel 1yarn global add parcel-bundler 局部安装 1yarn add parcel-bundler npm初始化项目">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MVC设计模式">
-<meta property="og:url" content="https://alierq.space/posts/7333197b.html">
+<meta property="og:title" content="Parcel安装和使用">
+<meta property="og:url" content="https://alierq.space/posts/dd5d5baf.html">
 <meta property="og:site_name" content="AlierQ&#39;s Blog">
-<meta property="og:description" content="MVC设计模模式什么是设计模式？设计模式是软件开发人员在软件开发过程中面临一般问题的解决方案，是一套被反复使用的、多数人知晓的、代码设计的总结。使用设计模式能够使得代码更可靠、更易懂、更高效。 什么是MVC设计模式？MVC设计模式为了提高代码的灵活性和复用性，将应用划分为三个部分：  Model（模型） 这部分封装了应用程序业务逻辑相关的数据以及他们对应的处理数据的方法，当数据发生改变时模型将会通">
+<meta property="og:description" content="Parcel简介Parcel是一款无需额外配置的打包工具，可以做到安装之后直接使用。得益于Parcel内部使用多线程打包，所以在相同项目中parcel的打包速度会快很多。 Parcel安装yarn初始化项目 1yarn init -y 全局安装Parcel 1yarn global add parcel-bundler 局部安装 1yarn add parcel-bundler npm初始化项目">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206172046665.jpg">
-<meta property="article:published_time" content="2022-06-17T12:42:52.000Z">
-<meta property="article:modified_time" content="2022-06-17T15:01:42.285Z">
+<meta property="og:image" content="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206191618946.png">
+<meta property="article:published_time" content="2022-06-19T06:56:05.000Z">
+<meta property="article:modified_time" content="2022-06-19T08:18:50.310Z">
 <meta property="article:author" content="AlierQ">
-<meta property="article:tag" content="MVC">
+<meta property="article:tag" content="Parcel">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206172046665.jpg">
+<meta name="twitter:image" content="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206191618946.png">
   
   
   
-  <title>MVC设计模式 - AlierQ&#39;s Blog</title>
+  <title>Parcel安装和使用 - AlierQ&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -200,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="MVC设计模式"></span>
+            <span id="subtitle" data-typed-text="Parcel安装和使用"></span>
           
         </div>
 
@@ -211,8 +211,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-06-17 20:42" pubdate>
-          2022年6月17日 晚上
+        <time datetime="2022-06-19 14:56" pubdate>
+          2022年6月19日 下午
         </time>
       </span>
     
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          文章字数：1.6k 字
+          文章字数：1k 字
         
       </span>
     
@@ -234,7 +234,7 @@
         
         
         
-          阅读时长 ≈ 14 分钟
+          阅读时长 ≈ 9 分钟
         
       </span>
     
@@ -280,43 +280,59 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">MVC设计模式</h1>
+            <h1 style="display: none">Parcel安装和使用</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年6月17日 晚上
+                    本文最后更新于：2022年6月19日 下午
                   
                 
               </p>
             
             <div class="markdown-body">
               
-              <h2 id="MVC设计模模式"><a href="#MVC设计模模式" class="headerlink" title="MVC设计模模式"></a>MVC设计模模式</h2><h3 id="什么是设计模式？"><a href="#什么是设计模式？" class="headerlink" title="什么是设计模式？"></a>什么是设计模式？</h3><p>设计模式是软件开发人员在软件开发过程中面临一般问题的解决方案，是一套被反复使用的、多数人知晓的、代码设计的总结。使用设计模式能够使得代码更可靠、更易懂、更高效。</p>
-<h3 id="什么是MVC设计模式？"><a href="#什么是MVC设计模式？" class="headerlink" title="什么是MVC设计模式？"></a>什么是MVC设计模式？</h3><p>MVC设计模式为了提高代码的灵活性和复用性，将应用划分为三个部分：</p>
-<ol>
-<li>Model（模型） 这部分封装了应用程序业务逻辑相关的数据以及他们对应的处理数据的方法，当数据发生改变时模型将会通知数据相关的视图。</li>
-</ol>
-<p>Model示例：</p>
-   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> <span class="hljs-title class_">Model</span> = &#123;<br>    <span class="hljs-attr">data</span>:&#123;&#125;,     <span class="hljs-comment">// 数据</span><br>    <span class="hljs-title function_">get</span>(<span class="hljs-params"></span>)&#123;&#125;,     <span class="hljs-comment">// 获取数据</span><br>    <span class="hljs-title function_">save</span>(<span class="hljs-params"></span>)&#123;&#125;,    <span class="hljs-comment">// 保存数据</span><br>    <span class="hljs-title function_">create</span>(<span class="hljs-params"></span>)&#123;&#125;,  <span class="hljs-comment">// 创建数据</span><br>    <span class="hljs-title function_">delete</span>(<span class="hljs-params"></span>)&#123;&#125;,  <span class="hljs-comment">// 删除数据</span><br>    <span class="hljs-title function_">update</span>(<span class="hljs-params"></span>)&#123;&#125;,  <span class="hljs-comment">// 更新数据</span><br>&#125;<br></code></pre></td></tr></table></figure>
-<ol start="2">
-<li>View（视图） 这部分是界面上的展示，展示的是Model中的数据的状态，当数据发送变化，视图也会随之重新渲染页面。</li>
-</ol>
-<p>View示例：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> <span class="hljs-title class_">View</span> = &#123;<br><span class="hljs-attr">container</span>:&#123;&#125;,  <span class="hljs-comment">// 视图的容器</span><br><span class="hljs-attr">element</span>:&#123;&#125;,    <span class="hljs-comment">// 视图的内容</span><br><span class="hljs-title function_">render</span>(<span class="hljs-params"></span>)&#123;&#125;,    <span class="hljs-comment">// 渲染视图</span><br>&#125;<br></code></pre></td></tr></table></figure>
+              <h2 id="Parcel简介"><a href="#Parcel简介" class="headerlink" title="Parcel简介"></a>Parcel简介</h2><p>Parcel是一款无需额外配置的打包工具，可以做到安装之后直接使用。得益于Parcel内部使用多线程打包，所以在相同项目中parcel的打包速度会快很多。</p>
+<h2 id="Parcel安装"><a href="#Parcel安装" class="headerlink" title="Parcel安装"></a>Parcel安装</h2><h3 id="yarn"><a href="#yarn" class="headerlink" title="yarn"></a>yarn</h3><p>初始化项目</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">yarn init -y<br></code></pre></td></tr></table></figure>
+<p>全局安装Parcel</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">yarn global add parcel-bundler<br></code></pre></td></tr></table></figure>
+<p>局部安装</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">yarn add parcel-bundler<br></code></pre></td></tr></table></figure>
+<h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h3><p>初始化项目</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">npm init -y<br></code></pre></td></tr></table></figure>
+<p>全局安装Parcel</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">npm install -g parcel-bundler<br></code></pre></td></tr></table></figure>
+<p>局部安装</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">npm install parcel-bundler<br></code></pre></td></tr></table></figure>
+<h2 id="Parcel的使用"><a href="#Parcel的使用" class="headerlink" title="Parcel的使用"></a>Parcel的使用</h2><p>假设项目文件目录如下</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs text">├── index.html<br>├── package.json<br>└── src<br>    └── main.js<br></code></pre></td></tr></table></figure>
+<p class="note note-warning">Parcel的打包需要指定一个入口文件，通常是HTML文件</p>
 
-<ol start="3">
-<li>Controller（控制器）这一部分是负责结合数据和视图这两部分，使之能够相互关联起来。控制器的工作流程：从视图中获取事件或者输入，根据业务逻辑让Model对数据进行处理，然后通知视图进行更新。</li>
-</ol>
-<p>Controller示例：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> <span class="hljs-title class_">Controller</span> = &#123;<br>    <span class="hljs-attr">events</span>:&#123;&#125;,      <span class="hljs-comment">// 事件元素</span><br>    <span class="hljs-title function_">bindEvent</span>(<span class="hljs-params"></span>)&#123;&#125;,  <span class="hljs-comment">// 绑定事件监听</span><br>    <span class="hljs-title function_">action1</span>(<span class="hljs-params"></span>)&#123;&#125;,    <span class="hljs-comment">// 事件触发回调函数（某些业务逻辑）</span><br>    <span class="hljs-title function_">action2</span>(<span class="hljs-params"></span>)&#123;&#125;,    <span class="hljs-comment">// 事件触发回调函数（某些业务逻辑）</span><br>    <span class="hljs-title function_">action3</span>(<span class="hljs-params"></span>)&#123;&#125;     <span class="hljs-comment">// 事件触发回调函数（某些业务逻辑）</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="开发模式打包"><a href="#开发模式打包" class="headerlink" title="开发模式打包"></a>开发模式打包</h3><p>开发模式打包下，Parcel会自动将应用构建在它内置的开发服务器中，你可使用浏览器进行访问，默认访问地址是：<a target="_blank" rel="noopener" href="http://localhose:1234/">http://localhose:1234</a></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">parcel index.html<br></code></pre></td></tr></table></figure>
+<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206191551190.png" srcset="/img/loading.gif" lazyload alt="示例"></p>
+<p>打包完成之后会在当前目录下自动生成dist目录</p>
+<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206191553645.png" srcset="/img/loading.gif" lazyload alt="dist目录"></p>
+<h3 id="生产模式打包"><a href="#生产模式打包" class="headerlink" title="生产模式打包"></a>生产模式打包</h3><p>完成项目开发之后，项目进行打包，不再需要运行在Parcel内置服务器中</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">parcel build index.html<br></code></pre></td></tr></table></figure>
 
-<h2 id="表驱动编程"><a href="#表驱动编程" class="headerlink" title="表驱动编程"></a>表驱动编程</h2><p>表驱动编程中的表指的是通过数据结构哈希表来进行挑选，然后执行相应语句，而不是使用许多逻辑语句（if-else、switch等）来进行选择执行，并且随着操作的增多，逻辑链的增多，表编程带来的效率提升会更高</p>
-<h3 id="非表编程"><a href="#非表编程" class="headerlink" title="非表编程"></a>非表编程</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">weekday</span>(<span class="hljs-params">day</span>) &#123; <br>    <span class="hljs-keyword">if</span>(day%<span class="hljs-number">7</span>===<span class="hljs-number">0</span>)&#123; <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;星期天&#x27;</span>; &#125; <br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(day%<span class="hljs-number">7</span>===<span class="hljs-number">1</span>)&#123; <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;星期一&#x27;</span>; &#125; <br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(day%<span class="hljs-number">7</span>===<span class="hljs-number">2</span>)&#123; <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;星期二&#x27;</span>; &#125; <br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(day%<span class="hljs-number">7</span>===<span class="hljs-number">3</span>)&#123; <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;星期三&#x27;</span>; &#125; <br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(day%<span class="hljs-number">7</span>===<span class="hljs-number">4</span>)&#123; <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;星期四&#x27;</span>; &#125; <br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(day%<span class="hljs-number">7</span>===<span class="hljs-number">5</span>)&#123; <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;星期五&#x27;</span>; &#125; <br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(day%<span class="hljs-number">7</span>===<span class="hljs-number">6</span>)&#123; <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;星期六&#x27;</span>; &#125; <br>&#125; <br></code></pre></td></tr></table></figure>
+<p class="note note-warning">
+这里有一点需要注意，直接使用上面的命令打包出来的所有资源的路径都是`/xxxx.js`，这可能会导致资源无法正常请求到，所以建议使用下面的指令，设置为当前路径</p>
 
-<h3 id="表编程"><a href="#表编程" class="headerlink" title="表编程"></a>表编程</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">weekday</span>(<span class="hljs-params">day</span>) &#123; <br>    <span class="hljs-keyword">let</span> week = [<span class="hljs-string">&#x27;星期天&#x27;</span>,<span class="hljs-string">&#x27;星期一&#x27;</span>,<span class="hljs-string">&#x27;星期二&#x27;</span>,<span class="hljs-string">&#x27;星期三&#x27;</span>,<span class="hljs-string">&#x27;星期四&#x27;</span>,<span class="hljs-string">&#x27;星期五&#x27;</span>,<span class="hljs-string">&#x27;星期六&#x27;</span>]<br>    <span class="hljs-keyword">return</span> week[day%<span class="hljs-number">7</span>]<br>&#125; <br></code></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">parcel build index.html --public-url .<br></code></pre></td></tr></table></figure>
 
-<p>从上面的例子可以看出，通过表编程可以简化一些逻辑操作。所以适当的运用表编程能够提升代码的效率。</p>
+<p>如果你期望打包时不进行代码压缩：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">parcel build index.html --no-minify --public-url .<br></code></pre></td></tr></table></figure>
+
+<h2 id="配置脚本"><a href="#配置脚本" class="headerlink" title="配置脚本"></a>配置脚本</h2><p>你可以通过配置<span class="label label-info">package.json</span>添加任务脚本来帮助你开发&amp;生产</p>
+<p><strong>package.json</strong></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>  <span class="hljs-attr">&quot;scripts&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;dev&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;parcel index.html&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;build&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;parcel build index.html&quot;</span><br>  <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+
+<p>此时你就可以使用yarn或者npm运行他们了</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># 以开发模式运行</span><br>yarn dev<br><br>npm run dev<br><br><span class="hljs-comment"># 以生成模式运行</span><br>yarn build<br><br>npm run build<br></code></pre></td></tr></table></figure>
+
+<p>更多资源类型解析打包、Parcel配置等知识请求移步到<a target="_blank" rel="noopener" href="https://www.parceljs.cn/javascript.html">Parcel中文官网</a>或者<a target="_blank" rel="noopener" href="https://parceljs.org/docs/">Parcel官网</a></p>
 
               
             </div>
@@ -328,7 +344,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/MVC/">#MVC</a>
+        <a href="/tags/Parcel/">#Parcel</a>
       
     </div>
   
@@ -340,8 +356,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>MVC设计模式</div>
-      <div>https://alierq.space/posts/7333197b.html</div>
+      <div>Parcel安装和使用</div>
+      <div>https://alierq.space/posts/dd5d5baf.html</div>
     </div>
     <div class="license-meta">
       
@@ -353,13 +369,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年6月17日</div>
+          <div>2022年6月19日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年6月17日</div>
+          <div>2022年6月19日</div>
         </div>
       
       <div class="license-meta-item">
@@ -388,18 +404,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/dd5d5baf.html" title="Parcel安装和使用">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Parcel安装和使用</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/3f4e513f.html" title="HTTP基本概念">
-                        <span class="hidden-mobile">HTTP基本概念</span>
+                      <a href="/posts/7333197b.html" title="MVC设计模式">
+                        <span class="hidden-mobile">MVC设计模式</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

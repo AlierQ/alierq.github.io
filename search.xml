@@ -580,6 +580,7 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
 <p><code>git status -sb</code>：用来查看当前哪个文件冲突了</p>
 <p><code>git branch -d 分支名</code>：删除合并后的无用的分支</p>
 <p><code>git remote -v</code>：显示所有远程仓库</p>
+<p><code>git remote add 名称  远程仓库地址</code>：添加一个远程仓库</p>
 <p class="note note-warning">当合并分支的时候可能会产生冲突，解决完冲突之后应重新add、commit该文件（此时commit时不带参数）</p>
 
 <p><span style="color:red;"><code>.gitignore文件</code>：配置哪些文件不需要提交</span></p>
@@ -909,6 +910,55 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
 ]]></content>
       <tags>
         <tag>MVC</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Parcel安装和使用</title>
+    <url>/posts/dd5d5baf.html</url>
+    <content><![CDATA[<h2 id="Parcel简介"><a href="#Parcel简介" class="headerlink" title="Parcel简介"></a>Parcel简介</h2><p>Parcel是一款无需额外配置的打包工具，可以做到安装之后直接使用。得益于Parcel内部使用多线程打包，所以在相同项目中parcel的打包速度会快很多。</p>
+<h2 id="Parcel安装"><a href="#Parcel安装" class="headerlink" title="Parcel安装"></a>Parcel安装</h2><h3 id="yarn"><a href="#yarn" class="headerlink" title="yarn"></a>yarn</h3><p>初始化项目</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">yarn init -y<br></code></pre></td></tr></table></figure>
+<p>全局安装Parcel</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">yarn global add parcel-bundler<br></code></pre></td></tr></table></figure>
+<p>局部安装</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">yarn add parcel-bundler<br></code></pre></td></tr></table></figure>
+<h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h3><p>初始化项目</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">npm init -y<br></code></pre></td></tr></table></figure>
+<p>全局安装Parcel</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">npm install -g parcel-bundler<br></code></pre></td></tr></table></figure>
+<p>局部安装</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">npm install parcel-bundler<br></code></pre></td></tr></table></figure>
+<h2 id="Parcel的使用"><a href="#Parcel的使用" class="headerlink" title="Parcel的使用"></a>Parcel的使用</h2><p>假设项目文件目录如下</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><code class="hljs text">├── index.html<br>├── package.json<br>└── src<br>    └── main.js<br></code></pre></td></tr></table></figure>
+<p class="note note-warning">Parcel的打包需要指定一个入口文件，通常是HTML文件</p>
+
+<h3 id="开发模式打包"><a href="#开发模式打包" class="headerlink" title="开发模式打包"></a>开发模式打包</h3><p>开发模式打包下，Parcel会自动将应用构建在它内置的开发服务器中，你可使用浏览器进行访问，默认访问地址是：<a href="http://localhose:1234/">http://localhose:1234</a></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">parcel index.html<br></code></pre></td></tr></table></figure>
+<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206191551190.png" alt="示例"></p>
+<p>打包完成之后会在当前目录下自动生成dist目录</p>
+<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206191553645.png" alt="dist目录"></p>
+<h3 id="生产模式打包"><a href="#生产模式打包" class="headerlink" title="生产模式打包"></a>生产模式打包</h3><p>完成项目开发之后，项目进行打包，不再需要运行在Parcel内置服务器中</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">parcel build index.html<br></code></pre></td></tr></table></figure>
+
+<p class="note note-warning">
+这里有一点需要注意，直接使用上面的命令打包出来的所有资源的路径都是`/xxxx.js`，这可能会导致资源无法正常请求到，所以建议使用下面的指令，设置为当前路径</p>
+
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">parcel build index.html --public-url .<br></code></pre></td></tr></table></figure>
+
+<p>如果你期望打包时不进行代码压缩：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">parcel build index.html --no-minify --public-url .<br></code></pre></td></tr></table></figure>
+
+<h2 id="配置脚本"><a href="#配置脚本" class="headerlink" title="配置脚本"></a>配置脚本</h2><p>你可以通过配置<span class="label label-info">package.json</span>添加任务脚本来帮助你开发&amp;生产</p>
+<p><strong>package.json</strong></p>
+<figure class="highlight json"><table><tr><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>  <span class="hljs-attr">&quot;scripts&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;dev&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;parcel index.html&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;build&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;parcel build index.html&quot;</span><br>  <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+
+<p>此时你就可以使用yarn或者npm运行他们了</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># 以开发模式运行</span><br>yarn dev<br><br>npm run dev<br><br><span class="hljs-comment"># 以生成模式运行</span><br>yarn build<br><br>npm run build<br></code></pre></td></tr></table></figure>
+
+<p>更多资源类型解析打包、Parcel配置等知识请求移步到<a href="https://www.parceljs.cn/javascript.html">Parcel中文官网</a>或者<a href="https://parceljs.org/docs/">Parcel官网</a></p>
+]]></content>
+      <tags>
+        <tag>Parcel</tag>
       </tags>
   </entry>
 </search>
