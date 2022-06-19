@@ -1,3 +1,4 @@
+https://alierq.space/posts/79a4f5c.html
 https://alierq.space/posts/dd5d5baf.html
 https://alierq.space/posts/8e7db504.html
 https://alierq.space/posts/7333197b.html
@@ -32,3 +33,4 @@ https://alierq.space/tags/JSONP/
 https://alierq.space/tags/WebStorage/
 https://alierq.space/tags/MVC/
 https://alierq.space/tags/Parcel/
+https://alierq.space/tags/EventBus-JavaScript/
