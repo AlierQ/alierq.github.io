@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://alierq.space/posts/b403a33b.html</loc>
+    
+    <lastmod>2022-06-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://alierq.space/posts/79a4f5c.html</loc>
     
     <lastmod>2022-06-19</lastmod>
@@ -182,21 +191,7 @@
 
   
   <url>
-    <loc>https://alierq.space/tags/Cookie/</loc>
-    <lastmod>2022-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://alierq.space/tags/JSON/</loc>
-    <lastmod>2022-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://alierq.space/tags/HTTP/</loc>
+    <loc>https://alierq.space/tags/Css/</loc>
     <lastmod>2022-06-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -210,6 +205,27 @@
   </url>
   
   <url>
+    <loc>https://alierq.space/tags/Git/</loc>
+    <lastmod>2022-06-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://alierq.space/tags/HTTP/</loc>
+    <lastmod>2022-06-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://alierq.space/tags/JSON/</loc>
+    <lastmod>2022-06-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://alierq.space/tags/AJAX/</loc>
     <lastmod>2022-06-19</lastmod>
     <changefreq>weekly</changefreq>
@@ -217,7 +233,7 @@
   </url>
   
   <url>
-    <loc>https://alierq.space/tags/Css/</loc>
+    <loc>https://alierq.space/tags/MVC/</loc>
     <lastmod>2022-06-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -231,21 +247,14 @@
   </url>
   
   <url>
+    <loc>https://alierq.space/tags/Parcel/</loc>
+    <lastmod>2022-06-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://alierq.space/tags/Bash/</loc>
-    <lastmod>2022-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://alierq.space/tags/Git/</loc>
-    <lastmod>2022-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://alierq.space/tags/Promise/</loc>
     <lastmod>2022-06-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -266,6 +275,20 @@
   </url>
   
   <url>
+    <loc>https://alierq.space/tags/EventBus/</loc>
+    <lastmod>2022-06-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://alierq.space/tags/Cookie/</loc>
+    <lastmod>2022-06-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://alierq.space/tags/WebStorage/</loc>
     <lastmod>2022-06-19</lastmod>
     <changefreq>weekly</changefreq>
@@ -273,21 +296,14 @@
   </url>
   
   <url>
-    <loc>https://alierq.space/tags/MVC/</loc>
+    <loc>https://alierq.space/tags/Promise/</loc>
     <lastmod>2022-06-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://alierq.space/tags/Parcel/</loc>
-    <lastmod>2022-06-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://alierq.space/tags/EventBus/</loc>
+    <loc>https://alierq.space/tags/cURL/</loc>
     <lastmod>2022-06-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

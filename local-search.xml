@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>cURL常见用法</title>
+    <link href="/posts/b403a33b.html"/>
+    <url>/posts/b403a33b.html</url>
+    
+    <content type="html"><![CDATA[<h2 id="cURL简介"><a href="#cURL简介" class="headerlink" title="cURL简介"></a>cURL简介</h2><p>cURL是一款常用的命令行工具，可以用来请求Web服务器，也可以用于传输数据。支持的协议包括 （DICT, FILE, FTP, FTPS, GOPHER, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, POP3, POP3S, RTMP, RTSP, SCP, SFTP, SMTP, SMTPS, TELNET and TFTP），cURL设计为无用户交互下完成工作；cURL提供了一大堆非常有用的功能包括：代理访问、用户认证、FTP上传下载、HTTP请求、SSL连接、Cookie支持、断点续传等等</p><h2 id="cURL常用命令"><a href="#cURL常用命令" class="headerlink" title="cURL常用命令"></a>cURL常用命令</h2><h3 id="发送GET请求"><a href="#发送GET请求" class="headerlink" title="发送GET请求"></a>发送GET请求</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># 不带参数</span><br>curl https://www.example.com<br><br><span class="hljs-comment"># 带参数</span><br>curl https://www.example.com?<span class="hljs-built_in">id</span>=<span class="hljs-string">&#x27;123123123&#x27;</span><br></code></pre></td></tr></table></figure><h3 id="发送POST请求"><a href="#发送POST请求" class="headerlink" title="发送POST请求"></a>发送POST请求</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sh">curl -X POST -d <span class="hljs-string">&#x27;id=123&amp;tage=a&#x27;</span> https://www.example.com<br><br>curl -X POST -d <span class="hljs-string">&#x27;id=123&#x27;</span> -d <span class="hljs-string">&#x27;tage=a&#x27;</span> https://www.example.com<br></code></pre></td></tr></table></figure><p class="note note-info">    -X：表示指定请求的方法<br>    -d：POST请求的数据体</p><h3 id="发送JSON格式的请求"><a href="#发送JSON格式的请求" class="headerlink" title="发送JSON格式的请求"></a>发送JSON格式的请求</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">curl -H <span class="hljs-string">&quot;Content-Type: application/json&quot;</span> -X POST -d <span class="hljs-string">&#x27;&#123;&quot;abc&quot;:123&#125;&#x27;</span> https://www.example.com<br></code></pre></td></tr></table></figure><p class="note note-info">    -H：设置请求头<br></p><h3 id="更多操作"><a href="#更多操作" class="headerlink" title="更多操作"></a>更多操作</h3><h4 id="（-v）显示通信过程"><a href="#（-v）显示通信过程" class="headerlink" title="（-v）显示通信过程"></a>（-v）显示通信过程</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">curl -v https://www.example.com<br></code></pre></td></tr></table></figure><h4 id="（-i）只显示响应头和网站代码"><a href="#（-i）只显示响应头和网站代码" class="headerlink" title="（-i）只显示响应头和网站代码"></a>（-i）只显示响应头和网站代码</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">curl -i https://www.example.com<br></code></pre></td></tr></table></figure><h4 id="（-l）只显示网站代码"><a href="#（-l）只显示网站代码" class="headerlink" title="（-l）只显示网站代码"></a>（-l）只显示网站代码</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">curl -l https://www.example.com<br></code></pre></td></tr></table></figure><h4 id="（-0）保存网页"><a href="#（-0）保存网页" class="headerlink" title="（-0）保存网页"></a>（-0）保存网页</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">curl -0 https://www.example.com<br></code></pre></td></tr></table></figure><h4 id="（-s）不显示错误信息"><a href="#（-s）不显示错误信息" class="headerlink" title="（-s）不显示错误信息"></a>（-s）不显示错误信息</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">curl -s https://www.example.com<br></code></pre></td></tr></table></figure><h4 id="（-S）只显示错误信息"><a href="#（-S）只显示错误信息" class="headerlink" title="（-S）只显示错误信息"></a>（-S）只显示错误信息</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">curl -S https://www.example.com<br></code></pre></td></tr></table></figure><h4 id="（-c）将cookie写入文件"><a href="#（-c）将cookie写入文件" class="headerlink" title="（-c）将cookie写入文件"></a>（-c）将cookie写入文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">curl -c cookies.txt https://www.example.com<br></code></pre></td></tr></table></figure><h4 id="（-b）发送cookie数据"><a href="#（-b）发送cookie数据" class="headerlink" title="（-b）发送cookie数据"></a>（-b）发送cookie数据</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs sh">curl -b <span class="hljs-string">&#x27;foo=bar&#x27;</span> https://www.example.com<br><br><span class="hljs-comment"># 多个cookie</span><br>curl -b <span class="hljs-string">&#x27;foo1=bar;foo2=bar2&#x27;</span> https://www.example.com<br><br><span class="hljs-comment"># cookie文件</span><br>curl -b cookies.txt https://www.example.com<br></code></pre></td></tr></table></figure><h4 id="（-F）上传二进制文件"><a href="#（-F）上传二进制文件" class="headerlink" title="（-F）上传二进制文件"></a>（-F）上传二进制文件</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># 默认加上`Content-Type: multipart/form-data`，资源名称指定为file</span><br>curl -F <span class="hljs-string">&#x27;file=@ss.png&#x27;</span> https://www.example.com<br><br><span class="hljs-comment"># 指定MIME类型</span><br>curl -F <span class="hljs-string">&#x27;file=@ss.png;type=image/png&#x27;</span> https://www.example.com<br><br><span class="hljs-comment"># 指定文件名  上传的是ss.png  服务器接收到的是aa.png</span><br>curl -F <span class="hljs-string">&#x27;file=@ss.png;filename=aa.png&#x27;</span> https://www.example.com <br></code></pre></td></tr></table></figure><p>更多cURL用法请见<a href="https://www.ruanyifeng.com/blog/2019/09/curl-reference.html">cURL用法指南</a></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>cURL</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>手写简易EventBus</title>
     <link href="/posts/79a4f5c.html"/>
     <url>/posts/79a4f5c.html</url>
@@ -311,9 +330,9 @@
     
     <tags>
       
-      <tag>Bash</tag>
-      
       <tag>Git</tag>
+      
+      <tag>Bash</tag>
       
     </tags>
     
