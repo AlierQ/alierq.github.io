@@ -4,17 +4,17 @@
   
   
   <entry>
-    <title>nvm安装和使用</title>
+    <title>NVM安装和使用</title>
     <link href="/posts/c2bdb00f.html"/>
     <url>/posts/c2bdb00f.html</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h2 id="NVM简介"><a href="#NVM简介" class="headerlink" title="NVM简介"></a>NVM简介</h2><p>nvm是一款node的版本管理工具，可以简单操作node版本的安装、卸载以及切换等。在平常的开发中可以通过使用nvm安装多个node版本，并且进行管理，高效且方便。</p><h3 id="NVM下载安装"><a href="#NVM下载安装" class="headerlink" title="NVM下载安装"></a>NVM下载安装</h3><p>Github仓库地址：<a href="https://github.com/coreybutler/nvm-windows/releases">nvm-windows</a></p><p>1、选择你要安装的对应版本号</p><p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206202317709.png"></p><p>2、下载你要使用的方式，可以是.exe也可以是免装压缩包，这里演示安装.exe</p><p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206202317759.png"></p><p>3、下载软件之后，运行软件</p><p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206202317601.png"></p><p>默认安装到C盘，这样会自动配置环境变量</p><p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206202317005.png"></p><p>4、安装完成之后进行测试，命令行输入nvm，出现下方信息表示安装完成（版本号不需要一致哈，你安装的什么就是什么）</p><p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206202317539.png"></p><h3 id="NVM配置镜像源"><a href="#NVM配置镜像源" class="headerlink" title="NVM配置镜像源"></a>NVM配置镜像源</h3><p>配置镜像源之后安装会快很多，下面是淘宝的镜像源</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs json">node_mirror<span class="hljs-punctuation">:</span> https<span class="hljs-punctuation">:</span><span class="hljs-comment">//npm.taobao.org/mirrors/node/</span><br>npm_mirror<span class="hljs-punctuation">:</span> https<span class="hljs-punctuation">:</span><span class="hljs-comment">//npm.taobao.org/mirrors/npm/</span><br></code></pre></td></tr></table></figure><p>将上方的命令添加到<strong>settings.txt</strong>文件的末尾</p><p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206202320284.png"></p><h3 id="NVM常用命令"><a href="#NVM常用命令" class="headerlink" title="NVM常用命令"></a>NVM常用命令</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs sh">nvm list // 查看安装的所有node的版本<br><br>nvm list available // 查看当前可安装的版本<br><br>nvm install xx.xx.xx  // 安装xx.xx.xx版本的node<br><br>nvm use xx.xx.xx // 使用（切换到）xx.xx.xx版本的node<br><br>nvm uninstall xx.xx.xx  // 卸载xx.xx.xx版本的node<br><br>nvm <span class="hljs-built_in">arch</span> // 显示node是运行在32位还是64位。<br><br>nvm on // 开启node.js版本管理<br><br>nvm off // 关闭node.js版本管理<br><br>nvm proxy [url] // 设置下载代理。不加可选参数url，显示当前代理。将url设置为none则移除代理。<br><br>nvm node_mirror [url] // 设置node镜像。默认是https://nodejs.org/dist/。如果不写url，则使用默认url。设置后可至安装目录settings.txt文件查看，也可直接在该文件操作。<br>nvm npm_mirror [url] // 设置npm镜像。https://github.com/npm/cli/archive/。如果不写url，则使用默认url。设置后可至安装目录settings.txt文件查看，也可直接在该文件操作。<br><br>nvm root [path] // 设置存储不同版本node的目录。如果未设置，默认使用当前目录。<br></code></pre></td></tr></table></figure>]]></content>
     
     
     
     <tags>
       
-      <tag>nvm</tag>
+      <tag>NVM</tag>
       
     </tags>
     
