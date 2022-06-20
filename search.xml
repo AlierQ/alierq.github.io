@@ -528,6 +528,9 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
     <title>nvm安装和使用</title>
     <url>/posts/c2bdb00f.html</url>
     <content><![CDATA[]]></content>
+      <tags>
+        <tag>nvm</tag>
+      </tags>
   </entry>
   <entry>
     <title>JavaScript原生AJAX</title>
