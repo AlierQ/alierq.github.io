@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>常见手写JS代码</title>
+    <link href="/posts/7c6ee642.html"/>
+    <url>/posts/7c6ee642.html</url>
+    
+    <content type="html"><![CDATA[<h2 id="常见手写JS代码"><a href="#常见手写JS代码" class="headerlink" title="常见手写JS代码"></a>常见手写JS代码</h2><p>本文用于收集整理以及学习常见的JS代码，内容来自互联网，不便整理出处，若内容有所侵犯权益，请在底部留言，我会尽快回复。</p><h3 id="防抖"><a href="#防抖" class="headerlink" title="防抖"></a>防抖</h3><p>防抖是指用户在触发某个操作时，如果在指定的时间内再次触发该操作，则清除前面的所触发的操作，直到用户在规定时间内不再进行操作，我们再处理用户触发的操作。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 防抖</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">debounce</span>(<span class="hljs-params">fn,delay</span>)&#123;<br>    <span class="hljs-keyword">let</span> timer<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">function</span>(<span class="hljs-params">...args</span>)&#123;<br>        <span class="hljs-comment">// 再次触发，清除之前的定时器</span><br>        <span class="hljs-keyword">if</span>(timer)&#123;<br>            <span class="hljs-built_in">clearTimeout</span>(timer)<br>        &#125;<br>        <span class="hljs-comment">// 设置新的定时器，重新计时</span><br>        timer = <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">()=&gt;</span>&#123;<br>            <span class="hljs-comment">// 调用真正的回调函数，并传入this和参数</span><br>            fn.<span class="hljs-title function_">apply</span>(<span class="hljs-variable language_">this</span>,args)<br>        &#125;,delay)<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>JavaScript</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>NVM安装和使用</title>
     <link href="/posts/c2bdb00f.html"/>
     <url>/posts/c2bdb00f.html</url>
