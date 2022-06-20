@@ -242,6 +242,13 @@
   </url>
   
   <url>
+    <loc>https://alierq.space/tags/cURL/</loc>
+    <lastmod>2022-06-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://alierq.space/tags/AJAX/</loc>
     <lastmod>2022-06-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -249,7 +256,21 @@
   </url>
   
   <url>
-    <loc>https://alierq.space/tags/cURL/</loc>
+    <loc>https://alierq.space/tags/jQuery/</loc>
+    <lastmod>2022-06-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://alierq.space/tags/nvm/</loc>
+    <lastmod>2022-06-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://alierq.space/tags/Parcel/</loc>
     <lastmod>2022-06-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -263,7 +284,14 @@
   </url>
   
   <url>
-    <loc>https://alierq.space/tags/jQuery/</loc>
+    <loc>https://alierq.space/tags/CORS/</loc>
+    <lastmod>2022-06-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://alierq.space/tags/JSONP/</loc>
     <lastmod>2022-06-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -291,35 +319,7 @@
   </url>
   
   <url>
-    <loc>https://alierq.space/tags/CORS/</loc>
-    <lastmod>2022-06-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://alierq.space/tags/JSONP/</loc>
-    <lastmod>2022-06-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://alierq.space/tags/Parcel/</loc>
-    <lastmod>2022-06-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://alierq.space/tags/Promise/</loc>
-    <lastmod>2022-06-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://alierq.space/tags/nvm/</loc>
     <lastmod>2022-06-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

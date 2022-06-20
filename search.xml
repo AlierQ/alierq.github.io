@@ -248,35 +248,6 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
       </tags>
   </entry>
   <entry>
-    <title>JavaScript同步和异步</title>
-    <url>/posts/95105818.html</url>
-    <content><![CDATA[<h2 id="JavaScript是单线程"><a href="#JavaScript是单线程" class="headerlink" title="JavaScript是单线程"></a>JavaScript是单线程</h2><p>JavaScript在诞生之初是被用作实现用户和浏览器的一些简单的交互，这也就使得了JavaScript在设计的时候就没有考虑他要做一些很复杂的操作，所以JavaScript就被设计成了单线程的一门语言。并在至今为止他都是一门单线程的脚本语言。</p>
-<p>所谓的单线程是指JavaScript引擎解释和执行的线程只有一个</p>
-<h2 id="同步和异步的概念"><a href="#同步和异步的概念" class="headerlink" title="同步和异步的概念"></a>同步和异步的概念</h2><h3 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h3><p>同步的概念：假设我现在手头有两件事要做：切菜和炒菜，我做这两件事情的时候，我必须要先切菜再炒菜，并且一定要等切菜这个任务完成之后才可以开始我炒菜的任务，如果切菜没有完成我就需要一直等待。</p>
-<ul>
-<li>换成计算机的表达：我需要等A事件执行完了，才能去执行B事件，如果A事件没有执行完，我就一直等待，直到它完成，我再去执行B事件。</li>
-</ul>
-<p><span class="label label-info">概括</span>：我一定要拿到结果，拿不到我就不走！</p>
-<h3 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h3><p>异步的概念：同样的，现在我的手头也有两件事要做：煲饭和炒菜，我做这两件事情的时候，我可以把饭煲上，然后我就去炒菜，我并不需要等待饭煲好了，再去炒菜，什么时候饭煲好了它可以响一下提醒我。</p>
-<ul>
-<li>换成计算机得表达：我让A事件执行，并且让它做完了之后就提醒我，在他执行的时候我去执行B事件。</li>
-</ul>
-<p><span class="label label-info">概括</span>：我不一定要拿到结果，我继续走，有结果了通知我一声就行！</p>
-<h2 id="JavaScript为什么需要异步任务"><a href="#JavaScript为什么需要异步任务" class="headerlink" title="JavaScript为什么需要异步任务"></a>JavaScript为什么需要异步任务</h2><p>因为JavaScript是单线程的，所以如果现在JavaScript中的一些事件需要长时间的执行，这就会导致后续要执行的事件要进行长时间的等待，极端条件下这种等待是不可控的。所以这个时候就需要引入异步的操作，将这类需要长时间的事件，放到一边去执行，不影响后续的事件。然后在特定的时间或者特定的状态使用一下<span class="label label-info">特殊的手段</span>再去得到之前那些长时间执行的事件的结果。</p>
-<h2 id="如何得到异步任务的结果"><a href="#如何得到异步任务的结果" class="headerlink" title="如何得到异步任务的结果"></a>如何得到异步任务的结果</h2><h3 id="轮询"><a href="#轮询" class="headerlink" title="轮询"></a>轮询</h3><p>每隔一段时间就询问一下异步任务是否有结果</p>
-<h3 id="回调"><a href="#回调" class="headerlink" title="回调"></a>回调</h3><p>当异步任务达到某种状态（完成、错误、超时…..）执行一段代码，由这段代码（回调函数）来得到结果。</p>
-<h2 id="常见的异步"><a href="#常见的异步" class="headerlink" title="常见的异步"></a>常见的异步</h2><ul>
-<li>AJAX</li>
-<li>addEventListener</li>
-<li>setTimeout()</li>
-<li>待补充…</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>HTTP基本概念</title>
     <url>/posts/3f4e513f.html</url>
     <content><![CDATA[<h2 id="HTTP简介"><a href="#HTTP简介" class="headerlink" title="HTTP简介"></a>HTTP简介</h2><p>HTTP 协议一般指 HTTP（超文本传输协议）是一种用于分布式、协作式和超媒体信息系统的应用层协议，是因特网上应用最为广泛的一种网络传输协议，所有的 WWW 文件都必须遵守这个标准。HTTP 是为 Web 浏览器与 Web 服务器之间的通信而设计的，但也可以用于其他目的。HTTP 是一个基于 TCP&#x2F;IP 通信协议来传递数据的（HTML 文件、图片文件、查询结果等）。</p>
@@ -492,6 +463,35 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
       </tags>
   </entry>
   <entry>
+    <title>JavaScript同步和异步</title>
+    <url>/posts/95105818.html</url>
+    <content><![CDATA[<h2 id="JavaScript是单线程"><a href="#JavaScript是单线程" class="headerlink" title="JavaScript是单线程"></a>JavaScript是单线程</h2><p>JavaScript在诞生之初是被用作实现用户和浏览器的一些简单的交互，这也就使得了JavaScript在设计的时候就没有考虑他要做一些很复杂的操作，所以JavaScript就被设计成了单线程的一门语言。并在至今为止他都是一门单线程的脚本语言。</p>
+<p>所谓的单线程是指JavaScript引擎解释和执行的线程只有一个</p>
+<h2 id="同步和异步的概念"><a href="#同步和异步的概念" class="headerlink" title="同步和异步的概念"></a>同步和异步的概念</h2><h3 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h3><p>同步的概念：假设我现在手头有两件事要做：切菜和炒菜，我做这两件事情的时候，我必须要先切菜再炒菜，并且一定要等切菜这个任务完成之后才可以开始我炒菜的任务，如果切菜没有完成我就需要一直等待。</p>
+<ul>
+<li>换成计算机的表达：我需要等A事件执行完了，才能去执行B事件，如果A事件没有执行完，我就一直等待，直到它完成，我再去执行B事件。</li>
+</ul>
+<p><span class="label label-info">概括</span>：我一定要拿到结果，拿不到我就不走！</p>
+<h3 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h3><p>异步的概念：同样的，现在我的手头也有两件事要做：煲饭和炒菜，我做这两件事情的时候，我可以把饭煲上，然后我就去炒菜，我并不需要等待饭煲好了，再去炒菜，什么时候饭煲好了它可以响一下提醒我。</p>
+<ul>
+<li>换成计算机得表达：我让A事件执行，并且让它做完了之后就提醒我，在他执行的时候我去执行B事件。</li>
+</ul>
+<p><span class="label label-info">概括</span>：我不一定要拿到结果，我继续走，有结果了通知我一声就行！</p>
+<h2 id="JavaScript为什么需要异步任务"><a href="#JavaScript为什么需要异步任务" class="headerlink" title="JavaScript为什么需要异步任务"></a>JavaScript为什么需要异步任务</h2><p>因为JavaScript是单线程的，所以如果现在JavaScript中的一些事件需要长时间的执行，这就会导致后续要执行的事件要进行长时间的等待，极端条件下这种等待是不可控的。所以这个时候就需要引入异步的操作，将这类需要长时间的事件，放到一边去执行，不影响后续的事件。然后在特定的时间或者特定的状态使用一下<span class="label label-info">特殊的手段</span>再去得到之前那些长时间执行的事件的结果。</p>
+<h2 id="如何得到异步任务的结果"><a href="#如何得到异步任务的结果" class="headerlink" title="如何得到异步任务的结果"></a>如何得到异步任务的结果</h2><h3 id="轮询"><a href="#轮询" class="headerlink" title="轮询"></a>轮询</h3><p>每隔一段时间就询问一下异步任务是否有结果</p>
+<h3 id="回调"><a href="#回调" class="headerlink" title="回调"></a>回调</h3><p>当异步任务达到某种状态（完成、错误、超时…..）执行一段代码，由这段代码（回调函数）来得到结果。</p>
+<h2 id="常见的异步"><a href="#常见的异步" class="headerlink" title="常见的异步"></a>常见的异步</h2><ul>
+<li>AJAX</li>
+<li>addEventListener</li>
+<li>setTimeout()</li>
+<li>待补充…</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MVC设计模式</title>
     <url>/posts/7333197b.html</url>
     <content><![CDATA[<h2 id="MVC设计模模式"><a href="#MVC设计模模式" class="headerlink" title="MVC设计模模式"></a>MVC设计模模式</h2><h3 id="什么是设计模式？"><a href="#什么是设计模式？" class="headerlink" title="什么是设计模式？"></a>什么是设计模式？</h3><p>设计模式是软件开发人员在软件开发过程中面临一般问题的解决方案，是一套被反复使用的、多数人知晓的、代码设计的总结。使用设计模式能够使得代码更可靠、更易懂、更高效。</p>
@@ -525,11 +525,46 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
       </tags>
   </entry>
   <entry>
-    <title>nvm安装和使用</title>
-    <url>/posts/c2bdb00f.html</url>
-    <content><![CDATA[]]></content>
+    <title>cURL常见用法</title>
+    <url>/posts/b403a33b.html</url>
+    <content><![CDATA[<h2 id="cURL简介"><a href="#cURL简介" class="headerlink" title="cURL简介"></a>cURL简介</h2><p>cURL是一款常用的命令行工具，可以用来请求Web服务器，也可以用于传输数据。支持的协议包括 （DICT, FILE, FTP, FTPS, GOPHER, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, POP3, POP3S, RTMP, RTSP, SCP, SFTP, SMTP, SMTPS, TELNET and TFTP），cURL设计为无用户交互下完成工作；cURL提供了一大堆非常有用的功能包括：代理访问、用户认证、FTP上传下载、HTTP请求、SSL连接、Cookie支持、断点续传等等</p>
+<h2 id="cURL常用命令"><a href="#cURL常用命令" class="headerlink" title="cURL常用命令"></a>cURL常用命令</h2><h3 id="发送GET请求"><a href="#发送GET请求" class="headerlink" title="发送GET请求"></a>发送GET请求</h3><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># 不带参数</span><br>curl https://www.example.com<br><br><span class="hljs-comment"># 带参数</span><br>curl https://www.example.com?<span class="hljs-built_in">id</span>=<span class="hljs-string">&#x27;123123123&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="发送POST请求"><a href="#发送POST请求" class="headerlink" title="发送POST请求"></a>发送POST请求</h3><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -X POST -d <span class="hljs-string">&#x27;id=123&amp;tage=a&#x27;</span> https://www.example.com<br><br>curl -X POST -d <span class="hljs-string">&#x27;id=123&#x27;</span> -d <span class="hljs-string">&#x27;tage=a&#x27;</span> https://www.example.com<br></code></pre></td></tr></table></figure>
+
+<p class="note note-info">
+    -X：表示指定请求的方法<br>
+    -d：POST请求的数据体
+</p>
+
+<h3 id="发送JSON格式的请求"><a href="#发送JSON格式的请求" class="headerlink" title="发送JSON格式的请求"></a>发送JSON格式的请求</h3><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -H <span class="hljs-string">&quot;Content-Type: application/json&quot;</span> -X POST -d <span class="hljs-string">&#x27;&#123;&quot;abc&quot;:123&#125;&#x27;</span> https://www.example.com<br></code></pre></td></tr></table></figure>
+
+<p class="note note-info">
+    -H：设置请求头<br>
+</p>
+
+<h3 id="更多操作"><a href="#更多操作" class="headerlink" title="更多操作"></a>更多操作</h3><h4 id="（-v）显示通信过程"><a href="#（-v）显示通信过程" class="headerlink" title="（-v）显示通信过程"></a>（-v）显示通信过程</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -v https://www.example.com<br></code></pre></td></tr></table></figure>
+
+<h4 id="（-i）只显示响应头和网站代码"><a href="#（-i）只显示响应头和网站代码" class="headerlink" title="（-i）只显示响应头和网站代码"></a>（-i）只显示响应头和网站代码</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -i https://www.example.com<br></code></pre></td></tr></table></figure>
+
+<h4 id="（-l）只显示网站代码"><a href="#（-l）只显示网站代码" class="headerlink" title="（-l）只显示网站代码"></a>（-l）只显示网站代码</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -l https://www.example.com<br></code></pre></td></tr></table></figure>
+
+<h4 id="（-0）保存网页"><a href="#（-0）保存网页" class="headerlink" title="（-0）保存网页"></a>（-0）保存网页</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -0 https://www.example.com<br></code></pre></td></tr></table></figure>
+
+<h4 id="（-s）不显示错误信息"><a href="#（-s）不显示错误信息" class="headerlink" title="（-s）不显示错误信息"></a>（-s）不显示错误信息</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -s https://www.example.com<br></code></pre></td></tr></table></figure>
+
+<h4 id="（-S）只显示错误信息"><a href="#（-S）只显示错误信息" class="headerlink" title="（-S）只显示错误信息"></a>（-S）只显示错误信息</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -S https://www.example.com<br></code></pre></td></tr></table></figure>
+
+<h4 id="（-c）将cookie写入文件"><a href="#（-c）将cookie写入文件" class="headerlink" title="（-c）将cookie写入文件"></a>（-c）将cookie写入文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">curl -c cookies.txt https://www.example.com<br></code></pre></td></tr></table></figure>
+
+<h4 id="（-b）发送cookie数据"><a href="#（-b）发送cookie数据" class="headerlink" title="（-b）发送cookie数据"></a>（-b）发送cookie数据</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -b <span class="hljs-string">&#x27;foo=bar&#x27;</span> https://www.example.com<br><br><span class="hljs-comment"># 多个cookie</span><br>curl -b <span class="hljs-string">&#x27;foo1=bar;foo2=bar2&#x27;</span> https://www.example.com<br><br><span class="hljs-comment"># cookie文件</span><br>curl -b cookies.txt https://www.example.com<br></code></pre></td></tr></table></figure>
+
+<h4 id="（-F）上传二进制文件"><a href="#（-F）上传二进制文件" class="headerlink" title="（-F）上传二进制文件"></a>（-F）上传二进制文件</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># 默认加上`Content-Type: multipart/form-data`，资源名称指定为file</span><br>curl -F <span class="hljs-string">&#x27;file=@ss.png&#x27;</span> https://www.example.com<br><br><span class="hljs-comment"># 指定MIME类型</span><br>curl -F <span class="hljs-string">&#x27;file=@ss.png;type=image/png&#x27;</span> https://www.example.com<br><br><span class="hljs-comment"># 指定文件名  上传的是ss.png  服务器接收到的是aa.png</span><br>curl -F <span class="hljs-string">&#x27;file=@ss.png;filename=aa.png&#x27;</span> https://www.example.com <br></code></pre></td></tr></table></figure>
+
+<p>更多cURL用法请见<a href="https://www.ruanyifeng.com/blog/2019/09/curl-reference.html">cURL用法指南</a></p>
+]]></content>
       <tags>
-        <tag>nvm</tag>
+        <tag>cURL</tag>
       </tags>
   </entry>
   <entry>
@@ -615,46 +650,105 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
       </tags>
   </entry>
   <entry>
-    <title>cURL常见用法</title>
-    <url>/posts/b403a33b.html</url>
-    <content><![CDATA[<h2 id="cURL简介"><a href="#cURL简介" class="headerlink" title="cURL简介"></a>cURL简介</h2><p>cURL是一款常用的命令行工具，可以用来请求Web服务器，也可以用于传输数据。支持的协议包括 （DICT, FILE, FTP, FTPS, GOPHER, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, POP3, POP3S, RTMP, RTSP, SCP, SFTP, SMTP, SMTPS, TELNET and TFTP），cURL设计为无用户交互下完成工作；cURL提供了一大堆非常有用的功能包括：代理访问、用户认证、FTP上传下载、HTTP请求、SSL连接、Cookie支持、断点续传等等</p>
-<h2 id="cURL常用命令"><a href="#cURL常用命令" class="headerlink" title="cURL常用命令"></a>cURL常用命令</h2><h3 id="发送GET请求"><a href="#发送GET请求" class="headerlink" title="发送GET请求"></a>发送GET请求</h3><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># 不带参数</span><br>curl https://www.example.com<br><br><span class="hljs-comment"># 带参数</span><br>curl https://www.example.com?<span class="hljs-built_in">id</span>=<span class="hljs-string">&#x27;123123123&#x27;</span><br></code></pre></td></tr></table></figure>
+    <title>jQuery的设计思想</title>
+    <url>/posts/171faadf.html</url>
+    <content><![CDATA[<h2 id="jQuery获取元素"><a href="#jQuery获取元素" class="headerlink" title="jQuery获取元素"></a>jQuery获取元素</h2><h3 id="CSS选择器方式"><a href="#CSS选择器方式" class="headerlink" title="CSS选择器方式"></a>CSS选择器方式</h3><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-variable language_">document</span>) <span class="hljs-comment">// 选取整个文档对象</span><br><br>$(<span class="hljs-string">&#x27;#mydiv&#x27;</span>) <span class="hljs-comment">// 选择id为mydiv的元素</span><br><br>$(<span class="hljs-string">&#x27;.tt&#x27;</span>) <span class="hljs-comment">// 选择class为tt的元素</span><br><br>$(<span class="hljs-string">&#x27;input[name=username]&#x27;</span>) <span class="hljs-comment">// 选择name属性为username的input元素</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="发送POST请求"><a href="#发送POST请求" class="headerlink" title="发送POST请求"></a>发送POST请求</h3><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -X POST -d <span class="hljs-string">&#x27;id=123&amp;tage=a&#x27;</span> https://www.example.com<br><br>curl -X POST -d <span class="hljs-string">&#x27;id=123&#x27;</span> -d <span class="hljs-string">&#x27;tage=a&#x27;</span> https://www.example.com<br></code></pre></td></tr></table></figure>
+<h3 id="jQuery特有表达式"><a href="#jQuery特有表达式" class="headerlink" title="jQuery特有表达式"></a>jQuery特有表达式</h3><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;a:first&#x27;</span>) <span class="hljs-comment">// 选择页面中第一个a元素</span><br><br>$(<span class="hljs-string">&#x27;tr:odd&#x27;</span>) <span class="hljs-comment">// 选择表格的奇数行</span><br><br>$(<span class="hljs-string">&#x27;#myForm :input&#x27;</span>) <span class="hljs-comment">// 选取id为myForm中的input元素</span><br><br>$(<span class="hljs-string">&#x27;div:visible&#x27;</span>) <span class="hljs-comment">// 选择可见的div元素</span><br><br>$(<span class="hljs-string">&#x27;div:gt(2)&#x27;</span>) <span class="hljs-comment">// 选择所有的div元素，除了前三个（0、1、2）</span><br><br>$(<span class="hljs-string">&#x27;div:animated&#x27;</span>) <span class="hljs-comment">// 选择当前处于动画状态的div元素</span><br></code></pre></td></tr></table></figure>
 
-<p class="note note-info">
-    -X：表示指定请求的方法<br>
-    -d：POST请求的数据体
-</p>
+<h2 id="jQuery的链式操作"><a href="#jQuery的链式操作" class="headerlink" title="jQuery的链式操作"></a>jQuery的链式操作</h2><p>在jQuery中使用了<span class="label label-info">链式操作</span>，就是在你获取网页元素之后，可以连续对他进行一列的操作，并且这一系列的操作可以连续的写在一起，就好像链条一样。</p>
+<p>例如：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;#mydiv&#x27;</span>).<span class="hljs-title function_">find</span>(<span class="hljs-string">&#x27;span&#x27;</span>).<span class="hljs-title function_">eq</span>(<span class="hljs-number">2</span>).<span class="hljs-title function_">html</span>(<span class="hljs-string">&#x27;Hello World!&#x27;</span>);<br></code></pre></td></tr></table></figure>
 
-<h3 id="发送JSON格式的请求"><a href="#发送JSON格式的请求" class="headerlink" title="发送JSON格式的请求"></a>发送JSON格式的请求</h3><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -H <span class="hljs-string">&quot;Content-Type: application/json&quot;</span> -X POST -d <span class="hljs-string">&#x27;&#123;&quot;abc&quot;:123&#125;&#x27;</span> https://www.example.com<br></code></pre></td></tr></table></figure>
+<p>将其分解之后：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;#mydiv&#x27;</span>) <span class="hljs-comment">// 获取到id为mydiv的元素</span><br><br>    .<span class="hljs-title function_">find</span>(<span class="hljs-string">&#x27;span&#x27;</span>) <span class="hljs-comment">// 在他的内部寻找span标签</span><br><br>    .<span class="hljs-title function_">eq</span>(<span class="hljs-number">2</span>) <span class="hljs-comment">// 获取span标签中的第3个(下标从0开始)</span><br><br>    .<span class="hljs-title function_">html</span>(<span class="hljs-string">&#x27;Hello World!&#x27;</span>); <span class="hljs-comment">// 将它的内容改为&#x27;Hello World!&#x27;</span><br></code></pre></td></tr></table></figure>
 
-<p class="note note-info">
-    -H：设置请求头<br>
-</p>
+<p>每一次的jQuery操作，都会返回一个jQuery对象，下一个操作就可以直接在前一个操作的基础之上进行。</p>
+<p>此外jQuery还提供了<a href="https://www.jquery123.com/end/">.end()</a>方法，返回上一个操作的对象。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;#mydiv&#x27;</span>) <span class="hljs-comment">// 获取到id为mydiv的元素</span><br><br>    .<span class="hljs-title function_">find</span>(<span class="hljs-string">&#x27;span&#x27;</span>) <span class="hljs-comment">// 在他的内部寻找span标签</span><br><br>    .<span class="hljs-title function_">eq</span>(<span class="hljs-number">2</span>) <span class="hljs-comment">// 获取span标签中的第3个(下标从0开始)</span><br><br>    .<span class="hljs-title function_">html</span>(<span class="hljs-string">&#x27;Hello World!&#x27;</span>); <span class="hljs-comment">// 将它的内容改为&#x27;Hello World!&#x27;</span><br>	<br>	<span class="hljs-comment">// 此时操作的对象是mydiv下的第3个span元素</span><br><br>	.<span class="hljs-title function_">end</span>() <span class="hljs-comment">// 返回上一个操作对象</span><br><br>	<span class="hljs-comment">// 此时操作的对象是mydiv下的所有span元素</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="更多操作"><a href="#更多操作" class="headerlink" title="更多操作"></a>更多操作</h3><h4 id="（-v）显示通信过程"><a href="#（-v）显示通信过程" class="headerlink" title="（-v）显示通信过程"></a>（-v）显示通信过程</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -v https://www.example.com<br></code></pre></td></tr></table></figure>
+<h2 id="jQuery创建元素"><a href="#jQuery创建元素" class="headerlink" title="jQuery创建元素"></a>jQuery创建元素</h2><p>jQuery创建元素只需要把新元素以字符串的形式传入jQuery的构造构造函数</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;&lt;div&gt;Hello World!&lt;/div&gt;&#x27;</span>)<br><br>$(<span class="hljs-string">&#x27;&lt;li&gt;new li&lt;/li&gt;&#x27;</span>)<br><br><span class="hljs-comment">// 还可以使用append创建之后直接插入</span><br><br>$(<span class="hljs-string">&#x27;ul&#x27;</span>).<span class="hljs-title function_">append</span>(<span class="hljs-string">&#x27;&lt;li&gt;li&lt;/li&gt;&#x27;</span>)<br></code></pre></td></tr></table></figure>
 
-<h4 id="（-i）只显示响应头和网站代码"><a href="#（-i）只显示响应头和网站代码" class="headerlink" title="（-i）只显示响应头和网站代码"></a>（-i）只显示响应头和网站代码</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -i https://www.example.com<br></code></pre></td></tr></table></figure>
+<h2 id="jQuery移动元素"><a href="#jQuery移动元素" class="headerlink" title="jQuery移动元素"></a>jQuery移动元素</h2><p>jQuery移动元素提供了两种方法：</p>
+<p>假定我们想要将div元素放在p元素后面</p>
+<p>第一种：直接移动该元素</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;div&#x27;</span>).<span class="hljs-title function_">insertAfter</span>($(<span class="hljs-string">&#x27;p&#x27;</span>))  <span class="hljs-comment">// 将div元素移动到p元素后面</span><br></code></pre></td></tr></table></figure>
 
-<h4 id="（-l）只显示网站代码"><a href="#（-l）只显示网站代码" class="headerlink" title="（-l）只显示网站代码"></a>（-l）只显示网站代码</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -l https://www.example.com<br></code></pre></td></tr></table></figure>
+<p>第二种：移动其他元素的位置，从而达到目的</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;p&#x27;</span>).<span class="hljs-title function_">after</span>($(<span class="hljs-string">&#x27;div&#x27;</span>))  <span class="hljs-comment">// 在p元素的后面加入一个div</span><br></code></pre></td></tr></table></figure>
 
-<h4 id="（-0）保存网页"><a href="#（-0）保存网页" class="headerlink" title="（-0）保存网页"></a>（-0）保存网页</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -0 https://www.example.com<br></code></pre></td></tr></table></figure>
+<p>两者实现的效果是相同的，但是第一种方法返回的对象是div元素，第二种方法返回的是p元素。</p>
+<p>这类操作方法，一共有四对：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 在现存元素的外部，从后面插入元素</span><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">insertAfter</span>()<br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">after</span>()<br><br><span class="hljs-comment">// 在现存元素的外部，从前面插入元素</span><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">insertBefore</span>()<br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">before</span>()<br><br><span class="hljs-comment">// 在现存元素的内部，从后面插入元素</span><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">appendTo</span>()<br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">append</span>()<br><br><span class="hljs-comment">// 在现存元素的内部，从前面插入元素</span><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">prependTo</span>()<br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">prepend</span>()<br></code></pre></td></tr></table></figure>
 
-<h4 id="（-s）不显示错误信息"><a href="#（-s）不显示错误信息" class="headerlink" title="（-s）不显示错误信息"></a>（-s）不显示错误信息</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -s https://www.example.com<br></code></pre></td></tr></table></figure>
+<h2 id="jQuery修改元素属性"><a href="#jQuery修改元素属性" class="headerlink" title="jQuery修改元素属性"></a>jQuery修改元素属性</h2><p>jQuery中使用同意个函数进行取值（getter）和赋值（setter），具体是取值还是赋值由函数的参数决定</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;div&#x27;</span>).<span class="hljs-property">html</span>; <span class="hljs-comment">// 无参，获取div的值</span><br><br>$(<span class="hljs-string">&#x27;div&#x27;</span>).<span class="hljs-property">html</span>; <span class="hljs-comment">// 带参，设置div的值 </span><br></code></pre></td></tr></table></figure>
 
-<h4 id="（-S）只显示错误信息"><a href="#（-S）只显示错误信息" class="headerlink" title="（-S）只显示错误信息"></a>（-S）只显示错误信息</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -S https://www.example.com<br></code></pre></td></tr></table></figure>
+<p>常用赋值和取值操作如下：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">html</span>() <span class="hljs-comment">// 取出或设置html内容</span><br><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">text</span>() <span class="hljs-comment">// 取出或设置text内容</span><br><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">attr</span>() <span class="hljs-comment">// 取出或设置某个属性的值</span><br><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">width</span>() <span class="hljs-comment">// 取出或设置某个元素的宽度</span><br><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">height</span>() <span class="hljs-comment">// 取出或设置某个元素的高度</span><br><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">val</span>() <span class="hljs-comment">// 取出某个表单元素的值</span><br></code></pre></td></tr></table></figure>
 
-<h4 id="（-c）将cookie写入文件"><a href="#（-c）将cookie写入文件" class="headerlink" title="（-c）将cookie写入文件"></a>（-c）将cookie写入文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">curl -c cookies.txt https://www.example.com<br></code></pre></td></tr></table></figure>
-
-<h4 id="（-b）发送cookie数据"><a href="#（-b）发送cookie数据" class="headerlink" title="（-b）发送cookie数据"></a>（-b）发送cookie数据</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -b <span class="hljs-string">&#x27;foo=bar&#x27;</span> https://www.example.com<br><br><span class="hljs-comment"># 多个cookie</span><br>curl -b <span class="hljs-string">&#x27;foo1=bar;foo2=bar2&#x27;</span> https://www.example.com<br><br><span class="hljs-comment"># cookie文件</span><br>curl -b cookies.txt https://www.example.com<br></code></pre></td></tr></table></figure>
-
-<h4 id="（-F）上传二进制文件"><a href="#（-F）上传二进制文件" class="headerlink" title="（-F）上传二进制文件"></a>（-F）上传二进制文件</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># 默认加上`Content-Type: multipart/form-data`，资源名称指定为file</span><br>curl -F <span class="hljs-string">&#x27;file=@ss.png&#x27;</span> https://www.example.com<br><br><span class="hljs-comment"># 指定MIME类型</span><br>curl -F <span class="hljs-string">&#x27;file=@ss.png;type=image/png&#x27;</span> https://www.example.com<br><br><span class="hljs-comment"># 指定文件名  上传的是ss.png  服务器接收到的是aa.png</span><br>curl -F <span class="hljs-string">&#x27;file=@ss.png;filename=aa.png&#x27;</span> https://www.example.com <br></code></pre></td></tr></table></figure>
-
-<p>更多cURL用法请见<a href="https://www.ruanyifeng.com/blog/2019/09/curl-reference.html">cURL用法指南</a></p>
+<p>有一点需要注意，在<span class="label label-info">$(‘xxx’)</span>获取的值是多个时，在进行赋值的时候，是对所有元素进行赋值；在进行取值的时候，只对第一个元素进行取值（<a href="https://www.jquery123.com/text/">.text()</a>除外，它是取出所有元素text内容）。</p>
 ]]></content>
       <tags>
-        <tag>cURL</tag>
+        <tag>jQuery</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>nvm安装和使用</title>
+    <url>/posts/c2bdb00f.html</url>
+    <content><![CDATA[]]></content>
+      <tags>
+        <tag>nvm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Parcel安装和使用</title>
+    <url>/posts/dd5d5baf.html</url>
+    <content><![CDATA[<h2 id="Parcel简介"><a href="#Parcel简介" class="headerlink" title="Parcel简介"></a>Parcel简介</h2><p>Parcel是一款无需额外配置的打包工具，可以做到安装之后直接使用。得益于Parcel内部使用多线程打包，所以在相同项目中parcel的打包速度会快很多。</p>
+<h2 id="Parcel安装"><a href="#Parcel安装" class="headerlink" title="Parcel安装"></a>Parcel安装</h2><h3 id="yarn"><a href="#yarn" class="headerlink" title="yarn"></a>yarn</h3><p>初始化项目</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">yarn init -y<br></code></pre></td></tr></table></figure>
+<p>全局安装Parcel</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">yarn global add parcel-bundler<br></code></pre></td></tr></table></figure>
+<p>局部安装</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">yarn add parcel-bundler<br></code></pre></td></tr></table></figure>
+<h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h3><p>初始化项目</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">npm init -y<br></code></pre></td></tr></table></figure>
+<p>全局安装Parcel</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">npm install -g parcel-bundler<br></code></pre></td></tr></table></figure>
+<p>局部安装</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">npm install parcel-bundler<br></code></pre></td></tr></table></figure>
+<h2 id="Parcel的使用"><a href="#Parcel的使用" class="headerlink" title="Parcel的使用"></a>Parcel的使用</h2><p>假设项目文件目录如下</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><code class="hljs text">├── index.html<br>├── package.json<br>└── src<br>    └── main.js<br></code></pre></td></tr></table></figure>
+<p class="note note-warning">Parcel的打包需要指定一个入口文件，通常是HTML文件</p>
+
+<h3 id="开发模式打包"><a href="#开发模式打包" class="headerlink" title="开发模式打包"></a>开发模式打包</h3><p>开发模式打包下，Parcel会自动将应用构建在它内置的开发服务器中，你可使用浏览器进行访问，默认访问地址是：<a href="http://localhose:1234/">http://localhose:1234</a></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">parcel index.html<br></code></pre></td></tr></table></figure>
+<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206191551190.png" alt="示例"></p>
+<p>打包完成之后会在当前目录下自动生成dist目录</p>
+<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206191553645.png" alt="dist目录"></p>
+<h3 id="生产模式打包"><a href="#生产模式打包" class="headerlink" title="生产模式打包"></a>生产模式打包</h3><p>完成项目开发之后，项目进行打包，不再需要运行在Parcel内置服务器中</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">parcel build index.html<br></code></pre></td></tr></table></figure>
+
+<p class="note note-warning">
+这里有一点需要注意，直接使用上面的命令打包出来的所有资源的路径都是`/xxxx.js`，这可能会导致资源无法正常请求到，所以建议使用下面的指令，设置为当前路径</p>
+
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">parcel build index.html --public-url .<br></code></pre></td></tr></table></figure>
+
+<p>如果你期望打包时不进行代码压缩：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">parcel build index.html --no-minify --public-url .<br></code></pre></td></tr></table></figure>
+
+<h2 id="配置脚本"><a href="#配置脚本" class="headerlink" title="配置脚本"></a>配置脚本</h2><p>你可以通过配置<span class="label label-info">package.json</span>添加任务脚本来帮助你开发&amp;生产</p>
+<p><strong>package.json</strong></p>
+<figure class="highlight json"><table><tr><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>  <span class="hljs-attr">&quot;scripts&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;dev&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;parcel index.html&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;build&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;parcel build index.html&quot;</span><br>  <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+
+<p>此时你就可以使用yarn或者npm运行他们了</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># 以开发模式运行</span><br>yarn dev<br><br>npm run dev<br><br><span class="hljs-comment"># 以生成模式运行</span><br>yarn build<br><br>npm run build<br></code></pre></td></tr></table></figure>
+
+<p>更多资源类型解析打包、Parcel配置等知识请求移步到<a href="https://www.parceljs.cn/javascript.html">Parcel中文官网</a>或者<a href="https://parceljs.org/docs/">Parcel官网</a></p>
+]]></content>
+      <tags>
+        <tag>Parcel</tag>
       </tags>
   </entry>
   <entry>
@@ -709,48 +803,76 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
       </tags>
   </entry>
   <entry>
-    <title>jQuery的设计思想</title>
-    <url>/posts/171faadf.html</url>
-    <content><![CDATA[<h2 id="jQuery获取元素"><a href="#jQuery获取元素" class="headerlink" title="jQuery获取元素"></a>jQuery获取元素</h2><h3 id="CSS选择器方式"><a href="#CSS选择器方式" class="headerlink" title="CSS选择器方式"></a>CSS选择器方式</h3><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-variable language_">document</span>) <span class="hljs-comment">// 选取整个文档对象</span><br><br>$(<span class="hljs-string">&#x27;#mydiv&#x27;</span>) <span class="hljs-comment">// 选择id为mydiv的元素</span><br><br>$(<span class="hljs-string">&#x27;.tt&#x27;</span>) <span class="hljs-comment">// 选择class为tt的元素</span><br><br>$(<span class="hljs-string">&#x27;input[name=username]&#x27;</span>) <span class="hljs-comment">// 选择name属性为username的input元素</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="jQuery特有表达式"><a href="#jQuery特有表达式" class="headerlink" title="jQuery特有表达式"></a>jQuery特有表达式</h3><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;a:first&#x27;</span>) <span class="hljs-comment">// 选择页面中第一个a元素</span><br><br>$(<span class="hljs-string">&#x27;tr:odd&#x27;</span>) <span class="hljs-comment">// 选择表格的奇数行</span><br><br>$(<span class="hljs-string">&#x27;#myForm :input&#x27;</span>) <span class="hljs-comment">// 选取id为myForm中的input元素</span><br><br>$(<span class="hljs-string">&#x27;div:visible&#x27;</span>) <span class="hljs-comment">// 选择可见的div元素</span><br><br>$(<span class="hljs-string">&#x27;div:gt(2)&#x27;</span>) <span class="hljs-comment">// 选择所有的div元素，除了前三个（0、1、2）</span><br><br>$(<span class="hljs-string">&#x27;div:animated&#x27;</span>) <span class="hljs-comment">// 选择当前处于动画状态的div元素</span><br></code></pre></td></tr></table></figure>
-
-<h2 id="jQuery的链式操作"><a href="#jQuery的链式操作" class="headerlink" title="jQuery的链式操作"></a>jQuery的链式操作</h2><p>在jQuery中使用了<span class="label label-info">链式操作</span>，就是在你获取网页元素之后，可以连续对他进行一列的操作，并且这一系列的操作可以连续的写在一起，就好像链条一样。</p>
+    <title>浅析跨域问题</title>
+    <url>/posts/721439c2.html</url>
+    <content><![CDATA[<h2 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h2><h3 id="源的概念"><a href="#源的概念" class="headerlink" title="源的概念"></a>源的概念</h3><p>window.origin或location.origin就可以得到当前源</p>
+<p>源 &#x3D; 协议 + 域名 + 端口号</p>
+<h3 id="同源的概念"><a href="#同源的概念" class="headerlink" title="同源的概念"></a>同源的概念</h3><p>如果两个url的协议、域名、端口号都完全一致，则这两个url就是同源的</p>
 <p>例如：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;#mydiv&#x27;</span>).<span class="hljs-title function_">find</span>(<span class="hljs-string">&#x27;span&#x27;</span>).<span class="hljs-title function_">eq</span>(<span class="hljs-number">2</span>).<span class="hljs-title function_">html</span>(<span class="hljs-string">&#x27;Hello World!&#x27;</span>);<br></code></pre></td></tr></table></figure>
+<p><a href="https://qq/.com">https://qq/.com</a> 和 <a href="https://www.baidu.com/">https://www.baidu.com</a> 不同源</p>
+<p><a href="https://baidu.com/">https://baidu.com</a> 和 <a href="https://www.baidu.com/">https://www.baidu.com</a> 不同源</p>
+<p>注意：只有完全一致才能算是同源</p>
+<h3 id="同源策源的概念"><a href="#同源策源的概念" class="headerlink" title="同源策源的概念"></a>同源策源的概念</h3><p>浏览器如果JavaScript运行在源A中就只允许获取源A的数据，而不能够源B中的数据，即不允许跨域</p>
+<p>同源策略的目的为了保护用户的隐私</p>
+<h2 id="跨域请求示例"><a href="#跨域请求示例" class="headerlink" title="跨域请求示例"></a>跨域请求示例</h2><p>我现在在本地9999端口的网页发送一个请求去请求本地8888端口的资源，代码如下：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> request = <span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLHttpRequest</span>();<br><br>request.<span class="hljs-title function_">open</span>(<span class="hljs-string">&#x27;get&#x27;</span>,<span class="hljs-string">&#x27;http://localhost:8888/friends.json&#x27;</span>)<br><br>request.<span class="hljs-property">onreadystatechange</span> = <span class="hljs-function">()=&gt;</span>&#123;<br>  <span class="hljs-keyword">if</span>(request.<span class="hljs-property">readyState</span> === <span class="hljs-number">4</span> &amp;&amp; request.<span class="hljs-property">status</span> === <span class="hljs-number">200</span>)&#123;<br>    <span class="hljs-keyword">let</span> ul = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&#x27;ul&#x27;</span>);<br>    <span class="hljs-keyword">let</span> friends = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(request.<span class="hljs-property">response</span>);<br>    friends.<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">item</span>)=&gt;</span>&#123;<br>        <span class="hljs-keyword">let</span> li = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&#x27;li&#x27;</span>);<br>        li.<span class="hljs-property">textContent</span> = item.<span class="hljs-property">name</span>;<br>        ul.<span class="hljs-title function_">appendChild</span>(li);<br>    &#125;)<br>    <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-title function_">appendChild</span>(ul);<br>  &#125;<br>&#125;<br><br>request.<span class="hljs-title function_">send</span>();<br></code></pre></td></tr></table></figure>
 
-<p>将其分解之后：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;#mydiv&#x27;</span>) <span class="hljs-comment">// 获取到id为mydiv的元素</span><br><br>    .<span class="hljs-title function_">find</span>(<span class="hljs-string">&#x27;span&#x27;</span>) <span class="hljs-comment">// 在他的内部寻找span标签</span><br><br>    .<span class="hljs-title function_">eq</span>(<span class="hljs-number">2</span>) <span class="hljs-comment">// 获取span标签中的第3个(下标从0开始)</span><br><br>    .<span class="hljs-title function_">html</span>(<span class="hljs-string">&#x27;Hello World!&#x27;</span>); <span class="hljs-comment">// 将它的内容改为&#x27;Hello World!&#x27;</span><br></code></pre></td></tr></table></figure>
+<p>浏览器就会发出下面的错误信息，提示你进行了跨域请求并且已经被浏览器进行阻止。</p>
+<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206110109578.png" alt="浏览器提示跨域错误"></p>
+<h2 id="跨域解决方式"><a href="#跨域解决方式" class="headerlink" title="跨域解决方式"></a>跨域解决方式</h2><h3 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h3><p>CORS（Cross-Origin Resource Sharing）跨域资源共享，是一种基于 HTTP 头的机制，该机制通过允许服务器标示除了它自己以外的其它origin（域、协议和端口），这样其他网站可以直接请求该网站的这些资源。</p>
+<p>使用方法：</p>
+<p>在被请求网站的响应头中进行添加</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><code class="hljs awk">...<br>Access-Control-Allow-Origin: http:<span class="hljs-regexp">//</span>xxx.xxxx.xxx    <span class="hljs-regexp">//</span>指定网址访问<br><br>or<br><br>Access-Control-Allow-Origin: *   <span class="hljs-regexp">//</span> 所有均可访问<br>...<br></code></pre></td></tr></table></figure>
 
-<p>每一次的jQuery操作，都会返回一个jQuery对象，下一个操作就可以直接在前一个操作的基础之上进行。</p>
-<p>此外jQuery还提供了<a href="https://www.jquery123.com/end/">.end()</a>方法，返回上一个操作的对象。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;#mydiv&#x27;</span>) <span class="hljs-comment">// 获取到id为mydiv的元素</span><br><br>    .<span class="hljs-title function_">find</span>(<span class="hljs-string">&#x27;span&#x27;</span>) <span class="hljs-comment">// 在他的内部寻找span标签</span><br><br>    .<span class="hljs-title function_">eq</span>(<span class="hljs-number">2</span>) <span class="hljs-comment">// 获取span标签中的第3个(下标从0开始)</span><br><br>    .<span class="hljs-title function_">html</span>(<span class="hljs-string">&#x27;Hello World!&#x27;</span>); <span class="hljs-comment">// 将它的内容改为&#x27;Hello World!&#x27;</span><br>	<br>	<span class="hljs-comment">// 此时操作的对象是mydiv下的第3个span元素</span><br><br>	.<span class="hljs-title function_">end</span>() <span class="hljs-comment">// 返回上一个操作对象</span><br><br>	<span class="hljs-comment">// 此时操作的对象是mydiv下的所有span元素</span><br></code></pre></td></tr></table></figure>
+<p>更多请见-&gt;<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CORS#%E7%AE%80%E5%8D%95%E8%AF%B7%E6%B1%82">MDN CORS文档</a></p>
+<h3 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h3><p>JSONP是当浏览器不支持CORS（比如IE浏览器）时使用的一种跨域方式</p>
+<h5 id="JSONP的实现"><a href="#JSONP的实现" class="headerlink" title="JSONP的实现"></a>JSONP的实现</h5><p>在请求网站中引入被请求网站的js代码，代码中cd是指定的回调函数</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;http://localhost:8888/jsonp/friends.js?callback=callback&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
-<h2 id="jQuery创建元素"><a href="#jQuery创建元素" class="headerlink" title="jQuery创建元素"></a>jQuery创建元素</h2><p>jQuery创建元素只需要把新元素以字符串的形式传入jQuery的构造构造函数</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;&lt;div&gt;Hello World!&lt;/div&gt;&#x27;</span>)<br><br>$(<span class="hljs-string">&#x27;&lt;li&gt;new li&lt;/li&gt;&#x27;</span>)<br><br><span class="hljs-comment">// 还可以使用append创建之后直接插入</span><br><br>$(<span class="hljs-string">&#x27;ul&#x27;</span>).<span class="hljs-title function_">append</span>(<span class="hljs-string">&#x27;&lt;li&gt;li&lt;/li&gt;&#x27;</span>)<br></code></pre></td></tr></table></figure>
+<p>后台内容</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">if</span>(path === <span class="hljs-string">&#x27;/jsonp/friends.js&#x27;</span>)&#123;<br>    response.<span class="hljs-property">statusCode</span> = <span class="hljs-number">200</span><br>    response.<span class="hljs-title function_">setHeader</span>(<span class="hljs-string">&#x27;Content-Type&#x27;</span>, <span class="hljs-string">&#x27;text/javascript;charset=utf-8&#x27;</span>)<br>    <span class="hljs-keyword">const</span> string = fs.<span class="hljs-title function_">readFileSync</span>(<span class="hljs-string">&#x27;public/friends.json&#x27;</span>)<br>    <br>    <span class="hljs-comment">// query.cd 获取前端传过来的cd参数的值</span><br>    <span class="hljs-comment">// 将cd的值作为回调函数的名称，进行拼接然后返回</span><br>    response.<span class="hljs-title function_">write</span>(query.<span class="hljs-property">callback</span> + <span class="hljs-string">&#x27;(&#x27;</span> + string + <span class="hljs-string">&#x27;)&#x27;</span>)<br>    response.<span class="hljs-title function_">end</span>()<br> &#125;<br></code></pre></td></tr></table></figure>
 
-<h2 id="jQuery移动元素"><a href="#jQuery移动元素" class="headerlink" title="jQuery移动元素"></a>jQuery移动元素</h2><p>jQuery移动元素提供了两种方法：</p>
-<p>假定我们想要将div元素放在p元素后面</p>
-<p>第一种：直接移动该元素</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;div&#x27;</span>).<span class="hljs-title function_">insertAfter</span>($(<span class="hljs-string">&#x27;p&#x27;</span>))  <span class="hljs-comment">// 将div元素移动到p元素后面</span><br></code></pre></td></tr></table></figure>
+<p>后台处理之后&#x2F;jsonp&#x2F;friends.js下的js文件的内容就变成了下面这样，变成了调用这个callback的函数，并且将数据作为参数传入callback中。</p>
+<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206110109038.png" alt="friends.js内容"></p>
+<p>callback函数的定义如下：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">callback</span>(<span class="hljs-params">data</span>)&#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(data);<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p>第二种：移动其他元素的位置，从而达到目的</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;p&#x27;</span>).<span class="hljs-title function_">after</span>($(<span class="hljs-string">&#x27;div&#x27;</span>))  <span class="hljs-comment">// 在p元素的后面加入一个div</span><br></code></pre></td></tr></table></figure>
+<p>控制台输出如下</p>
+<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206110109369.png" alt="控制台输出"></p>
+<p>至此，就已经能够在本页面访问到目标页面的数据了。</p>
+<p>注意：JSONP的实现需要后端支持</p>
+<p>上面的做法有一个缺点，这样设置JSONP之后所有网站都能够拿到这些数据了，如果不想所有网站都能够拿到数据，</p>
+<p>这个时候我们需要做出一些限制：</p>
+<ol>
+<li>使用请求头里面的referer进行匹配</li>
+<li>待补充…</li>
+</ol>
+<h4 id="JSONP优化"><a href="#JSONP优化" class="headerlink" title="JSONP优化"></a>JSONP优化</h4><ol>
+<li><p>自定义回调函数名 （上面的示例已经实现）</p>
+</li>
+<li><p>动态添加删除script标签</p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> script = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&#x27;script&#x27;</span>)<br>script.<span class="hljs-property">src</span> = <span class="hljs-string">`http://localhost:8888/jsonp/friends.js?callback=callback`</span><br>script.<span class="hljs-property">onload</span> = <span class="hljs-function">()=&gt;</span>&#123;<br>	script.<span class="hljs-title function_">remove</span>()<br>&#125;<br><span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-title function_">appendChild</span>(script)<br></code></pre></td></tr></table></figure>
 
-<p>两者实现的效果是相同的，但是第一种方法返回的对象是div元素，第二种方法返回的是p元素。</p>
-<p>这类操作方法，一共有四对：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 在现存元素的外部，从后面插入元素</span><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">insertAfter</span>()<br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">after</span>()<br><br><span class="hljs-comment">// 在现存元素的外部，从前面插入元素</span><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">insertBefore</span>()<br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">before</span>()<br><br><span class="hljs-comment">// 在现存元素的内部，从后面插入元素</span><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">appendTo</span>()<br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">append</span>()<br><br><span class="hljs-comment">// 在现存元素的内部，从前面插入元素</span><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">prependTo</span>()<br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">prepend</span>()<br></code></pre></td></tr></table></figure>
+<h4 id="JSONP优缺点"><a href="#JSONP优缺点" class="headerlink" title="JSONP优缺点"></a>JSONP优缺点</h4><p>优点：</p>
+<ul>
+<li>能够在IE下实现跨域</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>只能得到失败还是成功，无法得到状态码以及响应头等</li>
+<li>无法使用post请求，因为script只支持post</li>
+</ul>
+<h4 id="Promise规范封装JSONP"><a href="#Promise规范封装JSONP" class="headerlink" title="Promise规范封装JSONP"></a>Promise规范封装JSONP</h4><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 封装jsonp</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">jsonp</span>(<span class="hljs-params">url</span>)&#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve,rejected</span>)=&gt;</span>&#123;<br>    <span class="hljs-comment">// 随机生成回调函数名</span><br>	<span class="hljs-keyword">const</span> random = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>();<br>    <span class="hljs-comment">// 回调函数</span><br>    <span class="hljs-variable language_">window</span>[random] = <span class="hljs-function">(<span class="hljs-params">data</span>)=&gt;</span>&#123;<br>      <span class="hljs-title function_">resolve</span>(data);<br>    &#125;<br>    <span class="hljs-keyword">const</span> script = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&#x27;script&#x27;</span>)<br>    script.<span class="hljs-property">src</span> = url + <span class="hljs-string">`?callback=`</span> + random;<br>    script.<span class="hljs-property">onload</span> = <span class="hljs-function">()=&gt;</span>&#123;<br>      script.<span class="hljs-title function_">remove</span>()<br>    &#125;<br>    script.<span class="hljs-property">onerror</span> = <span class="hljs-function">()=&gt;</span>&#123;<br>      <span class="hljs-title function_">rejected</span>();<br>    &#125;<br>    <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-title function_">appendChild</span>(script)<br>  &#125;)<br>&#125;<br><br><span class="hljs-comment">// 调用jsonp</span><br><span class="hljs-title function_">jsonp</span>(<span class="hljs-string">&#x27;http://localhost:8888/jsonp/friends.js&#x27;</span>)<br>.<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">data</span>)=&gt;</span>&#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(data);<br>&#125;,<span class="hljs-function">()=&gt;</span>&#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;请求失败！&#x27;</span>);<br>&#125;)<br></code></pre></td></tr></table></figure>
 
-<h2 id="jQuery修改元素属性"><a href="#jQuery修改元素属性" class="headerlink" title="jQuery修改元素属性"></a>jQuery修改元素属性</h2><p>jQuery中使用同意个函数进行取值（getter）和赋值（setter），具体是取值还是赋值由函数的参数决定</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;div&#x27;</span>).<span class="hljs-property">html</span>; <span class="hljs-comment">// 无参，获取div的值</span><br><br>$(<span class="hljs-string">&#x27;div&#x27;</span>).<span class="hljs-property">html</span>; <span class="hljs-comment">// 带参，设置div的值 </span><br></code></pre></td></tr></table></figure>
-
-<p>常用赋值和取值操作如下：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">html</span>() <span class="hljs-comment">// 取出或设置html内容</span><br><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">text</span>() <span class="hljs-comment">// 取出或设置text内容</span><br><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">attr</span>() <span class="hljs-comment">// 取出或设置某个属性的值</span><br><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">width</span>() <span class="hljs-comment">// 取出或设置某个元素的宽度</span><br><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">height</span>() <span class="hljs-comment">// 取出或设置某个元素的高度</span><br><br>$(<span class="hljs-string">&#x27;xxx&#x27;</span>).<span class="hljs-title function_">val</span>() <span class="hljs-comment">// 取出某个表单元素的值</span><br></code></pre></td></tr></table></figure>
-
-<p>有一点需要注意，在<span class="label label-info">$(‘xxx’)</span>获取的值是多个时，在进行赋值的时候，是对所有元素进行赋值；在进行取值的时候，只对第一个元素进行取值（<a href="https://www.jquery123.com/text/">.text()</a>除外，它是取出所有元素text内容）。</p>
+<p>注意：这种方式封装JSONP需要将回调函数放在window上，否则因为作用域的原因会使得friends.js中的回调函数无法访问到。另外，如果只有一个jsonp请求，可以使用一个回调函数，但是一旦出现了多个jsonp请求，就要使用不同的回调函数了，上面采用了随机数的方式生成回调函数名。</p>
+<h2 id="跨域常见问题"><a href="#跨域常见问题" class="headerlink" title="跨域常见问题"></a>跨域常见问题</h2><h4 id="为什么可以使用其他网站上的css、js、和img？"><a href="#为什么可以使用其他网站上的css、js、和img？" class="headerlink" title="为什么可以使用其他网站上的css、js、和img？"></a>为什么可以使用其他网站上的css、js、和img？</h4><p>同源策略限制的是数据访问，在网站中使用js、css、img时是属于引用，不能够获取到其中数据的。</p>
 ]]></content>
       <tags>
-        <tag>jQuery</tag>
+        <tag>JavaScript</tag>
+        <tag>CORS</tag>
+        <tag>JSONP</tag>
       </tags>
   </entry>
   <entry>
@@ -864,128 +986,6 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
       <tags>
         <tag>Cookie</tag>
         <tag>WebStorage</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>浅析跨域问题</title>
-    <url>/posts/721439c2.html</url>
-    <content><![CDATA[<h2 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h2><h3 id="源的概念"><a href="#源的概念" class="headerlink" title="源的概念"></a>源的概念</h3><p>window.origin或location.origin就可以得到当前源</p>
-<p>源 &#x3D; 协议 + 域名 + 端口号</p>
-<h3 id="同源的概念"><a href="#同源的概念" class="headerlink" title="同源的概念"></a>同源的概念</h3><p>如果两个url的协议、域名、端口号都完全一致，则这两个url就是同源的</p>
-<p>例如：</p>
-<p><a href="https://qq/.com">https://qq/.com</a> 和 <a href="https://www.baidu.com/">https://www.baidu.com</a> 不同源</p>
-<p><a href="https://baidu.com/">https://baidu.com</a> 和 <a href="https://www.baidu.com/">https://www.baidu.com</a> 不同源</p>
-<p>注意：只有完全一致才能算是同源</p>
-<h3 id="同源策源的概念"><a href="#同源策源的概念" class="headerlink" title="同源策源的概念"></a>同源策源的概念</h3><p>浏览器如果JavaScript运行在源A中就只允许获取源A的数据，而不能够源B中的数据，即不允许跨域</p>
-<p>同源策略的目的为了保护用户的隐私</p>
-<h2 id="跨域请求示例"><a href="#跨域请求示例" class="headerlink" title="跨域请求示例"></a>跨域请求示例</h2><p>我现在在本地9999端口的网页发送一个请求去请求本地8888端口的资源，代码如下：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> request = <span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLHttpRequest</span>();<br><br>request.<span class="hljs-title function_">open</span>(<span class="hljs-string">&#x27;get&#x27;</span>,<span class="hljs-string">&#x27;http://localhost:8888/friends.json&#x27;</span>)<br><br>request.<span class="hljs-property">onreadystatechange</span> = <span class="hljs-function">()=&gt;</span>&#123;<br>  <span class="hljs-keyword">if</span>(request.<span class="hljs-property">readyState</span> === <span class="hljs-number">4</span> &amp;&amp; request.<span class="hljs-property">status</span> === <span class="hljs-number">200</span>)&#123;<br>    <span class="hljs-keyword">let</span> ul = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&#x27;ul&#x27;</span>);<br>    <span class="hljs-keyword">let</span> friends = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(request.<span class="hljs-property">response</span>);<br>    friends.<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">item</span>)=&gt;</span>&#123;<br>        <span class="hljs-keyword">let</span> li = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&#x27;li&#x27;</span>);<br>        li.<span class="hljs-property">textContent</span> = item.<span class="hljs-property">name</span>;<br>        ul.<span class="hljs-title function_">appendChild</span>(li);<br>    &#125;)<br>    <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-title function_">appendChild</span>(ul);<br>  &#125;<br>&#125;<br><br>request.<span class="hljs-title function_">send</span>();<br></code></pre></td></tr></table></figure>
-
-<p>浏览器就会发出下面的错误信息，提示你进行了跨域请求并且已经被浏览器进行阻止。</p>
-<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206110109578.png" alt="浏览器提示跨域错误"></p>
-<h2 id="跨域解决方式"><a href="#跨域解决方式" class="headerlink" title="跨域解决方式"></a>跨域解决方式</h2><h3 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h3><p>CORS（Cross-Origin Resource Sharing）跨域资源共享，是一种基于 HTTP 头的机制，该机制通过允许服务器标示除了它自己以外的其它origin（域、协议和端口），这样其他网站可以直接请求该网站的这些资源。</p>
-<p>使用方法：</p>
-<p>在被请求网站的响应头中进行添加</p>
-<figure class="highlight awk"><table><tr><td class="code"><pre><code class="hljs awk">...<br>Access-Control-Allow-Origin: http:<span class="hljs-regexp">//</span>xxx.xxxx.xxx    <span class="hljs-regexp">//</span>指定网址访问<br><br>or<br><br>Access-Control-Allow-Origin: *   <span class="hljs-regexp">//</span> 所有均可访问<br>...<br></code></pre></td></tr></table></figure>
-
-<p>更多请见-&gt;<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CORS#%E7%AE%80%E5%8D%95%E8%AF%B7%E6%B1%82">MDN CORS文档</a></p>
-<h3 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h3><p>JSONP是当浏览器不支持CORS（比如IE浏览器）时使用的一种跨域方式</p>
-<h5 id="JSONP的实现"><a href="#JSONP的实现" class="headerlink" title="JSONP的实现"></a>JSONP的实现</h5><p>在请求网站中引入被请求网站的js代码，代码中cd是指定的回调函数</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;http://localhost:8888/jsonp/friends.js?callback=callback&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-<p>后台内容</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">if</span>(path === <span class="hljs-string">&#x27;/jsonp/friends.js&#x27;</span>)&#123;<br>    response.<span class="hljs-property">statusCode</span> = <span class="hljs-number">200</span><br>    response.<span class="hljs-title function_">setHeader</span>(<span class="hljs-string">&#x27;Content-Type&#x27;</span>, <span class="hljs-string">&#x27;text/javascript;charset=utf-8&#x27;</span>)<br>    <span class="hljs-keyword">const</span> string = fs.<span class="hljs-title function_">readFileSync</span>(<span class="hljs-string">&#x27;public/friends.json&#x27;</span>)<br>    <br>    <span class="hljs-comment">// query.cd 获取前端传过来的cd参数的值</span><br>    <span class="hljs-comment">// 将cd的值作为回调函数的名称，进行拼接然后返回</span><br>    response.<span class="hljs-title function_">write</span>(query.<span class="hljs-property">callback</span> + <span class="hljs-string">&#x27;(&#x27;</span> + string + <span class="hljs-string">&#x27;)&#x27;</span>)<br>    response.<span class="hljs-title function_">end</span>()<br> &#125;<br></code></pre></td></tr></table></figure>
-
-<p>后台处理之后&#x2F;jsonp&#x2F;friends.js下的js文件的内容就变成了下面这样，变成了调用这个callback的函数，并且将数据作为参数传入callback中。</p>
-<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206110109038.png" alt="friends.js内容"></p>
-<p>callback函数的定义如下：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">callback</span>(<span class="hljs-params">data</span>)&#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(data);<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<p>控制台输出如下</p>
-<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206110109369.png" alt="控制台输出"></p>
-<p>至此，就已经能够在本页面访问到目标页面的数据了。</p>
-<p>注意：JSONP的实现需要后端支持</p>
-<p>上面的做法有一个缺点，这样设置JSONP之后所有网站都能够拿到这些数据了，如果不想所有网站都能够拿到数据，</p>
-<p>这个时候我们需要做出一些限制：</p>
-<ol>
-<li>使用请求头里面的referer进行匹配</li>
-<li>待补充…</li>
-</ol>
-<h4 id="JSONP优化"><a href="#JSONP优化" class="headerlink" title="JSONP优化"></a>JSONP优化</h4><ol>
-<li><p>自定义回调函数名 （上面的示例已经实现）</p>
-</li>
-<li><p>动态添加删除script标签</p>
-</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> script = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&#x27;script&#x27;</span>)<br>script.<span class="hljs-property">src</span> = <span class="hljs-string">`http://localhost:8888/jsonp/friends.js?callback=callback`</span><br>script.<span class="hljs-property">onload</span> = <span class="hljs-function">()=&gt;</span>&#123;<br>	script.<span class="hljs-title function_">remove</span>()<br>&#125;<br><span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-title function_">appendChild</span>(script)<br></code></pre></td></tr></table></figure>
-
-<h4 id="JSONP优缺点"><a href="#JSONP优缺点" class="headerlink" title="JSONP优缺点"></a>JSONP优缺点</h4><p>优点：</p>
-<ul>
-<li>能够在IE下实现跨域</li>
-</ul>
-<p>缺点：</p>
-<ul>
-<li>只能得到失败还是成功，无法得到状态码以及响应头等</li>
-<li>无法使用post请求，因为script只支持post</li>
-</ul>
-<h4 id="Promise规范封装JSONP"><a href="#Promise规范封装JSONP" class="headerlink" title="Promise规范封装JSONP"></a>Promise规范封装JSONP</h4><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 封装jsonp</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">jsonp</span>(<span class="hljs-params">url</span>)&#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve,rejected</span>)=&gt;</span>&#123;<br>    <span class="hljs-comment">// 随机生成回调函数名</span><br>	<span class="hljs-keyword">const</span> random = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>();<br>    <span class="hljs-comment">// 回调函数</span><br>    <span class="hljs-variable language_">window</span>[random] = <span class="hljs-function">(<span class="hljs-params">data</span>)=&gt;</span>&#123;<br>      <span class="hljs-title function_">resolve</span>(data);<br>    &#125;<br>    <span class="hljs-keyword">const</span> script = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&#x27;script&#x27;</span>)<br>    script.<span class="hljs-property">src</span> = url + <span class="hljs-string">`?callback=`</span> + random;<br>    script.<span class="hljs-property">onload</span> = <span class="hljs-function">()=&gt;</span>&#123;<br>      script.<span class="hljs-title function_">remove</span>()<br>    &#125;<br>    script.<span class="hljs-property">onerror</span> = <span class="hljs-function">()=&gt;</span>&#123;<br>      <span class="hljs-title function_">rejected</span>();<br>    &#125;<br>    <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-title function_">appendChild</span>(script)<br>  &#125;)<br>&#125;<br><br><span class="hljs-comment">// 调用jsonp</span><br><span class="hljs-title function_">jsonp</span>(<span class="hljs-string">&#x27;http://localhost:8888/jsonp/friends.js&#x27;</span>)<br>.<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">data</span>)=&gt;</span>&#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(data);<br>&#125;,<span class="hljs-function">()=&gt;</span>&#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;请求失败！&#x27;</span>);<br>&#125;)<br></code></pre></td></tr></table></figure>
-
-<p>注意：这种方式封装JSONP需要将回调函数放在window上，否则因为作用域的原因会使得friends.js中的回调函数无法访问到。另外，如果只有一个jsonp请求，可以使用一个回调函数，但是一旦出现了多个jsonp请求，就要使用不同的回调函数了，上面采用了随机数的方式生成回调函数名。</p>
-<h2 id="跨域常见问题"><a href="#跨域常见问题" class="headerlink" title="跨域常见问题"></a>跨域常见问题</h2><h4 id="为什么可以使用其他网站上的css、js、和img？"><a href="#为什么可以使用其他网站上的css、js、和img？" class="headerlink" title="为什么可以使用其他网站上的css、js、和img？"></a>为什么可以使用其他网站上的css、js、和img？</h4><p>同源策略限制的是数据访问，在网站中使用js、css、img时是属于引用，不能够获取到其中数据的。</p>
-]]></content>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>CORS</tag>
-        <tag>JSONP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Parcel安装和使用</title>
-    <url>/posts/dd5d5baf.html</url>
-    <content><![CDATA[<h2 id="Parcel简介"><a href="#Parcel简介" class="headerlink" title="Parcel简介"></a>Parcel简介</h2><p>Parcel是一款无需额外配置的打包工具，可以做到安装之后直接使用。得益于Parcel内部使用多线程打包，所以在相同项目中parcel的打包速度会快很多。</p>
-<h2 id="Parcel安装"><a href="#Parcel安装" class="headerlink" title="Parcel安装"></a>Parcel安装</h2><h3 id="yarn"><a href="#yarn" class="headerlink" title="yarn"></a>yarn</h3><p>初始化项目</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">yarn init -y<br></code></pre></td></tr></table></figure>
-<p>全局安装Parcel</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">yarn global add parcel-bundler<br></code></pre></td></tr></table></figure>
-<p>局部安装</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">yarn add parcel-bundler<br></code></pre></td></tr></table></figure>
-<h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h3><p>初始化项目</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">npm init -y<br></code></pre></td></tr></table></figure>
-<p>全局安装Parcel</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">npm install -g parcel-bundler<br></code></pre></td></tr></table></figure>
-<p>局部安装</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">npm install parcel-bundler<br></code></pre></td></tr></table></figure>
-<h2 id="Parcel的使用"><a href="#Parcel的使用" class="headerlink" title="Parcel的使用"></a>Parcel的使用</h2><p>假设项目文件目录如下</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><code class="hljs text">├── index.html<br>├── package.json<br>└── src<br>    └── main.js<br></code></pre></td></tr></table></figure>
-<p class="note note-warning">Parcel的打包需要指定一个入口文件，通常是HTML文件</p>
-
-<h3 id="开发模式打包"><a href="#开发模式打包" class="headerlink" title="开发模式打包"></a>开发模式打包</h3><p>开发模式打包下，Parcel会自动将应用构建在它内置的开发服务器中，你可使用浏览器进行访问，默认访问地址是：<a href="http://localhose:1234/">http://localhose:1234</a></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">parcel index.html<br></code></pre></td></tr></table></figure>
-<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206191551190.png" alt="示例"></p>
-<p>打包完成之后会在当前目录下自动生成dist目录</p>
-<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206191553645.png" alt="dist目录"></p>
-<h3 id="生产模式打包"><a href="#生产模式打包" class="headerlink" title="生产模式打包"></a>生产模式打包</h3><p>完成项目开发之后，项目进行打包，不再需要运行在Parcel内置服务器中</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">parcel build index.html<br></code></pre></td></tr></table></figure>
-
-<p class="note note-warning">
-这里有一点需要注意，直接使用上面的命令打包出来的所有资源的路径都是`/xxxx.js`，这可能会导致资源无法正常请求到，所以建议使用下面的指令，设置为当前路径</p>
-
-<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">parcel build index.html --public-url .<br></code></pre></td></tr></table></figure>
-
-<p>如果你期望打包时不进行代码压缩：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">parcel build index.html --no-minify --public-url .<br></code></pre></td></tr></table></figure>
-
-<h2 id="配置脚本"><a href="#配置脚本" class="headerlink" title="配置脚本"></a>配置脚本</h2><p>你可以通过配置<span class="label label-info">package.json</span>添加任务脚本来帮助你开发&amp;生产</p>
-<p><strong>package.json</strong></p>
-<figure class="highlight json"><table><tr><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>  <span class="hljs-attr">&quot;scripts&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;dev&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;parcel index.html&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;build&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;parcel build index.html&quot;</span><br>  <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
-
-<p>此时你就可以使用yarn或者npm运行他们了</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># 以开发模式运行</span><br>yarn dev<br><br>npm run dev<br><br><span class="hljs-comment"># 以生成模式运行</span><br>yarn build<br><br>npm run build<br></code></pre></td></tr></table></figure>
-
-<p>更多资源类型解析打包、Parcel配置等知识请求移步到<a href="https://www.parceljs.cn/javascript.html">Parcel中文官网</a>或者<a href="https://parceljs.org/docs/">Parcel官网</a></p>
-]]></content>
-      <tags>
-        <tag>Parcel</tag>
       </tags>
   </entry>
   <entry>
