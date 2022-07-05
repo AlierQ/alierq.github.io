@@ -23,13 +23,13 @@
 <meta property="og:site_name" content="AlierQ&#39;s Blog">
 <meta property="og:description" content="MVC设计模模式什么是设计模式？设计模式是软件开发人员在软件开发过程中面临一般问题的解决方案，是一套被反复使用的、多数人知晓的、代码设计的总结。使用设计模式能够使得代码更可靠、更易懂、更高效。 什么是MVC设计模式？MVC设计模式为了提高代码的灵活性和复用性，将应用划分为三个部分：  Model（模型） 这部分封装了应用程序业务逻辑相关的数据以及他们对应的处理数据的方法，当数据发生改变时模型将会通">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206172046665.jpg">
+<meta property="og:image" content="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202206172046665.jpg">
 <meta property="article:published_time" content="2022-06-17T12:42:52.000Z">
-<meta property="article:modified_time" content="2022-06-17T15:03:03.905Z">
+<meta property="article:modified_time" content="2022-07-05T15:13:02.051Z">
 <meta property="article:author" content="AlierQ">
 <meta property="article:tag" content="MVC">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206172046665.jpg">
+<meta name="twitter:image" content="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202206172046665.jpg">
   
   
   
@@ -285,7 +285,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年6月17日 晚上
+                    本文最后更新于：2022年7月5日 晚上
                   
                 
               </p>
@@ -299,6 +299,7 @@
 </ol>
 <p>Model示例：</p>
    <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> <span class="hljs-title class_">Model</span> = &#123;<br>    <span class="hljs-attr">data</span>:&#123;&#125;,     <span class="hljs-comment">// 数据</span><br>    <span class="hljs-title function_">get</span>(<span class="hljs-params"></span>)&#123;&#125;,     <span class="hljs-comment">// 获取数据</span><br>    <span class="hljs-title function_">save</span>(<span class="hljs-params"></span>)&#123;&#125;,    <span class="hljs-comment">// 保存数据</span><br>    <span class="hljs-title function_">create</span>(<span class="hljs-params"></span>)&#123;&#125;,  <span class="hljs-comment">// 创建数据</span><br>    <span class="hljs-title function_">delete</span>(<span class="hljs-params"></span>)&#123;&#125;,  <span class="hljs-comment">// 删除数据</span><br>    <span class="hljs-title function_">update</span>(<span class="hljs-params"></span>)&#123;&#125;,  <span class="hljs-comment">// 更新数据</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
 <ol start="2">
 <li>View（视图） 这部分是界面上的展示，展示的是Model中的数据的状态，当数据发送变化，视图也会随之重新渲染页面。</li>
 </ol>
@@ -359,7 +360,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年6月17日</div>
+          <div>2022年7月5日</div>
         </div>
       
       <div class="license-meta-item">

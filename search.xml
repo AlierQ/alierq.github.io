@@ -1,52 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>CSS盒模型</title>
-    <url>/posts/94a1bb4e.html</url>
-    <content><![CDATA[<h2 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h2><p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206062244801.png" alt="盒模型示意图"></p>
-<p>如上图所示盒模型由三个部分组成：</p>
-<ul>
-<li>内边距：<span class="label label-info">Padding</span></li>
-<li>边框：<span class="label label-info">Border</span></li>
-<li>外边距：<span class="label label-info">Margin</span></li>
-</ul>
-<h3 id="边框（Border）"><a href="#边框（Border）" class="headerlink" title="边框（Border）"></a>边框（Border）</h3><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/* 边框宽度 || 边框样式 || 边框颜色 */</span><br><span class="hljs-attribute">border</span>:border-width || border-style || border-color<br></code></pre></td></tr></table></figure>
-<p>边框样式属性值如下：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">none</span> <span class="hljs-comment">/* 没有边框样式 */</span><br><br>solid <span class="hljs-comment">/* 边框样式为单实线 */</span><br><br>dashed <span class="hljs-comment">/* 边框样式为虚线 */</span><br><br>dotted <span class="hljs-comment">/* 边框样式为点线 */</span><br><br>double <span class="hljs-comment">/* 边框样式为双实线 */</span><br></code></pre></td></tr></table></figure>
-<p>简写形式如下：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#ccc</span>;  <span class="hljs-comment">/* 宽度、颜色、样式 */</span><br></code></pre></td></tr></table></figure>
-<h4 id="特殊边框"><a href="#特殊边框" class="headerlink" title="特殊边框"></a>特殊边框</h4><p>表格边框：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">table</span>&#123;<br>	<span class="hljs-attribute">border-collapse</span>:collapse;  <span class="hljs-comment">/* 合并表格边框 */</span><br>&#125;<br></code></pre></td></tr></table></figure>
-<p>圆角边框：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css">bordre-radius: 左上 右上 右下 左下;<br><span class="hljs-comment">/* 从左上角顺时针分配指 */</span><br><br><span class="hljs-attribute">border-radius</span>:<span class="hljs-number">50%</span><br><span class="hljs-comment">/* 画圆 */</span><br><br>border-radius:<span class="hljs-number">10px</span> <span class="hljs-number">40px</span>;<br><span class="hljs-comment">/* 使用两个值的时候默认第一个设置主对角线，第二个设置副对角线 */</span><br><br><span class="hljs-attribute">border-radius</span>:<span class="hljs-number">10px</span> <span class="hljs-number">20px</span> <span class="hljs-number">30px</span><br><span class="hljs-comment">/* 使用三个值的时候,第一个参数和第三个参数为左上和右下，第二个参数设置副对角线 */</span><br></code></pre></td></tr></table></figure>
-<h3 id="内边距（Padding）"><a href="#内边距（Padding）" class="headerlink" title="内边距（Padding）"></a>内边距（Padding）</h3><p>内容距离边框的距离称为内边距</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">padding-left</span>:<span class="hljs-number">10px</span>;<br><span class="hljs-attribute">padding-right</span>:<span class="hljs-number">20px</span>;<br><span class="hljs-attribute">padding-top</span>:<span class="hljs-number">30px</span>;<br><span class="hljs-attribute">padding-bottom</span>:<span class="hljs-number">40px</span>;<br><span class="hljs-comment">/* 设置上下左右四个方向的内边距 */</span><br></code></pre></td></tr></table></figure>
-<p>简写形式：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">padding</span>:<span class="hljs-number">20px</span>;<br><span class="hljs-comment">/* 表示上下左右内边距都是20px的距离 */</span><br><br><span class="hljs-attribute">padding</span>:<span class="hljs-number">20px</span> <span class="hljs-number">30px</span>;<br><span class="hljs-comment">/* 上下是20px 左右是30px的内边距 */</span><br><br><span class="hljs-attribute">padding</span>:<span class="hljs-number">10px</span> <span class="hljs-number">20px</span> <span class="hljs-number">50px</span>;<br><span class="hljs-comment">/* 上内边距时10px 左右内边距是20px 下内边距是50px */</span><br><br><span class="hljs-attribute">padding</span>:<span class="hljs-number">10px</span> <span class="hljs-number">20px</span> <span class="hljs-number">30px</span> <span class="hljs-number">40px</span>;  <br><span class="hljs-comment">/* 顺时针的，上右下左 */</span><br></code></pre></td></tr></table></figure>
-<h3 id="外边距（Margin）"><a href="#外边距（Margin）" class="headerlink" title="外边距（Margin）"></a>外边距（Margin）</h3><p>边框之外到其他元素的距离称为外边</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">margin-top</span>:<span class="hljs-number">10px</span>;<br><span class="hljs-attribute">margin-right</span>:<span class="hljs-number">20px</span>;<br><span class="hljs-attribute">margin-left</span>:<span class="hljs-number">30px</span>;<br><span class="hljs-attribute">margin-bottom</span>:<span class="hljs-number">40px</span>;<br><span class="hljs-comment">/* 分别设置上右下左的外边距 */</span><br><span class="hljs-comment">/* 外边距简写方式与内边距相同 */</span><br></code></pre></td></tr></table></figure>
-<h4 id="外边距实现左右居中"><a href="#外边距实现左右居中" class="headerlink" title="外边距实现左右居中"></a>外边距实现左右居中</h4><p class="note note-warning">
-使用margin实现盒子水平居中，需要满足以下条件：<br>
-1、必须block元素<br>
-2、盒子必须指定width
-</p>
-实现方法：
-<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.div</span>&#123;<br>	<span class="hljs-attribute">width</span>:<span class="hljs-number">960px</span>;<br>	<span class="hljs-attribute">margin</span>:<span class="hljs-number">0</span> auto; <br>	<span class="hljs-comment">/* 更推荐下面的写法,不会影响top和bottom的样式 */</span><br>	<span class="hljs-attribute">margin-left</span>:auto;<br>	<span class="hljs-attribute">margin-right</span>:auto;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<h3 id="盒模型分类"><a href="#盒模型分类" class="headerlink" title="盒模型分类"></a>盒模型分类</h3><p>盒模型分为内容盒模型和边框盒模型，如图所示：</p>
-<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206062346000.png" alt="内容盒模型和边框盒模型"></p>
-<h4 id="内容盒模型（content-box）"><a href="#内容盒模型（content-box）" class="headerlink" title="内容盒模型（content-box）"></a>内容盒模型（content-box）</h4><p>设置内容盒模型：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">box-sizing</span>:content-box; <span class="hljs-comment">/* 默认是内容盒模型 */</span><br></code></pre></td></tr></table></figure>
-<p>内容盒模型的width只包含了<span class="label label-info">content</span>的内容<br>实际的盒子宽度 &#x3D; <span class="label label-info">width</span> + <span class="label label-info">border</span> + <span class="label label-info">padding</span></p>
-<h4 id="边框盒模型（border-box）"><a href="#边框盒模型（border-box）" class="headerlink" title="边框盒模型（border-box）"></a>边框盒模型（border-box）</h4><p>设置边框盒模型：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">box-sizing</span>:border-box;<br></code></pre></td></tr></table></figure>
-<p>内容盒模型的width包含了<span class="label label-info">content</span>、<span class="label label-info">border</span> 、<span class="label label-info">padding</span>的内容<br>实际的盒子宽度 &#x3D; <span class="label label-info">width</span></p>
-]]></content>
-      <tags>
-        <tag>Css</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CSS文档流</title>
     <url>/posts/1ec30961.html</url>
     <content><![CDATA[<h2 id="文档流"><a href="#文档流" class="headerlink" title="文档流"></a>文档流</h2><p>文档流是指HTML页面中的元素排布（流动）的方向</p>
@@ -87,13 +41,135 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
       </tags>
   </entry>
   <entry>
+    <title>CSS盒模型</title>
+    <url>/posts/94a1bb4e.html</url>
+    <content><![CDATA[<h2 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h2><p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202206062244801.png" alt="盒模型示意图"></p>
+<p>如上图所示盒模型由三个部分组成：</p>
+<ul>
+<li>内边距：<span class="label label-info">Padding</span></li>
+<li>边框：<span class="label label-info">Border</span></li>
+<li>外边距：<span class="label label-info">Margin</span></li>
+</ul>
+<h3 id="边框（Border）"><a href="#边框（Border）" class="headerlink" title="边框（Border）"></a>边框（Border）</h3><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/* 边框宽度 || 边框样式 || 边框颜色 */</span><br><span class="hljs-attribute">border</span>:border-width || border-style || border-color<br></code></pre></td></tr></table></figure>
+<p>边框样式属性值如下：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">none</span> <span class="hljs-comment">/* 没有边框样式 */</span><br><br>solid <span class="hljs-comment">/* 边框样式为单实线 */</span><br><br>dashed <span class="hljs-comment">/* 边框样式为虚线 */</span><br><br>dotted <span class="hljs-comment">/* 边框样式为点线 */</span><br><br>double <span class="hljs-comment">/* 边框样式为双实线 */</span><br></code></pre></td></tr></table></figure>
+<p>简写形式如下：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#ccc</span>;  <span class="hljs-comment">/* 宽度、颜色、样式 */</span><br></code></pre></td></tr></table></figure>
+<h4 id="特殊边框"><a href="#特殊边框" class="headerlink" title="特殊边框"></a>特殊边框</h4><p>表格边框：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">table</span>&#123;<br>	<span class="hljs-attribute">border-collapse</span>:collapse;  <span class="hljs-comment">/* 合并表格边框 */</span><br>&#125;<br></code></pre></td></tr></table></figure>
+<p>圆角边框：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css">bordre-radius: 左上 右上 右下 左下;<br><span class="hljs-comment">/* 从左上角顺时针分配指 */</span><br><br><span class="hljs-attribute">border-radius</span>:<span class="hljs-number">50%</span><br><span class="hljs-comment">/* 画圆 */</span><br><br>border-radius:<span class="hljs-number">10px</span> <span class="hljs-number">40px</span>;<br><span class="hljs-comment">/* 使用两个值的时候默认第一个设置主对角线，第二个设置副对角线 */</span><br><br><span class="hljs-attribute">border-radius</span>:<span class="hljs-number">10px</span> <span class="hljs-number">20px</span> <span class="hljs-number">30px</span><br><span class="hljs-comment">/* 使用三个值的时候,第一个参数和第三个参数为左上和右下，第二个参数设置副对角线 */</span><br></code></pre></td></tr></table></figure>
+<h3 id="内边距（Padding）"><a href="#内边距（Padding）" class="headerlink" title="内边距（Padding）"></a>内边距（Padding）</h3><p>内容距离边框的距离称为内边距</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">padding-left</span>:<span class="hljs-number">10px</span>;<br><span class="hljs-attribute">padding-right</span>:<span class="hljs-number">20px</span>;<br><span class="hljs-attribute">padding-top</span>:<span class="hljs-number">30px</span>;<br><span class="hljs-attribute">padding-bottom</span>:<span class="hljs-number">40px</span>;<br><span class="hljs-comment">/* 设置上下左右四个方向的内边距 */</span><br></code></pre></td></tr></table></figure>
+<p>简写形式：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">padding</span>:<span class="hljs-number">20px</span>;<br><span class="hljs-comment">/* 表示上下左右内边距都是20px的距离 */</span><br><br><span class="hljs-attribute">padding</span>:<span class="hljs-number">20px</span> <span class="hljs-number">30px</span>;<br><span class="hljs-comment">/* 上下是20px 左右是30px的内边距 */</span><br><br><span class="hljs-attribute">padding</span>:<span class="hljs-number">10px</span> <span class="hljs-number">20px</span> <span class="hljs-number">50px</span>;<br><span class="hljs-comment">/* 上内边距时10px 左右内边距是20px 下内边距是50px */</span><br><br><span class="hljs-attribute">padding</span>:<span class="hljs-number">10px</span> <span class="hljs-number">20px</span> <span class="hljs-number">30px</span> <span class="hljs-number">40px</span>;  <br><span class="hljs-comment">/* 顺时针的，上右下左 */</span><br></code></pre></td></tr></table></figure>
+<h3 id="外边距（Margin）"><a href="#外边距（Margin）" class="headerlink" title="外边距（Margin）"></a>外边距（Margin）</h3><p>边框之外到其他元素的距离称为外边</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">margin-top</span>:<span class="hljs-number">10px</span>;<br><span class="hljs-attribute">margin-right</span>:<span class="hljs-number">20px</span>;<br><span class="hljs-attribute">margin-left</span>:<span class="hljs-number">30px</span>;<br><span class="hljs-attribute">margin-bottom</span>:<span class="hljs-number">40px</span>;<br><span class="hljs-comment">/* 分别设置上右下左的外边距 */</span><br><span class="hljs-comment">/* 外边距简写方式与内边距相同 */</span><br></code></pre></td></tr></table></figure>
+<h4 id="外边距实现左右居中"><a href="#外边距实现左右居中" class="headerlink" title="外边距实现左右居中"></a>外边距实现左右居中</h4><p class="note note-warning">
+使用margin实现盒子水平居中，需要满足以下条件：<br>
+1、必须block元素<br>
+2、盒子必须指定width
+</p>
+实现方法：
+<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.div</span>&#123;<br>	<span class="hljs-attribute">width</span>:<span class="hljs-number">960px</span>;<br>	<span class="hljs-attribute">margin</span>:<span class="hljs-number">0</span> auto; <br>	<span class="hljs-comment">/* 更推荐下面的写法,不会影响top和bottom的样式 */</span><br>	<span class="hljs-attribute">margin-left</span>:auto;<br>	<span class="hljs-attribute">margin-right</span>:auto;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="盒模型分类"><a href="#盒模型分类" class="headerlink" title="盒模型分类"></a>盒模型分类</h3><p>盒模型分为内容盒模型和边框盒模型，如图所示：</p>
+<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202206062346000.png" alt="内容盒模型和边框盒模型"></p>
+<h4 id="内容盒模型（content-box）"><a href="#内容盒模型（content-box）" class="headerlink" title="内容盒模型（content-box）"></a>内容盒模型（content-box）</h4><p>设置内容盒模型：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">box-sizing</span>:content-box; <span class="hljs-comment">/* 默认是内容盒模型 */</span><br></code></pre></td></tr></table></figure>
+<p>内容盒模型的width只包含了<span class="label label-info">content</span>的内容<br>实际的盒子宽度 &#x3D; <span class="label label-info">width</span> + <span class="label label-info">border</span> + <span class="label label-info">padding</span></p>
+<h4 id="边框盒模型（border-box）"><a href="#边框盒模型（border-box）" class="headerlink" title="边框盒模型（border-box）"></a>边框盒模型（border-box）</h4><p>设置边框盒模型：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">box-sizing</span>:border-box;<br></code></pre></td></tr></table></figure>
+<p>内容盒模型的width包含了<span class="label label-info">content</span>、<span class="label label-info">border</span> 、<span class="label label-info">padding</span>的内容<br>实际的盒子宽度 &#x3D; <span class="label label-info">width</span></p>
+]]></content>
+      <tags>
+        <tag>Css</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git入门</title>
+    <url>/posts/8e7db504.html</url>
+    <content><![CDATA[<h2 id="Git指令"><a href="#Git指令" class="headerlink" title="Git指令"></a>Git指令</h2><h3 id="设置Git配置"><a href="#设置Git配置" class="headerlink" title="设置Git配置"></a>设置Git配置</h3><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">git config --global user.name 你的英文名<br>git config --global user.email 你的邮箱<br>git config --global push.default simple<br>git config --global core.quotepath <span class="hljs-literal">false</span><br>git config --global core.editor <span class="hljs-string">&quot;code --wait&quot;</span><br>git config --global core.autocrlf input<br></code></pre></td></tr></table></figure>
+
+<h3 id="查看Git配置"><a href="#查看Git配置" class="headerlink" title="查看Git配置"></a>查看Git配置</h3><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">git config --global --list<br></code></pre></td></tr></table></figure>
+
+<h3 id="常用Git指令"><a href="#常用Git指令" class="headerlink" title="常用Git指令"></a>常用Git指令</h3><p><code>git init</code> ：初始化一个git仓库</p>
+<p><code>git add 文件名\路径</code>：提交文件到暂存区</p>
+<p><code>git commit -m &quot;提交信息内容&quot;</code> ：将文件提交到仓库中，并注上提交信息</p>
+<p><code>git commit -v</code>：能够在编辑器中看到自己当前的修改行数内容</p>
+<p><code>git commit -v --amend</code> ：VScode终端提交语句</p>
+<p><code>git log</code> ：查看提交记录</p>
+<p><code>git reflog</code>：查看历史记录（包括回退的记录）</p>
+<p><code>git reset --hard 版本号前6位</code>：回退到指定版本</p>
+<p><code>git branch </code>：查看所有分支，以及当前所在分支</p>
+<p><code>git branch 分支名</code>：创建一个新分支</p>
+<p><code>git checkout 分支名</code>：切换到指定分支</p>
+<p><code>git merge 分支名</code>：将另一个分支合并到当前分支</p>
+<p><code>git status -sb</code>：用来查看当前哪个文件冲突了</p>
+<p><code>git branch -d 分支名</code>：删除合并后的无用的分支</p>
+<p><code>git remote -v</code>：显示所有远程仓库</p>
+<p><code>git remote add 名称  远程仓库地址</code>：添加一个远程仓库</p>
+<p class="note note-warning">当合并分支的时候可能会产生冲突，解决完冲突之后应重新add、commit该文件（此时commit时不带参数）</p>
+
+<p><span style="color:red;"><code>.gitignore文件</code>：配置哪些文件不需要提交</span></p>
+<p>常见不用提交目录：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">node_modules<br>.DS_Store<br>.idea<br>.vscode<br></code></pre></td></tr></table></figure>
+
+<h3 id="远程git仓库"><a href="#远程git仓库" class="headerlink" title="远程git仓库"></a>远程git仓库</h3><h4 id="创建ssh-key"><a href="#创建ssh-key" class="headerlink" title="创建ssh key"></a>创建ssh key</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">ssh-keygen -t rsa -b 4096 -C &quot;你的任意邮箱地址&quot;<br><span class="hljs-meta prompt_"># </span><span class="language-bash">-t 表示密钥的类型 ，-b表示密钥的长度，-C 用于识别这个密钥的注释</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="Github配置公钥"><a href="#Github配置公钥" class="headerlink" title="Github配置公钥"></a>Github配置公钥</h4><p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202206132145247.png" alt="git设置公钥"></p>
+<h4 id="测试Github连接"><a href="#测试Github连接" class="headerlink" title="测试Github连接"></a>测试Github连接</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">ssh -T git@github.com<br></code></pre></td></tr></table></figure>
+
+<h4 id="上传远程仓库"><a href="#上传远程仓库" class="headerlink" title="上传远程仓库"></a>上传远程仓库</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">将本地仓库和远程仓库连接起来</span><br>git remote add origin git@github.com:AlierQ/GitTest.git<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">将原有的master改名位main,因为github上的主分支名称由master改为了main</span><br>git branch -M main<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">推到远程仓库的main分支</span><br>git push -u origin main<br></code></pre></td></tr></table></figure>
+
+<h4 id="上传其他分支"><a href="#上传其他分支" class="headerlink" title="上传其他分支"></a>上传其他分支</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">方式1</span><br>git checkout 分支名<br>git push -u origin 分支名<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">方式2</span><br>git push origin 本地分支名:远程分支名<br></code></pre></td></tr></table></figure>
+
+<h4 id="获取远程合并本地"><a href="#获取远程合并本地" class="headerlink" title="获取远程合并本地"></a>获取远程合并本地</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">将远程的仓库合并到本地</span><br>git pull<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">若有多个仓库名</span><br>git pull 仓库名 远程分支名:本地分支名<br></code></pre></td></tr></table></figure>
+
+<h4 id="克隆远程仓库"><a href="#克隆远程仓库" class="headerlink" title="克隆远程仓库"></a>克隆远程仓库</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">从目标地址克隆项目到本地</span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">当前目录下新建一个与项目同名的文件夹，将项目放在里面</span><br>git clone git@XXXXXX[目标地址]    <br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">新建一个abc目录，将克隆的项目放在这里</span><br>git clone git@XXXXXX[目标地址] abc <br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">在当前目录下直接存放项目,(最好是空文件夹)</span><br>git clone git@XXXXXX[目标地址] .<br></code></pre></td></tr></table></figure>
+
+<h3 id="Git高级操作"><a href="#Git高级操作" class="headerlink" title="Git高级操作"></a>Git高级操作</h3><h4 id="bash-alias简化命令"><a href="#bash-alias简化命令" class="headerlink" title="bash alias简化命令"></a>bash alias简化命令</h4><p>1、向&#x2F;.bashrc文件里面写入配置</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">touch ~/.bashrc<br>echo &#x27;alias ga=&quot;git add&quot;&#x27;&gt;&gt; ~/.bashrc<br>echo &#x27;alias gc=&quot;git commit -v&quot;&#x27;&gt;&gt; ~/.bashrc<br>echo &#x27;alias gl=&quot;git pull&quot;&#x27;&gt;&gt; ~/.bashrc<br>echo &#x27;alias gp=&quot;git push&quot;&#x27;&gt;&gt; ~/.bashrc<br>echo &#x27;alias gco=&quot;git checkout&quot;&#x27;&gt;&gt; ~/.bashrc<br>echo &#x27;alias gst=&quot;git status -sb&quot;&#x27;&gt;&gt; ~/.bashrc<br></code></pre></td></tr></table></figure>
+
+<p>2、加载配置</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">source ~/.bashrc<br></code></pre></td></tr></table></figure>
+
+<h4 id="美化提交历史记录"><a href="#美化提交历史记录" class="headerlink" title="美化提交历史记录"></a>美化提交历史记录</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">git rebase -i 版本号<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202206132145993.png"></p>
+<h4 id="冲突解决"><a href="#冲突解决" class="headerlink" title="冲突解决"></a>冲突解决</h4><h5 id="中止"><a href="#中止" class="headerlink" title="中止"></a>中止</h5><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">git rebase --abort<br></code></pre></td></tr></table></figure>
+
+<h5 id="继续"><a href="#继续" class="headerlink" title="继续"></a>继续</h5><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">git rebase --continue<br></code></pre></td></tr></table></figure>
+
+<h4 id="临时隐藏文件"><a href="#临时隐藏文件" class="headerlink" title="临时隐藏文件"></a>临时隐藏文件</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">git add后可以使用该命令将文件隐藏</span><br>git stash<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">取消隐藏</span><br>git stash pop<br></code></pre></td></tr></table></figure>
+
+<p class="note note-warning">可以连续使用，pop顺序与放入顺序相反</p>
+
+<h3 id="忽略文件-gitignore"><a href="#忽略文件-gitignore" class="headerlink" title="忽略文件.gitignore"></a>忽略文件.gitignore</h3><p>.gitinore可以配置哪些文件不需要提交</p>
+<p>文件编写规则：</p>
+<ol>
+<li>忽略文件中的空行或以井号（#）开始的行将会被忽略。（注释）</li>
+<li>可以使用Linux通配符。例如：星号（*）代表任意多个字符，问号（?）代表一个字符，方括号（[abc]）代表可选字符范围，大括号（{string1,string2,…}）代表可选的字符串等。</li>
+<li>如果名称的最前面有一个感叹号（!），表示例外规则，将不被忽略。</li>
+<li>如果名称的最前面是一个路径分隔符（&#x2F;），表示要忽略的文件在此目录下，而子目录中的文件不忽略。</li>
+<li>如果名称的最后面是一个路径分隔符（&#x2F;），表示要忽略的是此目录下该名称的子目录，而非文件（默认文件或目录都忽略）。</li>
+</ol>
+<p>例如：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">注释</span><br><br>*.txt        # 忽略所有 .txt结尾的文件,这样的话上传就不会被选中！<br><br>!lib.txt     # 但lib.txt除外<br><br>/temp        # 仅忽略项目根目录下的temp文件,不包括其它目录subdir/temp<br><br>build/       # 忽略build/目录下的所有文件<br><br>doc/*.txt    # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt<br></code></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Dom事件模型和事件机制</title>
     <url>/posts/41c8ebf3.html</url>
     <content><![CDATA[<h2 id="Dom事件模型"><a href="#Dom事件模型" class="headerlink" title="Dom事件模型"></a>Dom事件模型</h2><p>Dom事件模型分为两种：<span class="label label-info">事件冒泡</span>和<span class="label label-info">事件捕获</span>，事件冒泡模型由微软提出，而事件捕获模型由网景提出。</p>
 <p>事件冒泡：当一个元素上的事件被触发时，事件<strong>从事件源开始</strong>，<strong>往上冒泡直到页面的根元素</strong>，这一过程被称为事件冒泡（默认方式）</p>
 <p>事件捕获：当一个元素上的事件被触发时，事件<strong>从页面的根元素开始</strong>，<strong>往下直到事件目标元素</strong>，这一过程被称为事件捕获	</p>
 <p>如图所示：</p>
-<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206031732613.png"></p>
+<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202206031732613.png"></p>
 <p class="note note-danger">
 注意：如果一个元素上既被添加了事件冒泡的的监听也被添加了事件捕获的监听，则是按照先捕获后冒泡的顺序执行监听的回调函数。
 </p>
@@ -142,82 +218,6 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
       </tags>
   </entry>
   <entry>
-    <title>Git入门</title>
-    <url>/posts/8e7db504.html</url>
-    <content><![CDATA[<h2 id="Git指令"><a href="#Git指令" class="headerlink" title="Git指令"></a>Git指令</h2><h3 id="设置Git配置"><a href="#设置Git配置" class="headerlink" title="设置Git配置"></a>设置Git配置</h3><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">git config --global user.name 你的英文名<br>git config --global user.email 你的邮箱<br>git config --global push.default simple<br>git config --global core.quotepath <span class="hljs-literal">false</span><br>git config --global core.editor <span class="hljs-string">&quot;code --wait&quot;</span><br>git config --global core.autocrlf input<br></code></pre></td></tr></table></figure>
-
-<h3 id="查看Git配置"><a href="#查看Git配置" class="headerlink" title="查看Git配置"></a>查看Git配置</h3><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">git config --global --list<br></code></pre></td></tr></table></figure>
-
-<h3 id="常用Git指令"><a href="#常用Git指令" class="headerlink" title="常用Git指令"></a>常用Git指令</h3><p><code>git init</code> ：初始化一个git仓库</p>
-<p><code>git add 文件名\路径</code>：提交文件到暂存区</p>
-<p><code>git commit -m &quot;提交信息内容&quot;</code> ：将文件提交到仓库中，并注上提交信息</p>
-<p><code>git commit -v</code>：能够在编辑器中看到自己当前的修改行数内容</p>
-<p><code>git commit -v --amend</code> ：VScode终端提交语句</p>
-<p><code>git log</code> ：查看提交记录</p>
-<p><code>git reflog</code>：查看历史记录（包括回退的记录）</p>
-<p><code>git reset --hard 版本号前6位</code>：回退到指定版本</p>
-<p><code>git branch </code>：查看所有分支，以及当前所在分支</p>
-<p><code>git branch 分支名</code>：创建一个新分支</p>
-<p><code>git checkout 分支名</code>：切换到指定分支</p>
-<p><code>git merge 分支名</code>：将另一个分支合并到当前分支</p>
-<p><code>git status -sb</code>：用来查看当前哪个文件冲突了</p>
-<p><code>git branch -d 分支名</code>：删除合并后的无用的分支</p>
-<p><code>git remote -v</code>：显示所有远程仓库</p>
-<p><code>git remote add 名称  远程仓库地址</code>：添加一个远程仓库</p>
-<p class="note note-warning">当合并分支的时候可能会产生冲突，解决完冲突之后应重新add、commit该文件（此时commit时不带参数）</p>
-
-<p><span style="color:red;"><code>.gitignore文件</code>：配置哪些文件不需要提交</span></p>
-<p>常见不用提交目录：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">node_modules<br>.DS_Store<br>.idea<br>.vscode<br></code></pre></td></tr></table></figure>
-
-<h3 id="远程git仓库"><a href="#远程git仓库" class="headerlink" title="远程git仓库"></a>远程git仓库</h3><h4 id="创建ssh-key"><a href="#创建ssh-key" class="headerlink" title="创建ssh key"></a>创建ssh key</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">ssh-keygen -t rsa -b 4096 -C &quot;你的任意邮箱地址&quot;<br><span class="hljs-meta prompt_"># </span><span class="language-bash">-t 表示密钥的类型 ，-b表示密钥的长度，-C 用于识别这个密钥的注释</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="Github配置公钥"><a href="#Github配置公钥" class="headerlink" title="Github配置公钥"></a>Github配置公钥</h4><p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206132145247.png" alt="git设置公钥"></p>
-<h4 id="测试Github连接"><a href="#测试Github连接" class="headerlink" title="测试Github连接"></a>测试Github连接</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">ssh -T git@github.com<br></code></pre></td></tr></table></figure>
-
-<h4 id="上传远程仓库"><a href="#上传远程仓库" class="headerlink" title="上传远程仓库"></a>上传远程仓库</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">将本地仓库和远程仓库连接起来</span><br>git remote add origin git@github.com:AlierQ/GitTest.git<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">将原有的master改名位main,因为github上的主分支名称由master改为了main</span><br>git branch -M main<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">推到远程仓库的main分支</span><br>git push -u origin main<br></code></pre></td></tr></table></figure>
-
-<h4 id="上传其他分支"><a href="#上传其他分支" class="headerlink" title="上传其他分支"></a>上传其他分支</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">方式1</span><br>git checkout 分支名<br>git push -u origin 分支名<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">方式2</span><br>git push origin 本地分支名:远程分支名<br></code></pre></td></tr></table></figure>
-
-<h4 id="获取远程合并本地"><a href="#获取远程合并本地" class="headerlink" title="获取远程合并本地"></a>获取远程合并本地</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">将远程的仓库合并到本地</span><br>git pull<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">若有多个仓库名</span><br>git pull 仓库名 远程分支名:本地分支名<br></code></pre></td></tr></table></figure>
-
-<h4 id="克隆远程仓库"><a href="#克隆远程仓库" class="headerlink" title="克隆远程仓库"></a>克隆远程仓库</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">从目标地址克隆项目到本地</span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">当前目录下新建一个与项目同名的文件夹，将项目放在里面</span><br>git clone git@XXXXXX[目标地址]    <br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">新建一个abc目录，将克隆的项目放在这里</span><br>git clone git@XXXXXX[目标地址] abc <br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">在当前目录下直接存放项目,(最好是空文件夹)</span><br>git clone git@XXXXXX[目标地址] .<br></code></pre></td></tr></table></figure>
-
-<h3 id="Git高级操作"><a href="#Git高级操作" class="headerlink" title="Git高级操作"></a>Git高级操作</h3><h4 id="bash-alias简化命令"><a href="#bash-alias简化命令" class="headerlink" title="bash alias简化命令"></a>bash alias简化命令</h4><p>1、向&#x2F;.bashrc文件里面写入配置</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">touch ~/.bashrc<br>echo &#x27;alias ga=&quot;git add&quot;&#x27;&gt;&gt; ~/.bashrc<br>echo &#x27;alias gc=&quot;git commit -v&quot;&#x27;&gt;&gt; ~/.bashrc<br>echo &#x27;alias gl=&quot;git pull&quot;&#x27;&gt;&gt; ~/.bashrc<br>echo &#x27;alias gp=&quot;git push&quot;&#x27;&gt;&gt; ~/.bashrc<br>echo &#x27;alias gco=&quot;git checkout&quot;&#x27;&gt;&gt; ~/.bashrc<br>echo &#x27;alias gst=&quot;git status -sb&quot;&#x27;&gt;&gt; ~/.bashrc<br></code></pre></td></tr></table></figure>
-
-<p>2、加载配置</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">source ~/.bashrc<br></code></pre></td></tr></table></figure>
-
-<h4 id="美化提交历史记录"><a href="#美化提交历史记录" class="headerlink" title="美化提交历史记录"></a>美化提交历史记录</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">git rebase -i 版本号<br></code></pre></td></tr></table></figure>
-
-<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206132145993.png"></p>
-<h4 id="冲突解决"><a href="#冲突解决" class="headerlink" title="冲突解决"></a>冲突解决</h4><h5 id="中止"><a href="#中止" class="headerlink" title="中止"></a>中止</h5><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">git rebase --abort<br></code></pre></td></tr></table></figure>
-
-<h5 id="继续"><a href="#继续" class="headerlink" title="继续"></a>继续</h5><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">git rebase --continue<br></code></pre></td></tr></table></figure>
-
-<h4 id="临时隐藏文件"><a href="#临时隐藏文件" class="headerlink" title="临时隐藏文件"></a>临时隐藏文件</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">git add后可以使用该命令将文件隐藏</span><br>git stash<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">取消隐藏</span><br>git stash pop<br></code></pre></td></tr></table></figure>
-
-<p class="note note-warning">可以连续使用，pop顺序与放入顺序相反</p>
-
-<h3 id="忽略文件-gitignore"><a href="#忽略文件-gitignore" class="headerlink" title="忽略文件.gitignore"></a>忽略文件.gitignore</h3><p>.gitinore可以配置哪些文件不需要提交</p>
-<p>文件编写规则：</p>
-<ol>
-<li>忽略文件中的空行或以井号（#）开始的行将会被忽略。（注释）</li>
-<li>可以使用Linux通配符。例如：星号（*）代表任意多个字符，问号（?）代表一个字符，方括号（[abc]）代表可选字符范围，大括号（{string1,string2,…}）代表可选的字符串等。</li>
-<li>如果名称的最前面有一个感叹号（!），表示例外规则，将不被忽略。</li>
-<li>如果名称的最前面是一个路径分隔符（&#x2F;），表示要忽略的文件在此目录下，而子目录中的文件不忽略。</li>
-<li>如果名称的最后面是一个路径分隔符（&#x2F;），表示要忽略的是此目录下该名称的子目录，而非文件（默认文件或目录都忽略）。</li>
-</ol>
-<p>例如：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">注释</span><br><br>*.txt        # 忽略所有 .txt结尾的文件,这样的话上传就不会被选中！<br><br>!lib.txt     # 但lib.txt除外<br><br>/temp        # 仅忽略项目根目录下的temp文件,不包括其它目录subdir/temp<br><br>build/       # 忽略build/目录下的所有文件<br><br>doc/*.txt    # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt<br></code></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JSON简述</title>
     <url>/posts/e38660dc.html</url>
     <content><![CDATA[<h2 id="JSON简介"><a href="#JSON简介" class="headerlink" title="JSON简介"></a>JSON简介</h2><p>JSON是一门独立的标记语言，用来展示数据，它易于人阅读和编写。同时也易于机器解析和生成。</p>
@@ -245,6 +245,151 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
 ]]></content>
       <tags>
         <tag>JSON</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaScript原生AJAX</title>
+    <url>/posts/d0443184.html</url>
+    <content><![CDATA[<h2 id="AJAX请求的步骤"><a href="#AJAX请求的步骤" class="headerlink" title="AJAX请求的步骤"></a>AJAX请求的步骤</h2><ol>
+<li>创建XMLHttpRequest对象</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> request = <span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLHttpRequest</span>();<br></code></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>调用XMLHttpRequest对象建立连接</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">request.<span class="hljs-title function_">open</span>(<span class="hljs-string">&#x27;get&#x27;</span>,<span class="hljs-string">&#x27;/index.html&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>监听对象</p>
+<ul>
+<li>使用onload或者onerror监听</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">request.<span class="hljs-property">onload</span> = <span class="hljs-function">()=&gt;</span>&#123;<br>	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(request.<span class="hljs-property">response</span>)  <span class="hljs-comment">// 可以获取请求到的内容</span><br>&#125;<br><br>request.<span class="hljs-property">onerror</span> = <span class="hljs-function">()=&gt;</span>&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;请求错误！&#x27;</span>)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>使用onreadystatechange监听</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">request.<span class="hljs-property">onreadystatechange</span> = <span class="hljs-function">()=&gt;</span>&#123;<br>	request.<span class="hljs-property">readyState</span> <span class="hljs-comment">// 获取当前XMLHttpRequest对象的状态</span><br>    <br>    request.<span class="hljs-property">status</span> <span class="hljs-comment">// 获取当前请求的状态码</span><br>    <br>    <span class="hljs-comment">// 根据当前request对象的状态和请求的状态码进行相应的处理</span><br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>调用XMLHttpRequest对象的send()方法发送请求</p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">request.<span class="hljs-title function_">send</span>() <br></code></pre></td></tr></table></figure>
+
+<h2 id="readyState状态"><a href="#readyState状态" class="headerlink" title="readyState状态"></a>readyState状态</h2><p><strong>XMLHttpRequest.readyState</strong>属性返回的是一个XMLHttpRequest 代理当前所处的状态</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>状态</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>UNSENT</td>
+<td>代理被创建，但未调用open()方法</td>
+</tr>
+<tr>
+<td>1</td>
+<td>OPENED</td>
+<td>open()方法已经被调用</td>
+</tr>
+<tr>
+<td>2</td>
+<td>HEADERS_RECEIVED</td>
+<td>send()方法已经被调用，并且头部状态已经可以获取</td>
+</tr>
+<tr>
+<td>3</td>
+<td>LOADING</td>
+<td>下载中，responseText属性已经包含部分数据</td>
+</tr>
+<tr>
+<td>4</td>
+<td>DONE</td>
+<td>下载操作已经完成</td>
+</tr>
+</tbody></table>
+<p class="note note-warning">
+通常在的下载完成之后时候使用onreadystatechange方法
+</p>
+
+<h2 id="AJAX请求的数据类型及使用方法"><a href="#AJAX请求的数据类型及使用方法" class="headerlink" title="AJAX请求的数据类型及使用方法"></a>AJAX请求的数据类型及使用方法</h2><ul>
+<li>CSS：得到之后可以将其放入style标签中</li>
+<li>HTML：得到之后使用innerHTML和DOM API加入网页中</li>
+<li>JS：得到之后可以将其放入script标签中</li>
+<li>XML：得到之后使用responseXML和DOM API获取其中的内容</li>
+<li>JSON：得到之后可以使用JSON.parse()将其转化成相应的数据类型</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>AJAX</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaScript同步和异步</title>
+    <url>/posts/95105818.html</url>
+    <content><![CDATA[<h2 id="JavaScript是单线程"><a href="#JavaScript是单线程" class="headerlink" title="JavaScript是单线程"></a>JavaScript是单线程</h2><p>JavaScript在诞生之初是被用作实现用户和浏览器的一些简单的交互，这也就使得了JavaScript在设计的时候就没有考虑他要做一些很复杂的操作，所以JavaScript就被设计成了单线程的一门语言。并在至今为止他都是一门单线程的脚本语言。</p>
+<p>所谓的单线程是指JavaScript引擎解释和执行的线程只有一个</p>
+<h2 id="同步和异步的概念"><a href="#同步和异步的概念" class="headerlink" title="同步和异步的概念"></a>同步和异步的概念</h2><h3 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h3><p>同步的概念：假设我现在手头有两件事要做：切菜和炒菜，我做这两件事情的时候，我必须要先切菜再炒菜，并且一定要等切菜这个任务完成之后才可以开始我炒菜的任务，如果切菜没有完成我就需要一直等待。</p>
+<ul>
+<li>换成计算机的表达：我需要等A事件执行完了，才能去执行B事件，如果A事件没有执行完，我就一直等待，直到它完成，我再去执行B事件。</li>
+</ul>
+<p><span class="label label-info">概括</span>：我一定要拿到结果，拿不到我就不走！</p>
+<h3 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h3><p>异步的概念：同样的，现在我的手头也有两件事要做：煲饭和炒菜，我做这两件事情的时候，我可以把饭煲上，然后我就去炒菜，我并不需要等待饭煲好了，再去炒菜，什么时候饭煲好了它可以响一下提醒我。</p>
+<ul>
+<li>换成计算机得表达：我让A事件执行，并且让它做完了之后就提醒我，在他执行的时候我去执行B事件。</li>
+</ul>
+<p><span class="label label-info">概括</span>：我不一定要拿到结果，我继续走，有结果了通知我一声就行！</p>
+<h2 id="JavaScript为什么需要异步任务"><a href="#JavaScript为什么需要异步任务" class="headerlink" title="JavaScript为什么需要异步任务"></a>JavaScript为什么需要异步任务</h2><p>因为JavaScript是单线程的，所以如果现在JavaScript中的一些事件需要长时间的执行，这就会导致后续要执行的事件要进行长时间的等待，极端条件下这种等待是不可控的。所以这个时候就需要引入异步的操作，将这类需要长时间的事件，放到一边去执行，不影响后续的事件。然后在特定的时间或者特定的状态使用一下<span class="label label-info">特殊的手段</span>再去得到之前那些长时间执行的事件的结果。</p>
+<h2 id="如何得到异步任务的结果"><a href="#如何得到异步任务的结果" class="headerlink" title="如何得到异步任务的结果"></a>如何得到异步任务的结果</h2><h3 id="轮询"><a href="#轮询" class="headerlink" title="轮询"></a>轮询</h3><p>每隔一段时间就询问一下异步任务是否有结果</p>
+<h3 id="回调"><a href="#回调" class="headerlink" title="回调"></a>回调</h3><p>当异步任务达到某种状态（完成、错误、超时…..）执行一段代码，由这段代码（回调函数）来得到结果。</p>
+<h2 id="常见的异步"><a href="#常见的异步" class="headerlink" title="常见的异步"></a>常见的异步</h2><ul>
+<li>AJAX</li>
+<li>addEventListener</li>
+<li>setTimeout()</li>
+<li>待补充…</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MVC设计模式</title>
+    <url>/posts/7333197b.html</url>
+    <content><![CDATA[<h2 id="MVC设计模模式"><a href="#MVC设计模模式" class="headerlink" title="MVC设计模模式"></a>MVC设计模模式</h2><h3 id="什么是设计模式？"><a href="#什么是设计模式？" class="headerlink" title="什么是设计模式？"></a>什么是设计模式？</h3><p>设计模式是软件开发人员在软件开发过程中面临一般问题的解决方案，是一套被反复使用的、多数人知晓的、代码设计的总结。使用设计模式能够使得代码更可靠、更易懂、更高效。</p>
+<h3 id="什么是MVC设计模式？"><a href="#什么是MVC设计模式？" class="headerlink" title="什么是MVC设计模式？"></a>什么是MVC设计模式？</h3><p>MVC设计模式为了提高代码的灵活性和复用性，将应用划分为三个部分：</p>
+<ol>
+<li>Model（模型） 这部分封装了应用程序业务逻辑相关的数据以及他们对应的处理数据的方法，当数据发生改变时模型将会通知数据相关的视图。</li>
+</ol>
+<p>Model示例：</p>
+   <figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> <span class="hljs-title class_">Model</span> = &#123;<br>    <span class="hljs-attr">data</span>:&#123;&#125;,     <span class="hljs-comment">// 数据</span><br>    <span class="hljs-title function_">get</span>(<span class="hljs-params"></span>)&#123;&#125;,     <span class="hljs-comment">// 获取数据</span><br>    <span class="hljs-title function_">save</span>(<span class="hljs-params"></span>)&#123;&#125;,    <span class="hljs-comment">// 保存数据</span><br>    <span class="hljs-title function_">create</span>(<span class="hljs-params"></span>)&#123;&#125;,  <span class="hljs-comment">// 创建数据</span><br>    <span class="hljs-title function_">delete</span>(<span class="hljs-params"></span>)&#123;&#125;,  <span class="hljs-comment">// 删除数据</span><br>    <span class="hljs-title function_">update</span>(<span class="hljs-params"></span>)&#123;&#125;,  <span class="hljs-comment">// 更新数据</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>View（视图） 这部分是界面上的展示，展示的是Model中的数据的状态，当数据发送变化，视图也会随之重新渲染页面。</li>
+</ol>
+<p>View示例：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> <span class="hljs-title class_">View</span> = &#123;<br><span class="hljs-attr">container</span>:&#123;&#125;,  <span class="hljs-comment">// 视图的容器</span><br><span class="hljs-attr">element</span>:&#123;&#125;,    <span class="hljs-comment">// 视图的内容</span><br><span class="hljs-title function_">render</span>(<span class="hljs-params"></span>)&#123;&#125;,    <span class="hljs-comment">// 渲染视图</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>Controller（控制器）这一部分是负责结合数据和视图这两部分，使之能够相互关联起来。控制器的工作流程：从视图中获取事件或者输入，根据业务逻辑让Model对数据进行处理，然后通知视图进行更新。</li>
+</ol>
+<p>Controller示例：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> <span class="hljs-title class_">Controller</span> = &#123;<br>    <span class="hljs-attr">events</span>:&#123;&#125;,      <span class="hljs-comment">// 事件元素</span><br>    <span class="hljs-title function_">bindEvent</span>(<span class="hljs-params"></span>)&#123;&#125;,  <span class="hljs-comment">// 绑定事件监听</span><br>    <span class="hljs-title function_">action1</span>(<span class="hljs-params"></span>)&#123;&#125;,    <span class="hljs-comment">// 事件触发回调函数（某些业务逻辑）</span><br>    <span class="hljs-title function_">action2</span>(<span class="hljs-params"></span>)&#123;&#125;,    <span class="hljs-comment">// 事件触发回调函数（某些业务逻辑）</span><br>    <span class="hljs-title function_">action3</span>(<span class="hljs-params"></span>)&#123;&#125;     <span class="hljs-comment">// 事件触发回调函数（某些业务逻辑）</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="表驱动编程"><a href="#表驱动编程" class="headerlink" title="表驱动编程"></a>表驱动编程</h2><p>表驱动编程中的表指的是通过数据结构哈希表来进行挑选，然后执行相应语句，而不是使用许多逻辑语句（if-else、switch等）来进行选择执行，并且随着操作的增多，逻辑链的增多，表编程带来的效率提升会更高</p>
+<h3 id="非表编程"><a href="#非表编程" class="headerlink" title="非表编程"></a>非表编程</h3><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">weekday</span>(<span class="hljs-params">day</span>) &#123; <br>    <span class="hljs-keyword">if</span>(day%<span class="hljs-number">7</span>===<span class="hljs-number">0</span>)&#123; <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;星期天&#x27;</span>; &#125; <br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(day%<span class="hljs-number">7</span>===<span class="hljs-number">1</span>)&#123; <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;星期一&#x27;</span>; &#125; <br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(day%<span class="hljs-number">7</span>===<span class="hljs-number">2</span>)&#123; <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;星期二&#x27;</span>; &#125; <br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(day%<span class="hljs-number">7</span>===<span class="hljs-number">3</span>)&#123; <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;星期三&#x27;</span>; &#125; <br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(day%<span class="hljs-number">7</span>===<span class="hljs-number">4</span>)&#123; <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;星期四&#x27;</span>; &#125; <br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(day%<span class="hljs-number">7</span>===<span class="hljs-number">5</span>)&#123; <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;星期五&#x27;</span>; &#125; <br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(day%<span class="hljs-number">7</span>===<span class="hljs-number">6</span>)&#123; <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;星期六&#x27;</span>; &#125; <br>&#125; <br></code></pre></td></tr></table></figure>
+
+<h3 id="表编程"><a href="#表编程" class="headerlink" title="表编程"></a>表编程</h3><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">weekday</span>(<span class="hljs-params">day</span>) &#123; <br>    <span class="hljs-keyword">let</span> week = [<span class="hljs-string">&#x27;星期天&#x27;</span>,<span class="hljs-string">&#x27;星期一&#x27;</span>,<span class="hljs-string">&#x27;星期二&#x27;</span>,<span class="hljs-string">&#x27;星期三&#x27;</span>,<span class="hljs-string">&#x27;星期四&#x27;</span>,<span class="hljs-string">&#x27;星期五&#x27;</span>,<span class="hljs-string">&#x27;星期六&#x27;</span>]<br>    <span class="hljs-keyword">return</span> week[day%<span class="hljs-number">7</span>]<br>&#125; <br></code></pre></td></tr></table></figure>
+
+<p>从上面的例子可以看出，通过表编程可以简化一些逻辑操作。所以适当的运用表编程能够提升代码的效率。</p>
+]]></content>
+      <tags>
+        <tag>MVC</tag>
       </tags>
   </entry>
   <entry>
@@ -287,7 +432,7 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
 <li><p>请求体在GET请求中一般为空</p>
 </li>
 </ul>
-<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206132335333.png" alt="HTTP请求图示"></p>
+<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202206132335333.png" alt="HTTP请求图示"></p>
 <h3 id="HTTP响应"><a href="#HTTP响应" class="headerlink" title="HTTP响应"></a>HTTP响应</h3><p>HTTP响应流程：</p>
 <ol>
 <li><p>返回请求</p>
@@ -310,7 +455,7 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
 <li><p>常见的<code>状态码</code>是重点</p>
 </li>
 </ul>
-<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206132335024.png" alt="HTTP响应图示"></p>
+<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202206132335024.png" alt="HTTP响应图示"></p>
 <h3 id="HTTP状态码"><a href="#HTTP状态码" class="headerlink" title="HTTP状态码"></a>HTTP状态码</h3><p>HTTP状态码能够描述返回的请求结果。借助状态码可以知道服务器是否正确的处理请求</p>
 <h4 id="状态码类别"><a href="#状态码类别" class="headerlink" title="状态码类别"></a>状态码类别</h4><table>
 <thead>
@@ -463,193 +608,6 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
       </tags>
   </entry>
   <entry>
-    <title>JavaScript同步和异步</title>
-    <url>/posts/95105818.html</url>
-    <content><![CDATA[<h2 id="JavaScript是单线程"><a href="#JavaScript是单线程" class="headerlink" title="JavaScript是单线程"></a>JavaScript是单线程</h2><p>JavaScript在诞生之初是被用作实现用户和浏览器的一些简单的交互，这也就使得了JavaScript在设计的时候就没有考虑他要做一些很复杂的操作，所以JavaScript就被设计成了单线程的一门语言。并在至今为止他都是一门单线程的脚本语言。</p>
-<p>所谓的单线程是指JavaScript引擎解释和执行的线程只有一个</p>
-<h2 id="同步和异步的概念"><a href="#同步和异步的概念" class="headerlink" title="同步和异步的概念"></a>同步和异步的概念</h2><h3 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h3><p>同步的概念：假设我现在手头有两件事要做：切菜和炒菜，我做这两件事情的时候，我必须要先切菜再炒菜，并且一定要等切菜这个任务完成之后才可以开始我炒菜的任务，如果切菜没有完成我就需要一直等待。</p>
-<ul>
-<li>换成计算机的表达：我需要等A事件执行完了，才能去执行B事件，如果A事件没有执行完，我就一直等待，直到它完成，我再去执行B事件。</li>
-</ul>
-<p><span class="label label-info">概括</span>：我一定要拿到结果，拿不到我就不走！</p>
-<h3 id="异步"><a href="#异步" class="headerlink" title="异步"></a>异步</h3><p>异步的概念：同样的，现在我的手头也有两件事要做：煲饭和炒菜，我做这两件事情的时候，我可以把饭煲上，然后我就去炒菜，我并不需要等待饭煲好了，再去炒菜，什么时候饭煲好了它可以响一下提醒我。</p>
-<ul>
-<li>换成计算机得表达：我让A事件执行，并且让它做完了之后就提醒我，在他执行的时候我去执行B事件。</li>
-</ul>
-<p><span class="label label-info">概括</span>：我不一定要拿到结果，我继续走，有结果了通知我一声就行！</p>
-<h2 id="JavaScript为什么需要异步任务"><a href="#JavaScript为什么需要异步任务" class="headerlink" title="JavaScript为什么需要异步任务"></a>JavaScript为什么需要异步任务</h2><p>因为JavaScript是单线程的，所以如果现在JavaScript中的一些事件需要长时间的执行，这就会导致后续要执行的事件要进行长时间的等待，极端条件下这种等待是不可控的。所以这个时候就需要引入异步的操作，将这类需要长时间的事件，放到一边去执行，不影响后续的事件。然后在特定的时间或者特定的状态使用一下<span class="label label-info">特殊的手段</span>再去得到之前那些长时间执行的事件的结果。</p>
-<h2 id="如何得到异步任务的结果"><a href="#如何得到异步任务的结果" class="headerlink" title="如何得到异步任务的结果"></a>如何得到异步任务的结果</h2><h3 id="轮询"><a href="#轮询" class="headerlink" title="轮询"></a>轮询</h3><p>每隔一段时间就询问一下异步任务是否有结果</p>
-<h3 id="回调"><a href="#回调" class="headerlink" title="回调"></a>回调</h3><p>当异步任务达到某种状态（完成、错误、超时…..）执行一段代码，由这段代码（回调函数）来得到结果。</p>
-<h2 id="常见的异步"><a href="#常见的异步" class="headerlink" title="常见的异步"></a>常见的异步</h2><ul>
-<li>AJAX</li>
-<li>addEventListener</li>
-<li>setTimeout()</li>
-<li>待补充…</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MVC设计模式</title>
-    <url>/posts/7333197b.html</url>
-    <content><![CDATA[<h2 id="MVC设计模模式"><a href="#MVC设计模模式" class="headerlink" title="MVC设计模模式"></a>MVC设计模模式</h2><h3 id="什么是设计模式？"><a href="#什么是设计模式？" class="headerlink" title="什么是设计模式？"></a>什么是设计模式？</h3><p>设计模式是软件开发人员在软件开发过程中面临一般问题的解决方案，是一套被反复使用的、多数人知晓的、代码设计的总结。使用设计模式能够使得代码更可靠、更易懂、更高效。</p>
-<h3 id="什么是MVC设计模式？"><a href="#什么是MVC设计模式？" class="headerlink" title="什么是MVC设计模式？"></a>什么是MVC设计模式？</h3><p>MVC设计模式为了提高代码的灵活性和复用性，将应用划分为三个部分：</p>
-<ol>
-<li>Model（模型） 这部分封装了应用程序业务逻辑相关的数据以及他们对应的处理数据的方法，当数据发生改变时模型将会通知数据相关的视图。</li>
-</ol>
-<p>Model示例：</p>
-   <figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> <span class="hljs-title class_">Model</span> = &#123;<br>    <span class="hljs-attr">data</span>:&#123;&#125;,     <span class="hljs-comment">// 数据</span><br>    <span class="hljs-title function_">get</span>(<span class="hljs-params"></span>)&#123;&#125;,     <span class="hljs-comment">// 获取数据</span><br>    <span class="hljs-title function_">save</span>(<span class="hljs-params"></span>)&#123;&#125;,    <span class="hljs-comment">// 保存数据</span><br>    <span class="hljs-title function_">create</span>(<span class="hljs-params"></span>)&#123;&#125;,  <span class="hljs-comment">// 创建数据</span><br>    <span class="hljs-title function_">delete</span>(<span class="hljs-params"></span>)&#123;&#125;,  <span class="hljs-comment">// 删除数据</span><br>    <span class="hljs-title function_">update</span>(<span class="hljs-params"></span>)&#123;&#125;,  <span class="hljs-comment">// 更新数据</span><br>&#125;<br></code></pre></td></tr></table></figure>
-<ol start="2">
-<li>View（视图） 这部分是界面上的展示，展示的是Model中的数据的状态，当数据发送变化，视图也会随之重新渲染页面。</li>
-</ol>
-<p>View示例：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> <span class="hljs-title class_">View</span> = &#123;<br><span class="hljs-attr">container</span>:&#123;&#125;,  <span class="hljs-comment">// 视图的容器</span><br><span class="hljs-attr">element</span>:&#123;&#125;,    <span class="hljs-comment">// 视图的内容</span><br><span class="hljs-title function_">render</span>(<span class="hljs-params"></span>)&#123;&#125;,    <span class="hljs-comment">// 渲染视图</span><br>&#125;<br></code></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>Controller（控制器）这一部分是负责结合数据和视图这两部分，使之能够相互关联起来。控制器的工作流程：从视图中获取事件或者输入，根据业务逻辑让Model对数据进行处理，然后通知视图进行更新。</li>
-</ol>
-<p>Controller示例：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> <span class="hljs-title class_">Controller</span> = &#123;<br>    <span class="hljs-attr">events</span>:&#123;&#125;,      <span class="hljs-comment">// 事件元素</span><br>    <span class="hljs-title function_">bindEvent</span>(<span class="hljs-params"></span>)&#123;&#125;,  <span class="hljs-comment">// 绑定事件监听</span><br>    <span class="hljs-title function_">action1</span>(<span class="hljs-params"></span>)&#123;&#125;,    <span class="hljs-comment">// 事件触发回调函数（某些业务逻辑）</span><br>    <span class="hljs-title function_">action2</span>(<span class="hljs-params"></span>)&#123;&#125;,    <span class="hljs-comment">// 事件触发回调函数（某些业务逻辑）</span><br>    <span class="hljs-title function_">action3</span>(<span class="hljs-params"></span>)&#123;&#125;     <span class="hljs-comment">// 事件触发回调函数（某些业务逻辑）</span><br>&#125;<br></code></pre></td></tr></table></figure>
-
-<h2 id="表驱动编程"><a href="#表驱动编程" class="headerlink" title="表驱动编程"></a>表驱动编程</h2><p>表驱动编程中的表指的是通过数据结构哈希表来进行挑选，然后执行相应语句，而不是使用许多逻辑语句（if-else、switch等）来进行选择执行，并且随着操作的增多，逻辑链的增多，表编程带来的效率提升会更高</p>
-<h3 id="非表编程"><a href="#非表编程" class="headerlink" title="非表编程"></a>非表编程</h3><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">weekday</span>(<span class="hljs-params">day</span>) &#123; <br>    <span class="hljs-keyword">if</span>(day%<span class="hljs-number">7</span>===<span class="hljs-number">0</span>)&#123; <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;星期天&#x27;</span>; &#125; <br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(day%<span class="hljs-number">7</span>===<span class="hljs-number">1</span>)&#123; <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;星期一&#x27;</span>; &#125; <br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(day%<span class="hljs-number">7</span>===<span class="hljs-number">2</span>)&#123; <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;星期二&#x27;</span>; &#125; <br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(day%<span class="hljs-number">7</span>===<span class="hljs-number">3</span>)&#123; <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;星期三&#x27;</span>; &#125; <br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(day%<span class="hljs-number">7</span>===<span class="hljs-number">4</span>)&#123; <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;星期四&#x27;</span>; &#125; <br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(day%<span class="hljs-number">7</span>===<span class="hljs-number">5</span>)&#123; <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;星期五&#x27;</span>; &#125; <br>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(day%<span class="hljs-number">7</span>===<span class="hljs-number">6</span>)&#123; <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;星期六&#x27;</span>; &#125; <br>&#125; <br></code></pre></td></tr></table></figure>
-
-<h3 id="表编程"><a href="#表编程" class="headerlink" title="表编程"></a>表编程</h3><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">weekday</span>(<span class="hljs-params">day</span>) &#123; <br>    <span class="hljs-keyword">let</span> week = [<span class="hljs-string">&#x27;星期天&#x27;</span>,<span class="hljs-string">&#x27;星期一&#x27;</span>,<span class="hljs-string">&#x27;星期二&#x27;</span>,<span class="hljs-string">&#x27;星期三&#x27;</span>,<span class="hljs-string">&#x27;星期四&#x27;</span>,<span class="hljs-string">&#x27;星期五&#x27;</span>,<span class="hljs-string">&#x27;星期六&#x27;</span>]<br>    <span class="hljs-keyword">return</span> week[day%<span class="hljs-number">7</span>]<br>&#125; <br></code></pre></td></tr></table></figure>
-
-<p>从上面的例子可以看出，通过表编程可以简化一些逻辑操作。所以适当的运用表编程能够提升代码的效率。</p>
-]]></content>
-      <tags>
-        <tag>MVC</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>cURL常见用法</title>
-    <url>/posts/b403a33b.html</url>
-    <content><![CDATA[<h2 id="cURL简介"><a href="#cURL简介" class="headerlink" title="cURL简介"></a>cURL简介</h2><p>cURL是一款常用的命令行工具，可以用来请求Web服务器，也可以用于传输数据。支持的协议包括 （DICT, FILE, FTP, FTPS, GOPHER, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, POP3, POP3S, RTMP, RTSP, SCP, SFTP, SMTP, SMTPS, TELNET and TFTP），cURL设计为无用户交互下完成工作；cURL提供了一大堆非常有用的功能包括：代理访问、用户认证、FTP上传下载、HTTP请求、SSL连接、Cookie支持、断点续传等等</p>
-<h2 id="cURL常用命令"><a href="#cURL常用命令" class="headerlink" title="cURL常用命令"></a>cURL常用命令</h2><h3 id="发送GET请求"><a href="#发送GET请求" class="headerlink" title="发送GET请求"></a>发送GET请求</h3><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># 不带参数</span><br>curl https://www.example.com<br><br><span class="hljs-comment"># 带参数</span><br>curl https://www.example.com?<span class="hljs-built_in">id</span>=<span class="hljs-string">&#x27;123123123&#x27;</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="发送POST请求"><a href="#发送POST请求" class="headerlink" title="发送POST请求"></a>发送POST请求</h3><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -X POST -d <span class="hljs-string">&#x27;id=123&amp;tage=a&#x27;</span> https://www.example.com<br><br>curl -X POST -d <span class="hljs-string">&#x27;id=123&#x27;</span> -d <span class="hljs-string">&#x27;tage=a&#x27;</span> https://www.example.com<br></code></pre></td></tr></table></figure>
-
-<p class="note note-info">
-    -X：表示指定请求的方法<br>
-    -d：POST请求的数据体
-</p>
-
-<h3 id="发送JSON格式的请求"><a href="#发送JSON格式的请求" class="headerlink" title="发送JSON格式的请求"></a>发送JSON格式的请求</h3><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -H <span class="hljs-string">&quot;Content-Type: application/json&quot;</span> -X POST -d <span class="hljs-string">&#x27;&#123;&quot;abc&quot;:123&#125;&#x27;</span> https://www.example.com<br></code></pre></td></tr></table></figure>
-
-<p class="note note-info">
-    -H：设置请求头<br>
-</p>
-
-<h3 id="更多操作"><a href="#更多操作" class="headerlink" title="更多操作"></a>更多操作</h3><h4 id="（-v）显示通信过程"><a href="#（-v）显示通信过程" class="headerlink" title="（-v）显示通信过程"></a>（-v）显示通信过程</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -v https://www.example.com<br></code></pre></td></tr></table></figure>
-
-<h4 id="（-i）只显示响应头和网站代码"><a href="#（-i）只显示响应头和网站代码" class="headerlink" title="（-i）只显示响应头和网站代码"></a>（-i）只显示响应头和网站代码</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -i https://www.example.com<br></code></pre></td></tr></table></figure>
-
-<h4 id="（-l）只显示网站代码"><a href="#（-l）只显示网站代码" class="headerlink" title="（-l）只显示网站代码"></a>（-l）只显示网站代码</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -l https://www.example.com<br></code></pre></td></tr></table></figure>
-
-<h4 id="（-0）保存网页"><a href="#（-0）保存网页" class="headerlink" title="（-0）保存网页"></a>（-0）保存网页</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -0 https://www.example.com<br></code></pre></td></tr></table></figure>
-
-<h4 id="（-s）不显示错误信息"><a href="#（-s）不显示错误信息" class="headerlink" title="（-s）不显示错误信息"></a>（-s）不显示错误信息</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -s https://www.example.com<br></code></pre></td></tr></table></figure>
-
-<h4 id="（-S）只显示错误信息"><a href="#（-S）只显示错误信息" class="headerlink" title="（-S）只显示错误信息"></a>（-S）只显示错误信息</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -S https://www.example.com<br></code></pre></td></tr></table></figure>
-
-<h4 id="（-c）将cookie写入文件"><a href="#（-c）将cookie写入文件" class="headerlink" title="（-c）将cookie写入文件"></a>（-c）将cookie写入文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">curl -c cookies.txt https://www.example.com<br></code></pre></td></tr></table></figure>
-
-<h4 id="（-b）发送cookie数据"><a href="#（-b）发送cookie数据" class="headerlink" title="（-b）发送cookie数据"></a>（-b）发送cookie数据</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -b <span class="hljs-string">&#x27;foo=bar&#x27;</span> https://www.example.com<br><br><span class="hljs-comment"># 多个cookie</span><br>curl -b <span class="hljs-string">&#x27;foo1=bar;foo2=bar2&#x27;</span> https://www.example.com<br><br><span class="hljs-comment"># cookie文件</span><br>curl -b cookies.txt https://www.example.com<br></code></pre></td></tr></table></figure>
-
-<h4 id="（-F）上传二进制文件"><a href="#（-F）上传二进制文件" class="headerlink" title="（-F）上传二进制文件"></a>（-F）上传二进制文件</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># 默认加上`Content-Type: multipart/form-data`，资源名称指定为file</span><br>curl -F <span class="hljs-string">&#x27;file=@ss.png&#x27;</span> https://www.example.com<br><br><span class="hljs-comment"># 指定MIME类型</span><br>curl -F <span class="hljs-string">&#x27;file=@ss.png;type=image/png&#x27;</span> https://www.example.com<br><br><span class="hljs-comment"># 指定文件名  上传的是ss.png  服务器接收到的是aa.png</span><br>curl -F <span class="hljs-string">&#x27;file=@ss.png;filename=aa.png&#x27;</span> https://www.example.com <br></code></pre></td></tr></table></figure>
-
-<p>更多cURL用法请见<a href="https://www.ruanyifeng.com/blog/2019/09/curl-reference.html">cURL用法指南</a></p>
-]]></content>
-      <tags>
-        <tag>cURL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JavaScript原生AJAX</title>
-    <url>/posts/d0443184.html</url>
-    <content><![CDATA[<h2 id="AJAX请求的步骤"><a href="#AJAX请求的步骤" class="headerlink" title="AJAX请求的步骤"></a>AJAX请求的步骤</h2><ol>
-<li>创建XMLHttpRequest对象</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> request = <span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLHttpRequest</span>();<br></code></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>调用XMLHttpRequest对象建立连接</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">request.<span class="hljs-title function_">open</span>(<span class="hljs-string">&#x27;get&#x27;</span>,<span class="hljs-string">&#x27;/index.html&#x27;</span>)<br></code></pre></td></tr></table></figure>
-
-<ol start="3">
-<li><p>监听对象</p>
-<ul>
-<li>使用onload或者onerror监听</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">request.<span class="hljs-property">onload</span> = <span class="hljs-function">()=&gt;</span>&#123;<br>	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(request.<span class="hljs-property">response</span>)  <span class="hljs-comment">// 可以获取请求到的内容</span><br>&#125;<br><br>request.<span class="hljs-property">onerror</span> = <span class="hljs-function">()=&gt;</span>&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;请求错误！&#x27;</span>)<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<ul>
-<li>使用onreadystatechange监听</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">request.<span class="hljs-property">onreadystatechange</span> = <span class="hljs-function">()=&gt;</span>&#123;<br>	request.<span class="hljs-property">readyState</span> <span class="hljs-comment">// 获取当前XMLHttpRequest对象的状态</span><br>    <br>    request.<span class="hljs-property">status</span> <span class="hljs-comment">// 获取当前请求的状态码</span><br>    <br>    <span class="hljs-comment">// 根据当前request对象的状态和请求的状态码进行相应的处理</span><br>&#125;<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>调用XMLHttpRequest对象的send()方法发送请求</p>
-</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">request.<span class="hljs-title function_">send</span>() <br></code></pre></td></tr></table></figure>
-
-<h2 id="readyState状态"><a href="#readyState状态" class="headerlink" title="readyState状态"></a>readyState状态</h2><p><strong>XMLHttpRequest.readyState</strong>属性返回的是一个XMLHttpRequest 代理当前所处的状态</p>
-<table>
-<thead>
-<tr>
-<th>值</th>
-<th>状态</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>0</td>
-<td>UNSENT</td>
-<td>代理被创建，但未调用open()方法</td>
-</tr>
-<tr>
-<td>1</td>
-<td>OPENED</td>
-<td>open()方法已经被调用</td>
-</tr>
-<tr>
-<td>2</td>
-<td>HEADERS_RECEIVED</td>
-<td>send()方法已经被调用，并且头部状态已经可以获取</td>
-</tr>
-<tr>
-<td>3</td>
-<td>LOADING</td>
-<td>下载中，responseText属性已经包含部分数据</td>
-</tr>
-<tr>
-<td>4</td>
-<td>DONE</td>
-<td>下载操作已经完成</td>
-</tr>
-</tbody></table>
-<p class="note note-warning">
-通常在的下载完成之后时候使用onreadystatechange方法
-</p>
-
-<h2 id="AJAX请求的数据类型及使用方法"><a href="#AJAX请求的数据类型及使用方法" class="headerlink" title="AJAX请求的数据类型及使用方法"></a>AJAX请求的数据类型及使用方法</h2><ul>
-<li>CSS：得到之后可以将其放入style标签中</li>
-<li>HTML：得到之后使用innerHTML和DOM API加入网页中</li>
-<li>JS：得到之后可以将其放入script标签中</li>
-<li>XML：得到之后使用responseXML和DOM API获取其中的内容</li>
-<li>JSON：得到之后可以使用JSON.parse()将其转化成相应的数据类型</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>AJAX</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>jQuery的设计思想</title>
     <url>/posts/171faadf.html</url>
     <content><![CDATA[<h2 id="jQuery获取元素"><a href="#jQuery获取元素" class="headerlink" title="jQuery获取元素"></a>jQuery获取元素</h2><h3 id="CSS选择器方式"><a href="#CSS选择器方式" class="headerlink" title="CSS选择器方式"></a>CSS选择器方式</h3><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js">$(<span class="hljs-variable language_">document</span>) <span class="hljs-comment">// 选取整个文档对象</span><br><br>$(<span class="hljs-string">&#x27;#mydiv&#x27;</span>) <span class="hljs-comment">// 选择id为mydiv的元素</span><br><br>$(<span class="hljs-string">&#x27;.tt&#x27;</span>) <span class="hljs-comment">// 选择class为tt的元素</span><br><br>$(<span class="hljs-string">&#x27;input[name=username]&#x27;</span>) <span class="hljs-comment">// 选择name属性为username的input元素</span><br></code></pre></td></tr></table></figure>
@@ -700,25 +658,68 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
     <content><![CDATA[<h2 id="NVM简介"><a href="#NVM简介" class="headerlink" title="NVM简介"></a>NVM简介</h2><p>nvm是一款node的版本管理工具，可以简单操作node版本的安装、卸载以及切换等。在平常的开发中可以通过使用nvm安装多个node版本，并且进行管理，高效且方便。</p>
 <h3 id="NVM下载安装"><a href="#NVM下载安装" class="headerlink" title="NVM下载安装"></a>NVM下载安装</h3><p>Github仓库地址：<a href="https://github.com/coreybutler/nvm-windows/releases">nvm-windows</a></p>
 <p>1、选择你要安装的对应版本号</p>
-<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206202317709.png"></p>
+<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202206202317709.png"></p>
 <p>2、下载你要使用的方式，可以是.exe也可以是免装压缩包，这里演示安装.exe</p>
-<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206202317759.png"></p>
+<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202206202317759.png"></p>
 <p>3、下载软件之后，运行软件</p>
-<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206202317601.png"></p>
+<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202206202317601.png"></p>
 <p>默认安装到C盘，这样会自动配置环境变量</p>
-<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206202317005.png"></p>
+<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202206202317005.png"></p>
 <p>4、安装完成之后进行测试，命令行输入nvm，出现下方信息表示安装完成（版本号不需要一致哈，你安装的什么就是什么）</p>
-<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206202317539.png"></p>
+<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202206202317539.png"></p>
 <h3 id="NVM配置镜像源"><a href="#NVM配置镜像源" class="headerlink" title="NVM配置镜像源"></a>NVM配置镜像源</h3><p>配置镜像源之后安装会快很多，下面是淘宝的镜像源</p>
 <figure class="highlight json"><table><tr><td class="code"><pre><code class="hljs json">node_mirror<span class="hljs-punctuation">:</span> https<span class="hljs-punctuation">:</span><span class="hljs-comment">//npm.taobao.org/mirrors/node/</span><br>npm_mirror<span class="hljs-punctuation">:</span> https<span class="hljs-punctuation">:</span><span class="hljs-comment">//npm.taobao.org/mirrors/npm/</span><br></code></pre></td></tr></table></figure>
 
 <p>将上方的命令添加到<strong>settings.txt</strong>文件的末尾</p>
-<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206202320284.png"></p>
+<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202206202320284.png"></p>
 <h3 id="NVM常用命令"><a href="#NVM常用命令" class="headerlink" title="NVM常用命令"></a>NVM常用命令</h3><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">nvm list // 查看安装的所有node的版本<br><br>nvm list available // 查看当前可安装的版本<br><br>nvm install xx.xx.xx  // 安装xx.xx.xx版本的node<br><br>nvm use xx.xx.xx // 使用（切换到）xx.xx.xx版本的node<br><br>nvm uninstall xx.xx.xx  // 卸载xx.xx.xx版本的node<br><br>nvm <span class="hljs-built_in">arch</span> // 显示node是运行在32位还是64位。<br><br>nvm on // 开启node.js版本管理<br><br>nvm off // 关闭node.js版本管理<br><br>nvm proxy [url] // 设置下载代理。不加可选参数url，显示当前代理。将url设置为none则移除代理。<br><br>nvm node_mirror [url] // 设置node镜像。默认是https://nodejs.org/dist/。如果不写url，则使用默认url。设置后可至安装目录settings.txt文件查看，也可直接在该文件操作。<br>nvm npm_mirror [url] // 设置npm镜像。https://github.com/npm/cli/archive/。如果不写url，则使用默认url。设置后可至安装目录settings.txt文件查看，也可直接在该文件操作。<br><br>nvm root [path] // 设置存储不同版本node的目录。如果未设置，默认使用当前目录。<br></code></pre></td></tr></table></figure>
 
 ]]></content>
       <tags>
         <tag>NVM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>cURL常见用法</title>
+    <url>/posts/b403a33b.html</url>
+    <content><![CDATA[<h2 id="cURL简介"><a href="#cURL简介" class="headerlink" title="cURL简介"></a>cURL简介</h2><p>cURL是一款常用的命令行工具，可以用来请求Web服务器，也可以用于传输数据。支持的协议包括 （DICT, FILE, FTP, FTPS, GOPHER, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, POP3, POP3S, RTMP, RTSP, SCP, SFTP, SMTP, SMTPS, TELNET and TFTP），cURL设计为无用户交互下完成工作；cURL提供了一大堆非常有用的功能包括：代理访问、用户认证、FTP上传下载、HTTP请求、SSL连接、Cookie支持、断点续传等等</p>
+<h2 id="cURL常用命令"><a href="#cURL常用命令" class="headerlink" title="cURL常用命令"></a>cURL常用命令</h2><h3 id="发送GET请求"><a href="#发送GET请求" class="headerlink" title="发送GET请求"></a>发送GET请求</h3><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># 不带参数</span><br>curl https://www.example.com<br><br><span class="hljs-comment"># 带参数</span><br>curl https://www.example.com?<span class="hljs-built_in">id</span>=<span class="hljs-string">&#x27;123123123&#x27;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="发送POST请求"><a href="#发送POST请求" class="headerlink" title="发送POST请求"></a>发送POST请求</h3><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -X POST -d <span class="hljs-string">&#x27;id=123&amp;tage=a&#x27;</span> https://www.example.com<br><br>curl -X POST -d <span class="hljs-string">&#x27;id=123&#x27;</span> -d <span class="hljs-string">&#x27;tage=a&#x27;</span> https://www.example.com<br></code></pre></td></tr></table></figure>
+
+<p class="note note-info">
+    -X：表示指定请求的方法<br>
+    -d：POST请求的数据体
+</p>
+
+<h3 id="发送JSON格式的请求"><a href="#发送JSON格式的请求" class="headerlink" title="发送JSON格式的请求"></a>发送JSON格式的请求</h3><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -H <span class="hljs-string">&quot;Content-Type: application/json&quot;</span> -X POST -d <span class="hljs-string">&#x27;&#123;&quot;abc&quot;:123&#125;&#x27;</span> https://www.example.com<br></code></pre></td></tr></table></figure>
+
+<p class="note note-info">
+    -H：设置请求头<br>
+</p>
+
+<h3 id="更多操作"><a href="#更多操作" class="headerlink" title="更多操作"></a>更多操作</h3><h4 id="（-v）显示通信过程"><a href="#（-v）显示通信过程" class="headerlink" title="（-v）显示通信过程"></a>（-v）显示通信过程</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -v https://www.example.com<br></code></pre></td></tr></table></figure>
+
+<h4 id="（-i）只显示响应头和网站代码"><a href="#（-i）只显示响应头和网站代码" class="headerlink" title="（-i）只显示响应头和网站代码"></a>（-i）只显示响应头和网站代码</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -i https://www.example.com<br></code></pre></td></tr></table></figure>
+
+<h4 id="（-l）只显示网站代码"><a href="#（-l）只显示网站代码" class="headerlink" title="（-l）只显示网站代码"></a>（-l）只显示网站代码</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -l https://www.example.com<br></code></pre></td></tr></table></figure>
+
+<h4 id="（-0）保存网页"><a href="#（-0）保存网页" class="headerlink" title="（-0）保存网页"></a>（-0）保存网页</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -0 https://www.example.com<br></code></pre></td></tr></table></figure>
+
+<h4 id="（-s）不显示错误信息"><a href="#（-s）不显示错误信息" class="headerlink" title="（-s）不显示错误信息"></a>（-s）不显示错误信息</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -s https://www.example.com<br></code></pre></td></tr></table></figure>
+
+<h4 id="（-S）只显示错误信息"><a href="#（-S）只显示错误信息" class="headerlink" title="（-S）只显示错误信息"></a>（-S）只显示错误信息</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -S https://www.example.com<br></code></pre></td></tr></table></figure>
+
+<h4 id="（-c）将cookie写入文件"><a href="#（-c）将cookie写入文件" class="headerlink" title="（-c）将cookie写入文件"></a>（-c）将cookie写入文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">curl -c cookies.txt https://www.example.com<br></code></pre></td></tr></table></figure>
+
+<h4 id="（-b）发送cookie数据"><a href="#（-b）发送cookie数据" class="headerlink" title="（-b）发送cookie数据"></a>（-b）发送cookie数据</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">curl -b <span class="hljs-string">&#x27;foo=bar&#x27;</span> https://www.example.com<br><br><span class="hljs-comment"># 多个cookie</span><br>curl -b <span class="hljs-string">&#x27;foo1=bar;foo2=bar2&#x27;</span> https://www.example.com<br><br><span class="hljs-comment"># cookie文件</span><br>curl -b cookies.txt https://www.example.com<br></code></pre></td></tr></table></figure>
+
+<h4 id="（-F）上传二进制文件"><a href="#（-F）上传二进制文件" class="headerlink" title="（-F）上传二进制文件"></a>（-F）上传二进制文件</h4><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># 默认加上`Content-Type: multipart/form-data`，资源名称指定为file</span><br>curl -F <span class="hljs-string">&#x27;file=@ss.png&#x27;</span> https://www.example.com<br><br><span class="hljs-comment"># 指定MIME类型</span><br>curl -F <span class="hljs-string">&#x27;file=@ss.png;type=image/png&#x27;</span> https://www.example.com<br><br><span class="hljs-comment"># 指定文件名  上传的是ss.png  服务器接收到的是aa.png</span><br>curl -F <span class="hljs-string">&#x27;file=@ss.png;filename=aa.png&#x27;</span> https://www.example.com <br></code></pre></td></tr></table></figure>
+
+<p>更多cURL用法请见<a href="https://www.ruanyifeng.com/blog/2019/09/curl-reference.html">cURL用法指南</a></p>
+]]></content>
+      <tags>
+        <tag>cURL</tag>
       </tags>
   </entry>
   <entry>
@@ -743,9 +744,9 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
 
 <h3 id="开发模式打包"><a href="#开发模式打包" class="headerlink" title="开发模式打包"></a>开发模式打包</h3><p>开发模式打包下，Parcel会自动将应用构建在它内置的开发服务器中，你可使用浏览器进行访问，默认访问地址是：<a href="http://localhose:1234/">http://localhose:1234</a></p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">parcel index.html<br></code></pre></td></tr></table></figure>
-<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206191551190.png" alt="示例"></p>
+<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202206191551190.png" alt="示例"></p>
 <p>打包完成之后会在当前目录下自动生成dist目录</p>
-<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206191553645.png" alt="dist目录"></p>
+<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202206191553645.png" alt="dist目录"></p>
 <h3 id="生产模式打包"><a href="#生产模式打包" class="headerlink" title="生产模式打包"></a>生产模式打包</h3><p>完成项目开发之后，项目进行打包，不再需要运行在Parcel内置服务器中</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">parcel build index.html<br></code></pre></td></tr></table></figure>
 
@@ -768,6 +769,18 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
 ]]></content>
       <tags>
         <tag>Parcel</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>常见手写JS代码</title>
+    <url>/posts/7c6ee642.html</url>
+    <content><![CDATA[<h2 id="常见手写JS代码"><a href="#常见手写JS代码" class="headerlink" title="常见手写JS代码"></a>常见手写JS代码</h2><p>本文用于收集整理以及学习常见的JS代码，内容来自互联网，不便整理出处，若内容有所侵犯权益，请在底部留言，我会尽快回复。</p>
+<h3 id="防抖"><a href="#防抖" class="headerlink" title="防抖"></a>防抖</h3><p>防抖是指用户在触发某个操作时，如果在指定的时间内再次触发该操作，则清除前面的所触发的操作，直到用户在规定时间内不再进行操作，我们再处理用户触发的操作。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 防抖</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">debounce</span>(<span class="hljs-params">fn,delay</span>)&#123;<br>    <span class="hljs-keyword">let</span> timer<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">function</span>(<span class="hljs-params">...args</span>)&#123;<br>        <span class="hljs-comment">// 再次触发，清除之前的定时器</span><br>        <span class="hljs-keyword">if</span>(timer)&#123;<br>            <span class="hljs-built_in">clearTimeout</span>(timer)<br>        &#125;<br>        <span class="hljs-comment">// 设置新的定时器，重新计时</span><br>        timer = <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">()=&gt;</span>&#123;<br>            <span class="hljs-comment">// 调用真正的回调函数，并传入this和参数</span><br>            fn.<span class="hljs-title function_">apply</span>(<span class="hljs-variable language_">this</span>,args)<br>        &#125;,delay)<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -822,6 +835,21 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
       </tags>
   </entry>
   <entry>
+    <title>手写简易EventBus</title>
+    <url>/posts/79a4f5c.html</url>
+    <content><![CDATA[<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202206191623469.png"></p>
+<h2 id="EventBus简介"><a href="#EventBus简介" class="headerlink" title="EventBus简介"></a>EventBus简介</h2><p>在之前的文章中，介绍了MVC设计模式，他将一个应用程序分成了多个模块，弱化了每一个模块与模块之间的联系，这样的就使得模块与模块之间的通信变得尤为重要，尤其是MVC中Model的改变引起View的改变。EventBus就是基于<code>订阅/发布</code>模式实现的实现的异步分发处理系统。</p>
+<h3 id="订阅者发布者模式"><a href="#订阅者发布者模式" class="headerlink" title="订阅者发布者模式"></a>订阅者发布者模式</h3><p>举一个生活中的例子，我订阅了一份报纸，这份报纸会在某天的某一时刻出现在我的邮箱中，我不确定它什么时候来，我也不需要一直等待，我只需要在它到来的时候阅读即可，它什么时候会到来呢，这取决于发布者，他何时发布，我何时就能够收到我的报纸。</p>
+<p>我阅读了发布者的报纸，这就视为了我与发布者的一次通信，并且这种通信是异步的</p>
+<h2 id="JS实现简易的EventBus"><a href="#JS实现简易的EventBus" class="headerlink" title="JS实现简易的EventBus"></a>JS实现简易的EventBus</h2><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">class</span> <span class="hljs-title class_">EventBus</span>&#123;<br>    <span class="hljs-title function_">constructor</span>(<span class="hljs-params"></span>) &#123;<br>        <span class="hljs-comment">// 存储订阅的事件以及回调</span><br>        <span class="hljs-variable language_">this</span>.<span class="hljs-property">eventHash</span> = &#123;&#125;<br>    &#125;<br>    <span class="hljs-comment">// 事件订阅</span><br>    <span class="hljs-title function_">on</span>(<span class="hljs-params">eventName,callback</span>)&#123;<br>        <span class="hljs-comment">// 已经订阅过的插入新回调</span><br>        <span class="hljs-keyword">if</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">eventHash</span>.<span class="hljs-title function_">hasOwnProperty</span>(eventName))&#123;<br>            <span class="hljs-variable language_">this</span>.<span class="hljs-property">eventHash</span>[eventName].<span class="hljs-title function_">push</span>(callback)<br>        &#125;<span class="hljs-keyword">else</span>&#123; <span class="hljs-comment">// 未订阅的创建新订阅</span><br>            <span class="hljs-variable language_">this</span>.<span class="hljs-property">eventHash</span>[eventName] = [callback]<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">// 事件发布</span><br>    <span class="hljs-title function_">emit</span>(<span class="hljs-params">eventName,data</span>)&#123;<br>        <span class="hljs-comment">// 事件订阅存在则发布</span><br>        <span class="hljs-keyword">if</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">eventHash</span>.<span class="hljs-title function_">hasOwnProperty</span>(eventName))&#123;<br>            <span class="hljs-variable language_">this</span>.<span class="hljs-property">eventHash</span>[eventName].<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">callback</span>)=&gt;</span>&#123;<br>                <span class="hljs-title function_">callback</span>(data)<br>            &#125;)<br>        &#125;<span class="hljs-keyword">else</span>&#123; <span class="hljs-comment">// 事件订阅不存在</span><br>            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">`&#x27;<span class="hljs-subst">$&#123;eventName&#125;</span>&#x27; Not Subscribed`</span>)<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">// 事件取消</span><br>    <span class="hljs-title function_">off</span>(<span class="hljs-params">eventName</span>)&#123;<br>        <span class="hljs-comment">// 不传参数清空所有事件订阅</span><br>        <span class="hljs-keyword">if</span>(eventName === <span class="hljs-literal">undefined</span>)&#123;<br>            <span class="hljs-variable language_">this</span>.<span class="hljs-property">eventHash</span> = &#123;&#125;<br>        &#125;<span class="hljs-keyword">else</span>&#123;<br>            <span class="hljs-comment">// 删除对应事件订阅</span><br>            <span class="hljs-keyword">delete</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">eventHash</span>[eventName]<br>        &#125;<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title class_">EventBus</span>;<br></code></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>EventBus</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>浅析跨域问题</title>
     <url>/posts/721439c2.html</url>
     <content><![CDATA[<h2 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h2><h3 id="源的概念"><a href="#源的概念" class="headerlink" title="源的概念"></a>源的概念</h3><p>window.origin或location.origin就可以得到当前源</p>
@@ -837,7 +865,7 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
 <figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> request = <span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLHttpRequest</span>();<br><br>request.<span class="hljs-title function_">open</span>(<span class="hljs-string">&#x27;get&#x27;</span>,<span class="hljs-string">&#x27;http://localhost:8888/friends.json&#x27;</span>)<br><br>request.<span class="hljs-property">onreadystatechange</span> = <span class="hljs-function">()=&gt;</span>&#123;<br>  <span class="hljs-keyword">if</span>(request.<span class="hljs-property">readyState</span> === <span class="hljs-number">4</span> &amp;&amp; request.<span class="hljs-property">status</span> === <span class="hljs-number">200</span>)&#123;<br>    <span class="hljs-keyword">let</span> ul = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&#x27;ul&#x27;</span>);<br>    <span class="hljs-keyword">let</span> friends = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(request.<span class="hljs-property">response</span>);<br>    friends.<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">item</span>)=&gt;</span>&#123;<br>        <span class="hljs-keyword">let</span> li = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&#x27;li&#x27;</span>);<br>        li.<span class="hljs-property">textContent</span> = item.<span class="hljs-property">name</span>;<br>        ul.<span class="hljs-title function_">appendChild</span>(li);<br>    &#125;)<br>    <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-title function_">appendChild</span>(ul);<br>  &#125;<br>&#125;<br><br>request.<span class="hljs-title function_">send</span>();<br></code></pre></td></tr></table></figure>
 
 <p>浏览器就会发出下面的错误信息，提示你进行了跨域请求并且已经被浏览器进行阻止。</p>
-<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206110109578.png" alt="浏览器提示跨域错误"></p>
+<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202206110109578.png" alt="浏览器提示跨域错误"></p>
 <h2 id="跨域解决方式"><a href="#跨域解决方式" class="headerlink" title="跨域解决方式"></a>跨域解决方式</h2><h3 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h3><p>CORS（Cross-Origin Resource Sharing）跨域资源共享，是一种基于 HTTP 头的机制，该机制通过允许服务器标示除了它自己以外的其它origin（域、协议和端口），这样其他网站可以直接请求该网站的这些资源。</p>
 <p>使用方法：</p>
 <p>在被请求网站的响应头中进行添加</p>
@@ -852,12 +880,12 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
 <figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">if</span>(path === <span class="hljs-string">&#x27;/jsonp/friends.js&#x27;</span>)&#123;<br>    response.<span class="hljs-property">statusCode</span> = <span class="hljs-number">200</span><br>    response.<span class="hljs-title function_">setHeader</span>(<span class="hljs-string">&#x27;Content-Type&#x27;</span>, <span class="hljs-string">&#x27;text/javascript;charset=utf-8&#x27;</span>)<br>    <span class="hljs-keyword">const</span> string = fs.<span class="hljs-title function_">readFileSync</span>(<span class="hljs-string">&#x27;public/friends.json&#x27;</span>)<br>    <br>    <span class="hljs-comment">// query.cd 获取前端传过来的cd参数的值</span><br>    <span class="hljs-comment">// 将cd的值作为回调函数的名称，进行拼接然后返回</span><br>    response.<span class="hljs-title function_">write</span>(query.<span class="hljs-property">callback</span> + <span class="hljs-string">&#x27;(&#x27;</span> + string + <span class="hljs-string">&#x27;)&#x27;</span>)<br>    response.<span class="hljs-title function_">end</span>()<br> &#125;<br></code></pre></td></tr></table></figure>
 
 <p>后台处理之后&#x2F;jsonp&#x2F;friends.js下的js文件的内容就变成了下面这样，变成了调用这个callback的函数，并且将数据作为参数传入callback中。</p>
-<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206110109038.png" alt="friends.js内容"></p>
+<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202206110109038.png" alt="friends.js内容"></p>
 <p>callback函数的定义如下：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">callback</span>(<span class="hljs-params">data</span>)&#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(data);<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>控制台输出如下</p>
-<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206110109369.png" alt="控制台输出"></p>
+<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202206110109369.png" alt="控制台输出"></p>
 <p>至此，就已经能够在本页面访问到目标页面的数据了。</p>
 <p>注意：JSONP的实现需要后端支持</p>
 <p>上面的做法有一个缺点，这样设置JSONP之后所有网站都能够拿到这些数据了，如果不想所有网站都能够拿到数据，</p>
@@ -895,18 +923,42 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
       </tags>
   </entry>
   <entry>
-    <title>手写简易EventBus</title>
-    <url>/posts/79a4f5c.html</url>
-    <content><![CDATA[<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206191623469.png"></p>
-<h2 id="EventBus简介"><a href="#EventBus简介" class="headerlink" title="EventBus简介"></a>EventBus简介</h2><p>在之前的文章中，介绍了MVC设计模式，他将一个应用程序分成了多个模块，弱化了每一个模块与模块之间的联系，这样的就使得模块与模块之间的通信变得尤为重要，尤其是MVC中Model的改变引起View的改变。EventBus就是基于<code>订阅/发布</code>模式实现的实现的异步分发处理系统。</p>
-<h3 id="订阅者发布者模式"><a href="#订阅者发布者模式" class="headerlink" title="订阅者发布者模式"></a>订阅者发布者模式</h3><p>举一个生活中的例子，我订阅了一份报纸，这份报纸会在某天的某一时刻出现在我的邮箱中，我不确定它什么时候来，我也不需要一直等待，我只需要在它到来的时候阅读即可，它什么时候会到来呢，这取决于发布者，他何时发布，我何时就能够收到我的报纸。</p>
-<p>我阅读了发布者的报纸，这就视为了我与发布者的一次通信，并且这种通信是异步的</p>
-<h2 id="JS实现简易的EventBus"><a href="#JS实现简易的EventBus" class="headerlink" title="JS实现简易的EventBus"></a>JS实现简易的EventBus</h2><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">class</span> <span class="hljs-title class_">EventBus</span>&#123;<br>    <span class="hljs-title function_">constructor</span>(<span class="hljs-params"></span>) &#123;<br>        <span class="hljs-comment">// 存储订阅的事件以及回调</span><br>        <span class="hljs-variable language_">this</span>.<span class="hljs-property">eventHash</span> = &#123;&#125;<br>    &#125;<br>    <span class="hljs-comment">// 事件订阅</span><br>    <span class="hljs-title function_">on</span>(<span class="hljs-params">eventName,callback</span>)&#123;<br>        <span class="hljs-comment">// 已经订阅过的插入新回调</span><br>        <span class="hljs-keyword">if</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">eventHash</span>.<span class="hljs-title function_">hasOwnProperty</span>(eventName))&#123;<br>            <span class="hljs-variable language_">this</span>.<span class="hljs-property">eventHash</span>[eventName].<span class="hljs-title function_">push</span>(callback)<br>        &#125;<span class="hljs-keyword">else</span>&#123; <span class="hljs-comment">// 未订阅的创建新订阅</span><br>            <span class="hljs-variable language_">this</span>.<span class="hljs-property">eventHash</span>[eventName] = [callback]<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">// 事件发布</span><br>    <span class="hljs-title function_">emit</span>(<span class="hljs-params">eventName,data</span>)&#123;<br>        <span class="hljs-comment">// 事件订阅存在则发布</span><br>        <span class="hljs-keyword">if</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">eventHash</span>.<span class="hljs-title function_">hasOwnProperty</span>(eventName))&#123;<br>            <span class="hljs-variable language_">this</span>.<span class="hljs-property">eventHash</span>[eventName].<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">callback</span>)=&gt;</span>&#123;<br>                <span class="hljs-title function_">callback</span>(data)<br>            &#125;)<br>        &#125;<span class="hljs-keyword">else</span>&#123; <span class="hljs-comment">// 事件订阅不存在</span><br>            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">`&#x27;<span class="hljs-subst">$&#123;eventName&#125;</span>&#x27; Not Subscribed`</span>)<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">// 事件取消</span><br>    <span class="hljs-title function_">off</span>(<span class="hljs-params">eventName</span>)&#123;<br>        <span class="hljs-comment">// 不传参数清空所有事件订阅</span><br>        <span class="hljs-keyword">if</span>(eventName === <span class="hljs-literal">undefined</span>)&#123;<br>            <span class="hljs-variable language_">this</span>.<span class="hljs-property">eventHash</span> = &#123;&#125;<br>        &#125;<span class="hljs-keyword">else</span>&#123;<br>            <span class="hljs-comment">// 删除对应事件订阅</span><br>            <span class="hljs-keyword">delete</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">eventHash</span>[eventName]<br>        &#125;<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title class_">EventBus</span>;<br></code></pre></td></tr></table></figure>
+    <title>浅述Promise</title>
+    <url>/posts/47308023.html</url>
+    <content><![CDATA[<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202206092334626.png"></p>
+<h2 id="Promise简介"><a href="#Promise简介" class="headerlink" title="Promise简介"></a>Promise简介</h2><p>Promise是前端解决异步任务的统一方式。<br>从JavaScript的语法上而言：Promise是一个对象，可以从它身上获取异步操作的消息。<br>从Promise的词意上而言：Promise的意思是“承诺”，它承诺过一段时间给你异步任务操作的结果。</p>
+<h2 id="Promise状态"><a href="#Promise状态" class="headerlink" title="Promise状态"></a>Promise状态</h2><ul>
+<li>pending（等待状态）</li>
+<li>fulfiled（成功状态）</li>
+<li>rejected（失败状态）</li>
+</ul>
+<h2 id="Promise特点"><a href="#Promise特点" class="headerlink" title="Promise特点"></a>Promise特点</h2><ol>
+<li><p>对象的状态不会受外界的影响，只有异步操作的结果可以决定当前是哪一种状态，其他的操作无法改变这个状态。</p>
+</li>
+<li><p>一旦状态改变，之后就不会再改变了，任何时候都能够得到这个结果。Promise中的对象状态的改变，只有两种可能：<span class="label label-info">（pending——&gt;&gt;fulfiled）</span>、<span class="label label-info">（pending——&gt;&gt;rejected）</span>一旦这种情况发生了，状态就固定了，不会再改变。</p>
+</li>
+<li><p>创建了Promise对象之后就会立即执行</p>
+</li>
+</ol>
+<p class="note note-warning">
+如果你在状态改变之后给Promise对象添加回调函数，你仍然能够得到这个结果。但如果是事件，你一旦错过了这个事件的触发，你再进行监听就无法得到之前的结果了。
+</p>
 
+<h2 id="Promise使用"><a href="#Promise使用" class="headerlink" title="Promise使用"></a>Promise使用</h2><h3 id="创建Promise对象"><a href="#创建Promise对象" class="headerlink" title="创建Promise对象"></a>创建Promise对象</h3><p>我们可以通过<span class="label label-info">new</span>关键字创建一个Promise对象。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> promise = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>)&#123;<br>	<span class="hljs-comment">// 异步操作</span><br>	<span class="hljs-built_in">setTimeout</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>		<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;执行了一些异步操作&#x27;</span>);<br>		<span class="hljs-title function_">resolve</span>(<span class="hljs-string">&#x27;拿到的一些数据&#x27;</span>);<br>	&#125;,<span class="hljs-number">2000</span>);<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p>执行结果：</p>
+<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202206100019947.png"></p>
+<p>从上面的执行结果我们就可以看出Promise对象在一创建出来就被立即执行了，所以在使用Promise对象的时候通常会使用一个函数将他包裹起来。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">async</span>(<span class="hljs-params"></span>)&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>)&#123;<br>        <span class="hljs-comment">// 异步操作</span><br>        <span class="hljs-built_in">setTimeout</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;执行了一些异步操作&#x27;</span>);<br>            <span class="hljs-title function_">resolve</span>(<span class="hljs-string">&#x27;拿到的一些数据&#x27;</span>);<br>        &#125;,<span class="hljs-number">2000</span>);<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>使用函数包裹并return对象之后，我们在调用async这个函数的时候就会得到一个Promise对象，我们就可以使用Promise对象自身及其原型上的方法了，例如：</p>
+<p><span class="label label-info">.resolve()</span>、<span class="label label-info">.reject()</span>、<span class="label label-info">.all()</span>、<span class="label label-info">.race()</span>、<span class="label label-info">.then()</span>、<span class="label label-info">.catch()</span></p>
+<p>未完待续…</p>
 ]]></content>
       <tags>
         <tag>JavaScript</tag>
-        <tag>EventBus</tag>
+        <tag>Promise</tag>
       </tags>
   </entry>
   <entry>
@@ -1005,57 +1057,6 @@ TIP：如果元素设置宽度后，文本内容超出，可以通过`word-wrap`
       <tags>
         <tag>Cookie</tag>
         <tag>WebStorage</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>浅述Promise</title>
-    <url>/posts/47308023.html</url>
-    <content><![CDATA[<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206092334626.png"></p>
-<h2 id="Promise简介"><a href="#Promise简介" class="headerlink" title="Promise简介"></a>Promise简介</h2><p>Promise是前端解决异步任务的统一方式。<br>从JavaScript的语法上而言：Promise是一个对象，可以从它身上获取异步操作的消息。<br>从Promise的词意上而言：Promise的意思是“承诺”，它承诺过一段时间给你异步任务操作的结果。</p>
-<h2 id="Promise状态"><a href="#Promise状态" class="headerlink" title="Promise状态"></a>Promise状态</h2><ul>
-<li>pending（等待状态）</li>
-<li>fulfiled（成功状态）</li>
-<li>rejected（失败状态）</li>
-</ul>
-<h2 id="Promise特点"><a href="#Promise特点" class="headerlink" title="Promise特点"></a>Promise特点</h2><ol>
-<li><p>对象的状态不会受外界的影响，只有异步操作的结果可以决定当前是哪一种状态，其他的操作无法改变这个状态。</p>
-</li>
-<li><p>一旦状态改变，之后就不会再改变了，任何时候都能够得到这个结果。Promise中的对象状态的改变，只有两种可能：<span class="label label-info">（pending——&gt;&gt;fulfiled）</span>、<span class="label label-info">（pending——&gt;&gt;rejected）</span>一旦这种情况发生了，状态就固定了，不会再改变。</p>
-</li>
-<li><p>创建了Promise对象之后就会立即执行</p>
-</li>
-</ol>
-<p class="note note-warning">
-如果你在状态改变之后给Promise对象添加回调函数，你仍然能够得到这个结果。但如果是事件，你一旦错过了这个事件的触发，你再进行监听就无法得到之前的结果了。
-</p>
-
-<h2 id="Promise使用"><a href="#Promise使用" class="headerlink" title="Promise使用"></a>Promise使用</h2><h3 id="创建Promise对象"><a href="#创建Promise对象" class="headerlink" title="创建Promise对象"></a>创建Promise对象</h3><p>我们可以通过<span class="label label-info">new</span>关键字创建一个Promise对象。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> promise = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>)&#123;<br>	<span class="hljs-comment">// 异步操作</span><br>	<span class="hljs-built_in">setTimeout</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>		<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;执行了一些异步操作&#x27;</span>);<br>		<span class="hljs-title function_">resolve</span>(<span class="hljs-string">&#x27;拿到的一些数据&#x27;</span>);<br>	&#125;,<span class="hljs-number">2000</span>);<br>&#125;)<br></code></pre></td></tr></table></figure>
-
-<p>执行结果：</p>
-<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206100019947.png"></p>
-<p>从上面的执行结果我们就可以看出Promise对象在一创建出来就被立即执行了，所以在使用Promise对象的时候通常会使用一个函数将他包裹起来。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">async</span>(<span class="hljs-params"></span>)&#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params">resolve, reject</span>)&#123;<br>        <span class="hljs-comment">// 异步操作</span><br>        <span class="hljs-built_in">setTimeout</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<br>            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;执行了一些异步操作&#x27;</span>);<br>            <span class="hljs-title function_">resolve</span>(<span class="hljs-string">&#x27;拿到的一些数据&#x27;</span>);<br>        &#125;,<span class="hljs-number">2000</span>);<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<p>使用函数包裹并return对象之后，我们在调用async这个函数的时候就会得到一个Promise对象，我们就可以使用Promise对象自身及其原型上的方法了，例如：</p>
-<p><span class="label label-info">.resolve()</span>、<span class="label label-info">.reject()</span>、<span class="label label-info">.all()</span>、<span class="label label-info">.race()</span>、<span class="label label-info">.then()</span>、<span class="label label-info">.catch()</span></p>
-<p>未完待续…</p>
-]]></content>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>Promise</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>常见手写JS代码</title>
-    <url>/posts/7c6ee642.html</url>
-    <content><![CDATA[<h2 id="常见手写JS代码"><a href="#常见手写JS代码" class="headerlink" title="常见手写JS代码"></a>常见手写JS代码</h2><p>本文用于收集整理以及学习常见的JS代码，内容来自互联网，不便整理出处，若内容有所侵犯权益，请在底部留言，我会尽快回复。</p>
-<h3 id="防抖"><a href="#防抖" class="headerlink" title="防抖"></a>防抖</h3><p>防抖是指用户在触发某个操作时，如果在指定的时间内再次触发该操作，则清除前面的所触发的操作，直到用户在规定时间内不再进行操作，我们再处理用户触发的操作。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 防抖</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">debounce</span>(<span class="hljs-params">fn,delay</span>)&#123;<br>    <span class="hljs-keyword">let</span> timer<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">function</span>(<span class="hljs-params">...args</span>)&#123;<br>        <span class="hljs-comment">// 再次触发，清除之前的定时器</span><br>        <span class="hljs-keyword">if</span>(timer)&#123;<br>            <span class="hljs-built_in">clearTimeout</span>(timer)<br>        &#125;<br>        <span class="hljs-comment">// 设置新的定时器，重新计时</span><br>        timer = <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">()=&gt;</span>&#123;<br>            <span class="hljs-comment">// 调用真正的回调函数，并传入this和参数</span><br>            fn.<span class="hljs-title function_">apply</span>(<span class="hljs-variable language_">this</span>,args)<br>        &#125;,delay)<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>JavaScript</tag>
       </tags>
   </entry>
 </search>

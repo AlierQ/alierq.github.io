@@ -23,13 +23,13 @@
 <meta property="og:site_name" content="AlierQ&#39;s Blog">
 <meta property="og:description" content="Git指令设置Git配置123456git config --global user.name 你的英文名git config --global user.email 你的邮箱git config --global push.default simplegit config --global core.quotepath falsegit config --global core.editor &amp;">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206132211080.png">
+<meta property="og:image" content="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202206132211080.png">
 <meta property="article:published_time" content="2022-06-13T13:22:56.000Z">
-<meta property="article:modified_time" content="2022-06-19T06:53:40.621Z">
+<meta property="article:modified_time" content="2022-07-05T15:13:50.783Z">
 <meta property="article:author" content="AlierQ">
 <meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206132211080.png">
+<meta name="twitter:image" content="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202206132211080.png">
   
   
   
@@ -285,7 +285,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年6月19日 下午
+                    本文最后更新于：2022年7月5日 晚上
                   
                 
               </p>
@@ -320,7 +320,7 @@
 
 <h3 id="远程git仓库"><a href="#远程git仓库" class="headerlink" title="远程git仓库"></a>远程git仓库</h3><h4 id="创建ssh-key"><a href="#创建ssh-key" class="headerlink" title="创建ssh key"></a>创建ssh key</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">ssh-keygen -t rsa -b 4096 -C &quot;你的任意邮箱地址&quot;<br><span class="hljs-meta prompt_"># </span><span class="language-bash">-t 表示密钥的类型 ，-b表示密钥的长度，-C 用于识别这个密钥的注释</span><br></code></pre></td></tr></table></figure>
 
-<h4 id="Github配置公钥"><a href="#Github配置公钥" class="headerlink" title="Github配置公钥"></a>Github配置公钥</h4><p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206132145247.png" srcset="/img/loading.gif" lazyload alt="git设置公钥"></p>
+<h4 id="Github配置公钥"><a href="#Github配置公钥" class="headerlink" title="Github配置公钥"></a>Github配置公钥</h4><p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202206132145247.png" srcset="/img/loading.gif" lazyload alt="git设置公钥"></p>
 <h4 id="测试Github连接"><a href="#测试Github连接" class="headerlink" title="测试Github连接"></a>测试Github连接</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">ssh -T git@github.com<br></code></pre></td></tr></table></figure>
 
 <h4 id="上传远程仓库"><a href="#上传远程仓库" class="headerlink" title="上传远程仓库"></a>上传远程仓库</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">将本地仓库和远程仓库连接起来</span><br>git remote add origin git@github.com:AlierQ/GitTest.git<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">将原有的master改名位main,因为github上的主分支名称由master改为了main</span><br>git branch -M main<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">推到远程仓库的main分支</span><br>git push -u origin main<br></code></pre></td></tr></table></figure>
@@ -339,7 +339,7 @@
 
 <h4 id="美化提交历史记录"><a href="#美化提交历史记录" class="headerlink" title="美化提交历史记录"></a>美化提交历史记录</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git rebase -i 版本号<br></code></pre></td></tr></table></figure>
 
-<p><img src="https://alierq.coding.net/p/images/d/images/git/raw/master/hexo/202206132145993.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202206132145993.png" srcset="/img/loading.gif" lazyload></p>
 <h4 id="冲突解决"><a href="#冲突解决" class="headerlink" title="冲突解决"></a>冲突解决</h4><h5 id="中止"><a href="#中止" class="headerlink" title="中止"></a>中止</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git rebase --abort<br></code></pre></td></tr></table></figure>
 
 <h5 id="继续"><a href="#继续" class="headerlink" title="继续"></a>继续</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">git rebase --continue<br></code></pre></td></tr></table></figure>
@@ -402,7 +402,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年6月19日</div>
+          <div>2022年7月5日</div>
         </div>
       
       <div class="license-meta-item">
