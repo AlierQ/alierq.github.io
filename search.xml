@@ -1307,6 +1307,12 @@ v-cloak可以配合css可以解决网速慢时，页面展示出插值语法的�
 <h3 id="destroyed"><a href="#destroyed" class="headerlink" title="destroyed()"></a>destroyed()</h3><p>在Vue实例被销毁后调用，此时所有指令都已经解绑、事件监听都已经删除、所有子实例也已经被销毁。</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">new</span> <span class="hljs-title class_">Vue</span>(&#123;<br>    ...<br>    <span class="hljs-title function_">destroyed</span>(<span class="hljs-params"></span>)&#123;<br>    ...<br>    &#125;,<br>&#125;)<br></code></pre></td></tr></table></figure>
 
+<h2 id="常用的4个生命周期钩子"><a href="#常用的4个生命周期钩子" class="headerlink" title="常用的4个生命周期钩子"></a>常用的4个生命周期钩子</h2><ul>
+<li>created()</li>
+<li>mounted()</li>
+<li>updated()</li>
+<li>destroyed()</li>
+</ul>
 ]]></content>
       <tags>
         <tag>Vue</tag>
