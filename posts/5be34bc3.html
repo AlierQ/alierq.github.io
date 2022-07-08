@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202207061602375.png">
 <meta property="article:published_time" content="2022-07-08T07:00:02.000Z">
-<meta property="article:modified_time" content="2022-07-08T08:58:55.774Z">
+<meta property="article:modified_time" content="2022-07-08T09:36:07.549Z">
 <meta property="article:author" content="AlierQ">
 <meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary_large_image">
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          文章字数：4.3k 字
+          文章字数：4.6k 字
         
       </span>
     
@@ -234,7 +234,7 @@
         
         
         
-          阅读时长 ≈ 37 分钟
+          阅读时长 ≈ 39 分钟
         
       </span>
     
@@ -355,12 +355,19 @@
 <h4 id="使用变更方法"><a href="#使用变更方法" class="headerlink" title="使用变更方法"></a>使用变更方法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">new</span> <span class="hljs-title class_">Vue</span>(&#123;<br>	<span class="hljs-attr">data</span>:&#123;<br>    	<span class="hljs-attr">array</span>:[<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;b&#x27;</span>,<span class="hljs-string">&#x27;c&#x27;</span>]<br>	&#125;<br>    <span class="hljs-attr">template</span>:<span class="hljs-string">`</span><br><span class="hljs-string">	&lt;div&gt;</span><br><span class="hljs-string">      &#123;&#123;array&#125;&#125;</span><br><span class="hljs-string">      &lt;button @click=&quot;setD&quot;&gt;set d&lt;/button&gt;</span><br><span class="hljs-string">    &lt;/div&gt;</span><br><span class="hljs-string">	`</span>,<br>    <span class="hljs-attr">methods</span>:&#123;<br>    	<span class="hljs-title function_">setD</span>(<span class="hljs-params"></span>)&#123;<br>    		<span class="hljs-variable language_">this</span>.<span class="hljs-property">array</span>.<span class="hljs-title function_">push</span>(<span class="hljs-string">&#x27;d&#x27;</span>)<br>		&#125;<br>	&#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
 
 <p>运行之后，点击<code>set d</code>按钮之后页面就能够显示出新增元素的array，并且在点击<code>update d</code>之后数据也能够进行更新，并且这种方式对于我们来讲跟操作普通的数组没有什么区别。</p>
-<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>这里需要注意一下，不论是通过<code>set/$set方法</code>还是官方提供的<code>数组变更方法</code>，对数组进行添加元素之后，都没有对数组新增元素进行了监听，甚至于原本的数组中的元素身上也是没有监听的，我们可以测试一下</p>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>这里需要注意一下，不论是通过<code>set/$set方法</code>还是官方提供的<code>数组变更方法</code>，对数组进行添加元素之后，使用<code>this.array[index]=value</code>都没有对数组新增元素进行更改，我们可以测试一下</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">new</span> <span class="hljs-title class_">Vue</span>(&#123;<br>  <span class="hljs-attr">data</span>: &#123;<br>    <span class="hljs-attr">array</span>: [<span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>]<br>  &#125;,<br>  <span class="hljs-attr">template</span>: <span class="hljs-string">`</span><br><span class="hljs-string">    &lt;div&gt;</span><br><span class="hljs-string">      &#123;&#123;array&#125;&#125;</span><br><span class="hljs-string">      &lt;button @click=&quot;setD&quot;&gt;set d&lt;/button&gt;</span><br><span class="hljs-string">      &lt;button @click=&quot;updateD&quot;&gt;update d&lt;/button&gt;</span><br><span class="hljs-string">    &lt;/div&gt;</span><br><span class="hljs-string">  `</span>,<br>  <span class="hljs-attr">methods</span>: &#123;<br>    <span class="hljs-title function_">setD</span>(<span class="hljs-params"></span>) &#123;<br>      <span class="hljs-variable language_">this</span>.$set(<span class="hljs-variable language_">this</span>.<span class="hljs-property">array</span>,<span class="hljs-number">3</span>,<span class="hljs-string">&#x27;d&#x27;</span>)<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">array</span>.<span class="hljs-title function_">push</span>(<span class="hljs-number">1</span>);<br>    &#125;,<br>    <span class="hljs-title function_">updateD</span>(<span class="hljs-params"></span>) &#123;<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">array</span>[<span class="hljs-number">1</span>] = <span class="hljs-string">&quot;t&quot;</span>;<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">array</span>[<span class="hljs-number">3</span>] = <span class="hljs-string">&quot;dd&quot;</span>;<br>    &#125;<br>  &#125;<br>&#125;).$mount(<span class="hljs-string">&quot;#app&quot;</span>);<br></code></pre></td></tr></table></figure>
 
 <p>下面是两种方式添加新元素之后，对已有元素和新元素的更改：</p>
-<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202207081657878.gif" srcset="/img/loading.gif" lazyload alt="两种方法的监听测试"></p>
-<p>从图中可以看出，数组中的已有元素和新增元素实际上都是没有被监听到的，只有在使用了set&#x2F;$set和变更方法的时候页面会产生相应的变化。所以如果想要数组的变化能够同步到页面中，我们不能直接去修改数组的值，只能使用set&#x2F;$set和变更方法</p>
+<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202207081657878.gif" srcset="/img/loading.gif" lazyload alt="两种方法的监听"></p>
+<p>从图中可以看出，数组中的已有元素和新增元素都没有办法通过<code>this.array[index]=value</code>的方式进行修改</p>
+<p>事实上，在Vue中是没有办法通过<code>this.array[index] =newValue</code>、<code>this.array.length = newLength</code>进行数组修改的，这样是没有办法触发响应式更新的。</p>
+<p><code>this.array[index] =newValue</code>可以变相的使用set和变更方法实现</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// Vue.set</span><br><span class="hljs-title class_">Vue</span>.<span class="hljs-title function_">set</span>(vm.<span class="hljs-property">items</span>, indexOfItem, newValue)<br><br><span class="hljs-comment">// Array.prototype.splice</span><br>vm.<span class="hljs-property">items</span>.<span class="hljs-title function_">splice</span>(indexOfItem, <span class="hljs-number">1</span>, newValue)<br></code></pre></td></tr></table></figure>
+
+<p><code>this.array.length = newLength</code>可以使用变更方法实现</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// Array.prototype.splice</span><br>vm.<span class="hljs-property">items</span>.<span class="hljs-title function_">splice</span>(newLength)<br></code></pre></td></tr></table></figure>
+
 
               
             </div>
