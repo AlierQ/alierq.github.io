@@ -1466,4 +1466,38 @@ v-cloak可以配合css可以解决网速慢时，页面展示出插值语法的�
         <tag>Vue</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Vue的.sync修饰符</title>
+    <url>/posts/2b276609.html</url>
+    <content><![CDATA[<h2 id="sync的使用"><a href="#sync的使用" class="headerlink" title=".sync的使用"></a>.sync的使用</h2><p>为了更好的讲解<code>.sync</code>修饰符，我们假如现在有一个场景：父组件将数据传递给子组件，子组件期望修改数据（ps：这里会用到自定义事件）代码如下：</p>
+<p><strong>父组件.vue</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">Child</span> <span class="hljs-attr">:money</span>=<span class="hljs-string">&quot;total&quot;</span> @<span class="hljs-attr">update:money</span>=<span class="hljs-string">&quot;total = $event&quot;</span>/&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript"><span class="hljs-keyword">import</span> <span class="hljs-title class_">Child</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./Child.vue&quot;</span>;</span><br><span class="language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span><br><span class="language-javascript">  <span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">    <span class="hljs-keyword">return</span> &#123; <span class="hljs-attr">total</span>: <span class="hljs-number">10000</span> &#125;;</span><br><span class="language-javascript">  &#125;,</span><br><span class="language-javascript">  <span class="hljs-attr">components</span>: &#123; <span class="hljs-title class_">Child</span>: <span class="hljs-title class_">Child</span> &#125;</span><br><span class="language-javascript">&#125;;</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>子组件.vue</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;child&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;$emit(&#x27;update:money&#x27;, money-100)&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span><br><span class="language-javascript">  <span class="hljs-attr">props</span>: [<span class="hljs-string">&quot;money&quot;</span>]</span><br><span class="language-javascript">&#125;;</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>可以看到父组件将<code>total</code>这个数据传递给子组件，然后子组件期望修改<code>total</code>这个数据，就发布了一个自定义事件让父组件更新<code>total</code>，更新的<code>total</code>依然会传回给子组件。</p>
+<p>这个符合这个场景我们就可以使用<code>.sync</code>修饰符</p>
+<p><strong>父组件.vue</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">Child</span> <span class="hljs-attr">:money.sync</span>=<span class="hljs-string">&quot;total&quot;</span>/&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript"><span class="hljs-keyword">import</span> <span class="hljs-title class_">Child</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./Child.vue&quot;</span>;</span><br><span class="language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span><br><span class="language-javascript">  <span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">    <span class="hljs-keyword">return</span> &#123; <span class="hljs-attr">total</span>: <span class="hljs-number">10000</span> &#125;;</span><br><span class="language-javascript">  &#125;,</span><br><span class="language-javascript">  <span class="hljs-attr">components</span>: &#123; <span class="hljs-title class_">Child</span>: <span class="hljs-title class_">Child</span> &#125;</span><br><span class="language-javascript">&#125;;</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>使用<code>.sync</code>修饰符实现的效果和上面的是一致的</p>
+<p><code>.sync</code>相当于为我们做了事件的监听和数据的赋值，内容如下：</p>
+<ol>
+<li>监听<code>update:money</code>自定义事件的触发</li>
+<li>将自定义事件传递过来的参数赋值给<code>total</code></li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>所以<code>.sync</code>修饰符实际上就是一个语法糖</p>
+<p>他将<code>&lt;Child :money=&quot;total&quot; @update:money=&quot;total = $event&quot;/&gt;</code></p>
+<p>简化成了<code>&lt;Child :money.sync=&quot;total&quot;/&gt;</code></p>
+<p class="note note-warning">
+注意：假如传入子组件的数据参数名为`xyz`，则自定义事件就要命名为`update:xyz`，否则.sync无法进行工作
+</p>
+
+
+]]></content>
+      <tags>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
 </search>
