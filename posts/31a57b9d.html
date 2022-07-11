@@ -16,16 +16,16 @@
   <meta name="author" content="AlierQ">
   <meta name="keywords" content="">
   
-    <meta name="description" content=".sync的使用为了更好的讲解.sync修饰符，我们假如现在有一个场景：父组件将数据传递给子组件，子组件期望修改数据（ps：这里会用到自定义事件）代码如下： 父组件.vue 123456789101112131415&lt;template&gt;  &lt;div class&#x3D;&quot;app&quot;&gt;    &lt;Child :money&#x3D;&quot;total&quot; @u">
+    <meta name="description" content="computed（计算属性）顾名思义，计算属性就是要由一些其他数据计算得出，原本是不存在的，是依赖于其他数据和一些逻辑处理才得以被创造出来。 使用方法完整写法如果你即将要使用的计算属性不仅需要读取，并且需要修改，这个时候你就需要使用完整版计算属性写法 12345678910111213computed:&amp;#123;    fullName:&amp;#123;        get()&amp;#123;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue的.sync修饰符">
-<meta property="og:url" content="https://alierq.space/posts/2b276609.html">
+<meta property="og:title" content="Vue中computed和watch的使用及其区别">
+<meta property="og:url" content="https://alierq.space/posts/31a57b9d.html">
 <meta property="og:site_name" content="AlierQ&#39;s Blog">
-<meta property="og:description" content=".sync的使用为了更好的讲解.sync修饰符，我们假如现在有一个场景：父组件将数据传递给子组件，子组件期望修改数据（ps：这里会用到自定义事件）代码如下： 父组件.vue 123456789101112131415&lt;template&gt;  &lt;div class&#x3D;&quot;app&quot;&gt;    &lt;Child :money&#x3D;&quot;total&quot; @u">
+<meta property="og:description" content="computed（计算属性）顾名思义，计算属性就是要由一些其他数据计算得出，原本是不存在的，是依赖于其他数据和一些逻辑处理才得以被创造出来。 使用方法完整写法如果你即将要使用的计算属性不仅需要读取，并且需要修改，这个时候你就需要使用完整版计算属性写法 12345678910111213computed:&amp;#123;    fullName:&amp;#123;        get()&amp;#123;">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202207061602375.png">
-<meta property="article:published_time" content="2022-07-11T13:24:00.000Z">
-<meta property="article:modified_time" content="2022-07-11T14:32:34.762Z">
+<meta property="article:published_time" content="2022-07-11T14:34:35.000Z">
+<meta property="article:modified_time" content="2022-07-11T16:26:23.949Z">
 <meta property="article:author" content="AlierQ">
 <meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary_large_image">
@@ -33,7 +33,7 @@
   
   
   
-  <title>Vue的.sync修饰符 - AlierQ&#39;s Blog</title>
+  <title>Vue中computed和watch的使用及其区别 - AlierQ&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -200,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Vue的.sync修饰符"></span>
+            <span id="subtitle" data-typed-text="Vue中computed和watch的使用及其区别"></span>
           
         </div>
 
@@ -211,7 +211,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-07-11 21:24" pubdate>
+        <time datetime="2022-07-11 22:34" pubdate>
           2022年7月11日 晚上
         </time>
       </span>
@@ -223,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          文章字数：1.4k 字
+          文章字数：2k 字
         
       </span>
     
@@ -234,7 +234,7 @@
         
         
         
-          阅读时长 ≈ 12 分钟
+          阅读时长 ≈ 18 分钟
         
       </span>
     
@@ -280,44 +280,54 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Vue的.sync修饰符</h1>
+            <h1 style="display: none">Vue中computed和watch的使用及其区别</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年7月11日 晚上
+                    本文最后更新于：2022年7月12日 凌晨
                   
                 
               </p>
             
             <div class="markdown-body">
               
-              <h2 id="sync的使用"><a href="#sync的使用" class="headerlink" title=".sync的使用"></a>.sync的使用</h2><p>为了更好的讲解<code>.sync</code>修饰符，我们假如现在有一个场景：父组件将数据传递给子组件，子组件期望修改数据（ps：这里会用到自定义事件）代码如下：</p>
-<p><strong>父组件.vue</strong></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">Child</span> <span class="hljs-attr">:money</span>=<span class="hljs-string">&quot;total&quot;</span> @<span class="hljs-attr">update:money</span>=<span class="hljs-string">&quot;total = $event&quot;</span>/&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript"><span class="hljs-keyword">import</span> <span class="hljs-title class_">Child</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./Child.vue&quot;</span>;</span><br><span class="language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span><br><span class="language-javascript">  <span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">    <span class="hljs-keyword">return</span> &#123; <span class="hljs-attr">total</span>: <span class="hljs-number">10000</span> &#125;;</span><br><span class="language-javascript">  &#125;,</span><br><span class="language-javascript">  <span class="hljs-attr">components</span>: &#123; <span class="hljs-title class_">Child</span>: <span class="hljs-title class_">Child</span> &#125;</span><br><span class="language-javascript">&#125;;</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+              <h2 id="computed（计算属性）"><a href="#computed（计算属性）" class="headerlink" title="computed（计算属性）"></a>computed（计算属性）</h2><p>顾名思义，计算属性就是要由一些其他数据计算得出，原本是不存在的，是依赖于其他数据和一些逻辑处理才得以被创造出来。</p>
+<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><h4 id="完整写法"><a href="#完整写法" class="headerlink" title="完整写法"></a>完整写法</h4><p>如果你即将要使用的计算属性不仅需要读取，并且需要修改，这个时候你就需要使用完整版计算属性写法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-attr">computed</span>:&#123;<br>    <span class="hljs-attr">fullName</span>:&#123;<br>        <span class="hljs-title function_">get</span>(<span class="hljs-params"></span>)&#123;<br>            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;get被调用了&#x27;</span>);<br>            <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">firstName</span> + <span class="hljs-string">&#x27;-&#x27;</span> + <span class="hljs-variable language_">this</span>.<span class="hljs-property">lastName</span><br>        &#125;,<br>        <span class="hljs-title function_">set</span>(<span class="hljs-params">value</span>)&#123;<br>            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;set被调用&#x27;</span>);<br>            <span class="hljs-variable language_">this</span>.<span class="hljs-property">firstName</span> = value.<span class="hljs-title function_">split</span>(<span class="hljs-string">&#x27;-&#x27;</span>)[<span class="hljs-number">0</span>];<br>            <span class="hljs-variable language_">this</span>.<span class="hljs-property">lastName</span> = value.<span class="hljs-title function_">split</span>(<span class="hljs-string">&#x27;-&#x27;</span>)[<span class="hljs-number">1</span>];<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p><strong>子组件.vue</strong></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;child&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;$emit(&#x27;update:money&#x27;, money-100)&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span><br><span class="language-javascript">  <span class="hljs-attr">props</span>: [<span class="hljs-string">&quot;money&quot;</span>]</span><br><span class="language-javascript">&#125;;</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-<p>可以看到父组件将<code>total</code>这个数据传递给子组件，然后子组件期望修改<code>total</code>这个数据，就发布了一个自定义事件让父组件更新<code>total</code>，更新的<code>total</code>依然会传回给子组件。</p>
-<p>这个符合这个场景我们就可以使用<code>.sync</code>修饰符</p>
-<p><strong>父组件.vue</strong></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;app&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">Child</span> <span class="hljs-attr">:money.sync</span>=<span class="hljs-string">&quot;total&quot;</span>/&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript"><span class="hljs-keyword">import</span> <span class="hljs-title class_">Child</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;./Child.vue&quot;</span>;</span><br><span class="language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span><br><span class="language-javascript">  <span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;</span><br><span class="language-javascript">    <span class="hljs-keyword">return</span> &#123; <span class="hljs-attr">total</span>: <span class="hljs-number">10000</span> &#125;;</span><br><span class="language-javascript">  &#125;,</span><br><span class="language-javascript">  <span class="hljs-attr">components</span>: &#123; <span class="hljs-title class_">Child</span>: <span class="hljs-title class_">Child</span> &#125;</span><br><span class="language-javascript">&#125;;</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-<p>使用<code>.sync</code>修饰符实现的效果和上面的是一致的</p>
-<p><code>.sync</code>相当于为我们做了事件的监听和数据的赋值，内容如下：</p>
-<ol>
-<li>监听<code>update:money</code>自定义事件的触发</li>
-<li>将自定义事件传递过来的参数赋值给<code>total</code></li>
-</ol>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>所以<code>.sync</code>修饰符实际上就是一个语法糖</p>
-<p>他将<code>&lt;Child :money=&quot;total&quot; @update:money=&quot;total = $event&quot;/&gt;</code></p>
-<p>简化成了<code>&lt;Child :money.sync=&quot;total&quot;/&gt;</code></p>
 <p class="note note-warning">
-注意：假如传入子组件的数据参数名为`xyz`，则自定义事件就要命名为`update:xyz`，否则.sync无法进行工作
+    注意：计算属性中的get和set不能写成箭头函数！
 </p>
 
+<h4 id="简便写法"><a href="#简便写法" class="headerlink" title="简便写法"></a>简便写法</h4><p>如果你即将要使用的计算属性，你只需要读取它的数据，而不需修改它的数据，这个时候你就可以使用简便写法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-attr">computed</span>:&#123;<br>    <span class="hljs-title function_">fullName</span>(<span class="hljs-params"></span>)&#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;get被调用了&#x27;</span>);<br>        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">firstName</span> + <span class="hljs-string">&#x27;-&#x27;</span> + <span class="hljs-variable language_">this</span>.<span class="hljs-property">lastName</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
+<li>计算属性会被放在vm（实例对象）身上，能够被当作普通数据使用</li>
+<li>计算属性是具有缓存机制的，只有当依赖数据发生变化的时候才会进行更新</li>
+<li><code>get</code>在<code>初始化时</code>和<code>依赖数据更新时</code>才会被调用</li>
+<li><code>set</code>在当前属性<code>被修改时</code>才会被调用</li>
+</ul>
+<h2 id="watch（监视属性）"><a href="#watch（监视属性）" class="headerlink" title="watch（监视属性）"></a>watch（监视属性）</h2><p>监视属性能够对data中的属性进行监听，当其发生变化的时候，自动调用相应的回调函数</p>
+<h3 id="使用方法-1"><a href="#使用方法-1" class="headerlink" title="使用方法"></a>使用方法</h3><h4 id="完整写法-1"><a href="#完整写法-1" class="headerlink" title="完整写法"></a>完整写法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// new Vue 时在options中使用watch监视属性</span><br><span class="hljs-attr">watch</span>:&#123;<br>    <span class="hljs-attr">isHot</span>:&#123; <br>    <span class="hljs-comment">// deep:true        开启深度监听（监听对象内部）</span><br>    <span class="hljs-comment">// immediate:true   初始化时也进行监听</span><br>    	<span class="hljs-title function_">handler</span>(<span class="hljs-params">newValue,oldValue</span>)&#123;<br>    		<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;isHot被修改了&#x27;</span>,newValue,oldValue);<br>    	&#125;<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">// 在vm对象身上使用watch监视属性</span><br>vm.$watch(<span class="hljs-string">&#x27;isHot&#x27;</span>,&#123;<br>	<span class="hljs-comment">// deep:true        开启深度监听（监听对象内部）</span><br>	<span class="hljs-comment">// immediate:true   初始化时也进行监听</span><br>	<span class="hljs-title function_">handler</span>(<span class="hljs-params">newValue,oldValue</span>)&#123;<br>		<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;isHot被修改了&#x27;</span>,newValue,oldValue);<br>	&#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<h4 id="简便写法-1"><a href="#简便写法-1" class="headerlink" title="简便写法"></a>简便写法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 在options中使用watch监视属性</span><br><span class="hljs-attr">watch</span>:&#123;<br>    <span class="hljs-comment">// 函数名是监视的属性的名称</span><br>    <span class="hljs-title function_">isHot</span>(<span class="hljs-params">newValue,oldValue</span>)&#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;isHot被修改了&#x27;</span>,newValue,oldValue);<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">// 在vm对象身上使用watch监视属性</span><br>vm.$watch(<span class="hljs-string">&#x27;isHot&#x27;</span>,<span class="hljs-keyword">function</span>(<span class="hljs-params">newValue,oldValue</span>)&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;isHot被修改了&#x27;</span>,newValue,oldValue);<br>&#125;,&#123;<br>    <span class="hljs-attr">immediate</span>:<span class="hljs-literal">true</span>,<br>    <span class="hljs-attr">deep</span>:<span class="hljs-literal">true</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p class="note note-warning">
+注意：<br>
+1.在vm对象身上使用watch监视属性时，同样不能使用箭头函数<br>
+2.在new Vue时使用在options中使用watch属性时使用简写方式则不能使用`immediate`和`deep`
+</p>
+
+<h2 id="总结-amp-区别"><a href="#总结-amp-区别" class="headerlink" title="总结&amp;区别"></a>总结&amp;区别</h2><h3 id="computed"><a href="#computed" class="headerlink" title="computed"></a>computed</h3><p>computed是计算属性，他由一些data中的数据进行加工而成，这些他用到的数据称为依赖数据，并在计算属性会被放在vm上，能够进行直接读取，此外计算属性是有缓存的，当依赖数据进行变化的时候才会更新计算属性，否则就会使用之前缓存的计算属性，这样有较高的效率</p>
+<h3 id="watch"><a href="#watch" class="headerlink" title="watch"></a>watch</h3><p>watch是监视属性，watch是对data中数据的监听，一旦数据改变，就能够触发在watch中配置的回调函数，默认初始化的时候不会进行监听，可以使用immediate:true开始初始化时的监听，另外watch不会监听data中对象中的属性的变化，可以使用deep:true开启深度监视</p>
+<h3 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h3><ol>
+<li><p>computed能完成的功能，watch都可以完成</p>
+</li>
+<li><p>watch能完成的功能，computed不一定能完成，例如：watch可以进行异步操作。</p>
+</li>
+</ol>
 
               
             </div>
@@ -341,8 +351,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Vue的.sync修饰符</div>
-      <div>https://alierq.space/posts/2b276609.html</div>
+      <div>Vue中computed和watch的使用及其区别</div>
+      <div>https://alierq.space/posts/31a57b9d.html</div>
     </div>
     <div class="license-meta">
       
@@ -360,7 +370,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年7月11日</div>
+          <div>2022年7月12日</div>
         </div>
       
       <div class="license-meta-item">
@@ -389,18 +399,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/31a57b9d.html" title="Vue中computed和watch的使用及其区别">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Vue中computed和watch的使用及其区别</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/5be34bc3.html" title="Vue中data含有对象和数组时的bug">
-                        <span class="hidden-mobile">Vue中data含有对象和数组时的bug</span>
+                      <a href="/posts/2b276609.html" title="Vue的.sync修饰符">
+                        <span class="hidden-mobile">Vue的.sync修饰符</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

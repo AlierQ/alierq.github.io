@@ -1467,6 +1467,50 @@ v-cloak可以配合css可以解决网速慢时，页面展示出插值语法的�
       </tags>
   </entry>
   <entry>
+    <title>Vue中computed和watch的使用及其区别</title>
+    <url>/posts/31a57b9d.html</url>
+    <content><![CDATA[<h2 id="computed（计算属性）"><a href="#computed（计算属性）" class="headerlink" title="computed（计算属性）"></a>computed（计算属性）</h2><p>顾名思义，计算属性就是要由一些其他数据计算得出，原本是不存在的，是依赖于其他数据和一些逻辑处理才得以被创造出来。</p>
+<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><h4 id="完整写法"><a href="#完整写法" class="headerlink" title="完整写法"></a>完整写法</h4><p>如果你即将要使用的计算属性不仅需要读取，并且需要修改，这个时候你就需要使用完整版计算属性写法</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-attr">computed</span>:&#123;<br>    <span class="hljs-attr">fullName</span>:&#123;<br>        <span class="hljs-title function_">get</span>(<span class="hljs-params"></span>)&#123;<br>            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;get被调用了&#x27;</span>);<br>            <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">firstName</span> + <span class="hljs-string">&#x27;-&#x27;</span> + <span class="hljs-variable language_">this</span>.<span class="hljs-property">lastName</span><br>        &#125;,<br>        <span class="hljs-title function_">set</span>(<span class="hljs-params">value</span>)&#123;<br>            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;set被调用&#x27;</span>);<br>            <span class="hljs-variable language_">this</span>.<span class="hljs-property">firstName</span> = value.<span class="hljs-title function_">split</span>(<span class="hljs-string">&#x27;-&#x27;</span>)[<span class="hljs-number">0</span>];<br>            <span class="hljs-variable language_">this</span>.<span class="hljs-property">lastName</span> = value.<span class="hljs-title function_">split</span>(<span class="hljs-string">&#x27;-&#x27;</span>)[<span class="hljs-number">1</span>];<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p class="note note-warning">
+    注意：计算属性中的get和set不能写成箭头函数！
+</p>
+
+<h4 id="简便写法"><a href="#简便写法" class="headerlink" title="简便写法"></a>简便写法</h4><p>如果你即将要使用的计算属性，你只需要读取它的数据，而不需修改它的数据，这个时候你就可以使用简便写法</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-attr">computed</span>:&#123;<br>    <span class="hljs-title function_">fullName</span>(<span class="hljs-params"></span>)&#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;get被调用了&#x27;</span>);<br>        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">firstName</span> + <span class="hljs-string">&#x27;-&#x27;</span> + <span class="hljs-variable language_">this</span>.<span class="hljs-property">lastName</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
+<li>计算属性会被放在vm（实例对象）身上，能够被当作普通数据使用</li>
+<li>计算属性是具有缓存机制的，只有当依赖数据发生变化的时候才会进行更新</li>
+<li><code>get</code>在<code>初始化时</code>和<code>依赖数据更新时</code>才会被调用</li>
+<li><code>set</code>在当前属性<code>被修改时</code>才会被调用</li>
+</ul>
+<h2 id="watch（监视属性）"><a href="#watch（监视属性）" class="headerlink" title="watch（监视属性）"></a>watch（监视属性）</h2><p>监视属性能够对data中的属性进行监听，当其发生变化的时候，自动调用相应的回调函数</p>
+<h3 id="使用方法-1"><a href="#使用方法-1" class="headerlink" title="使用方法"></a>使用方法</h3><h4 id="完整写法-1"><a href="#完整写法-1" class="headerlink" title="完整写法"></a>完整写法</h4><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// new Vue 时在options中使用watch监视属性</span><br><span class="hljs-attr">watch</span>:&#123;<br>    <span class="hljs-attr">isHot</span>:&#123; <br>    <span class="hljs-comment">// deep:true        开启深度监听（监听对象内部）</span><br>    <span class="hljs-comment">// immediate:true   初始化时也进行监听</span><br>    	<span class="hljs-title function_">handler</span>(<span class="hljs-params">newValue,oldValue</span>)&#123;<br>    		<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;isHot被修改了&#x27;</span>,newValue,oldValue);<br>    	&#125;<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">// 在vm对象身上使用watch监视属性</span><br>vm.$watch(<span class="hljs-string">&#x27;isHot&#x27;</span>,&#123;<br>	<span class="hljs-comment">// deep:true        开启深度监听（监听对象内部）</span><br>	<span class="hljs-comment">// immediate:true   初始化时也进行监听</span><br>	<span class="hljs-title function_">handler</span>(<span class="hljs-params">newValue,oldValue</span>)&#123;<br>		<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;isHot被修改了&#x27;</span>,newValue,oldValue);<br>	&#125;<br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<h4 id="简便写法-1"><a href="#简便写法-1" class="headerlink" title="简便写法"></a>简便写法</h4><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 在options中使用watch监视属性</span><br><span class="hljs-attr">watch</span>:&#123;<br>    <span class="hljs-comment">// 函数名是监视的属性的名称</span><br>    <span class="hljs-title function_">isHot</span>(<span class="hljs-params">newValue,oldValue</span>)&#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;isHot被修改了&#x27;</span>,newValue,oldValue);<br>    &#125;<br>&#125;<br><br><span class="hljs-comment">// 在vm对象身上使用watch监视属性</span><br>vm.$watch(<span class="hljs-string">&#x27;isHot&#x27;</span>,<span class="hljs-keyword">function</span>(<span class="hljs-params">newValue,oldValue</span>)&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;isHot被修改了&#x27;</span>,newValue,oldValue);<br>&#125;,&#123;<br>    <span class="hljs-attr">immediate</span>:<span class="hljs-literal">true</span>,<br>    <span class="hljs-attr">deep</span>:<span class="hljs-literal">true</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+
+<p class="note note-warning">
+注意：<br>
+1.在vm对象身上使用watch监视属性时，同样不能使用箭头函数<br>
+2.在new Vue时使用在options中使用watch属性时使用简写方式则不能使用`immediate`和`deep`
+</p>
+
+<h2 id="总结-amp-区别"><a href="#总结-amp-区别" class="headerlink" title="总结&amp;区别"></a>总结&amp;区别</h2><h3 id="computed"><a href="#computed" class="headerlink" title="computed"></a>computed</h3><p>computed是计算属性，他由一些data中的数据进行加工而成，这些他用到的数据称为依赖数据，并在计算属性会被放在vm上，能够进行直接读取，此外计算属性是有缓存的，当依赖数据进行变化的时候才会更新计算属性，否则就会使用之前缓存的计算属性，这样有较高的效率</p>
+<h3 id="watch"><a href="#watch" class="headerlink" title="watch"></a>watch</h3><p>watch是监视属性，watch是对data中数据的监听，一旦数据改变，就能够触发在watch中配置的回调函数，默认初始化的时候不会进行监听，可以使用immediate:true开始初始化时的监听，另外watch不会监听data中对象中的属性的变化，可以使用deep:true开启深度监视</p>
+<h3 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h3><ol>
+<li><p>computed能完成的功能，watch都可以完成</p>
+</li>
+<li><p>watch能完成的功能，computed不一定能完成，例如：watch可以进行异步操作。</p>
+</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Vue的.sync修饰符</title>
     <url>/posts/2b276609.html</url>
     <content><![CDATA[<h2 id="sync的使用"><a href="#sync的使用" class="headerlink" title=".sync的使用"></a>.sync的使用</h2><p>为了更好的讲解<code>.sync</code>修饰符，我们假如现在有一个场景：父组件将数据传递给子组件，子组件期望修改数据（ps：这里会用到自定义事件）代码如下：</p>
