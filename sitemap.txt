@@ -51,3 +51,5 @@ https://alierq.space/tags/Cookie/
 https://alierq.space/tags/WebStorage/
 https://alierq.space/tags/Vue/
 https://alierq.space/tags/Mint/
+https://alierq.space/tags/TypeScript/
+https://alierq.space/tags/Scss/
