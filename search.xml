@@ -1547,7 +1547,8 @@ v-cloak可以配合css可以解决网速慢时，页面展示出插值语法的�
   <entry>
     <title>Mint薄荷流水项目开发中的各种问题</title>
     <url>/posts/9da4b10b.html</url>
-    <content><![CDATA[<h2 id="JS或者TS使用"><a href="#JS或者TS使用" class="headerlink" title="JS或者TS使用@"></a>JS或者TS使用@</h2><p>@表示项目中的src目录</p>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这是一篇关于Mint 薄荷流水项目（<a href="https://github.com/AlierQ/Mint-vue">Github地址</a>）开发中出现的各种问题的整合，其中提出的解决方法并不能保证解决所有的问题，其中有些观点也并不能保证一定100%正确，如果内容对你帮助，我很荣幸，如果你发现其中有错误可以在下方给我留言，我会尽快处理，最后感谢您的阅读！</p>
+<h2 id="JS或者TS使用"><a href="#JS或者TS使用" class="headerlink" title="JS或者TS使用@"></a>JS或者TS使用@</h2><p>@表示项目中的src目录</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> <span class="hljs-title class_">HelloWorld</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@/components/HelloWorld.vue&quot;</span>;<br></code></pre></td></tr></table></figure>
 
 <h2 id="CSS合作和SCSS使用"><a href="#CSS合作和SCSS使用" class="headerlink" title="CSS合作和SCSS使用@"></a>CSS合作和SCSS使用@</h2><p>@表示项目中src目录</p>
