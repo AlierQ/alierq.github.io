@@ -1,0 +1,861 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="AlierQ">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="前言在制作 OneUI 组件库中的 菜单（Menu）组件的时候，感觉折叠效果需要加上一点动画，折叠效果的显示与隐藏是使用 v-if 进行控制的，这个时候我就想到要使用 Vue 的动画和过渡来进行制作，代码如下 template： 123456&lt;transition name&#x3D;&quot;fade&quot;&gt;    &lt;div class&#x3D;&quot;one-submenu-bas">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue3 Transition 高度auto元素无法添加展开类动画的解决方案">
+<meta property="og:url" content="https://alierq.space/posts/eedb1b80.html">
+<meta property="og:site_name" content="AlierQ&#39;s Blog">
+<meta property="og:description" content="前言在制作 OneUI 组件库中的 菜单（Menu）组件的时候，感觉折叠效果需要加上一点动画，折叠效果的显示与隐藏是使用 v-if 进行控制的，这个时候我就想到要使用 Vue 的动画和过渡来进行制作，代码如下 template： 123456&lt;transition name&#x3D;&quot;fade&quot;&gt;    &lt;div class&#x3D;&quot;one-submenu-bas">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202207061602375.png">
+<meta property="article:published_time" content="2022-08-05T06:57:33.000Z">
+<meta property="article:modified_time" content="2022-08-05T11:25:41.410Z">
+<meta property="article:author" content="AlierQ">
+<meta property="article:tag" content="Vue">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202207061602375.png">
+  
+  
+  
+  <title>Vue3 Transition 高度auto元素无法添加展开类动画的解决方案 - AlierQ&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="/font/font.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"alierq.space","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"df60f35396f0f48b8cc541f369532995","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"z8WG5aFCs52EcQQxkXfUu7mT-MdYXbMMI","app_key":"HMJ6Ccdd4GYlyQRORR6OLJaF","server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+
+  <link rel="preconnect" href="https://s1.hdslb.com/" /><link rel="stylesheet" href="//s1.hdslb.com/bfs/static/jinkela/long/font/regular.css" media="all" onload="this.media='all'" /><link rel="stylesheet" href="//s1.hdslb.com/bfs/static/jinkela/long/font/medium.css" media="all" onload="this.media='all'" />
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>AlierQ&#39;s Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/article_main.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Vue3 Transition 高度auto元素无法添加展开类动画的解决方案"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-08-05 14:57" pubdate>
+          2022年8月5日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          文章字数：6.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          阅读时长 ≈ 52 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="leancloud-page-views-container" class="post-meta" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          阅读次数：<span id="leancloud-page-views"></span>
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Vue3 Transition 高度auto元素无法添加展开类动画的解决方案</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2022年8月5日 晚上
+                  
+                
+              </p>
+            
+            <div class="markdown-body">
+              
+              <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在制作 OneUI 组件库中的 菜单（Menu）组件的时候，感觉折叠效果需要加上一点动画，折叠效果的显示与隐藏是使用 v-if 进行控制的，这个时候我就想到要使用 Vue 的动画和过渡来进行制作，代码如下</p>
+<p>template：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;fade&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;one-submenu-basic&quot;</span></span><br><span class="hljs-tag">         <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;isVisible&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">slot</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>style：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;scss&quot;</span>&gt;</span><span class="language-css"></span><br><span class="language-css"></span><br><span class="language-css"><span class="hljs-selector-class">.fade-enter-active</span>, <span class="hljs-selector-class">.fade-leave-active</span> &#123;</span><br><span class="language-css">  <span class="hljs-attribute">transition</span>: all .<span class="hljs-number">25s</span> ease;</span><br><span class="language-css">  <span class="hljs-attribute">height</span>: auto;</span><br><span class="language-css">&#125;</span><br><span class="language-css"></span><br><span class="language-css"><span class="hljs-selector-class">.fade-enter-from</span>, <span class="hljs-selector-class">.fade-leave-to</span> &#123;</span><br><span class="language-css">  <span class="hljs-attribute">height</span>: <span class="hljs-number">0</span>;</span><br><span class="language-css">&#125;</span><br><span class="language-css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>效果如下：</p>
+<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202208051549260.gif" srcset="/img/loading.gif" lazyload alt="GIF 5-8-2022 下午 3-14-20"></p>
+<p>从上面的效果中我们可以看到，过渡并没有生效，这个时候如果我们将不适用<code>height:auto</code>而是使用一个确定的值</p>
+<p>style：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;scss&quot;</span>&gt;</span><span class="language-css"></span><br><span class="language-css"></span><br><span class="language-css"><span class="hljs-selector-class">.fade-enter-active</span>, <span class="hljs-selector-class">.fade-leave-active</span> &#123;</span><br><span class="language-css">  <span class="hljs-attribute">transition</span>: all .<span class="hljs-number">25s</span> ease;</span><br><span class="language-css">  <span class="hljs-attribute">height</span>: <span class="hljs-number">300px</span>;</span><br><span class="language-css">&#125;</span><br><span class="language-css"></span><br><span class="language-css"><span class="hljs-selector-class">.fade-enter-from</span>, <span class="hljs-selector-class">.fade-leave-to</span> &#123;</span><br><span class="language-css">  <span class="hljs-attribute">height</span>: <span class="hljs-number">0</span>;</span><br><span class="language-css">&#125;</span><br><span class="language-css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>效果如下：</p>
+<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202208051549525.gif" srcset="/img/loading.gif" lazyload alt="GIF 5-8-2022 下午 3-20-13"></p>
+<p>我们可以看到，这个时候过渡效果就生效了，但是效果并不是很理想，因为每个内容的高度都是不固定的是由内部的元素决定的，所以我们不能够使用一个固定的值来设置过渡的动画，换句话说就是我们要自己手动的获取Dom元素的高度然后进行设置。</p>
+<h2 id="问题分析与解决"><a href="#问题分析与解决" class="headerlink" title="问题分析与解决"></a>问题分析与解决</h2><p>这个时候，我们会想到在Dom元素mount到页面的时候，去获取一下Dom元素的高度不就行了嘛，让我们来试试，代码如下</p>
+<p>template：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;fade&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;subMenu&quot;</span></span><br><span class="hljs-tag">         <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;one-submenu-basic&quot;</span></span><br><span class="hljs-tag">         <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;isVisible&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">slot</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>这是为元素添加上了ref属性，用于获取Dom</p>
+<p>script：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span><br><span class="language-javascript">  <span class="hljs-title function_">setup</span>(<span class="hljs-params">props</span>) &#123;</span><br><span class="language-javascript">    <span class="hljs-comment">// subMenu获取到了上面的显示隐藏的Dom元素</span></span><br><span class="language-javascript">    <span class="hljs-keyword">const</span> subMenu = ref&lt;<span class="hljs-title class_">HTMLDivElement</span>&gt;(<span class="hljs-literal">null</span>);</span><br><span class="language-javascript"></span><br><span class="language-javascript">    <span class="hljs-title function_">onMounted</span>(<span class="hljs-function">() =&gt;</span> &#123;</span><br><span class="language-javascript">      <span class="hljs-comment">// 获取到元素的高度</span></span><br><span class="language-javascript">      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;height:&quot;</span> + subMenu.<span class="hljs-property">value</span>.<span class="hljs-title function_">getBoundingClientRect</span>().<span class="hljs-property">height</span>);</span><br><span class="language-javascript">    &#125;);</span><br><span class="language-javascript"></span><br><span class="language-javascript">    <span class="hljs-keyword">return</span> &#123;</span><br><span class="language-javascript">      subMenu</span><br><span class="language-javascript">    &#125;;</span><br><span class="language-javascript">  &#125;</span><br><span class="language-javascript">&#125;;</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>这个时候控制台就报错了，如图：</p>
+<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202208051549618.png" srcset="/img/loading.gif" lazyload alt="image-20220805154507262"></p>
+<p>它的意思是 subMenu.value 的值是 null，没有办法在它身上找到 getBoundingClientRect 这个方法。</p>
+<h3 id="坑一：v-if"><a href="#坑一：v-if" class="headerlink" title="坑一：v-if"></a>坑一：v-if</h3><p>这个地方就有一个坑了，它之所以报错是因为我们使用了 v-if，v-if 在为假的时候根本就不会在页面中插入这个元素，这里的不会出现在页面并不是不显示出来，而是Dom树中也不存在它，所以我们也就不能获取到这个Dom</p>
+<p>这个也好解决，我们使用 v-show 就行了，它同样能够隐藏页面中的元素，但是依然能够在Dom树中找到</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;fade&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;subMenu&quot;</span></span><br><span class="hljs-tag">         <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;one-submenu-basic&quot;</span></span><br><span class="hljs-tag">         <span class="hljs-attr">v-show</span>=<span class="hljs-string">&quot;isVisible&quot;</span>&gt;</span> <span class="hljs-comment">&lt;!--使用v-show便于获取Dom元素--&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">slot</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>控制台输出如下：</p>
+<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202208051659552.png" srcset="/img/loading.gif" lazyload alt="image-20220805155829011"></p>
+<p>很显然没有得到我们想要的，它没有办法获取元素的高度，这个时候可能会觉得奇怪，v-show 并没有从Dom树中移除元素，那么我们应该能够获取到元素的高度才对。</p>
+<h3 id="坑二：v-show"><a href="#坑二：v-show" class="headerlink" title="坑二：v-show"></a>坑二：v-show</h3><p>这里又有一个平时可能不太注意的地方，v-show的隐藏原理实际上是通过给元素设置<code>display:none</code>来进行隐藏的，然而在设置<code>dispaly:none</code>的时候元素实际上是没有宽高（值为0）的，所以这个时候我们，即便是获取到了元素，得到的宽高也都是0。</p>
+<p>v-show隐藏原理如图：</p>
+<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202208051700213.gif" srcset="/img/loading.gif" lazyload alt="GIF 5-8-2022 下午 4-07-23"></p>
+<h2 id="解决方式一（有缺陷）"><a href="#解决方式一（有缺陷）" class="headerlink" title="解决方式一（有缺陷）"></a>解决方式一（有缺陷）</h2><p>通过上面的分析和实验，我们没有办法从v-show为true的元素中获取它的高度，假如我先让他为真，然后再让他为假呢（通俗点讲就是先显示在隐藏），代码如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span><br><span class="language-javascript">  <span class="hljs-title function_">setup</span>(<span class="hljs-params">props</span>) &#123;</span><br><span class="language-javascript">    <span class="hljs-keyword">const</span> subMenu = ref&lt;<span class="hljs-title class_">HTMLDivElement</span>&gt;(<span class="hljs-literal">null</span>);</span><br><span class="language-javascript">    <span class="hljs-comment">// 假设这是控制显示的</span></span><br><span class="language-javascript"> 	<span class="hljs-keyword">const</span> isVisible = <span class="hljs-title function_">ref</span>(<span class="hljs-literal">true</span>);</span><br><span class="language-javascript">      </span><br><span class="language-javascript">    <span class="hljs-title function_">onMounted</span>(<span class="hljs-function">() =&gt;</span> &#123;</span><br><span class="language-javascript">      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;height: &quot;</span> + subMenu.<span class="hljs-property">value</span>.<span class="hljs-title function_">getBoundingClientRect</span>().<span class="hljs-property">height</span>);</span><br><span class="language-javascript">        </span><br><span class="language-javascript">      <span class="hljs-comment">// 假设这是控制隐藏的</span></span><br><span class="language-javascript">      isVisible.<span class="hljs-property">value</span> = <span class="hljs-literal">false</span></span><br><span class="language-javascript">    &#125;);</span><br><span class="language-javascript"></span><br><span class="language-javascript">    <span class="hljs-keyword">return</span> &#123;</span><br><span class="language-javascript">      subMenu</span><br><span class="language-javascript">    &#125;;</span><br><span class="language-javascript">  &#125;</span><br><span class="language-javascript">&#125;;</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>这时候效果如下：</p>
+<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202208051700255.gif" srcset="/img/loading.gif" lazyload alt="GIF 5-8-2022 下午 4-17-28"></p>
+<p>我们可以看到，我们获取到了Dom元素的高度，我们将其设置到高度上，代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-title function_">onMounted</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>    subMenu.<span class="hljs-property">value</span>.<span class="hljs-property">style</span>.<span class="hljs-property">height</span> = subMenu.<span class="hljs-property">value</span>.<span class="hljs-title function_">getBoundingClientRect</span>().<span class="hljs-property">height</span> + <span class="hljs-string">&#x27;px&#x27;</span>;<br>&#125;);<br></code></pre></td></tr></table></figure>
+
+<p>效果如下：</p>
+<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202208051700180.gif" srcset="/img/loading.gif" lazyload alt="GIF 5-8-2022 下午 4-56-06"></p>
+<p>我们可以看到右边的元素中确实已经出现了高度，但是过渡依旧没有生效。</p>
+<h3 id="坑三：transition与内联样式"><a href="#坑三：transition与内联样式" class="headerlink" title="坑三：transition与内联样式"></a>坑三：transition与内联样式</h3><p>这里之所以过渡效果没有生效，也是因为一个平时可能不太会注意到的一个坑，实际上是因为transition和内联样式造成，因为内联样式是优先级最高的，但是在Vue的过渡原理是为元素添加内部样式来完成过渡，这个时候内部样式优先级低于内联样式，所以内部样式也不会生效，始终维持着内联样式的高度。</p>
+<p>所以我们没法通过<code>style</code>进行设置，这里因为我使用的Scss所以我直接使用Scss变量来进行添加height属性，代码如下</p>
+<p>template：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;fade&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;subMenu&quot;</span></span><br><span class="hljs-tag">         <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;one-submenu-basic&quot;</span></span><br><span class="hljs-tag">         // 这里是<span class="hljs-attr">Scss</span>通过<span class="hljs-attr">style</span>传入变量的语句</span><br><span class="hljs-tag">         <span class="hljs-attr">:style</span>=<span class="hljs-string">&quot;&#123;&#x27;--height&#x27;:height + &#x27;px&#x27;&#125;&quot;</span></span><br><span class="hljs-tag">         <span class="hljs-attr">v-show</span>=<span class="hljs-string">&quot;isVisible&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">slot</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>script：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;ts&quot;</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript"></span><br><span class="language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span><br><span class="language-javascript">  <span class="hljs-title function_">setup</span>(<span class="hljs-params">props, context</span>) &#123;</span><br><span class="language-javascript">    <span class="hljs-keyword">const</span> isVisible = <span class="hljs-title function_">ref</span>(<span class="hljs-literal">true</span>);</span><br><span class="language-javascript">    <span class="hljs-keyword">const</span> subMenu = ref&lt;<span class="hljs-title class_">HTMLDivElement</span>&gt;(<span class="hljs-literal">null</span>);</span><br><span class="language-javascript">    <span class="hljs-comment">// 用来存放高度</span></span><br><span class="language-javascript">    <span class="hljs-keyword">const</span> height = <span class="hljs-title function_">ref</span>(<span class="hljs-literal">true</span>);</span><br><span class="language-javascript"></span><br><span class="language-javascript">    <span class="hljs-title function_">onMounted</span>(<span class="hljs-function">() =&gt;</span> &#123;</span><br><span class="language-javascript">      height.<span class="hljs-property">value</span> = subMenu.<span class="hljs-property">value</span>.<span class="hljs-title function_">getBoundingClientRect</span>().<span class="hljs-property">height</span>;</span><br><span class="language-javascript">      titles.<span class="hljs-property">value</span>[props.<span class="hljs-property">name</span>] = <span class="hljs-literal">false</span>;</span><br><span class="language-javascript">    &#125;);</span><br><span class="language-javascript"></span><br><span class="language-javascript">    <span class="hljs-keyword">return</span> &#123;</span><br><span class="language-javascript">      isVisible,</span><br><span class="language-javascript">      subMenu,</span><br><span class="language-javascript">      height</span><br><span class="language-javascript">    &#125;;</span><br><span class="language-javascript">  &#125;</span><br><span class="language-javascript">&#125;;</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>style：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;scss&quot;</span>&gt;</span><br>.one-submenu-basic &#123;<br>  /* 获取上面template中style传递的变量的值 */<br>  $height: var(--height);<br>  height: $height; /* 设置内部样式的高度 */<br>  overflow: hidden;<br>&#125;<br><br>.fade-enter-active, .fade-leave-active &#123;<br>  transition: all .25s ease;<br>&#125;<br><br>.fade-enter-from, .fade-leave-to &#123;<br>  height: 0;<br>&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>效果如图</p>
+<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202208051920976.gif" srcset="/img/loading.gif" lazyload alt="GIF 5-8-2022 下午 5-23-18"></p>
+<p>设置完内部样式中的height之后，我们可以看到过渡的效果已经出现了，但是细心的你可能发现了，这种解决方式在初始页面刷新的时候会造成页面闪烁，原因是因为，我默认所有元素都展示，获取完了高度之后再进行折叠，这样就造成了页面的闪动，这也就是这种解决方式的缺点。</p>
+<p>解决这个问题的方式可以为页面添加 loadding 页面完全加载完了之后再显示页面，有兴趣的小伙伴自己尝试一下，这里我就不使用这种方式解决了。</p>
+<h2 id="解决方式二（解决）"><a href="#解决方式二（解决）" class="headerlink" title="解决方式二（解决）"></a>解决方式二（解决）</h2><p>其实最大的问题就在于过渡开始的时候，我们没有办法得知元素的高度，所以没办法让过渡完美的生效。这个时候想到，如果我们能够在Dom出现在页面中，但是过渡还未开始的时候，获取到Dom元素是不是就可以了，我们之前使用了Vue生命周期的钩子没有解决这个问题，但是在Vue中过渡效果也是有JavaScript钩子的。</p>
+<p><a target="_blank" rel="noopener" href="https://v3.cn.vuejs.org/guide/transitions-enterleave.html#javascript-%E9%92%A9%E5%AD%90">Vue 过渡&amp;动画JavaScript钩子</a></p>
+<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202208051921824.png" srcset="/img/loading.gif" lazyload alt="image-20220805182303705"></p>
+<p>我们可以看到Vue过渡提供的JS中有一个<code>beforeEnter()</code>进入过渡之前的钩子，并且给我们提供了一个<code>el</code>元素参数，我们将其拿出来看看</p>
+<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202208051921014.png" srcset="/img/loading.gif" lazyload alt="image-20220805183750485"></p>
+<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202208051921019.png" srcset="/img/loading.gif" lazyload alt="image-20220805183806572"></p>
+<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202208051921494.png" srcset="/img/loading.gif" lazyload alt="image-20220805183820217"></p>
+<p>图中可以看到，这个el对象实际上就是我们要展示的Dom对象，并且我们在里面看到了我们想要的表示高度的属性，我们只需要将其设置在内样式中即可，我们将其打印出来</p>
+<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202208051922069.png" srcset="/img/loading.gif" lazyload alt="image-20220805190754367"></p>
+<p>结果获取到的值还是0，但是我们刚刚已经打印出对象了，并且已经看到了高度里面是有值的，怎么打印出来就没有值，这个据我推测是因为log的时候Dom对象还没有被完全显示出来，我们使用<code>nextTick()</code>再打印出来试试</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> <span class="hljs-title function_">beforeEnter</span> = (<span class="hljs-params">el</span>) =&gt; &#123;<br>    <span class="hljs-title function_">nextTick</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;clientHeight: &quot;</span> + el.<span class="hljs-property">clientHeight</span>);<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;offsetHeight: &quot;</span> + el.<span class="hljs-property">offsetHeight</span>);<br>        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;scrollHeight: &quot;</span> + el.<span class="hljs-property">scrollHeight</span>);<br>        height.<span class="hljs-property">value</span> = el.<span class="hljs-property">scrollHeight</span> + <span class="hljs-string">&#x27;px&#x27;</span>;<br>    &#125;);<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202208051921241.png" srcset="/img/loading.gif" lazyload alt="image-20220805191115071"></p>
+<p>在nextTick内打印出来的scrollHeight能够获取到元素的高度，我们将其设置在之前的内部样式中，完整代码如下</p>
+<p>template：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">transition</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;fade&quot;</span> @<span class="hljs-attr">before-enter</span>=<span class="hljs-string">&quot;beforeEnter&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;subMenu&quot;</span></span><br><span class="hljs-tag">         <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;one-submenu-basic&quot;</span></span><br><span class="hljs-tag">         <span class="hljs-attr">:style</span>=<span class="hljs-string">&quot;&#123;&#x27;--height&#x27;:height&#125;&quot;</span></span><br><span class="hljs-tag">         <span class="hljs-attr">v-show</span>=<span class="hljs-string">&quot;state[name]&quot;</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">slot</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">transition</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>script：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;ts&quot;</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;</span><br><span class="language-javascript">  <span class="hljs-title function_">setup</span>(<span class="hljs-params">props, context</span>) &#123;</span><br><span class="language-javascript">    <span class="hljs-keyword">const</span> isVisible = <span class="hljs-title function_">ref</span>(<span class="hljs-literal">true</span>);</span><br><span class="language-javascript">    <span class="hljs-keyword">const</span> subMenu = ref&lt;<span class="hljs-title class_">HTMLDivElement</span>&gt;(<span class="hljs-literal">null</span>);</span><br><span class="language-javascript">    <span class="hljs-comment">// 用来存放高度</span></span><br><span class="language-javascript">    <span class="hljs-keyword">const</span> height = <span class="hljs-title function_">ref</span>(<span class="hljs-literal">true</span>);</span><br><span class="language-javascript"></span><br><span class="language-javascript">    <span class="hljs-keyword">const</span> <span class="hljs-title function_">beforeEnter</span> = (<span class="hljs-params">el</span>) =&gt; &#123;</span><br><span class="language-javascript">      <span class="hljs-title function_">nextTick</span>(<span class="hljs-function">() =&gt;</span> &#123;</span><br><span class="language-javascript">        height.<span class="hljs-property">value</span> = el.<span class="hljs-property">scrollHeight</span> + <span class="hljs-string">&#x27;px&#x27;</span>;</span><br><span class="language-javascript">      &#125;);</span><br><span class="language-javascript">    &#125;;</span><br><span class="language-javascript"></span><br><span class="language-javascript">    <span class="hljs-keyword">return</span> &#123;</span><br><span class="language-javascript">      isVisible,</span><br><span class="language-javascript">      subMenu,</span><br><span class="language-javascript">      height</span><br><span class="language-javascript">    &#125;;</span><br><span class="language-javascript">  &#125;</span><br><span class="language-javascript">&#125;;</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>style：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;scss&quot;</span>&gt;</span><br>.one-submenu-basic &#123;<br>  $height: var(--height);<br>  height: $height;<br>  overflow: hidden;<br>&#125;<br><br>.fade-enter-active, .fade-leave-active &#123;<br>  transition: all .5s ease;<br>&#125;<br><br>.fade-enter-from, .fade-leave-to &#123;<br>  height: 0;<br>&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>最终效果：</p>
+<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202208051921427.gif" srcset="/img/loading.gif" lazyload alt="GIF 5-8-2022 下午 7-14-50"></p>
+<p>我们可以看到在刷新页面重新加载的时候也有动画，并且能够自适应高度展开，至此就是关于该问题的全部内容了，感谢您能看到这。</p>
+
+              
+            </div>
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Vue/">#Vue</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Vue3 Transition 高度auto元素无法添加展开类动画的解决方案</div>
+      <div>https://alierq.space/posts/eedb1b80.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>AlierQ</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年8月5日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2022年8月5日</div>
+        </div>
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/a32a5c5f.html" title="Mint薄荷流水项目开发中的各种问题（react版）">
+                        <span class="hidden-mobile">Mint薄荷流水项目开发中的各种问题（react版）</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  <article id="comments" lazyload>
+    
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createCssLink('https://unpkg.com/@waline/client@v2/dist/waline.css')
+      Fluid.utils.createScript('https://unpkg.com/@waline/client@v2/dist/waline.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://waline-alierq.vercel.app/","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":[],"lang":"zh-CN","emoji":["https://unpkg.com/@waline/emojis@1.0.1/bilibili","https://unpkg.com/@waline/emojis@1.0.1/weibo","https://unpkg.com/@waline/emojis@1.0.1/qq"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10,"placeholder":"欢迎评论呀~"},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        Waline.init(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          var imgSelector = '#waline .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="leancloud-site-pv-container" style="display: none">
+        总访问量 
+        <span id="leancloud-site-pv"></span>
+         次
+      </span>
+    
+    
+      <span id="leancloud-site-uv-container" style="display: none">
+        总访客数 
+        <span id="leancloud-site-uv"></span>
+         人
+      </span>
+    
+    
+
+  
+</div>
+
+  
+  
+    <!-- 备案信息 ICP for China -->
+    <div class="beian">
+  <span>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+      渝ICP备2022006518号
+    </a>
+  </span>
+  
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      if (!Fluid.ctx.dnt) {
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?df60f35396f0f48b8cc541f369532995";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.0/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script>
+  (function() {
+    var enableLang = CONFIG.code_language.enable && CONFIG.code_language.default;
+    var enableCopy = CONFIG.copy_btn;
+    if (!enableLang && !enableCopy) {
+      return;
+    }
+
+    function getBgClass(ele) {
+      return Fluid.utils.getBackgroundLightness(ele) >= 0 ? 'code-widget-light' : 'code-widget-dark';
+    }
+
+    var copyTmpl = '';
+    copyTmpl += '<div class="code-widget">';
+    copyTmpl += 'LANG';
+    copyTmpl += '</div>';
+    jQuery('.markdown-body pre').each(function() {
+      var $pre = jQuery(this);
+      if ($pre.find('code.mermaid').length > 0) {
+        return;
+      }
+      if ($pre.find('span.line').length > 0) {
+        return;
+      }
+
+      var lang = '';
+
+      if (enableLang) {
+        lang = CONFIG.code_language.default;
+        if ($pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2 && $pre.children().hasClass('hljs')) {
+          lang = $pre[0].children[0].classList[1];
+        } else if ($pre[0].getAttribute('data-language')) {
+          lang = $pre[0].getAttribute('data-language');
+        } else if ($pre.parent().hasClass('sourceCode') && $pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2) {
+          lang = $pre[0].children[0].classList[1];
+          $pre.parent().addClass('code-wrapper');
+        } else if ($pre.parent().hasClass('markdown-body') && $pre[0].classList.length === 0) {
+          $pre.wrap('<div class="code-wrapper"></div>');
+        }
+        lang = lang.toUpperCase().replace('NONE', CONFIG.code_language.default);
+      }
+      $pre.append(copyTmpl.replace('LANG', lang).replace('code-widget">',
+        getBgClass($pre[0]) + (enableCopy ? ' code-widget copy-btn" data-clipboard-snippet><i class="iconfont icon-copy"></i>' : ' code-widget">')));
+
+      if (enableCopy) {
+        Fluid.utils.createScript('https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js', function() {
+          var clipboard = new window.ClipboardJS('.copy-btn', {
+            target: function(trigger) {
+              var nodes = trigger.parentNode.childNodes;
+              for (var i = 0; i < nodes.length; i++) {
+                if (nodes[i].tagName === 'CODE') {
+                  return nodes[i];
+                }
+              }
+            }
+          });
+          clipboard.on('success', function(e) {
+            e.clearSelection();
+            e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-copy', 'icon-success');
+            setTimeout(function() {
+              e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-success', 'icon-copy');
+            }, 2000);
+          });
+        });
+      }
+    });
+  })();
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="/js/leancloud.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
