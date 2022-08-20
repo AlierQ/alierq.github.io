@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202207061602375.png">
 <meta property="article:published_time" content="2022-08-05T06:57:33.000Z">
-<meta property="article:modified_time" content="2022-08-20T09:12:02.012Z">
+<meta property="article:modified_time" content="2022-08-20T09:13:28.124Z">
 <meta property="article:author" content="AlierQ">
 <meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary_large_image">
@@ -357,7 +357,7 @@
 <p>解决这个问题的方式可以为页面添加 loadding 页面完全加载完了之后再显示页面，有兴趣的小伙伴自己尝试一下，这里我就不使用这种方式解决了。</p>
 <h2 id="解决方式二（解决）"><a href="#解决方式二（解决）" class="headerlink" title="解决方式二（解决）"></a>解决方式二（解决）</h2><p>其实最大的问题就在于过渡开始的时候，我们没有办法得知元素的高度，所以没办法让过渡完美的生效。这个时候想到，如果我们能够在Dom出现在页面中，但是过渡还未开始的时候，获取到Dom元素是不是就可以了，我们之前使用了Vue生命周期的钩子没有解决这个问题，但是在Vue中过渡效果也是有JavaScript钩子的。</p>
 <p><a target="_blank" rel="noopener" href="https://v3.cn.vuejs.org/guide/transitions-enterleave.html#javascript-%E9%92%A9%E5%AD%90">Vue 过渡&amp;动画JavaScript钩子</a></p>
-<p><img src="C:\Users\10293\AppData\Roaming\Typora\typora-user-images\image-20220820170819672.png" srcset="/img/loading.gif" lazyload alt="image-20220820170819672"></p>
+<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202208201712491.png" srcset="/img/loading.gif" lazyload alt="image-20220820170819672"></p>
 <p>我们可以看到Vue过渡提供的JS中有一个<code>@enter</code>进入过渡之前的钩子，并且给我们提供了一个<code>el</code>元素参数，我们将其拿出来看看</p>
 <p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202208051921014.png" srcset="/img/loading.gif" lazyload alt="image-20220805183750485"></p>
 <p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202208051921019.png" srcset="/img/loading.gif" lazyload alt="image-20220805183806572"></p>
