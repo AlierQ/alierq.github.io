@@ -16,26 +16,27 @@
   <meta name="author" content="AlierQ">
   <meta name="keywords" content="">
   
-    <meta name="description" content="插值语法功能：用于解析标签体内容 写法： 123&lt;h1&gt;插值语法&lt;&#x2F;h1&gt;&lt;h3&gt;你好，&amp;#123;&amp;#123;name&amp;#125;&amp;#125;&lt;&#x2F;h3&gt;&lt;!--使用&amp;#123;&amp;#123;js表达式&amp;#125;&amp;#125;的形式引入js表达式--&gt;  指令语法功能：用于解析标签（包括：标签属性、标签体内容、绑定事件……） 12345&amp;l">
+    <meta name="description" content="媒体查询直接在css使用12345&#x2F;* 最大宽度为800，即0-800px这个范围 *&#x2F;&#x2F;* 满足条件才生效 *&#x2F;@media (max-width:800px)&amp;#123;	&#x2F;* 这里用来写样式 *&#x2F;&amp;#125;  在link标签中使用12&lt;!-- 满足media就运行style.css的样式文件 --&gt;&lt;link rel&#x3D;&quot;stylesheet&quot; href">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue的模板语法">
-<meta property="og:url" content="https://alierq.space/posts/77afcb1e.html">
+<meta property="og:title" content="媒体查询和Rem">
+<meta property="og:url" content="https://alierq.space/posts/6ff54d8c.html">
 <meta property="og:site_name" content="AlierQ&#39;s Blog">
-<meta property="og:description" content="插值语法功能：用于解析标签体内容 写法： 123&lt;h1&gt;插值语法&lt;&#x2F;h1&gt;&lt;h3&gt;你好，&amp;#123;&amp;#123;name&amp;#125;&amp;#125;&lt;&#x2F;h3&gt;&lt;!--使用&amp;#123;&amp;#123;js表达式&amp;#125;&amp;#125;的形式引入js表达式--&gt;  指令语法功能：用于解析标签（包括：标签属性、标签体内容、绑定事件……） 12345&amp;l">
+<meta property="og:description" content="媒体查询直接在css使用12345&#x2F;* 最大宽度为800，即0-800px这个范围 *&#x2F;&#x2F;* 满足条件才生效 *&#x2F;@media (max-width:800px)&amp;#123;	&#x2F;* 这里用来写样式 *&#x2F;&amp;#125;  在link标签中使用12&lt;!-- 满足media就运行style.css的样式文件 --&gt;&lt;link rel&#x3D;&quot;stylesheet&quot; href">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202207061602375.png">
-<meta property="article:published_time" content="2022-07-06T08:44:43.000Z">
-<meta property="article:modified_time" content="2022-07-06T11:11:43.623Z">
+<meta property="og:image" content="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202208292227466.png">
+<meta property="article:published_time" content="2022-08-29T13:59:12.000Z">
+<meta property="article:modified_time" content="2022-08-29T14:28:52.822Z">
 <meta property="article:author" content="AlierQ">
-<meta property="article:tag" content="Vue">
+<meta property="article:tag" content="Rem">
+<meta property="article:tag" content="Media">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202207061602375.png">
+<meta name="twitter:image" content="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202208292227466.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Vue的模板语法 - AlierQ&#39;s Blog</title>
+  <title>媒体查询和Rem - AlierQ&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -202,7 +203,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Vue的模板语法"></span>
+            <span id="subtitle" data-typed-text="媒体查询和Rem"></span>
           
         </div>
 
@@ -213,8 +214,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-07-06 16:44" pubdate>
-          2022年7月6日 下午
+        <time datetime="2022-08-29 21:59" pubdate>
+          2022年8月29日 晚上
         </time>
       </span>
     
@@ -225,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          文章字数：2.8k 字
+          文章字数：753 字
         
       </span>
     
@@ -236,7 +237,7 @@
         
         
         
-          阅读时长 ≈ 24 分钟
+          阅读时长 ≈ 7 分钟
         
       </span>
     
@@ -282,120 +283,36 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Vue的模板语法</h1>
+            <h1 style="display: none">媒体查询和Rem</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年7月6日 晚上
+                    本文最后更新于：2022年8月29日 晚上
                   
                 
               </p>
             
             <div class="markdown-body">
               
-              <h2 id="插值语法"><a href="#插值语法" class="headerlink" title="插值语法"></a>插值语法</h2><p>功能：用于解析标签体内容</p>
-<p>写法：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>插值语法<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>你好，&#123;&#123;name&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span><br><span class="hljs-comment">&lt;!--使用&#123;&#123;js表达式&#125;&#125;的形式引入js表达式--&gt;</span><br></code></pre></td></tr></table></figure>
+              <h2 id="媒体查询"><a href="#媒体查询" class="headerlink" title="媒体查询"></a>媒体查询</h2><h3 id="直接在css使用"><a href="#直接在css使用" class="headerlink" title="直接在css使用"></a>直接在css使用</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-comment">/* 最大宽度为800，即0-800px这个范围 */</span><br><span class="hljs-comment">/* 满足条件才生效 */</span><br><span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>:<span class="hljs-number">800px</span>)&#123;<br>	<span class="hljs-comment">/* 这里用来写样式 */</span><br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h2 id="指令语法"><a href="#指令语法" class="headerlink" title="指令语法"></a>指令语法</h2><p>功能：用于解析标签（包括：标签属性、标签体内容、绑定事件……）</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">v-bind:href</span>=<span class="hljs-string">&quot;url&quot;</span> <span class="hljs-attr">:x</span>=<span class="hljs-string">&quot;a&quot;</span>&gt;</span>点我去百度<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><span class="hljs-comment">&lt;!-- 加了v-bind后Vue会将属性后面的内容变成js表达式去执行</span><br><span class="hljs-comment">	v-bind可以给标签中任意的属性去绑定值</span><br><span class="hljs-comment">	可以简写为 &quot;:&quot;</span><br><span class="hljs-comment">--&gt;</span><br></code></pre></td></tr></table></figure>
+<h3 id="在link标签中使用"><a href="#在link标签中使用" class="headerlink" title="在link标签中使用"></a>在link标签中使用</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- 满足media就运行style.css的样式文件 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;style.css&quot;</span> <span class="hljs-attr">media</span>=<span class="hljs-string">&quot;(max-width:320px)&quot;</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
-<p>备注：Vue中有很多的指令，且形式都是 v-??? ,此处用v-bind举个例子</p>
-<h3 id="常见指令语法"><a href="#常见指令语法" class="headerlink" title="常见指令语法"></a>常见指令语法</h3><h4 id="v-on"><a href="#v-on" class="headerlink" title="v-on"></a>v-on</h4><p>作用：用于给元素绑定事件</p>
-<p>用法：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-on:click</span>=<span class="hljs-string">&quot;clickFunction&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h2 id="REM"><a href="#REM" class="headerlink" title="REM"></a>REM</h2><p>rem是根元素字体的单位，比如 <code>html&#123;font-size:16px;&#125;</code> ，1rem相当于16px。</p>
+<p>作用：能够通过设置根元素上面的<code>font-size</code>大小实现等比例缩放</p>
+<h2 id="常见的单位"><a href="#常见的单位" class="headerlink" title="常见的单位"></a>常见的单位</h2><p><code>px</code>：一个像素的宽度</p>
+<p><code>em</code>：一个m的宽度或者一个汉字的宽度（em等于自己的font-size的高度）</p>
+<p><code>vh</code>（viewport height ）：视口高度，100vh等于整个视口的高度</p>
+<p><code>vw</code>（viewport width）：视口宽度，100vw等于整个视口的宽度</p>
+<h2 id="px自动换成转rem的方式"><a href="#px自动换成转rem的方式" class="headerlink" title="px自动换成转rem的方式"></a>px自动换成转rem的方式</h2><h3 id="px2rem-函数"><a href="#px2rem-函数" class="headerlink" title="px2rem 函数"></a>px2rem 函数</h3><p>这种方式要在sass或者less的情况下使用</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs scss"><span class="hljs-keyword">@function</span> px2rem(<span class="hljs-variable">$n</span>) &#123;<br><span class="hljs-comment">// 这里假设设计稿是750的宽度，计算出来之后10等分即1rem=75px</span><br>    <span class="hljs-keyword">@return</span> (<span class="hljs-variable">$n</span> * <span class="hljs-number">10</span> / <span class="hljs-number">750</span>) * <span class="hljs-number">1rem</span>; <br>&#125;<br><span class="hljs-selector-class">.demo</span>&#123; <br>    <span class="hljs-attribute">width</span>: px2rem(<span class="hljs-number">750</span>); <br>    <span class="hljs-attribute">height</span>: px2rem(<span class="hljs-number">750</span>); <br>    <span class="hljs-attribute">background</span>: blue; <br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p>简写形式：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> @<span class="hljs-attr">click</span>=<span class="hljs-string">&quot;clickFunction&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h4><p>作用：单向数据绑定，数据从data流向页面</p>
-<p>用法：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-bind:name</span>=<span class="hljs-string">&quot;name&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-<p>简写形式：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">:name</span>=<span class="hljs-string">&quot;name&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h4><p>作用：双向数据绑定，数据既能从data流向页面，又能从页面流向data</p>
-<p>用法：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model:value</span>=<span class="hljs-string">&#x27;inputvalue&#x27;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">input</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-<p>简写形式：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">v-model</span>=<span class="hljs-string">&#x27;inputvalue&#x27;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">input</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-<p class="note note-warning">
-注意：v-model一般只用在表单元素上
-</p>
-
-<h4 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h4><p>作用：进行数据的遍历，遍历的可以是数组、对象、数字</p>
-<p>用法：</p>
-<p>数组：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;(item,index) in data&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-<p>对象：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;(value,key) in data&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-<p>数字：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-for</span>=<span class="hljs-string">&quot;(number,index) in 10&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-<p class="note note-warning">
-注意：v-for通常要和 :key 属性一起使用
-</p>
-
-<h4 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a>v-show</h4><p>作用：条件渲染，通过v-show能够控制元素的显示或者隐藏（元素不会在Dom结构中消失）</p>
-<p>用法：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-show</span>=<span class="hljs-string">&quot;isshow === true&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-comment">&lt;!--v-show的值通常是个逻辑值--&gt;</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="v-if"><a href="#v-if" class="headerlink" title="v-if"></a>v-if</h4><p>作用：同v-show一样都是条件渲染，通过v-if能够控制元素的显示或者隐藏（元素会直接从Dom结构中消失）</p>
-<p>用法：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;isshow === true&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="v-else-x2F-v-else-if"><a href="#v-else-x2F-v-else-if" class="headerlink" title="v-else&#x2F;v-else-if"></a>v-else&#x2F;v-else-if</h4><p>作用：v-else和v-else-if跟JavaScript中的分支结构功能相同，在v-if不成立的时候会一次检查v-else-if，都不成立执行v-else</p>
-<p>用法：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;n==1&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-else-if</span>=<span class="hljs-string">&quot;n==2&quot;</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-else-if</span>=<span class="hljs-string">&quot;n==3&quot;</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-else-if</span>=<span class="hljs-string">&quot;n==4&quot;</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-else</span>&gt;</span>error<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-<p class="note note-warning">
-注意：v-if、v-else-if、v-else 一起使用时，结构不能被“打断”，例如下面这样：
-</p>
-
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-if</span>=<span class="hljs-string">&quot;n==1&quot;</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-else-if</span>=<span class="hljs-string">&quot;n==2&quot;</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-comment">&lt;!-- v-if和v-else被打断了: --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>@<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-else-if</span>=<span class="hljs-string">&quot;n==3&quot;</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-else-if</span>=<span class="hljs-string">&quot;n==4&quot;</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="v-text"><a href="#v-text" class="headerlink" title="v-text"></a>v-text</h4><p>作用：用于将数据填充到标签中，作用相当于插值语法</p>
-<p>用法：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-text</span>=<span class="hljs-string">&quot;tagValue&quot;</span>&gt;</span>123123<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-<p class="note note-warning">
-注意：<br>
-1、v-text会把原本的内容为完全的替换掉<br>
-2、v-text不能解析HTML标签
-</p>
-
-<h4 id="v-html"><a href="#v-html" class="headerlink" title="v-html"></a>v-html</h4><p>作用：同上面的v-text的作用相同</p>
-<p>用法：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-html</span>=<span class="hljs-string">&quot;tagValue&quot;</span>&gt;</span>123123<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-<p class="note note-warning">
-不同之处：v-html能够解析HTML标签<br>
-相同之处：v-html也会把原本的内容为完全的替换掉<br>
-注意：v-html有安全性问题，尽量不要使用v-html
-</p>
-
-<h4 id="v-cloak"><a href="#v-cloak" class="headerlink" title="v-cloak"></a>v-cloak</h4><p>作用：vue实例创建完毕并接管容器后，会删除掉v-cloak属性</p>
-<p>用法：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css"></span><br><span class="language-css">    <span class="hljs-selector-attr">[v-cloak]</span> &#123;</span><br><span class="language-css">    	<span class="hljs-attribute">display</span>: none;</span><br><span class="language-css">    &#125;</span><br><span class="language-css"></span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">v-cloak</span>&gt;</span>&#123;&#123;name&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-<p class="note note-info">
-v-cloak可以配合css可以解决网速慢时，页面展示出插值语法的问题，如上
-</p>
-
-<h4 id="v-once"><a href="#v-once" class="headerlink" title="v-once"></a>v-once</h4><p>作用：v-once在初次动态渲染之后，就是为静态内容，以后的数据都不会引起v-once所在结构的改变，可以用于优化性能</p>
-<p>用法：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">v-once</span>&gt;</span>初始化时候的n是:&#123;&#123;n&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="v-pre"><a href="#v-pre" class="headerlink" title="v-pre"></a>v-pre</h4><p>作用：Vue会跳过v-pre属性所在节点的编译过程，可以利用它跳过没有使用指令语法、插值语法的节点，能够加快编译速度</p>
-<p>用法：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;root&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">v-pre</span>&gt;</span>没有使用指令语法和插值语法<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">v-pre</span>&gt;</span>&#123;&#123;name&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
+<h3 id="使用vscode的插件"><a href="#使用vscode的插件" class="headerlink" title="使用vscode的插件"></a>使用vscode的插件</h3><p><a target="_blank" rel="noopener" href="https://github.com/cipchk/vscode-cssrem/blob/HEAD/README.zh-CN.md">px to rem插件的Github地址</a></p>
+<p>扩展设置中设置基准值</p>
+<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202208292223911.png" srcset="/img/loading.gif" lazyload alt="设置基准值"></p>
+<p>鼠标悬浮提示，并且在编码的时候会智能提示px到rem的转换</p>
+<p><img src="https://images-1257631716.cos.ap-shanghai.myqcloud.com/hexo/img/202208292223152.png" srcset="/img/loading.gif" lazyload alt="智能提示"></p>
 
               
             </div>
@@ -407,7 +324,9 @@ v-cloak可以配合css可以解决网速慢时，页面展示出插值语法的�
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Vue/">#Vue</a>
+        <a href="/tags/Rem/">#Rem</a>
+      
+        <a href="/tags/Media/">#Media</a>
       
     </div>
   
@@ -419,8 +338,8 @@ v-cloak可以配合css可以解决网速慢时，页面展示出插值语法的�
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Vue的模板语法</div>
-      <div>https://alierq.space/posts/77afcb1e.html</div>
+      <div>媒体查询和Rem</div>
+      <div>https://alierq.space/posts/6ff54d8c.html</div>
     </div>
     <div class="license-meta">
       
@@ -432,13 +351,13 @@ v-cloak可以配合css可以解决网速慢时，页面展示出插值语法的�
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年7月6日</div>
+          <div>2022年8月29日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年7月6日</div>
+          <div>2022年8月29日</div>
         </div>
       
       <div class="license-meta-item">
@@ -467,18 +386,12 @@ v-cloak可以配合css可以解决网速慢时，页面展示出插值语法的�
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/ded27652.html" title="Vue中el和data的两种写法">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Vue中el和data的两种写法</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/e983d6cb.html" title="Vue的完整版和运行时版">
-                        <span class="hidden-mobile">Vue的完整版和运行时版</span>
+                      <a href="/posts/ca9e2b2a.html" title="Webpack笔记">
+                        <span class="hidden-mobile">Webpack笔记</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
