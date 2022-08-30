@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://alierq.space/about/index.html</loc>
+    
+    <lastmod>2022-08-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://alierq.space/posts/c82f5ac0.html</loc>
     
     <lastmod>2022-08-30</lastmod>
@@ -320,15 +329,6 @@
     <loc>https://alierq.space/posts/e38660dc.html</loc>
     
     <lastmod>2022-07-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://alierq.space/about/index.html</loc>
-    
-    <lastmod>2022-05-25</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
