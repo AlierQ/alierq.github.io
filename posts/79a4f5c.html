@@ -19,7 +19,7 @@
     <meta name="description" content="EventBus简介在之前的文章中，介绍了MVC设计模式，他将一个应用程序分成了多个模块，弱化了每一个模块与模块之间的联系，这样的就使得模块与模块之间的通信变得尤为重要，尤其是MVC中Model的改变引起View的改变。EventBus就是基于订阅&#x2F;发布模式实现的实现的异步分发处理系统。 订阅者发布者模式举一个生活中的例子，我订阅了一份报纸，这份报纸会在某天的某一时刻出现在我的邮箱中，我不确定它">
 <meta property="og:type" content="article">
 <meta property="og:title" content="手写简易EventBus">
-<meta property="og:url" content="https://alierq.space/posts/79a4f5c.html">
+<meta property="og:url" content="https://alierq.github.io/posts/79a4f5c.html">
 <meta property="og:site_name" content="AlierQ&#39;s Blog">
 <meta property="og:description" content="EventBus简介在之前的文章中，介绍了MVC设计模式，他将一个应用程序分成了多个模块，弱化了每一个模块与模块之间的联系，这样的就使得模块与模块之间的通信变得尤为重要，尤其是MVC中Model的改变引起View的改变。EventBus就是基于订阅&#x2F;发布模式实现的实现的异步分发处理系统。 订阅者发布者模式举一个生活中的例子，我订阅了一份报纸，这份报纸会在某天的某一时刻出现在我的邮箱中，我不确定它">
 <meta property="og:locale" content="zh_CN">
@@ -78,7 +78,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"alierq.space","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"df60f35396f0f48b8cc541f369532995","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"z8WG5aFCs52EcQQxkXfUu7mT-MdYXbMMI","app_key":"HMJ6Ccdd4GYlyQRORR6OLJaF","server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"alierq.github.io","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":"df60f35396f0f48b8cc541f369532995","google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"z8WG5aFCs52EcQQxkXfUu7mT-MdYXbMMI","app_key":"HMJ6Ccdd4GYlyQRORR6OLJaF","server_url":null,"path":"window.location.pathname","ignore_local":true}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -327,7 +327,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>手写简易EventBus</div>
-      <div>https://alierq.space/posts/79a4f5c.html</div>
+      <div>https://alierq.github.io/posts/79a4f5c.html</div>
     </div>
     <div class="license-meta">
       
